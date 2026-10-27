@@ -65,7 +65,7 @@ function radio(env,name,value){for(const n of env.doc.querySelectorAll('input[na
 
 var html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
 var externalScripts={};
-for(const path of ['scales/catalog.js','scales/library.js'])externalScripts[path]=await fs.readFile(new URL('../'+path,import.meta.url),'utf8');
+for(const path of ['scales/catalog.js','scales/library.js','clinical/headache-data.js','clinical/headache.js'])externalScripts[path]=await fs.readFile(new URL('../'+path,import.meta.url),'utf8');
 
 
 var env=makeEnv(html);
@@ -140,11 +140,11 @@ for(const id of ids){
 var svg1=all.ctx.buildFlowSvg('검증',[['A','a'],['B','b']]),svg2=all.ctx.buildFlowSvg('검증',[['A','a'],['B','b']]);
 check('unique SVG marker ID',svg1.match(/marker id="([^"]+)"/)[1]!==svg2.match(/marker id="([^"]+)"/)[1]);
 var proof=makeEnv(html);proof.ctx.toggleSymptom('headache');proof.ctx.startPatientIntake();proof.ctx.skipQuestion();proof.ctx.switchMode('doctor');
-check('skip not counted as answer',proof.doc.getElementById('visitQuickSummary').textContent.includes('응답 0/6'));
+check('skip not counted as answer',proof.doc.getElementById('visitQuickSummary').textContent.includes('응답 0/'+proof.eval('NEURO_DATA.headache.questions.length')));
 proof.ctx.navigator.clipboard.writeText=()=>Promise.reject(Error('denied'));proof.ctx.copyEmrText();await Promise.resolve();await Promise.resolve();check('clipboard rejection reported',proof.alerts.some(t=>t.includes('복사하지 못했습니다')));
 proof.ctx.navigator.clipboard=undefined;proof.ctx.copyEmrText();check('missing clipboard reported',proof.alerts.some(t=>t.includes('복사를 사용할 수 없습니다')));
 proof.ctx.switchMode('patient');var b=proof.doc.querySelector('#optList button');b.click();proof.ctx.switchMode('doctor');proof.flush();check('switching mode cancels advance',proof.eval('AppState.queueIndex')===1);proof.ctx.switchMode('patient');check('question buttons usable on return',!proof.doc.querySelector('#optList button').disabled);
-var blocks=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);blocks.forEach(b=>new vm.Script(b));check('all inline scripts parse',blocks.length===21);
+var blocks=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);blocks.forEach(b=>new vm.Script(b));check('all inline scripts parse',blocks.length===23);
 check('print header has important override',html.includes('#visitPrintSheet header{display:block!important;'));
 
 
@@ -154,6 +154,6 @@ z.ctx.switchMode('doctor');z.ctx.switchDocStage('stage5_followup');z.doc.getElem
 var originalId=z.doc.querySelector('#docMechanismArea marker').id,printId=z.doc.querySelector('#visitPrintSheet marker').id;
 check('copied SVG has separate marker namespace',originalId!==printId);
 check('copied arrows target copied marker',z.doc.querySelector('#visitPrintSheet line').getAttribute('marker-end')==='url(#'+printId+')');
-console.log(JSON.stringify({passed:checks.length,paths:20,scope:'DOM simulation; image decode, clipboard and print mocked'},null,2));
+console.log(JSON.stringify({passed:checks.length,paths:pathCount,scope:'DOM simulation; image decode, clipboard and print mocked'},null,2));
 
 export { makeEnv };
