@@ -1,20 +1,13 @@
-/* Metadata only, except the separately licensed Korean 4AT form. Reviewed 2026-10-27. */
+/* 공개 한국어 전자 평가 허용 근거를 확인한 도구만 포함. Reviewed 2026-10-27. */
 window.NEURO_SCALE_CATALOG = {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "reviewed": "2026-10-27",
   "deploymentScope": "한국어·공개 정적 웹앱",
   "groups": {
     "headache": "두통",
     "dizziness": "어지럼·전정",
     "cognition": "치매·인지",
-    "tremor": "파킨슨·운동",
     "sleep": "수면",
-    "numbness": "말초신경·통증",
-    "weakness": "뇌졸중·운동기능",
-    "syncope": "실신·자율신경",
-    "seizure": "뇌전증",
-    "gait": "보행·균형",
-    "tinnitus": "이명·청각",
     "mood": "우울·불안",
     "other": "기타 신경과"
   },
@@ -24,133 +17,14 @@ window.NEURO_SCALE_CATALOG = {
       "url": "https://www.phqscreeners.com/select-screener",
       "access": "본문 확인",
       "kind": "권리자 공식 안내",
-      "note": "복제·전시·배포 허용 안내 확인. 한국어 원본 파일과 판본 대조는 미완료."
+      "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
     },
     "phqManual": {
       "label": "PHQ/GAD 공식 사용 설명서",
       "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
       "access": "PDF 본문 확인",
       "kind": "개발자 공식 설명서",
-      "note": "p.3·6·7의 점수 범위와 구간 확인. 한국어 문항 원본은 접근 실패."
-    },
-    "mapi": {
-      "label": "Mapi Research Trust ePROVIDE",
-      "url": "https://eprovide.mapi-trust.org/",
-      "access": "본문 확인 불가",
-      "kind": "공식 배포기관 자료 검색 출발점",
-      "note": "동적 페이지 본문을 읽지 못함. 척도별 권리자·번역판·전자 공개 조건 확인 필요."
-    },
-    "moca": {
-      "label": "MoCA 권리자 허가 절차",
-      "url": "https://www.mocacognition.com/permission",
-      "access": "허가 신청 화면 확인",
-      "kind": "권리자",
-      "note": "별도 허가 절차 확인. 한국어 전자 공개 허가는 확보하지 않음."
-    },
-    "mds": {
-      "label": "MDS Clinical Outcome Assessments",
-      "url": "https://www.movementdisorders.org/MDS/MDS-Clinical-Outcome-Assessment.htm",
-      "access": "본문 확인",
-      "kind": "권리자",
-      "note": "척도별·언어별 허가 필요. 목록에 한국어가 있어도 사용권 취득을 뜻하지 않음."
-    },
-    "mdsTerms": {
-      "label": "MDS Permission Request",
-      "url": "https://mds.movementdisorders.org/publications/rating_scales/request_form.php",
-      "access": "본문 확인",
-      "kind": "권리자 이용 조건",
-      "note": "종이 표준 허가와 전자 개발 허가는 별개. 전자 개발은 사전 명시적 승인 필요."
-    },
-    "par": {
-      "label": "PAR MMSE-2 공식 소개",
-      "url": "https://www.parinc.com/products/MMSE-2",
-      "access": "본문 확인",
-      "kind": "출판사",
-      "note": "판본별 범위가 다름. 변형·번역 형식은 허가 절차 필요. 국내 한국어판 권리는 별도 확인."
-    },
-    "cist": {
-      "label": "국립중앙의료원 CIST 소개",
-      "url": "https://www.nmc.or.kr/nmc/board/B0000008/27109",
-      "access": "본문 확인",
-      "kind": "개발 공공기관",
-      "note": "국내 개발·6개 인지영역 확인. 웹 원문 복제·공개 조건은 미확인."
-    },
-    "cdr": {
-      "label": "Washington University CDR Licensing",
-      "url": "https://knightadrc.wustl.edu/professionals-clinicians/cdr-dementia-staging-instrument/copyright-licensing/",
-      "access": "본문 확인",
-      "kind": "권리자",
-      "note": "임상·연구 모두 라이선스 필요. 번역판 접근도 허가와 별도 연결."
-    },
-    "iqcode": {
-      "label": "ANU IQCODE",
-      "url": "https://nceph.anu.edu.au/research/tools-resources/informant-questionnaire-cognitive-decline-elderly",
-      "access": "본문 확인",
-      "kind": "개발기관",
-      "note": "보호자 보고 도구 소개 확인. 한국어판 전자 공개 조건 미확인."
-    },
-    "npi": {
-      "label": "NPI 이용 규칙",
-      "url": "https://www.npitest.net/terms-of-service.html",
-      "access": "본문 확인",
-      "kind": "개발자",
-      "note": "저작권 보호·재출판 허가 규칙 확인. NPI-Q 및 한국어판 조건 별도 확인."
-    },
-    "psqi": {
-      "label": "University of Pittsburgh 수면 평가도구",
-      "url": "https://www.sleep.pitt.edu/research/measures-and-study-instruments",
-      "access": "본문 확인",
-      "kind": "권리자",
-      "note": "비상업 연구·교육에 한정한 무료 재인쇄 안내. 공개 의원 웹 전자판 허가는 확인되지 않음."
-    },
-    "ess": {
-      "label": "ESS 개발자 공식 사이트",
-      "url": "https://epworthsleepinessscale.com/",
-      "access": "본문 확인",
-      "kind": "권리자",
-      "note": "사용 라이선스 필요 안내. 비용 면제와 무허가는 다른 개념."
-    },
-    "pdq": {
-      "label": "Oxford PDQ-39/PDQ-8",
-      "url": "https://www.ndph.ox.ac.uk/our-research/health-services-research-unit-hsru/outcome-measures/pdq-39-questionnaire",
-      "access": "검색 결과만 확인·본문 403",
-      "kind": "개발기관",
-      "note": "라이선스 안내가 검색되었으나 현재 본문·한국어 전자판 조건 미확인."
-    },
-    "bpi": {
-      "label": "MD Anderson BPI",
-      "url": "https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/symptom-research/symptom-assessment-tools/brief-pain-inventory.html",
-      "access": "본문 확인",
-      "kind": "개발기관",
-      "note": "임상·전자 사용 소개와 신청 절차 확인. 원문 재배포 허가는 별도."
-    },
-    "tinnitus": {
-      "label": "VA NCRAR 이명 평가도구",
-      "url": "https://ncrar.research.va.gov/NCRAR/ClinicianResources/TinnitusQuestionnaires.asp",
-      "access": "본문 확인",
-      "kind": "개발·연구기관",
-      "note": "TFI는 OHSU 사용허가로 연결. THI 한국어 전자 공개 조건은 미확인."
-    },
-    "bdi": {
-      "label": "Pearson BDI-II",
-      "url": "https://www.pearsonassessments.com/en-us/en-us/Store/Professional-Assessments/Personality-%26-Biopsychosocial/Beck-Depression-Inventory/p/100000159",
-      "access": "본문 확인",
-      "kind": "출판사",
-      "note": "유료 종이·디지털 상품과 자격 요건 존재. 공개 웹 재배포 권리는 미확보."
-    },
-    "qolie": {
-      "label": "RAND QOLIE",
-      "url": "https://www.rand.org/health/surveys/qolie.html",
-      "access": "본문 확인",
-      "kind": "개발기관",
-      "note": "QOLIE-31과 89의 자료·매뉴얼 확인. 한국어·QOLIE-10·공개 전자판 조건은 미확인."
-    },
-    "rehab": {
-      "label": "RehabMeasures Database",
-      "url": "https://www.sralab.org/rehabilitation-measures",
-      "access": "본문 확인",
-      "kind": "전문기관 참고자료",
-      "note": "권리자의 이용허락 자체가 아님. 척도별 페이지·한국어판 권리 확인 필요."
+      "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
     },
     "fourat": {
       "label": "4AT 한국어 공식 배포",
@@ -180,1776 +54,29 @@ window.NEURO_SCALE_CATALOG = {
       "kind": "개발자",
       "note": "0~12, 4 이상 섬망 가능, 1~3 인지장애 가능. 0점도 배제 진단 아님."
     },
-    "mini": {
-      "label": "Mini-Cog 개발자 이용 안내",
-      "url": "https://mini-cog.com/contact/",
+    "informKo": {
+      "label": "INfORM 한국어 평가도구 · 27Oct2019",
+      "url": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "access": "공식 번역 목록 연결 및 PDF 텍스트 확인 · 화면 이미지 대조는 미완료",
+      "kind": "한국어 번역 배포 학술 컨소시엄",
+      "note": "PHQ-4 p.48 / PHQ-9 p.50 / GAD-7 p.52(인쇄된 쪽 번호). 해당 한국어 페이지의 복제·번역·표시·배포 허용 문구와 번역자 표시를 확인. 이 웹 구현의 별도 임상 검증은 아님."
+    },
+    "informTranslations": {
+      "label": "INfORM 공식 번역 목록",
+      "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+      "access": "본문 및 한국어 PDF 링크 확인",
+      "kind": "번역판 공식 배포 목록",
+      "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+    },
+    "phqTerms": {
+      "label": "PHQ Screeners 이용 조건",
+      "url": "https://www.phqscreeners.com/terms",
       "access": "본문 확인",
-      "kind": "개발자",
-      "note": "진료·교육과 상업적 이용 조건을 구분. 한국어 원본·공개 전자 배포의 정확한 적용은 확인 필요."
-    },
-    "healthmeasures": {
-      "label": "HealthMeasures 전자 시행 안내",
-      "url": "https://healthmeasures.net/services/",
-      "access": "본문 확인",
-      "kind": "공식 배포기관",
-      "note": "전자 시행 HEAP 승인·화면 검토 절차 확인. 세부 한국어 척도·환산표는 별도."
-    },
-    "ninds": {
-      "label": "NINDS NIHSS",
-      "url": "https://www.ninds.nih.gov/health-information/stroke/assess-and-treat",
-      "access": "검색 결과만 확인·본문 403",
-      "kind": "개발기관",
-      "note": "공식 소개·PDF 접근 제한. 전자 공개·한국어판·채점 매뉴얼 본문 미확인."
-    },
-    "headache": {
-      "label": "대한두통학회",
-      "url": "https://headache.or.kr/index.php",
-      "access": "검색 결과 확인",
-      "kind": "국내 학회",
-      "note": "두통일지 자료 확인 출발점. 특정 서식 원문과 배포 권리 미확인."
+      "kind": "권리자",
+      "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
     }
   },
   "scales": [
-    {
-      "id": "hit6",
-      "abbr": "HIT-6",
-      "name": "Headache Impact Test-6",
-      "groups": [
-        "headache"
-      ],
-      "purpose": "두통이 일상 기능에 미치는 영향",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "midas",
-      "abbr": "MIDAS",
-      "name": "Migraine Disability Assessment",
-      "groups": [
-        "headache"
-      ],
-      "purpose": "편두통 관련 활동 장애",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "msq",
-      "abbr": "MSQ",
-      "name": "Migraine-Specific Quality of Life Questionnaire",
-      "groups": [
-        "headache"
-      ],
-      "purpose": "편두통 관련 삶의 질",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "headache-diary",
-      "abbr": "두통일지",
-      "name": "Headache Diary (비표준화 기록 유형)",
-      "groups": [
-        "headache"
-      ],
-      "purpose": "두통일수·복용일수와 경과 기록",
-      "method": "환자 자가 기록 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "표준 총점 없음 · 특정 공식 서식 확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "headache",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "dhi",
-      "abbr": "DHI",
-      "name": "Dizziness Handicap Inventory",
-      "groups": [
-        "dizziness"
-      ],
-      "purpose": "어지럼 관련 기능·정서·신체적 불편",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "25",
-      "duration": "약 10분",
-      "scoreRange": "0~100 (총점)",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "전문기관 척도별 본문 확인 · 권리허가 근거 아님",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/dizziness-handicap-inventory",
-      "manual": {
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "점",
-        "evidence": "https://www.sralab.org/rehabilitation-measures/dizziness-handicap-inventory"
-      }
-    },
-    {
-      "id": "vss",
-      "abbr": "VSS",
-      "name": "Vertigo Symptom Scale",
-      "groups": [
-        "dizziness"
-      ],
-      "purpose": "어지럼·균형 및 자율신경/불안 증상",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "장문 36; 단축판 별도 확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "척도 소개 본문 확인 · 판본별 총점 미확정",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/vertigo-symptom-scale"
-    },
-    {
-      "id": "abc",
-      "abbr": "ABC Scale",
-      "name": "Activities-specific Balance Confidence Scale",
-      "groups": [
-        "dizziness",
-        "gait"
-      ],
-      "purpose": "일상 활동의 균형 자신감",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "16",
-      "duration": "약 5~10분",
-      "scoreRange": "0~100% (평균)",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "전자화·웹 게시 시 허가 필요 안내",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "전문기관에 인용된 권리조건 확인 · 직접 권리허가 미확보",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/activities-specific-balance-confidence-scale",
-      "manual": {
-        "min": 0,
-        "max": 100,
-        "step": "any",
-        "unit": "%",
-        "evidence": "https://www.sralab.org/rehabilitation-measures/activities-specific-balance-confidence-scale"
-      }
-    },
-    {
-      "id": "vadl",
-      "abbr": "VADL",
-      "name": "Vestibular Disorders Activities of Daily Living Scale",
-      "groups": [
-        "dizziness"
-      ],
-      "purpose": "전정질환의 일상생활 독립성",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "28",
-      "duration": "약 5~10분",
-      "scoreRange": "항목 1~10; 종합값 형식 확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "척도 소개 본문 확인 · 전자 복제 조건 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/vestibular-disorders-activities-daily-living-scale"
-    },
-    {
-      "id": "mmse",
-      "abbr": "MMSE",
-      "name": "Mini-Mental State Examination",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "인지기능 선별과 경과 관찰",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "저작권·판본별 허가 확인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "보유",
-      "source": "par",
-      "sourceScope": "출판사 MMSE-2 소개 및 원검사와 관계 확인 · 보유한 MMSE 판본은 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "k-mmse",
-      "abbr": "K-MMSE",
-      "name": "Korean Mini-Mental State Examination",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "한국어 인지기능 평가",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "par",
-      "sourceScope": "원검사 출판사 안내만 확인 · 한국어판 권리자와 보유 판본 별도 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "mmse2",
-      "abbr": "MMSE-2",
-      "name": "Mini-Mental State Examination, Second Edition",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "인지기능 선별·추적",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "BV 약 5분 / SV 약 10~15분 / EV 약 20분",
-      "scoreRange": "BV 0~16 / SV 0~30 / EV 0~90 · 판본 구분 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "형식변경·번역 등 별도 허가 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "par",
-      "sourceScope": "출판사 판본 정보 본문 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "moca",
-      "abbr": "MoCA",
-      "name": "Montreal Cognitive Assessment",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "경도 인지기능 저하 선별",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "권리자 허가 절차 있음 · 공개 전자판 미허가",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "moca",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "cist",
-      "abbr": "CIST",
-      "name": "Cognitive Impairment Screening Test",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "국내 인지기능 선별",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "국내 개발 한국어 도구 소개 확인 · 공개 전자 사용권 미확인",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "cist",
-      "sourceScope": "국립중앙의료원 개발·임상 소개 본문 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "cdr",
-      "abbr": "CDR",
-      "name": "Clinical Dementia Rating",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "인지·일상기능 기반 치매 단계 평가",
-      "method": "의료진 시행·환자/보호자 면담 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "임상·연구 라이선스 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "cdr",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "gds-dementia",
-      "abbr": "GDS (치매 중증도)",
-      "name": "Global Deterioration Scale",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "치매의 전반적 임상 중증도",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "ad8",
-      "abbr": "AD8",
-      "name": "Eight-item Informant Interview to Differentiate Aging and Dementia",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "관찰된 인지·기능 변화 선별",
-      "method": "보호자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "cdr",
-      "sourceScope": "Washington University 자료 출발점 · AD8 개별 이용조건 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "iqcode",
-      "abbr": "IQCODE",
-      "name": "Informant Questionnaire on Cognitive Decline in the Elderly",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "과거 대비 인지기능 변화",
-      "method": "보호자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "iqcode",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "kiadl",
-      "abbr": "K-IADL",
-      "name": "Korean Instrumental Activities of Daily Living",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "도구적 일상생활 기능",
-      "method": "보호자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "siadl",
-      "abbr": "S-IADL",
-      "name": "Seoul Instrumental Activities of Daily Living",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "도구적 일상생활 기능",
-      "method": "보호자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "npi",
-      "abbr": "NPI",
-      "name": "Neuropsychiatric Inventory",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "치매 관련 행동·정신 증상",
-      "method": "의료진·보호자 면담 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "재출판 시 개발자 허가 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "npi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "npiq",
-      "abbr": "NPI-Q",
-      "name": "Neuropsychiatric Inventory Questionnaire",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "행동·정신 증상과 보호자 부담",
-      "method": "보호자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "npi",
-      "sourceScope": "NPI 공통 규칙 확인 · NPI-Q 한국어·전자판 범위 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "mdsupdrs",
-      "abbr": "MDS-UPDRS",
-      "name": "Movement Disorder Society-Sponsored Revision of the Unified Parkinson's Disease Rating Scale",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 운동·비운동·기능 평가",
-      "method": "의료진·환자/보호자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "공식 목록에 한국어 존재 · 권리 취득은 별도",
-      "grade": "B",
-      "license": "척도·언어·전자 개발별 사전 허가 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mds",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [
-        "mdsTerms"
-      ],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "hy",
-      "abbr": "Hoehn & Yahr",
-      "name": "Hoehn and Yahr Staging",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 임상 단계",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mds",
-      "sourceScope": "관련 학회 안내 출발점 · 해당 도구 권리조건 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "seadl",
-      "abbr": "Schwab & England ADL",
-      "name": "Schwab and England Activities of Daily Living Scale",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 일상생활 독립성",
-      "method": "의료진·환자/보호자 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mds",
-      "sourceScope": "관련 학회 출발점 · 해당 도구 권리조건 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "pdq39",
-      "abbr": "PDQ-39",
-      "name": "Parkinson's Disease Questionnaire-39",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 관련 삶의 질",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "pdq",
-      "sourceScope": "공식 소개 검색 결과만 확인 · 본문 접근 실패",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "pdq8",
-      "abbr": "PDQ-8",
-      "name": "Parkinson's Disease Questionnaire-8",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 관련 삶의 질 단축 평가",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "pdq",
-      "sourceScope": "공식 소개 검색 결과만 확인 · 본문 접근 실패",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "nmss",
-      "abbr": "NMSS",
-      "name": "Non-Motor Symptoms Scale for Parkinson's Disease",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 비운동 증상 부담",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "MDS 허가·전자 개발 승인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mds",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [
-        "mdsTerms"
-      ],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "nmsq",
-      "abbr": "NMSQ",
-      "name": "Non-Motor Symptoms Questionnaire",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨병 비운동 증상 선별",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "MDS 허가·전자 개발 승인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mds",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [
-        "mdsTerms"
-      ],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "scopaaut",
-      "abbr": "SCOPA-AUT",
-      "name": "Scales for Outcomes in Parkinson's Disease–Autonomic Dysfunction",
-      "groups": [
-        "tremor",
-        "syncope"
-      ],
-      "purpose": "파킨슨병의 자율신경 증상",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "공식 목록에 한국어 존재 · 권리는 별도",
-      "grade": "B",
-      "license": "MDS 허가·전자 개발 승인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mds",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [
-        "mdsTerms"
-      ],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "fogq",
-      "abbr": "FOG-Q",
-      "name": "Freezing of Gait Questionnaire",
-      "groups": [
-        "tremor",
-        "gait"
-      ],
-      "purpose": "보행 동결 관련 불편",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "woq9",
-      "abbr": "WOQ-9",
-      "name": "Wearing-Off Questionnaire-9",
-      "groups": [
-        "tremor"
-      ],
-      "purpose": "파킨슨 치료의 약효 소진 증상",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "isi",
-      "abbr": "ISI",
-      "name": "Insomnia Severity Index",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "불면 증상과 기능 영향",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "psqi",
-      "abbr": "PSQI",
-      "name": "Pittsburgh Sleep Quality Index",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "수면의 질",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "권리자 사용조건·별도 라이선스 확인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "psqi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "ess",
-      "abbr": "ESS",
-      "name": "Epworth Sleepiness Scale",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "주간 졸림",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "권리자 사용조건·별도 라이선스 확인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "ess",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "stopbang",
-      "abbr": "STOP-Bang",
-      "name": "STOP-Bang Questionnaire",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "폐쇄성 수면무호흡 위험 선별",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "berlin",
-      "abbr": "Berlin Questionnaire",
-      "name": "Berlin Questionnaire",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "수면무호흡 위험 선별",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "rbdsq",
-      "abbr": "RBDSQ",
-      "name": "REM Sleep Behavior Disorder Screening Questionnaire",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "렘수면행동장애 선별",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "irls",
-      "abbr": "IRLS",
-      "name": "International Restless Legs Syndrome Study Group Rating Scale",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "하지불안증후군 중증도",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "rls6",
-      "abbr": "RLS-6",
-      "name": "Restless Legs Syndrome-6",
-      "groups": [
-        "sleep"
-      ],
-      "purpose": "하지불안증후군 증상 부담",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "dn4",
-      "abbr": "DN4",
-      "name": "Douleur Neuropathique en 4 Questions",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "신경병증성 통증 선별",
-      "method": "의료진 시행·환자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "paindetect",
-      "abbr": "painDETECT",
-      "name": "painDETECT Questionnaire",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "신경병증성 통증 양상 선별",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "nrs",
-      "abbr": "NRS",
-      "name": "Numeric Rating Scale",
-      "groups": [
-        "numbness",
-        "other"
-      ],
-      "purpose": "증상 강도의 숫자 평가",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "1 (통증 NPRS 참고)",
-      "duration": "3분 미만 (통증 NPRS 참고)",
-      "scoreRange": "0~10 (통증 NPRS)",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "통증 NPRS 소개 확인 · 다른 증상용 NRS로 확장 해석하지 않음",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/numeric-pain-rating-scale",
-      "manual": {
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "unit": "점",
-        "evidence": "https://www.sralab.org/rehabilitation-measures/numeric-pain-rating-scale"
-      }
-    },
-    {
-      "id": "vas",
-      "abbr": "VAS",
-      "name": "Visual Analogue Scale",
-      "groups": [
-        "numbness",
-        "tinnitus"
-      ],
-      "purpose": "통증·이명 등 증상 강도의 연속선 평가",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "bpi",
-      "abbr": "BPI",
-      "name": "Brief Pain Inventory",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "통증 강도와 생활 간섭",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "단축판 5분 이내 / 장문 10분 이내",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "bpi",
-      "sourceScope": "개발기관의 시행·신청 안내 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "npsi",
-      "abbr": "NPSI",
-      "name": "Neuropathic Pain Symptom Inventory",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "신경병증성 통증 특성",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "mnsi",
-      "abbr": "MNSI",
-      "name": "Michigan Neuropathy Screening Instrument",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "당뇨 말초신경병증 선별",
-      "method": "의료진 시행·환자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "tcns",
-      "abbr": "TCNS",
-      "name": "Toronto Clinical Neuropathy Score",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "말초신경병증의 임상 중증도",
-      "method": "의료진 시행·환자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "incat",
-      "abbr": "INCAT",
-      "name": "Inflammatory Neuropathy Cause and Treatment Disability Score",
-      "groups": [
-        "numbness"
-      ],
-      "purpose": "염증성 신경병증의 기능 장애",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "nihss",
-      "abbr": "NIHSS",
-      "name": "National Institutes of Health Stroke Scale",
-      "groups": [
-        "weakness"
-      ],
-      "purpose": "급성 뇌졸중 신경학적 결손",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "ninds",
-      "sourceScope": "공식 소개·PDF 본문 접근 403 · 판본/권리/채점 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "mrs",
-      "abbr": "mRS",
-      "name": "Modified Rankin Scale",
-      "groups": [
-        "weakness"
-      ],
-      "purpose": "뇌졸중 후 전반적 장애",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "전문기관 자료 검색 출발점 · 해당 도구 직접자료 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "barthel",
-      "abbr": "Barthel Index",
-      "name": "Barthel Index of Activities of Daily Living",
-      "groups": [
-        "weakness"
-      ],
-      "purpose": "기본 일상생활 독립성",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "전문기관 자료 검색 출발점 · 해당 도구 직접자료 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "fma",
-      "abbr": "Fugl-Meyer Assessment",
-      "name": "Fugl-Meyer Assessment of Motor Recovery after Stroke",
-      "groups": [
-        "weakness"
-      ],
-      "purpose": "뇌졸중 후 운동·감각 회복",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "전문기관 자료 검색 출발점 · 해당 도구 직접자료 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "mrc",
-      "abbr": "MRC Scale",
-      "name": "Medical Research Council Muscle Strength Scale",
-      "groups": [
-        "weakness"
-      ],
-      "purpose": "근육별 근력 평가",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "전문기관 자료 검색 출발점 · 해당 도구 직접자료 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "compass31",
-      "abbr": "COMPASS-31",
-      "name": "Composite Autonomic Symptom Score-31",
-      "groups": [
-        "syncope"
-      ],
-      "purpose": "자율신경 증상 부담",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "ohq",
-      "abbr": "OHQ",
-      "name": "Orthostatic Hypotension Questionnaire",
-      "groups": [
-        "syncope",
-        "dizziness"
-      ],
-      "purpose": "기립성 저혈압 관련 증상과 활동 영향",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "qolie10",
-      "abbr": "QOLIE-10",
-      "name": "Quality of Life in Epilepsy Inventory-10",
-      "groups": [
-        "seizure"
-      ],
-      "purpose": "뇌전증 관련 삶의 질 단축 평가",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "qolie",
-      "sourceScope": "RAND의 관련 원논문 안내 확인 · QOLIE-10 원문/권리는 별도 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "qolie31",
-      "abbr": "QOLIE-31",
-      "name": "Quality of Life in Epilepsy Inventory-31",
-      "groups": [
-        "seizure"
-      ],
-      "purpose": "뇌전증 관련 삶의 질",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "qolie",
-      "sourceScope": "RAND 원본·매뉴얼 링크 확인 · 한국어/전자 배포권 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "lsss",
-      "abbr": "Liverpool Seizure Severity Scale",
-      "name": "Liverpool Seizure Severity Scale",
-      "groups": [
-        "seizure"
-      ],
-      "purpose": "발작 중증도와 영향",
-      "method": "환자 보고·의료진 확인 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "tug",
-      "abbr": "TUG",
-      "name": "Timed Up and Go",
-      "groups": [
-        "gait",
-        "dizziness"
-      ],
-      "purpose": "기능적 이동과 균형 평가",
-      "method": "의료진 관찰 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "시간(초) · 보편적 단일 절단값 미제공",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "시행·시간 단위 본문 확인 · 공개 한국어 문항권 미확인",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/timed-and-go",
-      "manual": {
-        "min": 0,
-        "max": null,
-        "exclusiveMin": true,
-        "step": "any",
-        "unit": "초",
-        "evidence": "https://www.sralab.org/rehabilitation-measures/timed-and-go"
-      }
-    },
-    {
-      "id": "bbs",
-      "abbr": "Berg Balance Scale",
-      "name": "Berg Balance Scale",
-      "groups": [
-        "gait",
-        "dizziness"
-      ],
-      "purpose": "정적 균형과 낙상 관련 기능",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "14",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "척도 소개와 public domain 참고 안내 확인 · 한국어판 원문/권리 별도 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/berg-balance-scale"
-    },
-    {
-      "id": "poma",
-      "abbr": "Tinetti POMA",
-      "name": "Tinetti Performance-Oriented Mobility Assessment",
-      "groups": [
-        "gait"
-      ],
-      "purpose": "균형과 보행 기능",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "sppb",
-      "abbr": "SPPB",
-      "name": "Short Physical Performance Battery",
-      "groups": [
-        "gait"
-      ],
-      "purpose": "하지 신체 수행능력",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "fga",
-      "abbr": "FGA",
-      "name": "Functional Gait Assessment",
-      "groups": [
-        "gait",
-        "dizziness"
-      ],
-      "purpose": "보행 중 동적 균형",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "10",
-      "duration": "확인 필요",
-      "scoreRange": "0~30",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "척도 소개·배점 범위 본문 확인",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/functional-gait-assessment",
-      "manual": {
-        "min": 0,
-        "max": 30,
-        "step": 1,
-        "unit": "점",
-        "evidence": "https://www.sralab.org/rehabilitation-measures/functional-gait-assessment"
-      }
-    },
-    {
-      "id": "10mwt",
-      "abbr": "10m Walk Test",
-      "name": "10 Meter Walk Test",
-      "groups": [
-        "gait",
-        "weakness",
-        "tremor"
-      ],
-      "purpose": "보행 속도 측정",
-      "method": "의료진 측정 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "m/s · 실제 측정 거리/시간으로 계산",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "속도=실제 측정거리÷시간 공식 확인 · 특정 프로토콜 문항 미포함",
-      "evidence": [],
-      "reviewed": "2026-10-27",
-      "sourceUrl": "https://www.sralab.org/rehabilitation-measures/10-meter-walk-test",
-      "calculator": "speed"
-    },
-    {
-      "id": "thi",
-      "abbr": "THI",
-      "name": "Tinnitus Handicap Inventory",
-      "groups": [
-        "tinnitus"
-      ],
-      "purpose": "이명 관련 기능·정서 부담",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "tinnitus",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "tfi",
-      "abbr": "TFI",
-      "name": "Tinnitus Functional Index",
-      "groups": [
-        "tinnitus"
-      ],
-      "purpose": "이명 기능 영향과 치료 반응",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "공식 VA 안내에서 OHSU 권리자 사용허가 요청으로 연결",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "tinnitus",
-      "sourceScope": "VA 공식 허가 연결 확인 · 실제 허가 미취득",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "hhie",
-      "abbr": "HHIE",
-      "name": "Hearing Handicap Inventory for the Elderly",
-      "groups": [
-        "tinnitus"
-      ],
-      "purpose": "고령자의 청각 관련 일상 부담",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
     {
       "id": "phq9",
       "abbr": "PHQ-9",
@@ -1962,21 +89,24 @@ window.NEURO_SCALE_CATALOG = {
         "other"
       ],
       "purpose": "우울 증상 선별과 중증도",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
+      "method": "환자 자가보고 · 의료진이 원문을 읽고 환자의 응답을 입력할 수 있음",
       "items": "9",
       "duration": "확인 필요",
       "scoreRange": "0~27",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "한국어 검증 연구 검색됨 · 연구 본문 403, 공식 한국어 원본·사용권 대조 확인 필요",
-      "grade": "C",
-      "license": "일반 복제·배포 허용 확인; 사용할 한국어 원본 판본 대조 미완료",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
+      "interpretation": "공식 매뉴얼 근거 구간만 표시 · 확정 진단 아님",
+      "korean": "INfORM 27Oct2019 한국어 번역판 확인 · 이 판본의 독립 검증 연구/웹 구현 임상 검증은 미확인",
+      "grade": "A",
+      "license": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "electronic": "한국어 해당 판본의 복제·표시·배포 허용 문구에 근거해 공개 웹 입력 UI 제공",
+      "internalUse": "해당 판본의 명시적 허용 조건에 따라 제공",
       "insurance": "확인 필요 · 수가·인정기준 미검증",
       "paper": "보유",
-      "source": "phq",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
+      "source": "informKo",
+      "sourceScope": "공식 INfORM 한국어 번역판 해당 페이지의 명시적 허용 문구·번역자 확인; Pfizer 공식 일반 조건·채점 매뉴얼 함께 확인",
       "evidence": [
+        "informTranslations",
+        "phq",
+        "phqTerms",
         "phqManual"
       ],
       "reviewed": "2026-10-27",
@@ -1987,7 +117,11 @@ window.NEURO_SCALE_CATALOG = {
         "unit": "점",
         "interpretation": "phq9",
         "evidence": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf"
-      }
+      },
+      "rightsVerified": true,
+      "electronicLanguage": "ko",
+      "electronicVersion": "INfORM-27Oct2019",
+      "sourceUrl": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf#page=50"
     },
     {
       "id": "phq2",
@@ -2000,21 +134,24 @@ window.NEURO_SCALE_CATALOG = {
         "other"
       ],
       "purpose": "우울 증상 단축 선별",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
+      "method": "환자 자가보고 · 의료진이 원문을 읽고 환자의 응답을 입력할 수 있음",
       "items": "2",
       "duration": "확인 필요",
       "scoreRange": "0~6",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "PHQ 계열 일반 허용 확인; 한국어 원본 판본 대조 미완료",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
+      "interpretation": "공식 매뉴얼 근거 구간만 표시 · 확정 진단 아님",
+      "korean": "INfORM 27Oct2019 한국어 번역판 확인 · 이 판본의 독립 검증 연구/웹 구현 임상 검증은 미확인",
+      "grade": "A",
+      "license": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "electronic": "한국어 해당 판본의 복제·표시·배포 허용 문구에 근거해 공개 웹 입력 UI 제공",
+      "internalUse": "해당 판본의 명시적 허용 조건에 따라 제공",
       "insurance": "확인 필요 · 수가·인정기준 미검증",
       "paper": "미보유",
-      "source": "phq",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
+      "source": "informKo",
+      "sourceScope": "공식 INfORM 한국어 번역판 해당 페이지의 명시적 허용 문구·번역자 확인; Pfizer 공식 일반 조건·채점 매뉴얼 함께 확인",
       "evidence": [
+        "informTranslations",
+        "phq",
+        "phqTerms",
         "phqManual"
       ],
       "reviewed": "2026-10-27",
@@ -2025,7 +162,11 @@ window.NEURO_SCALE_CATALOG = {
         "unit": "점",
         "interpretation": "phq2",
         "evidence": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf"
-      }
+      },
+      "rightsVerified": true,
+      "electronicLanguage": "ko",
+      "electronicVersion": "INfORM-27Oct2019",
+      "sourceUrl": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf#page=50"
     },
     {
       "id": "gad7",
@@ -2039,21 +180,24 @@ window.NEURO_SCALE_CATALOG = {
         "other"
       ],
       "purpose": "불안 증상 선별과 중증도",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
+      "method": "환자 자가보고 · 의료진이 원문을 읽고 환자의 응답을 입력할 수 있음",
       "items": "7",
       "duration": "확인 필요",
       "scoreRange": "0~21",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "한국어 검증 연구 검색됨 · 연구 본문 접근 제한, 공식 한국어 원본·사용권 대조 확인 필요",
-      "grade": "C",
-      "license": "일반 복제·배포 허용 확인; 한국어 원본 판본 대조 미완료",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
+      "interpretation": "공식 매뉴얼 근거 구간만 표시 · 확정 진단 아님",
+      "korean": "INfORM 27Oct2019 한국어 번역판 확인 · 이 판본의 독립 검증 연구/웹 구현 임상 검증은 미확인",
+      "grade": "A",
+      "license": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "electronic": "한국어 해당 판본의 복제·표시·배포 허용 문구에 근거해 공개 웹 입력 UI 제공",
+      "internalUse": "해당 판본의 명시적 허용 조건에 따라 제공",
       "insurance": "확인 필요 · 수가·인정기준 미검증",
       "paper": "미보유",
-      "source": "phq",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
+      "source": "informKo",
+      "sourceScope": "공식 INfORM 한국어 번역판 해당 페이지의 명시적 허용 문구·번역자 확인; Pfizer 공식 일반 조건·채점 매뉴얼 함께 확인",
       "evidence": [
+        "informTranslations",
+        "phq",
+        "phqTerms",
         "phqManual"
       ],
       "reviewed": "2026-10-27",
@@ -2064,83 +208,140 @@ window.NEURO_SCALE_CATALOG = {
         "unit": "점",
         "interpretation": "gad7",
         "evidence": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf"
-      }
+      },
+      "rightsVerified": true,
+      "electronicLanguage": "ko",
+      "electronicVersion": "INfORM-27Oct2019",
+      "sourceUrl": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf#page=52"
     },
     {
-      "id": "hads",
-      "abbr": "HADS",
-      "name": "Hospital Anxiety and Depression Scale",
-      "groups": [
-        "mood"
-      ],
-      "purpose": "신체질환 환자의 우울·불안 증상",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "bdiii",
-      "abbr": "BDI-II",
-      "name": "Beck Depression Inventory-II",
-      "groups": [
-        "mood"
-      ],
-      "purpose": "우울 증상 중증도",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "21",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "출판사 유료 판본·자격 요건 확인; 전자 공개권 미확보",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "bdi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "gds-depression",
-      "abbr": "GDS (노인우울)",
-      "name": "Geriatric Depression Scale",
+      "id": "gad2",
+      "abbr": "GAD-2",
+      "name": "Generalized Anxiety Disorder-2",
       "groups": [
         "mood",
-        "cognition"
+        "other"
       ],
-      "purpose": "고령자의 우울 증상 선별",
-      "method": "환자 보고·면담 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
+      "purpose": "불안 증상 단축 선별",
+      "method": "환자 자가보고 · 의료진이 원문을 읽고 환자의 응답을 입력할 수 있음",
+      "items": "2",
       "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
+      "scoreRange": "0~6",
+      "interpretation": "공식 매뉴얼 근거 구간만 표시 · 확정 진단 아님",
+      "korean": "INfORM 27Oct2019 한국어 번역판 확인 · 이 판본의 독립 검증 연구/웹 구현 임상 검증은 미확인",
+      "grade": "A",
+      "license": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "electronic": "한국어 해당 판본의 복제·표시·배포 허용 문구에 근거해 공개 웹 입력 UI 제공",
+      "internalUse": "해당 판본의 명시적 허용 조건에 따라 제공",
       "insurance": "확인 필요 · 수가·인정기준 미검증",
       "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "한국어판의 판본·권리자·직접 자료 확인 필요; 치매 GDS와 다른 도구",
-      "evidence": [],
-      "reviewed": "2026-10-27"
+      "source": "informKo",
+      "sourceScope": "공식 INfORM 한국어 번역판 해당 페이지의 명시적 허용 문구·번역자 확인; Pfizer 공식 일반 조건·채점 매뉴얼 함께 확인",
+      "evidence": [
+        "informTranslations",
+        "phq",
+        "phqTerms",
+        "phqManual"
+      ],
+      "reviewed": "2026-10-27",
+      "manual": {
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "unit": "점",
+        "interpretation": "gad2",
+        "evidence": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf"
+      },
+      "rightsVerified": true,
+      "electronicLanguage": "ko",
+      "electronicVersion": "INfORM-27Oct2019",
+      "sourceUrl": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf#page=52"
+    },
+    {
+      "id": "phq4",
+      "abbr": "PHQ-4",
+      "name": "Patient Health Questionnaire-4",
+      "groups": [
+        "mood",
+        "other"
+      ],
+      "purpose": "우울·불안 초단축 선별",
+      "method": "환자 자가보고 · 의료진이 원문을 읽고 환자의 응답을 입력할 수 있음",
+      "items": "4",
+      "duration": "확인 필요",
+      "scoreRange": "0~12",
+      "interpretation": "공식 매뉴얼 근거 구간만 표시 · 확정 진단 아님",
+      "korean": "INfORM 27Oct2019 한국어 번역판 확인 · 이 판본의 독립 검증 연구/웹 구현 임상 검증은 미확인",
+      "grade": "A",
+      "license": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "electronic": "한국어 해당 판본의 복제·표시·배포 허용 문구에 근거해 공개 웹 입력 UI 제공",
+      "internalUse": "해당 판본의 명시적 허용 조건에 따라 제공",
+      "insurance": "확인 필요 · 수가·인정기준 미검증",
+      "paper": "미보유",
+      "source": "informKo",
+      "sourceScope": "공식 INfORM 한국어 번역판 해당 페이지의 명시적 허용 문구·번역자 확인; Pfizer 공식 일반 조건·채점 매뉴얼 함께 확인",
+      "evidence": [
+        "informTranslations",
+        "phq",
+        "phqTerms",
+        "phqManual"
+      ],
+      "reviewed": "2026-10-27",
+      "manual": {
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "점",
+        "interpretation": "phq4",
+        "evidence": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf"
+      },
+      "rightsVerified": true,
+      "electronicLanguage": "ko",
+      "electronicVersion": "INfORM-27Oct2019",
+      "sourceUrl": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf#page=48"
+    },
+    {
+      "id": "phq8",
+      "abbr": "PHQ-8",
+      "name": "Patient Health Questionnaire-8",
+      "groups": [
+        "mood",
+        "other"
+      ],
+      "purpose": "우울 증상 중증도 · 자해 문항 없음",
+      "method": "환자 자가보고 · 의료진이 원문을 읽고 환자의 응답을 입력할 수 있음",
+      "items": "8",
+      "duration": "확인 필요",
+      "scoreRange": "0~24",
+      "interpretation": "공식 매뉴얼 근거 구간만 표시 · 확정 진단 아님",
+      "korean": "INfORM 27Oct2019 한국어 번역판 확인 · 이 판본의 독립 검증 연구/웹 구현 임상 검증은 미확인",
+      "grade": "A",
+      "license": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "electronic": "한국어 해당 판본의 복제·표시·배포 허용 문구에 근거해 공개 웹 입력 UI 제공",
+      "internalUse": "해당 판본의 명시적 허용 조건에 따라 제공",
+      "insurance": "확인 필요 · 수가·인정기준 미검증",
+      "paper": "미보유",
+      "source": "informKo",
+      "sourceScope": "공식 INfORM 한국어 번역판 해당 페이지의 명시적 허용 문구·번역자 확인; Pfizer 공식 일반 조건·채점 매뉴얼 함께 확인",
+      "evidence": [
+        "informTranslations",
+        "phq",
+        "phqTerms",
+        "phqManual"
+      ],
+      "reviewed": "2026-10-27",
+      "manual": {
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "점",
+        "interpretation": "phq9",
+        "evidence": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf"
+      },
+      "rightsVerified": true,
+      "electronicLanguage": "ko",
+      "electronicVersion": "INfORM-27Oct2019",
+      "sourceUrl": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf#page=50"
     },
     {
       "id": "fourat",
@@ -2182,289 +383,6 @@ window.NEURO_SCALE_CATALOG = {
       "electronicLanguage": "ko",
       "electronicVersion": "1.2",
       "rightsVerified": true
-    },
-    {
-      "id": "minicog",
-      "abbr": "Mini-Cog",
-      "name": "Mini-Cog Cognitive Screening Instrument",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "간단 인지기능 선별",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mini",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "gpcog",
-      "abbr": "GPCOG",
-      "name": "General Practitioner Assessment of Cognition",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "일차진료 인지기능 선별",
-      "method": "의료진·보호자 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "fss",
-      "abbr": "FSS",
-      "name": "Fatigue Severity Scale",
-      "groups": [
-        "other",
-        "sleep"
-      ],
-      "purpose": "신경계 질환의 피로 영향",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "mfis",
-      "abbr": "MFIS",
-      "name": "Modified Fatigue Impact Scale",
-      "groups": [
-        "other"
-      ],
-      "purpose": "피로의 신체·인지·사회 영향",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "edss",
-      "abbr": "EDSS",
-      "name": "Expanded Disability Status Scale",
-      "groups": [
-        "other",
-        "weakness",
-        "gait"
-      ],
-      "purpose": "다발경화증 관련 신경학적 장애",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "dgi",
-      "abbr": "DGI",
-      "name": "Dynamic Gait Index",
-      "groups": [
-        "gait",
-        "dizziness"
-      ],
-      "purpose": "동적 보행 균형",
-      "method": "의료진 시행 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "6mwt",
-      "abbr": "6MWT",
-      "name": "Six Minute Walk Test",
-      "groups": [
-        "gait",
-        "weakness"
-      ],
-      "purpose": "보행 지구력",
-      "method": "의료진 측정 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "rehab",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "neuroqol",
-      "abbr": "Neuro-QoL",
-      "name": "Quality of Life in Neurological Disorders",
-      "groups": [
-        "other"
-      ],
-      "purpose": "신경계 질환 관련 삶의 질 영역",
-      "method": "환자·보호자 보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "B",
-      "license": "전자 시행 HEAP 절차 확인; 세부 한국어 도구별 승인 필요",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "healthmeasures",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "auditc",
-      "abbr": "AUDIT-C",
-      "name": "Alcohol Use Disorders Identification Test–Consumption",
-      "groups": [
-        "other",
-        "seizure",
-        "sleep"
-      ],
-      "purpose": "음주 관련 위험 선별",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "peg",
-      "abbr": "PEG",
-      "name": "Pain, Enjoyment of Life and General Activity Scale",
-      "groups": [
-        "numbness",
-        "other"
-      ],
-      "purpose": "통증 강도와 기능 영향",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "mapi",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
-    },
-    {
-      "id": "smcq",
-      "abbr": "SMCQ",
-      "name": "Subjective Memory Complaints Questionnaire",
-      "groups": [
-        "cognition"
-      ],
-      "purpose": "주관적 기억력 저하",
-      "method": "환자 자가보고 · 판본별 시행지침 확인 필요",
-      "items": "확인 필요",
-      "duration": "확인 필요",
-      "scoreRange": "확인 필요",
-      "interpretation": "확인 필요 · 자동 해석 미제공",
-      "korean": "확인 필요",
-      "grade": "C",
-      "license": "이용 조건 미확인",
-      "electronic": "미확인 · 원문 미포함",
-      "internalUse": "확인 필요 · 종이 보유와 사용권 별개",
-      "insurance": "확인 필요 · 수가·인정기준 미검증",
-      "paper": "미보유",
-      "source": "cist",
-      "sourceScope": "공식 자료 확인 출발점 · 세부 판본 확인 필요",
-      "evidence": [],
-      "reviewed": "2026-10-27"
     }
   ]
 };
@@ -2560,6 +478,895 @@ window.NEURO_SCALE_FORMS = {
           }
         ]
       }
+    ],
+    "max": 12,
+    "instructions": [],
+    "licenseLabel": "CC BY 4.0",
+    "administration": "의료진이 관찰·질문·보호자 정보를 종합해 공식 지침에 따라 평가합니다.",
+    "notes": "공식 한국어 v1.2 · 번역자 정보와 해당 번역판의 별도 검증 연구는 확인 필요.",
+    "changes": "웹 입력·자동 합산 UI 추가, 개인정보 기입란 제외. 문항·선택지·배점 유지. 원 개발자의 보증·승인을 의미하지 않습니다. No warranty is given as to accuracy or fitness for purpose.",
+    "footnote": "0점은 섬망과 인지장애를 확실히 배제하지는 못한다: 임상 상황에 따라 더욱 세부적인 평가가 필요할 수 있다."
+  },
+  "phq9": {
+    "language": "ko",
+    "version": "INfORM-27Oct2019",
+    "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+    "license": "https://www.phqscreeners.com/select-screener",
+    "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+    "instructions": [
+      "지난 2주 동안, 다음의 문제로 얼마나 자주 괴로웠습니까?"
+    ],
+    "administration": "자가보고 문항을 의료진이 원문대로 읽고 환자의 답을 입력합니다. 의료진의 추정으로 대신 답하지 마세요.",
+    "notes": "한국어 INfORM 27Oct2019 번역판입니다. 국내 다른 번역판이나 국가건강검진 판본과 동일하다고 간주하지 마세요. 원문은 새로 번역하지 않았으며 줄바꿈만 화면에 맞췄습니다.",
+    "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+    "licenseLabel": "복제·표시·배포 조건",
+    "difficulty": {
+      "label": "어떠한 문제라도 체크하였다면, 이러한 문제들이 당신이 일하거나, 집안일 하거나, 다른 사람과 어울릴 때 얼마나 어렵게 하였습니까?",
+      "options": [
+        "전혀 어렵지 않다.",
+        "다소 어렵다.",
+        "매우 어렵다.",
+        "극히 심하게 어렵다."
+      ]
+    },
+    "max": 27,
+    "questions": [
+      {
+        "id": "q1",
+        "label": "1. 무엇인가를 하는데 있어 즐거움이나 흥미가 거의 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "label": "2. 기분이 슬프거나 우울하거나, 희망이 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "label": "3. 잠들기 또는 잠자는 상태를 유지하기 어렵거나, 너무 많이 잔다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "label": "4. 피곤하거나 에너지가 별로 없다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "label": "5. 식욕이 떨어지거나 과식한다",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "label": "6. 스스로에 대하여 좋지 않게 생각되거나 자신이 실패자라는 생각이 들거나 자신이나 가족을 실망시켰다는 생각이 든다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "label": "7. 예를 들어 신문을 읽거나 텔레비전을 보는 것과 같은 일에 집중하는 것이 어렵다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "label": "8. 다른 사람들이 알아차릴 정도로 느리게 움직이거나 말한다. 혹은 반대로 가만히 있지 못하고 평상 시 보다 더 많이 움직인다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "label": "9. 자신이 죽어버리거나 스스로를 다치게 하는 것이 낫다고 생각한다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "safetyItem": 8
+  },
+  "gad7": {
+    "language": "ko",
+    "version": "INfORM-27Oct2019",
+    "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+    "license": "https://www.phqscreeners.com/select-screener",
+    "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+    "instructions": [
+      "지난 2주 동안, 다음의 문제로 얼마나 자주 괴로웠습니까?"
+    ],
+    "administration": "자가보고 문항을 의료진이 원문대로 읽고 환자의 답을 입력합니다. 의료진의 추정으로 대신 답하지 마세요.",
+    "notes": "한국어 INfORM 27Oct2019 번역판입니다. 국내 다른 번역판이나 국가건강검진 판본과 동일하다고 간주하지 마세요. 원문은 새로 번역하지 않았으며 줄바꿈만 화면에 맞췄습니다.",
+    "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+    "licenseLabel": "복제·표시·배포 조건",
+    "difficulty": {
+      "label": "어떠한 문제라도 체크했다면, 이러한 문제들이 당신이 일하거나, 집안일 하거나, 다른 사람과 어울릴 때 얼마나 어려움을 줍니까?",
+      "options": [
+        "전혀 어렵지 않다.",
+        "다소 어렵다.",
+        "매우 어렵다.",
+        "극히 심하게 어렵다."
+      ]
+    },
+    "max": 21,
+    "questions": [
+      {
+        "id": "q1",
+        "label": "1. 긴장되거나, 불안하거나, 초조함",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "label": "2. 걱정을 조절하거나 멈출 수 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "label": "3. 다양한 일에 관하여 너무 많이 걱정함",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "label": "4. 긴장을 푸는 것이 어려움",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "label": "5. 안절부절 못해서 가만히 앉아 있기 힘듦",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "label": "6. 쉽게 짜증이 나거나 화가 남.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "label": "7. 무언가 안 좋은 일이 일어날 것 같아 두려움",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      }
     ]
+  },
+  "phq2": {
+    "language": "ko",
+    "version": "INfORM-27Oct2019",
+    "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+    "license": "https://www.phqscreeners.com/select-screener",
+    "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+    "instructions": [
+      "지난 2주 동안, 다음의 문제로 얼마나 자주 괴로웠습니까?"
+    ],
+    "administration": "자가보고 문항을 의료진이 원문대로 읽고 환자의 답을 입력합니다. 의료진의 추정으로 대신 답하지 마세요.",
+    "notes": "한국어 INfORM 27Oct2019 번역판입니다. 국내 다른 번역판이나 국가건강검진 판본과 동일하다고 간주하지 마세요. 원문은 새로 번역하지 않았으며 줄바꿈만 화면에 맞췄습니다.",
+    "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+    "licenseLabel": "복제·표시·배포 조건",
+    "difficulty": null,
+    "max": 6,
+    "questions": [
+      {
+        "id": "q1",
+        "label": "1. 무엇인가를 하는데 있어 즐거움이나 흥미가 거의 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "label": "2. 기분이 슬프거나 우울하거나, 희망이 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "derivation": "공식 PHQ 매뉴얼 p.3·7에 따라 같은 한국어 PHQ-9의 앞 2문항으로 구성. 독립된 한국어 PHQ-2 배포본이나 검증판이라고 주장하지 않습니다."
+  },
+  "gad2": {
+    "language": "ko",
+    "version": "INfORM-27Oct2019",
+    "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+    "license": "https://www.phqscreeners.com/select-screener",
+    "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+    "instructions": [
+      "지난 2주 동안, 다음의 문제로 얼마나 자주 괴로웠습니까?"
+    ],
+    "administration": "자가보고 문항을 의료진이 원문대로 읽고 환자의 답을 입력합니다. 의료진의 추정으로 대신 답하지 마세요.",
+    "notes": "한국어 INfORM 27Oct2019 번역판입니다. 국내 다른 번역판이나 국가건강검진 판본과 동일하다고 간주하지 마세요. 원문은 새로 번역하지 않았으며 줄바꿈만 화면에 맞췄습니다.",
+    "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+    "licenseLabel": "복제·표시·배포 조건",
+    "difficulty": null,
+    "max": 6,
+    "questions": [
+      {
+        "id": "q1",
+        "label": "1. 긴장되거나, 불안하거나, 초조함",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "label": "2. 걱정을 조절하거나 멈출 수 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반 이상의 날",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "derivation": "공식 PHQ 매뉴얼 p.3·7에 따라 같은 한국어 GAD-7의 앞 2문항으로 구성. 독립된 한국어 GAD-2 검증판이라고 주장하지 않습니다."
+  },
+  "phq8": {
+    "language": "ko",
+    "version": "INfORM-27Oct2019",
+    "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+    "license": "https://www.phqscreeners.com/select-screener",
+    "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+    "instructions": [
+      "지난 2주 동안, 다음의 문제로 얼마나 자주 괴로웠습니까?"
+    ],
+    "administration": "자가보고 문항을 의료진이 원문대로 읽고 환자의 답을 입력합니다. 의료진의 추정으로 대신 답하지 마세요.",
+    "notes": "한국어 INfORM 27Oct2019 번역판입니다. 국내 다른 번역판이나 국가건강검진 판본과 동일하다고 간주하지 마세요. 원문은 새로 번역하지 않았으며 줄바꿈만 화면에 맞췄습니다.",
+    "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+    "licenseLabel": "복제·표시·배포 조건",
+    "difficulty": null,
+    "max": 24,
+    "questions": [
+      {
+        "id": "q1",
+        "label": "1. 무엇인가를 하는데 있어 즐거움이나 흥미가 거의 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "label": "2. 기분이 슬프거나 우울하거나, 희망이 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "label": "3. 잠들기 또는 잠자는 상태를 유지하기 어렵거나, 너무 많이 잔다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "label": "4. 피곤하거나 에너지가 별로 없다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "label": "5. 식욕이 떨어지거나 과식한다",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "label": "6. 스스로에 대하여 좋지 않게 생각되거나 자신이 실패자라는 생각이 들거나 자신이나 가족을 실망시켰다는 생각이 든다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "label": "7. 예를 들어 신문을 읽거나 텔레비전을 보는 것과 같은 일에 집중하는 것이 어렵다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "label": "8. 다른 사람들이 알아차릴 정도로 느리게 움직이거나 말한다. 혹은 반대로 가만히 있지 못하고 평상 시 보다 더 많이 움직인다.",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "날들의 반 이상",
+            "score": 2
+          },
+          {
+            "text": "거의 매일",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "derivation": "공식 PHQ 매뉴얼 p.3·7에 따라 같은 한국어 PHQ-9에서 9번 문항을 제외한 형태. 자해·자살 생각 문항을 포함하지 않아 이를 확인하는 검사로 사용할 수 없습니다."
+  },
+  "phq4": {
+    "language": "ko",
+    "version": "INfORM-27Oct2019",
+    "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+    "license": "https://www.phqscreeners.com/select-screener",
+    "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+    "instructions": [
+      "지난 2주 동안, 다음의 문제로 얼마나 자주 괴로웠습니까?"
+    ],
+    "administration": "자가보고 문항을 의료진이 원문대로 읽고 환자의 답을 입력합니다. 의료진의 추정으로 대신 답하지 마세요.",
+    "notes": "한국어 INfORM 27Oct2019 번역판입니다. 국내 다른 번역판이나 국가건강검진 판본과 동일하다고 간주하지 마세요. 원문은 새로 번역하지 않았으며 줄바꿈만 화면에 맞췄습니다.",
+    "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+    "licenseLabel": "복제·표시·배포 조건",
+    "difficulty": {
+      "label": "어떠한 문제라도 체크하였다면, 이러한 문제들이 당신이 일하거나, 집안일 하거나, 다른 사람과 어울릴 때 얼마나 어렵게 하였습니까?",
+      "options": [
+        "전혀 어렵지 않다.",
+        "다소 어렵다.",
+        "매우 어렵다.",
+        "극히 심하게 어렵다."
+      ]
+    },
+    "max": 12,
+    "questions": [
+      {
+        "id": "q1",
+        "label": "1. 긴장되거나, 불안하거나, 초조함",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반이상",
+            "score": 2
+          },
+          {
+            "text": "거의매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "label": "2. 걱정을 조절하거나 멈출 수 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반이상",
+            "score": 2
+          },
+          {
+            "text": "거의매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "label": "3. 일을 하는데 있어 즐거움이나 흥미가 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반이상",
+            "score": 2
+          },
+          {
+            "text": "거의매일",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "label": "4. 기분이 나쁘거나 우울하거나, 희망이 없음",
+        "instructions": [],
+        "options": [
+          {
+            "text": "전혀 아니다",
+            "score": 0
+          },
+          {
+            "text": "며칠",
+            "score": 1
+          },
+          {
+            "text": "반이상",
+            "score": 2
+          },
+          {
+            "text": "거의매일",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "subscales": {
+      "anxiety": [
+        0,
+        1
+      ],
+      "depression": [
+        2,
+        3
+      ]
+    }
   }
 };

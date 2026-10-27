@@ -22,3 +22,12 @@
 #docStage_stage4_scales legend{font-weight:700;padding:0 5px}
 #docStage_stage4_scales #scaleElectronic select{width:100%;white-space:normal}
 @media(max-width:800px){#docStage_stage4_scales .scale-columns{grid-template-columns:1fr}#docStage_stage4_scales #scaleDetail{border-left:0;border-top:1px solid var(--gray-200);padding:20px 0}#docStage_stage4_scales .scale-metadata{grid-template-columns:1fr;gap:3px}#docStage_stage4_scales .scale-metadata dd{margin-bottom:10px}}
+
+#docStage_stage4_scales #scaleElectronic{margin-top:0;border-top:0}
+#docStage_stage4_scales #scaleElectronic select{font-size:17px;min-height:48px}
+#docStage_stage4_scales #scaleElectronic legend{font-size:17px;line-height:1.7}
+#docStage_stage4_scales #scaleElectronicProgress{font-weight:700}
+#docStage_stage4_scales .scale-safety{padding:14px;border:2px solid #a73535;background:#fff2f2;color:#812828;font-weight:700}
+#docStage_stage4_scales .scale-safety[hidden]{display:none}
+#docStage_stage4_scales details{margin-top:20px}
+#docStage_stage4_scales summary{cursor:pointer;font-weight:700}
