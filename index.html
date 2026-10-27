@@ -18,7 +18,7 @@
         box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;padding:18px;background:#fff1f2;color:#881337;border:3px solid #be123c;white-space:pre-wrap;font:16px sans-serif';
         document.body.insertBefore(box, document.body.firstChild);
       }
-      box.textContent = 'NeuroDesk 실행에 필요한 파일을 읽지 못했거나 오류가 발생했습니다.\n' + failures.join('\n') + '\n압축을 모두 푼 뒤 index.html, style.css, app.js, data 폴더가 함께 있는지 확인해 주세요. 이 파일을 Edge 또는 Chrome에서 여세요.';
+      box.textContent = 'NeuroDesk 실행에 필요한 파일을 읽지 못했거나 오류가 발생했습니다.\n' + failures.join('\n') + '\n압축을 모두 푼 뒤 index.html과 증상별 PNG 이미지가 같은 폴더에 있는지 확인해 주세요. 이 파일을 Edge 또는 Chrome에서 여세요.';
     }
     if (document.body) display();
     else document.addEventListener('DOMContentLoaded', display, {once:true});
@@ -33,7 +33,7 @@
   }, true);
   window.addEventListener('load', function () {
     if (typeof renderSymptomGrid !== 'function') {
-      show('app.js가 실행되지 않았습니다.');
+      show('index.html 안의 앱 스크립트가 실행되지 않았습니다.');
     } else if (typeof NEURO_DATA === 'undefined' || Object.keys(NEURO_DATA).length !== 12) {
       show('12개 증상 데이터 중 일부가 로딩되지 않았습니다.');
     }
@@ -272,7 +272,7 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
 /* Additional workflow layout. Original clinic.css and illustrations preserved. */
 .visit-guide{border-top:1px solid #d7ded9;border-bottom:1px solid #d7ded9;padding:22px 0;margin:22px 0}.visit-guide h2{font-size:19px;font-weight:700;margin:0 0 16px}.visit-guide ol{padding:0;list-style:none;counter-reset:visit;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.visit-guide li{counter-increment:visit;font-size:16px;line-height:1.75}.visit-guide li:before{content:'0' counter(visit);display:block;font-size:12px;color:#6f7e77;margin-bottom:6px}.visit-guide li b,.visit-guide li span{display:block}.visit-guide li span{color:#5c6964;margin-top:7px}.visit-guide details{margin-top:20px;font-size:15px;border-top:1px solid #e1e5df;padding-top:14px}.visit-guide summary,.art-options summary{cursor:pointer;min-height:44px;padding:8px 0}.visit-guide details p{margin:8px 0;line-height:1.8}#symptomVisitGuide:not(:empty){border-top:1px solid #e1e5df;padding-top:16px;margin-top:20px}#symptomVisitGuide h3{font-size:18px;margin-bottom:6px}#symptomVisitGuide p{font-size:17px;line-height:1.9;margin-bottom:12px}.visit-editor{border:1px solid #ced8d1;padding:24px;margin:24px 0;background:#f8faf7}.visit-editor h3{font-size:22px!important;margin:5px 0 10px}.visit-editor p{font-size:15px;line-height:1.8;color:#52645c}.visit-fields{display:grid;gap:18px;margin:20px 0}.visit-fields label{display:grid;gap:7px;font-size:16px;font-weight:600}.visit-fields input,.visit-fields textarea{width:100%;box-sizing:border-box;background:white;border:1px solid #aebeb4;border-radius:3px;padding:12px;font:inherit;font-weight:400;line-height:1.7;color:#233a31}.visit-fields textarea{resize:vertical}.visit-fields input:focus,.visit-fields textarea:focus{outline:2px solid #49675e;outline-offset:2px}.confirm-line{display:flex;gap:10px;align-items:center;min-height:48px;font-size:16px}.confirm-line input{width:21px;height:21px}.visit-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.visit-actions button:first-child{background:#243e49;color:white}.visit-actions button:disabled{opacity:.45;cursor:not-allowed}.field-note{font-size:13px!important;margin-top:14px}.art-options{font-size:14px;border-bottom:1px solid #dce3dc;margin:18px 0;padding-bottom:12px}#visitPrintSheet{display:none}#screenPatientFinish>div:first-child{font-size:14px!important;font-weight:700;letter-spacing:2px;color:#49675e}#screenSymptomSelect>label{background:#f1f4ef!important;color:#354e43!important;border-radius:3px!important}#patientSummaryCard{border-radius:3px!important}
 @media(max-width:800px){.visit-guide ol{grid-template-columns:1fr;gap:18px}.visit-guide li:before{display:inline;margin-right:12px}.visit-guide li b{display:inline}.visit-editor{padding:18px}}
-@media print{.visit-editor,.art-options{display:none!important}body.visit-printing *{visibility:hidden!important}body.visit-printing #visitPrintSheet,body.visit-printing #visitPrintSheet *{visibility:visible!important}body.visit-printing #visitPrintSheet{display:block!important;position:absolute;left:0;top:0;width:100%;color:#182c32;background:white;font-size:12pt;line-height:1.8}body.visit-printing main,body.visit-printing>header,body.visit-printing>footer,body.visit-printing #testModal{display:none!important}#visitPrintSheet header{display:block;padding:0 0 18px;border-bottom:2px solid #243e49;margin:0 0 22px}#visitPrintSheet h1{font-size:23pt;margin:8px 0}#visitPrintSheet header p{font-size:11pt;margin:0}#visitPrintSheet h2{font-size:13pt;margin:0 0 8px}#visitPrintSheet section{margin:0 0 22px;break-inside:avoid}#visitPrintSheet section p{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}#visitPrintSheet footer{border-top:1px solid #ccd5ce;padding-top:14px;font-size:10pt}}
+@media print{.visit-editor,.art-options{display:none!important}body.visit-printing *{visibility:hidden!important}body.visit-printing #visitPrintSheet,body.visit-printing #visitPrintSheet *{visibility:visible!important}body.visit-printing #visitPrintSheet{display:block!important;position:absolute;left:0;top:0;width:100%;color:#182c32;background:white;font-size:12pt;line-height:1.8}body.visit-printing main,body.visit-printing>header,body.visit-printing>footer,body.visit-printing #testModal{display:none!important}#visitPrintSheet header{display:block!important;padding:0 0 18px;border-bottom:2px solid #243e49;margin:0 0 22px}#visitPrintSheet h1{font-size:23pt;margin:8px 0}#visitPrintSheet header p{font-size:11pt;margin:0}#visitPrintSheet h2{font-size:13pt;margin:0 0 8px}#visitPrintSheet section{margin:0 0 22px;break-inside:avoid}#visitPrintSheet section p{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}#visitPrintSheet footer{border-top:1px solid #ccd5ce;padding-top:14px;font-size:10pt}}
 
 .quick-summary{border:1px solid #ced8d1;background:#f7f9f6;padding:20px;margin-bottom:22px}.quick-summary h3{margin-bottom:8px}.quick-summary ul{list-style:none;padding:0;margin:12px 0}.quick-summary li{padding:10px 0;border-top:1px solid #dce3dc}.quick-summary li strong,.quick-summary li span{display:block;font-size:15px;line-height:1.8}.quick-summary li span{font-size:17px}.quick-warning{color:#9a3412;font-weight:700}.field-note{font-size:13px;color:#52665d}.education-art{display:block}
 
@@ -467,7 +467,7 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
               <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docFollowupHeadTitle">5. 증상별 추적관리 계획 및 환자 교육자료</h2>
             </div>
             <div class="no-print">
-              <button class="btn-mode" style="background:var(--primary); color:white;" id="eduPrintButton" disabled onclick="window.print()">의사 확인 후 인쇄 (A4)</button>
+              <button class="btn-mode" style="background:var(--primary); color:white;" id="eduPrintButton" disabled onclick="printEducationSheet()">의사 확인 후 인쇄 (A4)</button>
             </div>
           </div>
 
@@ -1509,8 +1509,15 @@ NEURO_DATA.other = {
       answers: {},
       queue: [],
       queueIndex: 0,
+      scaleScores: {},
       selectedSubpath: {}        // 각 증상별 의사가 선택한 원인 경로 ID
     };
+
+    let questionAdvanceTimer = null;
+    function cancelQuestionAdvance() {
+      if (questionAdvanceTimer !== null) clearTimeout(questionAdvanceTimer);
+      questionAdvanceTimer = null;
+    }
 
     window.onload = function() {
       renderSymptomGrid();
@@ -1549,6 +1556,7 @@ NEURO_DATA.other = {
     }
 
     function switchMode(mode) {
+      cancelQuestionAdvance();
       const btnP = document.getElementById('btnModePatient');
       const btnD = document.getElementById('btnModeDoctor');
       const secP = document.getElementById('patientSection');
@@ -1557,6 +1565,7 @@ NEURO_DATA.other = {
       const nav5 = document.getElementById('doctor5StageNav');
 
       if (mode === 'patient') {
+        if (document.getElementById('screenQuestionnaire').style.display === 'block' && AppState.queue[AppState.queueIndex]) renderQuestion();
         btnP.classList.add('active');
         btnD.classList.remove('active');
         secP.style.display = 'block';
@@ -1580,6 +1589,8 @@ NEURO_DATA.other = {
         alert('증상을 1개 이상 선택해 주세요.');
         return;
       }
+      cancelQuestionAdvance();
+      document.getElementById('screenPatientFinish').style.display = 'none';
       AppState.isProxy = document.getElementById('chkProxyCaregiver').checked;
       AppState.answers = {};
       AppState.queueIndex = 0;
@@ -1603,6 +1614,7 @@ NEURO_DATA.other = {
     }
 
     function renderQuestion() {
+      cancelQuestionAdvance();
       if (AppState.queueIndex >= AppState.queue.length) {
         finishIntake();
         return;
@@ -1625,6 +1637,14 @@ NEURO_DATA.other = {
         <div id="optList"></div>
       `;
 
+      function showEmergencyNotice() {
+        const warning = document.createElement('div');
+        warning.id = 'questionEmergencyNotice';
+        warning.className = 'danger-box';
+        warning.setAttribute('role', 'alert');
+        warning.textContent = '위험신호로 표시된 답변입니다. 문진을 계속하기 전에 즉시 의료진에게 이 화면을 보여 주세요.';
+        block.appendChild(warning);
+      }
       const optList = document.getElementById('optList');
       q.options.forEach(opt => {
         const btn = document.createElement('button');
@@ -1632,19 +1652,41 @@ NEURO_DATA.other = {
         btn.className = `option-btn ${isSel ? 'selected' : ''} ${opt.redFlag ? 'danger-option' : ''}`;
         btn.innerHTML = `<span>${opt.text}</span><span>✓</span>`;
         btn.onclick = () => {
+          if (questionAdvanceTimer !== null) return;
           AppState.answers[q.id] = opt.text;
-          setTimeout(() => nextQuestion(), 250);
+          optList.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          let warning = document.getElementById('questionEmergencyNotice');
+          if (warning) warning.remove();
+          if (opt.emergency) {
+            showEmergencyNotice();
+            return;
+          }
+          optList.querySelectorAll('button').forEach(b => b.disabled = true);
+          questionAdvanceTimer = setTimeout(() => {
+            questionAdvanceTimer = null;
+            if (AppState.queue[AppState.queueIndex] === item) nextQuestion();
+          }, 250);
         };
         optList.appendChild(btn);
       });
+      if (q.options.some(opt => opt.emergency && AppState.answers[q.id] === opt.text)) showEmergencyNotice();
     }
 
     function nextQuestion() {
+      cancelQuestionAdvance();
+      const item = AppState.queue[AppState.queueIndex];
+      if (!item) return;
+      if (!AppState.answers[item.question.id]) {
+        alert('답변을 선택하거나 건너뛰기를 눌러 주세요.');
+        return;
+      }
       AppState.queueIndex++;
       renderQuestion();
     }
 
     function prevQuestion() {
+      cancelQuestionAdvance();
       if (AppState.queueIndex > 0) {
         AppState.queueIndex--;
         renderQuestion();
@@ -1655,12 +1697,15 @@ NEURO_DATA.other = {
     }
 
     function skipQuestion() {
+      cancelQuestionAdvance();
       const item = AppState.queue[AppState.queueIndex];
+      if (!item) return;
       AppState.answers[item.question.id] = '건너뜀';
       nextQuestion();
     }
 
     function finishIntake() {
+      cancelQuestionAdvance();
       document.getElementById('screenQuestionnaire').style.display = 'none';
       document.getElementById('screenPatientFinish').style.display = 'block';
 
@@ -1670,11 +1715,16 @@ NEURO_DATA.other = {
         const m = NEURO_DATA[sId];
         html += `<span style="background:#e0f2fe; color:#0369a1; padding:4px 10px; border-radius:14px; font-size:13px; font-weight:700;">${m.icon} ${m.name}</span>`;
       });
-      html += `</div><div style="font-size:13px; color:var(--gray-700);">문진이 안전하게 기록되었습니다. 진료실 입실 시 의료진에게 알려주세요.</div>`;
+      html += `</div><div style="font-size:13px; color:var(--gray-700);">문진 응답은 현재 화면에서만 유지됩니다. 새로고침하거나 창을 닫으면 사라지며 다른 기기로 자동 전달되지 않습니다. 진료실에서 이 화면을 보여주세요.</div>`;
       box.innerHTML = html;
     }
 
     function resetPatientIntake() {
+      cancelQuestionAdvance();
+      AppState.queue = [];
+      AppState.scaleScores = {};
+      AppState.activeDocStage = 'stage1_summary';
+      document.getElementById('screenQuestionnaire').style.display = 'none';
       AppState.selectedSymptoms = [];
       AppState.answers = {};
       AppState.queueIndex = 0;
@@ -1688,7 +1738,7 @@ NEURO_DATA.other = {
        ========================================================================= */
     function initDoctorDashboard() {
       if (AppState.selectedSymptoms.length === 0) {
-        AppState.selectedSymptoms = ['headache']; // 테스트/미선택 시 기본 1개 세팅
+        AppState.activeDoctorSymptom = null;
       }
 
       if (!AppState.activeDoctorSymptom || !AppState.selectedSymptoms.includes(AppState.activeDoctorSymptom)) {
@@ -1735,7 +1785,17 @@ NEURO_DATA.other = {
     function renderDoctorStage() {
       const symId = AppState.activeDoctorSymptom;
       const mod = NEURO_DATA[symId];
-      if (!mod) return;
+      if (!mod) {
+        document.getElementById('docSummaryHeadTitle').textContent = '증상을 선택한 후 문진 또는 진료 검토를 시작해 주세요.';
+        ['docAnswerTable','docRedFlagsArea','docClinicalAssessmentBox','docTestCandidatesList',
+         'docSubpathButtons','docSubpathContent','docScalesList','docFollowupTableBody',
+         'docMechanismArea','docPatientLeafletArea','visitQuickSummary'].forEach(id => {
+          document.getElementById(id).innerHTML = '';
+        });
+        document.getElementById('docCaregiverTag').style.display = 'none';
+        document.getElementById('eduPrintButton').disabled = true;
+        return;
+      }
 
       // 1. Stage 1: 문진 요약
       document.getElementById('docSummaryHeadTitle').innerText = `1. [${mod.name}] 문진 요약 및 위험신호`;
@@ -1863,7 +1923,10 @@ NEURO_DATA.other = {
           const title=document.createElement('div');title.textContent=scale.name;title.style='font-weight:700;font-size:14px;margin-bottom:6px';wrap.appendChild(title);
           const input=document.createElement('input');input.type='number';input.min='0';input.step='1';input.placeholder='종이 설문에서 산출한 총점';input.style='width:100%;max-width:310px;padding:10px;border:1px solid #94a3b8;border-radius:8px;font-size:14px';input.setAttribute('aria-label',scale.name+' 총점');wrap.appendChild(input);
           const note=document.createElement('p');note.style='font-size:12px;color:#475569;margin-top:6px';note.textContent='채점 및 해석은 공식 매뉴얼과 임상상황을 확인하세요. 자동 진단 없음.';wrap.appendChild(note);
-          input.oninput=()=>{ const score=Number(input.value);if(!input.value||!Number.isFinite(score)||score<0){note.textContent='유효한 총점을 입력하세요.';return;} note.textContent=`기록용 총점: ${score}점 · ${scale.scoringNotes||'공식 기준을 확인하세요.'} · 환자별 자동판정 없음`; };
+          const scoreKey = symId + ':' + idx;
+          input.value = AppState.scaleScores[scoreKey] || '';
+          input.oninput=()=>{ AppState.scaleScores[scoreKey]=input.value; const score=Number(input.value);if(!input.value||!Number.isFinite(score)||score<0){note.textContent='유효한 총점을 입력하세요.';return;} note.textContent=`기록용 총점: ${score}점 · ${scale.scoringNotes||'공식 기준을 확인하세요.'} · 환자별 자동판정 없음`; };
+          if (input.value) input.oninput();
           sub.appendChild(wrap);
         });
         scalesList.appendChild(sub);
@@ -1898,6 +1961,8 @@ NEURO_DATA.other = {
 
 
     function buildFlowSvg(title, steps, color='#0f4c81') {
+      buildFlowSvg.sequence = (buildFlowSvg.sequence || 0) + 1;
+      const markerId = 'mechanism-arrow-' + buildFlowSvg.sequence;
       const width = 820, height = 220;
       const boxW = 160, boxH = 58, startX = 20, y = 28, gap = 35;
       const positions = steps.map((_, i) => startX + i*(boxW+gap));
@@ -1905,7 +1970,7 @@ NEURO_DATA.other = {
         const x1 = positions[i] + boxW;
         const x2 = positions[i+1] - 10;
         const mid = (x1 + x2) / 2;
-        return `<line x1="${x1}" y1="${y+boxH/2}" x2="${x2}" y2="${y+boxH/2}" stroke="${color}" stroke-width="3" marker-end="url(#arrow)" />`;
+        return `<line x1="${x1}" y1="${y+boxH/2}" x2="${x2}" y2="${y+boxH/2}" stroke="${color}" stroke-width="3" marker-end="url(#${markerId})" />`;
       }).join('');
       const boxes = steps.map((s, i) => {
         const x = positions[i];
@@ -1918,7 +1983,7 @@ NEURO_DATA.other = {
       return `
         <svg class="mechanism-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${title} 발생기전 도식">
           <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+            <marker id="${markerId}" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
               <path d="M0,0 L0,6 L9,3 z" fill="${color}" />
             </marker>
           </defs>
@@ -1926,6 +1991,19 @@ NEURO_DATA.other = {
           ${arrowPath}
           ${boxes}
         </svg>`;
+    }
+
+    function namespaceMechanismMarkers(container) {
+      container.querySelectorAll('svg').forEach((svg, index) => {
+        svg.querySelectorAll('marker[id]').forEach(marker => {
+          const oldId = marker.id;
+          const newId = 'print-' + index + '-' + oldId;
+          marker.id = newId;
+          svg.querySelectorAll('[marker-end]').forEach(line => {
+            if (line.getAttribute('marker-end') === 'url(#' + oldId + ')') line.setAttribute('marker-end', 'url(#' + newId + ')');
+          });
+        });
+      });
     }
 
     function getMechanismEducation(symId, subId, subName) {
@@ -2049,16 +2127,24 @@ NEURO_DATA.other = {
       txt += `■ 문진 응답:\n`;
       if (mod.questions) {
         mod.questions.forEach(q => {
-          txt += `- ${q.stem.slice(0, 25)}... : ${AppState.answers[q.id] || '미응답'}\n`;
+          txt += `- ${q.stem} : ${AppState.answers[q.id] || '미응답'}\n`;
         });
       }
       txt += `\n■ 진료 시 확인할 위험신호 (일반 확인목록):\n`;
       txt += `아래 목록은 환자에게 확인된 소견이 아닙니다. 문진 응답과 진찰로 별도 확인이 필요합니다.\n`;
       txt += (mod.redFlags && mod.redFlags.length ? mod.redFlags.map(r => `- ${r}`).join('\n') : '제공된 일반 확인목록 없음') + `\n`;
 
-      navigator.clipboard.writeText(txt).then(() => {
-        alert(`${mod.name} EMR 텍스트가 복사되었습니다. 차트에 붙여넣기(Ctrl+V) 하세요.`);
-      });
+      if (typeof window.getVisitEmrText === 'function') txt += window.getVisitEmrText();
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('clipboard unavailable');
+        navigator.clipboard.writeText(txt).then(() => {
+          alert(`${mod.name} EMR 텍스트가 복사되었습니다. 차트에 붙여넣기(Ctrl+V) 하세요.`);
+        }).catch(() => {
+          alert('클립보드에 복사하지 못했습니다. 브라우저의 클립보드 권한과 HTTPS 또는 로컬 실행 환경을 확인해 주세요.');
+        });
+      } catch (error) {
+        alert('이 환경에서는 클립보드 복사를 사용할 수 없습니다. HTTPS 또는 지원되는 브라우저에서 다시 시도해 주세요.');
+      }
     }
 
     /* =========================================================================
@@ -2117,17 +2203,16 @@ NEURO_DATA.other = {
         }
       });
 
-      // Test 3: 복수 선택 시 스위칭 독립성 검사 시뮬레이션
+      // Read-only data check; never mutate the current visit.
       const testSyms = ['headache', 'dizziness'];
-      AppState.selectedSymptoms = [...testSyms];
-      AppState.activeDoctorSymptom = 'dizziness';
-      const activeMod = NEURO_DATA[AppState.activeDoctorSymptom];
-      assert('복수 선택 시 activeDoctorSymptom 전환 정상 작동', activeMod.id === 'dizziness' && activeMod.name === '어지럼');
+      const testState = { selectedSymptoms: [...testSyms], activeDoctorSymptom: 'dizziness' };
+      const activeMod = NEURO_DATA[testState.activeDoctorSymptom];
+      assert('복수 선택용 데이터 참조 확인 (화면 전환 검증 아님)', activeMod?.id === 'dizziness' && activeMod?.name === '어지럼');
 
       html += `<hr style="margin:12px 0;">`;
       html += `<div style="font-size:15px; font-weight:800;">진단 완료: ${passCount} / ${totalTests} 항목 통과 (${Math.round((passCount/totalTests)*100)}%)</div>`;
       if (passCount === totalTests) {
-        html += `<div style="color:#047857; font-weight:700; margin-top:4px;">🎉 모든 증상군이 두통 종속성 없이 완전히 독립되어 작동합니다!</div>`;
+        html += `<div style="color:#047857; font-weight:700; margin-top:4px;">데이터 존재 및 일부 경로 혼입 검사 통과. 문진 이동·임상 정확성·이미지·인쇄·상태 초기화는 별도 검증이 필요합니다.</div>`;
       }
       log.innerHTML = html;
     }
@@ -2138,6 +2223,7 @@ NEURO_DATA.other = {
     function eduPanel(title,value){return `<section class="education-section"><h4>${escapeEdu(title)}</h4><p>${escapeEdu(value)}</p></section>`;}
     function updateDetailedEducation() {
       const mod=NEURO_DATA[AppState.activeDoctorSymptom];
+      document.getElementById('eduPrintButton').disabled = true;
       if(!mod) return;
       const selected=(mod.differentialPathways||[]).find(x=>x.id===AppState.selectedSubpath[mod.id]);
       const sp=selected||(mod.differentialPathways||[])[0];
@@ -2157,14 +2243,39 @@ NEURO_DATA.other = {
         `<div class="edu-plan no-print"><strong>의사가 확정한 내용만 별도로 기록</strong><p>실제 약물명·용량·횟수는 처방전 기준입니다. 이 서식은 약물 처방이 아닙니다.</p>
         <label><input id="eduConfirmed" type="checkbox" onchange="toggleEducationPrint()"> 의료진이 교육내용 확인함 (현재 화면에만 적용)</label></div>`+
         `<p class="edu-footer">의학 정보 제공을 위한 초안. 개인별 상태·진단·검사결과에 따라 계획이 달라집니다.</p>`;
-      schedule.innerHTML=`<tr><td><b>${escapeEdu(sp.name)}</b></td><td>담당의 결정</td><td>${escapeEdu(followup)}</td></tr>`;
+      schedule.innerHTML=`<tr><td><b>${escapeEdu(sp.name)}</b></td><td>담당의 결정</td><td>${escapeEdu(followup)}</td></tr>` +
+        (sp.followUpAndSafety||[]).map(value=>`<tr><td>선택 질환 안전 확인</td><td>담당의 결정</td><td>${escapeEdu(value)}</td></tr>`).join('') +
+        (mod.followUpSchedule||[]).map(sch=>`<tr><td>증상군 참고 · ${escapeEdu(sch.phase)}</td><td>${escapeEdu(sch.interval)}<br>질환별 적용 확인 필요</td><td>확인: ${escapeEdu(sch.checkpoints)}<br>목표: ${escapeEdu(sch.targets)}</td></tr>`).join('');
     }
     function toggleEducationPrint(){ const el=document.getElementById('eduConfirmed'); const btn=document.getElementById('eduPrintButton'); if(btn)btn.disabled=!el?.checked; }
+    async function printEducationSheet() {
+      const button = document.getElementById('eduPrintButton');
+      if (button.disabled || printEducationSheet.busy) return;
+      printEducationSheet.busy = true;
+      const area = document.getElementById('printableArea');
+      const context = AppState.activeDoctorSymptom + ':' + AppState.selectedSubpath[AppState.activeDoctorSymptom];
+      const content = area.innerHTML;
+      try {
+        await Promise.all(Array.from(area.querySelectorAll('img')).map(img => img.decode ? img.decode() : new Promise((resolve,reject) => {
+          if (img.complete) { img.naturalWidth ? resolve() : reject(new Error('image')); return; }
+          img.onload=resolve; img.onerror=reject;
+        })));
+        if (document.fonts && document.fonts.ready) await document.fonts.ready;
+        if (button.disabled || !document.getElementById('eduConfirmed')?.checked ||
+            context !== AppState.activeDoctorSymptom + ':' + AppState.selectedSubpath[AppState.activeDoctorSymptom] ||
+            content !== area.innerHTML) return;
+        window.print();
+      } catch (error) {
+        alert('그림을 준비하지 못해 인쇄를 중단했습니다. 이미지 파일을 확인한 후 다시 시도해 주세요.');
+      } finally {
+        printEducationSheet.busy = false;
+      }
+    }
     const originalRenderDoctorStage=renderDoctorStage;
     renderDoctorStage=function(){originalRenderDoctorStage();updateDetailedEducation();};
   
 </script>
-  <script>window.NEURO_EMBEDDED_IMAGES={"images/cognition.png":"images/cognition.png","images/dizziness.png":"images/dizziness.png","images/gait.png":"images/gait.png","images/headache.png":"images/headache.png","images/numbness.png":"images/numbness.png","images/other.png":"images/other.png","images/seizure.png":"images/seizure.png","images/sleep.png":"images/sleep.png","images/syncope.png":"images/syncope.png","images/tinnitus.png":"images/tinnitus.png","images/tremor.png":"images/tremor.png","images/weakness.png":"images/weakness.png"};</script>
+  <script>window.NEURO_EMBEDDED_IMAGES={"images/cognition.png":"cognition.png","images/dizziness.png":"dizziness.png","images/gait.png":"gait.png","images/headache.png":"headache.png","images/numbness.png":"numbness.png","images/other.png":"other.png","images/seizure.png":"seizure.png","images/sleep.png":"sleep.png","images/syncope.png":"syncope.png","images/tinnitus.png":"tinnitus.png","images/tremor.png":"tremor.png","images/weakness.png":"weakness.png"};</script>
 <script data-source="clinic.js">
 /* Presentation-only enhancements. Clinical data and app.js are unchanged. */
 (function(){
@@ -2172,7 +2283,8 @@ NEURO_DATA.other = {
   function showEducationArt(){
     const holder=document.getElementById('clinicEducationArt');
     const id=AppState.activeDoctorSymptom;
-    if(!holder||!NEURO_DATA[id]||!titles[id])return;
+    if(!holder)return;
+    if(!NEURO_DATA[id]||!titles[id]){holder.innerHTML='';holder.hidden=true;return;}
     holder.hidden=false;
     holder.innerHTML='<h3>'+titles[id]+'</h3><img src="'+window.NEURO_EMBEDDED_IMAGES['images/'+id+'.png']+'" alt="'+titles[id]+' 참고 일러스트" loading="eager" decoding="async"><figcaption>몸의 구조를 이해하기 위한 참고 그림입니다. 선택한 질환이나 개인의 검사 결과를 보여주는 그림은 아닙니다.<p class="art-review-note">AI 제작 참고 일러스트 · 해부학적 정확성에 대한 의료진 검토가 필요합니다.</p></figcaption>';
   }
@@ -2198,13 +2310,15 @@ NEURO_DATA.other = {
   const safe=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function key(){const id=AppState.activeDoctorSymptom;return id? id+':'+(AppState.selectedSubpath[id]||''):'';}
   function save(){if(context)drafts[context]=fields.map(id=>el(id).value);}
+  function printState(){return JSON.stringify([key(),fields.map(id=>el(id).value),el('visitIncludeVisuals').checked,typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'']);}
+  let printing=false;
   function restore(){const next=key();if(next!==context){save();context=next;fields.forEach((id,i)=>el(id).value=(drafts[context]||[])[i]||'');}el('visitReviewed').checked=false;refreshVisitPrint();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const path=mod?.differentialPathways?.find(p=>p.id===AppState.selectedSubpath[mod.id]);el('visitContext').textContent=mod? '현재 선택: '+mod.name+(path?' / '+path.name:''):'';}
   function guide(){const selected=AppState.selectedSymptoms;const texts=[];if(selected.includes('headache'))texts.push('<h3>두통 진료 준비</h3><p>두통이 있었던 날과 진통제를 복용한 날, 이전에 사용한 약을 정리해 주세요. 복용 중인 약 목록이나 기존 검사 결과가 있으면 진료에 도움이 됩니다.</p>');if(selected.includes('dizziness'))texts.push('<h3>어지럼 진료 준비</h3><p>언제 시작됐는지, 얼마나 지속되는지, 어떤 자세에서 생기는지 알려주세요. 이전에 받은 검사나 치료가 있으면 함께 말씀해 주세요.</p>');for(const id of selected){const mod=NEURO_DATA[id];if(!mod)continue;texts.push('<details><summary>'+safe(mod.name)+' · 검사 검토 안내</summary><p>아래는 진찰 후 필요에 따라 검토하는 항목입니다. 시행 여부는 담당 의사가 결정합니다.</p>'+ (mod.testConsiderations||[]).map(t=>'<section><h4>'+safe(t.name)+'</h4><p>'+safe(t.why)+'</p></section>').join('')+'</details>');}el('symptomVisitGuide').innerHTML=texts.join('');el('finishedVisitGuide').innerHTML=texts.join('');}
-  window.refreshVisitPrint=function(){el('visitPrint').disabled=!(el('visitReviewed').checked&&(fields.some(id=>el(id).value.trim())||(typeof window.hasEducationSelection==='function'&&window.hasEducationSelection())));};
+  window.refreshVisitPrint=function(){el('visitPrint').disabled=!(NEURO_DATA[AppState.activeDoctorSymptom]&&el('visitReviewed').checked&&(fields.some(id=>el(id).value.trim())||(typeof window.hasEducationSelection==='function'&&window.hasEducationSelection())));};
   window.clearVisitDraft=function(){fields.forEach(id=>el(id).value='');if(context)delete drafts[context];el('visitReviewed').checked=false;refreshVisitPrint();};
-  window.printVisitSheet=async function(){if(el('visitPrint').disabled)return;const mod=NEURO_DATA[AppState.activeDoctorSymptom];const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];const sections=fields.map((id,i)=>{const value=el(id).value.trim();return value?'<section><h2>'+labels[i]+'</h2><p>'+safe(value)+'</p></section>':'';}).join('');el('visitPrintSheet').innerHTML='<header><p>김영재내과신경과의원</p><h1>진료 후 안내서</h1><p>'+safe(mod?.name)+' · '+new Date().toLocaleDateString('ko-KR')+'</p></header>'+sections+(typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'')+(el('visitIncludeVisuals').checked?'<div class="print-visuals"><figure class="education-art">'+el('clinicEducationArt').innerHTML+'</figure><div class="mechanism-box">'+el('docMechanismArea').innerHTML+'</div></div>':'')+'<footer>이 안내서는 진료 시 설명한 내용을 정리한 자료입니다. 약물명·용량·복용 횟수는 처방전을 따르세요.</footer>';const sheet=el('visitPrintSheet');const contextAtPrint=AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom];try{await Promise.all(Array.from(sheet.querySelectorAll('img')).map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(new Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts&&document.fonts.ready)await document.fonts.ready;if(el('visitPrint').disabled||contextAtPrint!==AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom])return;document.body.classList.add('visit-printing');window.print();}catch(error){alert('그림을 준비하지 못해 인쇄를 중단했습니다. 파일을 다시 열고 시도해 주세요.');}finally{document.body.classList.remove('visit-printing');}};
+  window.printVisitSheet=async function(){if(el('visitPrint').disabled||printing)return;printing=true;const snapshot=printState();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];const sections=fields.map((id,i)=>{const value=el(id).value.trim();return value?'<section><h2>'+labels[i]+'</h2><p>'+safe(value)+'</p></section>':'';}).join('');el('visitPrintSheet').innerHTML='<header><p>김영재내과신경과의원</p><h1>진료 후 안내서</h1><p>'+safe(mod?.name)+' · '+new Date().toLocaleDateString('ko-KR')+'</p></header>'+sections+(typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'')+(el('visitIncludeVisuals').checked?'<div class="print-visuals"><figure class="education-art">'+el('clinicEducationArt').innerHTML+'</figure><div class="mechanism-box">'+el('docMechanismArea').innerHTML+'</div></div>':'')+'<footer>이 안내서는 진료 시 설명한 내용을 정리한 자료입니다. 약물명·용량·복용 횟수는 처방전을 따르세요.</footer>';const sheet=el('visitPrintSheet');namespaceMechanismMarkers(sheet);const contextAtPrint=AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom];try{await Promise.all(Array.from(sheet.querySelectorAll('img')).map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(new Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts&&document.fonts.ready)await document.fonts.ready;if(snapshot!==printState()||el('visitPrint').disabled||contextAtPrint!==AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom])return;document.body.classList.add('visit-printing');window.print();}catch(error){alert('그림을 준비하지 못해 인쇄를 중단했습니다. 파일을 다시 열고 시도해 주세요.');}finally{printing=false;document.body.classList.remove('visit-printing');}};
   const oldToggle=toggleSymptom;toggleSymptom=function(id){oldToggle(id);guide();};
-  function quickSummary(){const mod=NEURO_DATA[AppState.activeDoctorSymptom];if(!mod)return;const questions=mod.questions||[];const answered=questions.filter(q=>AppState.answers[q.id]);const flagged=answered.filter(q=>(q.options||[]).some(o=>o.text===AppState.answers[q.id]&&o.redFlag));el('visitQuickSummary').innerHTML='<h3>핵심 문진 요약</h3><p>'+safe(mod.name)+' · 응답 '+answered.length+'/'+questions.length+' · '+(AppState.isProxy?'보호자 대리 응답':'본인 응답')+'</p>'+(flagged.length?'<p class="quick-warning">위험신호로 표시된 응답 '+flagged.length+'건 · 아래 원문과 진찰로 확인하세요.</p>':'')+(answered.length?'<ul>'+answered.slice(0,3).map(q=>'<li><strong>'+safe(q.stem)+'</strong><span>'+safe(AppState.answers[q.id])+'</span></li>').join('')+'</ul>':'<p>문진 응답이 없습니다. 진료실에서 직접 확인하세요.</p>')+'<p class="field-note">응답 순서대로 최대 3개를 표시합니다. 자동 진단이나 위험신호 배제 결과가 아닙니다. 전체 응답과 위험신호는 아래에서 확인하세요.</p>';}
+  function quickSummary(){const mod=NEURO_DATA[AppState.activeDoctorSymptom];if(!mod){el('visitQuickSummary').innerHTML='';return;}const questions=mod.questions||[];const answered=questions.filter(q=>AppState.answers[q.id]&&AppState.answers[q.id]!=='건너뜀');const flagged=answered.filter(q=>(q.options||[]).some(o=>o.text===AppState.answers[q.id]&&o.redFlag));el('visitQuickSummary').innerHTML='<h3>핵심 문진 요약</h3><p>'+safe(mod.name)+' · 응답 '+answered.length+'/'+questions.length+' · '+(AppState.isProxy?'보호자 대리 응답':'본인 응답')+'</p>'+(flagged.length?'<p class="quick-warning">위험신호로 표시된 응답 '+flagged.length+'건 · 아래 원문과 진찰로 확인하세요.</p>':'')+(answered.length?'<ul>'+answered.slice(0,3).map(q=>'<li><strong>'+safe(q.stem)+'</strong><span>'+safe(AppState.answers[q.id])+'</span></li>').join('')+'</ul>':'<p>문진 응답이 없습니다. 진료실에서 직접 확인하세요.</p>')+'<p class="field-note">응답 순서대로 최대 3개를 표시합니다. 자동 진단이나 위험신호 배제 결과가 아닙니다. 전체 응답과 위험신호는 아래에서 확인하세요.</p>';}
  const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();restore();quickSummary();};
   const oldReset=resetPatientIntake;resetPatientIntake=function(){oldReset();Object.keys(drafts).forEach(k=>delete drafts[k]);context='';clearVisitDraft();el('visitPrintSheet').innerHTML='';guide();};
   fields.forEach(id=>{el(id).addEventListener('input',()=>{save();el('visitReviewed').checked=false;refreshVisitPrint();});});
@@ -2227,16 +2341,21 @@ NEURO_DATA.other = {
   function educationParts(){const {sp}=current();const data=sp&&EDUCATION_V2[sp.id];if(!data)return [];return [data[0],(sp.nonPharmTx||[]).join(' / '),data[2],data[1],data[3]];}
   function invalidate(){el('visitReviewed').checked=false;refreshVisitPrint();}
   window.setExperienceType=function(type){el('returnBrief').hidden=type!=='return';};
-  function summary(){el('experienceSummary').innerHTML='<h3>환자가 오늘 확인하고 싶은 내용</h3><p>'+safe(visit.concerns.join(' · ')||'선택한 질문 없음')+'</p><p class="experience-note">'+(visit.type==='return'?'간단 재진 문진':'기존 상세 문진')+' · '+(AppState.isProxy?'보호자 대리 응답':'본인 응답')+'</p>'+(visit.type==='return'?'<dl><dt>증상 변화</dt><dd>'+safe(visit.course)+'</dd><dt>약 사용 중 불편감</dt><dd>'+safe(visit.medicine)+'</dd><dt>새 증상</dt><dd>'+safe(visit.newSymptoms)+'</dd></dl>'+(visit.note?'<p class="return-note">'+safe(visit.note)+'</p>':'')+'<p class="quick-warning">간단 재진에서는 기존 상세 문진을 생략했습니다. 새 증상·위험신호는 진료실에서 직접 확인하세요.</p>':'');}
+  window.getVisitEmrText=function(){
+    let text='\n■ 환자가 확인하고 싶은 내용:\n'+(visit.concerns.join(' · ')||'선택 없음')+'\n';
+    if(visit.type==='return')text+='\n■ 재진 변화 (환자/보호자 응답):\n- 증상 변화: '+visit.course+'\n- 약 사용 중 불편감: '+visit.medicine+'\n- 새 증상: '+visit.newSymptoms+'\n'+(visit.note?'- 추가 설명: '+visit.note+'\n':'');
+    return text;
+  };
+  function summary(){if(!NEURO_DATA[AppState.activeDoctorSymptom]){el('experienceSummary').innerHTML='';return;}el('experienceSummary').innerHTML='<h3>환자가 오늘 확인하고 싶은 내용</h3><p>'+safe(visit.concerns.join(' · ')||'선택한 질문 없음')+'</p><p class="experience-note">'+(visit.type==='return'?(visit.detailed?'재진 상세 문진':'간단 재진 문진'):'기존 상세 문진')+' · '+(AppState.isProxy?'보호자 대리 응답':'본인 응답')+'</p>'+(visit.type==='return'?'<dl><dt>증상 변화</dt><dd>'+safe(visit.course)+'</dd><dt>약 사용 중 불편감</dt><dd>'+safe(visit.medicine)+'</dd><dt>새 증상</dt><dd>'+safe(visit.newSymptoms)+'</dd></dl>'+(visit.note?'<p class="return-note">'+safe(visit.note)+'</p>':'')+'<p class="quick-warning">'+(visit.detailed?'변화 확인을 위해 상세 문진을 함께 진행했습니다.':'간단 재진에서는 기존 상세 문진을 생략했습니다.')+' 새 증상·위험신호는 진료실에서 직접 확인하세요.</p>':'');}
   function renderPicker(){const {sp,key}=current();pickerKey=key;const parts=educationParts();const selected=selection[key]||{items:[],family:false};el('educationFamily').checked=selected.family;el('educationContext').textContent=sp?'검토 중인 교육자료: '+sp.name:'질환 선택 후 교육자료를 확인하세요.';el('educationChoices').innerHTML=parts.map((value,i)=>value?'<label><input type="checkbox" data-education="'+i+'" '+(selected.items.includes(i)?'checked':'')+' onchange="changeEducationChoice()"> '+labels[i]+'</label>':'').join('');el('educationPreview').innerHTML=getSelectedEducationHTML()||'<p>선택한 자료가 없습니다.</p>';}
   window.hasEducationSelection=function(){return !!selection[current().key]?.items.length;};
   window.getSelectedEducationHTML=function(){const {sp,key}=current();const state=selection[key];if(!sp||!state?.items.length)return '';const parts=educationParts();return '<section class="selected-education"><h2>'+(state.family?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2><p class="education-source">'+safe(sp.name)+' · 진료 시 의료진이 확인한 항목</p>'+state.items.map(i=>'<section><h3>'+labels[i]+'</h3><p>'+safe(parts[i])+'</p></section>').join('')+'<p class="education-source">공통 교육 내용입니다. 개인별 계획과 처방은 오늘의 안내 및 처방전을 확인하세요.</p></section>';};
   window.changeEducationChoice=function(){if(!pickerKey)return;selection[pickerKey]={items:Array.from(document.querySelectorAll('[data-education]:checked')).map(n=>Number(n.getAttribute('data-education'))),family:el('educationFamily').checked};invalidate();el('educationPreview').innerHTML=getSelectedEducationHTML()||'<p>선택한 자료가 없습니다.</p>';};
   const oldStart=startPatientIntake;
-  startPatientIntake=function(){if(!AppState.selectedSymptoms.length){oldStart();return;}const type=choice('experienceType')||'first';const course=choice('returnCourse'),medicine=choice('returnMedicine'),newSymptoms=choice('returnNew');if(type==='return'&&(!course||!medicine||!newSymptoms)){alert('재진 변화 질문 3개에 답해 주세요. 잘 모르시면 해당 항목을 선택해 주세요.');return;}visit={type,concerns:concernValues(),course,medicine,newSymptoms,note:type==='return'?el('returnNote').value.trim():''};if(type==='first'){oldStart();return;}AppState.answers={};AppState.queue=[];AppState.queueIndex=0;AppState.isProxy=el('chkProxyCaregiver').checked;el('screenSymptomSelect').style.display='none';el('screenQuestionnaire').style.display='none';finishIntake();};
+  startPatientIntake=function(){if(!AppState.selectedSymptoms.length){oldStart();return;}const type=choice('experienceType')||'first';const course=choice('returnCourse'),medicine=choice('returnMedicine'),newSymptoms=choice('returnNew');if(type==='return'&&(!course||!medicine||!newSymptoms)){alert('재진 변화 질문 3개에 답해 주세요. 잘 모르시면 해당 항목을 선택해 주세요.');return;}visit={type,concerns:concernValues(),course,medicine,newSymptoms,note:type==='return'?el('returnNote').value.trim():''};if(type==='first'||course==='악화'||newSymptoms==='새 증상 있음'){if(type==='return')alert('증상 악화 또는 새 증상을 확인하기 위해 상세 문진을 진행합니다. 의료진에게 변화 내용을 직접 알려 주세요.');visit.detailed=type==='return';oldStart();return;}cancelQuestionAdvance();AppState.answers={};AppState.queue=[];AppState.queueIndex=0;AppState.isProxy=el('chkProxyCaregiver').checked;el('screenSymptomSelect').style.display='none';el('screenQuestionnaire').style.display='none';finishIntake();};
   const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();summary();renderPicker();};
   const oldClear=clearVisitDraft;window.clearVisitDraft=function(){oldClear();if(pickerKey)delete selection[pickerKey];renderPicker();invalidate();};
-  const oldReset=resetPatientIntake;resetPatientIntake=function(){oldReset();visit={type:'first',concerns:[],course:'',medicine:'',newSymptoms:'',note:''};Object.keys(selection).forEach(k=>delete selection[k]);pickerKey='';document.querySelectorAll('input[name="experienceType"],input[name="returnCourse"],input[name="returnMedicine"],input[name="returnNew"],input[name="visitConcern"]').forEach(n=>n.checked=n.name==='experienceType'&&n.value==='first');el('returnBrief').hidden=true;el('returnNote').value='';el('educationFamily').checked=false;el('educationChoices').innerHTML='';el('educationPreview').innerHTML='';el('educationContext').textContent='';el('experienceSummary').innerHTML='';AppState.selectedSubpath={};AppState.activeDoctorSymptom=null;AppState.isProxy=false;el('chkProxyCaregiver').checked=false;el('eduPrintButton').disabled=true;el('visitIncludeVisuals').checked=true;document.querySelectorAll('input[data-education]').forEach(n=>n.checked=false);};
+  const oldReset=resetPatientIntake;resetPatientIntake=function(){oldReset();visit={type:'first',concerns:[],course:'',medicine:'',newSymptoms:'',note:''};Object.keys(selection).forEach(k=>delete selection[k]);pickerKey='';document.querySelectorAll('input[name="experienceType"],input[name="returnCourse"],input[name="returnMedicine"],input[name="returnNew"],input[name="visitConcern"]').forEach(n=>n.checked=n.name==='experienceType'&&n.value==='first');el('returnBrief').hidden=true;el('returnNote').value='';el('educationFamily').checked=false;el('educationChoices').innerHTML='';el('educationPreview').innerHTML='';el('educationContext').textContent='';el('experienceSummary').innerHTML='';AppState.selectedSubpath={};AppState.activeDoctorSymptom=null;AppState.isProxy=false;el('chkProxyCaregiver').checked=false;el('eduPrintButton').disabled=true;el('visitIncludeVisuals').checked=true;document.querySelectorAll('input[data-education]').forEach(n=>n.checked=false);el('patientSummaryCard').innerHTML='';el('symSwitchContainer').innerHTML='';document.querySelectorAll('.doc-stage').forEach(n=>n.classList.toggle('active',n.id==='docStage_stage1_summary'));document.querySelectorAll('#doctor5StageNav .nav-btn').forEach((n,i)=>n.classList.toggle('active',i===0));renderDoctorStage();switchMode('patient');};
 })();
 
 </script>
