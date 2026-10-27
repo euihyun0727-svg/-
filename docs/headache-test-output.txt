@@ -1,0 +1,60 @@
+{
+  "passed": 88,
+  "paths": 23,
+  "scope": "DOM simulation; image decode, clipboard and print mocked"
+}
+{
+  "headacheChecks": 248,
+  "cases": [
+    {
+      "case": "삽화편두통",
+      "status": "PASS"
+    },
+    {
+      "case": "만성편두통",
+      "status": "PASS"
+    },
+    {
+      "case": "전조편두통",
+      "status": "PASS"
+    },
+    {
+      "case": "약물과용두통",
+      "status": "PASS"
+    },
+    {
+      "case": "군발두통",
+      "status": "PASS"
+    },
+    {
+      "case": "벼락두통",
+      "status": "PASS"
+    },
+    {
+      "case": "예방약 복용 중 재진",
+      "status": "PASS"
+    },
+    {
+      "case": "고령자의 새 두통",
+      "status": "PASS"
+    }
+  ],
+  "FAIL": 0,
+  "NOT_TESTED": [
+    "real browser/layout",
+    "PNG decoding",
+    "clipboard permissions",
+    "A4 visual layout",
+    "Netlify deployment",
+    "clinical sign-off",
+    "2026 Korean coverage criteria"
+  ]
+}
+{
+  "scaleChecks": 594,
+  "fourATCombinations": 54,
+  "regressionChecks": 85,
+  "browserUI": "not tested",
+  "externalLinkNavigation": "not tested; URLs/attributes checked",
+  "imageAndPrint": "mocked"
+}

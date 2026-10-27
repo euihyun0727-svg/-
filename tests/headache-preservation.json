@@ -1,0 +1,10 @@
+{
+  "otherSymptoms": "fc60be3f7a49197f03c8493861dce3faf874404bd5270f843db6db4fe074ce6a",
+  "otherEducation": "83775fb2dbe6b173302f6a71bfda652b478b8f1503b9b61f58b4eca63e9c9c83",
+  "scales": {
+    "scales/catalog.js": "0db67ea493c2a0c749a4c00ddd7fb359297652158e0178509014f9e937f802eb",
+    "scales/library.js": "89b37aa47c9b480a3459f12677287184b2551c1d00f3f1a9edc85d5a27b2c759",
+    "scales/library.css": "29966a8652c3ea643d6bd309e7c8a694399301e1a89679665263aaad1c802ca1",
+    "tests/scale-library.mjs": "df633de9c6d53ee1561540fae28c73f0a82d75d4dbf894e3905c832ce6ca666b"
+  }
+}
