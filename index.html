@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>김영재내과신경과의원 | NeuroDesk</title>
+  <title>NeuroDesk</title>
 <script>
 (function () {
   var failures = [];
@@ -284,6 +284,8 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
 <style>
 #visitPrintSheet .print-visuals img{display:block;width:100%;max-height:380px;object-fit:contain}#visitPrintSheet .print-visuals .mechanism-svg{width:100%;height:auto;min-width:0}#visitPrintSheet .print-visuals .mechanism-figure-wrap{overflow:visible}#visitPrintSheet .print-visuals figure{margin:0 0 20px}#visitPrintSheet .print-visuals{break-inside:auto}@media print{body.visit-printing #visitPrintSheet .print-visuals{break-inside:auto;page-break-inside:auto}#visitPrintSheet .print-visuals img{max-height:80mm}#visitPrintSheet .print-visuals figure,#visitPrintSheet .print-visuals .mechanism-box{break-inside:avoid;page-break-inside:avoid}#visitPrintSheet .print-visuals figcaption{font-size:10pt;line-height:1.6}#visitPrintSheet .print-visuals .art-review-note{font-size:9pt!important}#visitPrintSheet{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
+  <link rel="stylesheet" href="scales/library.css">
+  <link rel="stylesheet" href="clinical/headache.css">
 </head>
 <body>
 
@@ -291,7 +293,7 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
   <header>
     <div class="brand">
       <div class="brand-badge">NeuroDesk</div>
-      <div><div class="brand-title">김영재내과신경과의원</div><div class="clinic-brand-sub">환자 문진 · 신경과 진료 보조</div></div>
+      <div><div class="brand-title">NeuroDesk</div><div class="clinic-brand-sub">환자 문진 · 신경과 진료 보조</div></div>
     </div>
     <div class="header-controls no-print">
       <button class="btn-test" onclick="runAutomatedIntegrityTest()">무결성 자동진단</button>
@@ -452,7 +454,7 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
           <div style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
             <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docScalesHeadTitle">4. 증상별 임상 설문 및 평가도구</h2>
             <p style="font-size:12.5px; color:var(--gray-600); margin-top:4px;">
-              ※ 현재 버전은 원내 종이 설문을 이용하는 방식입니다. 실제 공식 문항을 웹에서 재현하려면 각 척도의 전자적 사용허가를 확인해야 합니다. 종이 사용권만으로 디지털 배포 권한이 자동 부여되지는 않습니다.
+              ※ 한국어 문항의 전자 표시·배포 조건을 확인한 척도만 제공합니다. 척도를 선택해 원문 질문을 읽고 환자의 응답을 입력하세요. 총점은 모든 채점 문항에 응답한 뒤 계산합니다. 점수·응답은 현재 창에만 유지되며, 즐겨찾기와 종이 보유 설정만 이 브라우저에 저장합니다.
             </p>
           </div>
           <div id="docScalesList"></div>
@@ -495,7 +497,7 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
     </div>
   </main>
 <section id="visitPrintSheet" aria-label="진료 후 안내서"></section>
-  <footer class="clinic-footer no-print">김영재내과신경과의원 · NeuroDesk</footer>
+  <footer class="clinic-footer no-print">NeuroDesk</footer>
 
   <!-- Automated Test Runner Results Modal -->
   <div class="modal-overlay" id="testModal">
@@ -520,7 +522,7 @@ const NEURO_DATA = {};
 
 </script>
   <script data-source="data/headache.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.headache = {
         id: 'headache',
         name: '두통',
@@ -637,14 +639,7 @@ NEURO_DATA.headache = {
             patientLeaflet: '■ 약물과용두통 안내\n- 진통제를 자주 드시면 통증 조절 체계가 민감해져 약효가 떨어질 때마다 두통이 옵니다. 의사와 함께 약을 줄여야 합니다.'
           }
         ],
-        scales: [
-          {
-            name: '두통영향평가 (HIT-6)',
-            copyrightNotice: 'HIT-6는 QualityMetric Inc.의 저작권 평가도구입니다. 원내 진료 시 공인 한국어 라이선스 사용지침을 준수하십시오.',
-            isOfficialAvailable: true,
-            scoringNotes: '총점 36~78점 (60점 이상 시 심각한 일상 장애)'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '급성기 평가', interval: '2~4주', checkpoints: '약물 조기 복용률, 2시간 후 통증 소실률, 부작용', targets: '2시간 내 일상 복귀' },
           { phase: '예방약 평가', interval: '4~8주', checkpoints: '두통 일지, 월 두통 일수 및 강도 변화', targets: '두통 빈도 50% 이상 감소' }
@@ -653,7 +648,7 @@ NEURO_DATA.headache = {
 
 </script>
   <script data-source="data/dizziness.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.dizziness = {
         id: 'dizziness',
         name: '어지럼',
@@ -753,14 +748,7 @@ NEURO_DATA.dizziness = {
             patientLeaflet: '■ 기립성 어지럼 안내\n- 일어날 때 절대 급하게 일어나지 마시고, 10초간 발목을 까딱인 후 천천히 일어나세요.'
           }
         ],
-        scales: [
-          {
-            name: '어지럼 장애 지수 (DHI)',
-            copyrightNotice: 'DHI(Dizziness Handicap Inventory)는 Jacobson & Newman의 공인 척도입니다. 원내 평가 시 공식 표준 가이드를 확인하십시오.',
-            isOfficialAvailable: true,
-            scoringNotes: '총점 0~100점 (신체적, 감정적, 기능적 장애 평가)'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '정복술 후 재평가', interval: '1~2주', checkpoints: 'Dix-Hallpike 재검, 잔여 불균형감', targets: '체위성 안진 소실' },
           { phase: '만성 어지럼 추적', interval: '4~8주', checkpoints: 'DHI 척도 재평가, 낙상 유무', targets: '일상 활동 복귀 및 낙상 제로' }
@@ -769,7 +757,7 @@ NEURO_DATA.dizziness = {
 
 </script>
   <script data-source="data/cognition.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.cognition = {
         id: 'cognition',
         name: '기억력 저하 및 치매',
@@ -850,14 +838,7 @@ NEURO_DATA.cognition = {
             patientLeaflet: '■ 알츠하이머 치매 보호자 안내\n- 환자에게 화를 내거나 따지지 마시고 안심시켜 주세요. 가스밸브와 약 복용은 보호자가 직접 관리하셔야 합니다.'
           }
         ],
-        scales: [
-          {
-            name: 'K-MMSE / CIST 및 CDR 평가',
-            copyrightNotice: 'MMSE 및 CIST는 공인된 진단 기준과 평가자 교육을 필수로 합니다. 원내 라이선스 정책을 준수하십시오.',
-            isOfficialAvailable: true,
-            scoringNotes: '치매진단기준(DSM-5, NIA-AA) 참조'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '초기 약물 안정화', interval: '4주', checkpoints: '소화기계 부작용(오심, 설사), 서맥', targets: '약제 순응도 확보' },
           { phase: '인지기능 정기 추적', interval: '3~6개월', checkpoints: 'IADL 변화, BPSD(이상행동) 모니터링', targets: '기능 저하 속도 완화' }
@@ -866,7 +847,7 @@ NEURO_DATA.cognition = {
 
 </script>
   <script data-source="data/sleep.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.sleep = {
         id: 'sleep',
         name: '수면장애',
@@ -947,14 +928,7 @@ NEURO_DATA.sleep = {
             patientLeaflet: '■ 수면무호흡증 안내\n- 수면 중 숨이 멈추면 혈압이 오르고 뇌졸중 위험이 증가합니다. 양압기 치료 검사가 필요합니다.'
           }
         ],
-        scales: [
-          {
-            name: '불면증 심각도 지수 (ISI) / 주간졸림 (ESS)',
-            copyrightNotice: 'ISI 및 ESS는 공인된 수면평가도구입니다. 원내 라이선스 가이드를 확인하십시오.',
-            isOfficialAvailable: true,
-            scoringNotes: 'ISI 15점 이상 시 임상적 중등도 불면'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '불면 약제 모니터링', interval: '2~4주', checkpoints: '아침 멍함(Hangover), 복용 일수', targets: '수면 효율 85% 이상' }
         ]
@@ -962,7 +936,7 @@ NEURO_DATA.sleep = {
 
 </script>
   <script data-source="data/numbness.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.numbness = {
         id: 'numbness',
         name: '손발 저림 및 감각 이상',
@@ -1027,14 +1001,7 @@ NEURO_DATA.numbness = {
             patientLeaflet: '■ 손목터널증후군 안내\n- 밤에 저려서 손을 터는 증상이 전형적입니다. 손목을 편 상태로 지지해주는 부목이 효과적입니다.'
           }
         ],
-        scales: [
-          {
-            name: '신경병증성 통증 설문 (DN4) / MNSI',
-            copyrightNotice: 'DN4 및 MNSI는 공인 말초신경병 평가 척도입니다.',
-            isOfficialAvailable: true,
-            scoringNotes: 'DN4 4점 이상 시 신경병증성 통증 분류'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '약물 적정기', interval: '2~4주', checkpoints: '신경통 조절률, 어지럼/졸림 부작용', targets: '통증 30~50% 경감' }
         ]
@@ -1042,7 +1009,7 @@ NEURO_DATA.numbness = {
 
 </script>
   <script data-source="data/tremor.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.tremor = {
         id: 'tremor',
         name: '떨림 및 파킨슨 증상',
@@ -1100,14 +1067,7 @@ NEURO_DATA.tremor = {
             patientLeaflet: '■ 파킨슨병 안내\n- 뇌의 도파민 부족으로 생기며, 약물치료와 운동을 꾸준히 병행하면 오랜 기간 일상을 유지할 수 있습니다.'
           }
         ],
-        scales: [
-          {
-            name: 'UPDRS Part III (운동능력 평가)',
-            copyrightNotice: 'MDS-UPDRS는 국제 파킨슨병학회의 공식 평가도구입니다.',
-            isOfficialAvailable: true,
-            scoringNotes: '운동 증상 중증도 평가'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '약물 초기 조절', interval: '4주', checkpoints: '서동 호전도, 어지럼, 오심', targets: '동작 느림의 주관적 50% 개선' }
         ]
@@ -1115,7 +1075,7 @@ NEURO_DATA.tremor = {
 
 </script>
   <script data-source="data/tinnitus.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.tinnitus = {
         id: 'tinnitus',
         name: '이명',
@@ -1162,14 +1122,7 @@ NEURO_DATA.tinnitus = {
             patientLeaflet: '■ 이명 안내\n- 조용한 방에 계시면 뇌가 이명 소리에 더 집중합니다. 잔잔한 배경음악이나 빗소리를 틀어놓으세요.'
           }
         ],
-        scales: [
-          {
-            name: '이명 장애도 평가 (THI)',
-            copyrightNotice: 'THI(Tinnitus Handicap Inventory) 공인 척도 가이드 준수.',
-            isOfficialAvailable: true,
-            scoringNotes: '이명이 수면과 감정에 미치는 영향 평가'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '소리적응 추적', interval: '8주', checkpoints: 'THI 점수, 수면장애 개선도', targets: '이명에 대한 불편감 완화' }
         ]
@@ -1177,7 +1130,7 @@ NEURO_DATA.tinnitus = {
 
 </script>
   <script data-source="data/weakness.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.weakness = {
         id: 'weakness',
         name: '근력 저하 및 마비',
@@ -1225,14 +1178,7 @@ NEURO_DATA.weakness = {
             patientLeaflet: '■ 급성 마비 응급 안내\n- 뇌혈관 질환은 분초를 다툽니다. 즉시 큰 병원 응급실로 가셔야 합니다.'
           }
         ],
-        scales: [
-          {
-            name: 'NIHSS / MRC 근력 척도',
-            copyrightNotice: 'NIHSS는 급성 뇌졸중 평가 표준 척도입니다.',
-            isOfficialAvailable: true,
-            scoringNotes: '근력 0(완전마비)~5(정상)'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '급성기 전원', interval: '즉시', checkpoints: '활력징후, 혈당 확인', targets: '골든타임 내 응급실 도착' }
         ]
@@ -1240,7 +1186,7 @@ NEURO_DATA.weakness = {
 
 </script>
   <script data-source="data/syncope.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.syncope = {
         id: 'syncope',
         name: '실신 및 의식 소실',
@@ -1288,14 +1234,7 @@ NEURO_DATA.syncope = {
             patientLeaflet: '■ 미주신경성 실신 안내\n- 아득해지는 느낌이 오면 서 있지 마시고 그 자리에서 즉시 주저앉거나 누우셔야 머리를 다치지 않습니다.'
           }
         ],
-        scales: [
-          {
-            name: 'EGSYS / 실신 위험도 평가',
-            copyrightNotice: '실신 가이드라인(ESC/AHA) 위험도 기준을 준용합니다.',
-            isOfficialAvailable: true,
-            scoringNotes: '심장성 실신 고위험 선별'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '생활습관 평가', interval: '4주', checkpoints: '재발 횟수, 신체대항기법 적용 여부', targets: '실신성 낙상 및 외상 방지' }
         ]
@@ -1303,7 +1242,7 @@ NEURO_DATA.syncope = {
 
 </script>
   <script data-source="data/seizure.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.seizure = {
         id: 'seizure',
         name: '경련 및 발작',
@@ -1356,14 +1295,7 @@ NEURO_DATA.seizure = {
             patientLeaflet: '■ 경련 후 생활 안전 수칙\n- 밤샘을 피하시고 술은 절대 드시면 안 됩니다. 운전은 법적으로 일정 기간 제한됩니다.'
           }
         ],
-        scales: [
-          {
-            name: '뇌전증 재발 위험도 평가',
-            copyrightNotice: 'ILAE(국제뇌전증퇴치연맹) 임상 정의 및 분류 기준 준수.',
-            isOfficialAvailable: true,
-            scoringNotes: '재발 위험 요인 체크'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '약물 시작 후', interval: '2~4주', checkpoints: '약물 부작용(피부 발진, 졸림), 발작 재발', targets: '발작 제로 및 발진 부작용 배제' }
         ]
@@ -1371,7 +1303,7 @@ NEURO_DATA.seizure = {
 
 </script>
   <script data-source="data/gait.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.gait = {
         id: 'gait',
         name: '보행장애 및 균형장애',
@@ -1425,14 +1357,7 @@ NEURO_DATA.gait = {
             patientLeaflet: '■ 보행장애 안전 안내\n- 집안의 문턱을 없애고 화장실 손잡이를 설치하세요. 지팡이나 보행기를 꼭 사용하셔야 골절을 막을 수 있습니다.'
           }
         ],
-        scales: [
-          {
-            name: 'TUG / 버그 균형 척도 (BBS)',
-            copyrightNotice: '공인 보행 및 균형 척도 가이드 준수.',
-            isOfficialAvailable: true,
-            scoringNotes: '낙상 위험도 분류'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '낙상 모니터링', interval: '8주', checkpoints: 'TUG 재측정, 보조기 사용 순응도', targets: '낙상 발생 방지' }
         ]
@@ -1440,7 +1365,7 @@ NEURO_DATA.gait = {
 
 </script>
   <script data-source="data/other.js">
-// Original clinical content, preserved without edits.
+// Clinical content preserved; unused legacy scale metadata removed in favor of the verified Stage 4 catalog.
 NEURO_DATA.other = {
         id: 'other',
         name: '기타 신경학적 증상',
@@ -1480,14 +1405,7 @@ NEURO_DATA.other = {
             patientLeaflet: '■ 삼차신경통 안내\n- 일반 진통제로는 효과가 없으며 전용 신경통 약물로 조절합니다. 얼굴을 찬바람에 노출하지 마세요.'
           }
         ],
-        scales: [
-          {
-            name: '통증 척도 (NRS) / SF-36',
-            copyrightNotice: '공인 삶의 질 및 통증 평가 가이드라인 준수.',
-            isOfficialAvailable: true,
-            scoringNotes: '신경병성 통증 강도 측정'
-          }
-        ],
+        scales: [],
         followUpSchedule: [
           { phase: '약제 부작용 모니터링', interval: '2~4주', checkpoints: '약물 발진, 저나트륨혈증, 졸림', targets: '통증 발작 빈도 감소' }
         ]
@@ -1523,6 +1441,307 @@ NEURO_DATA.other = {
       renderSymptomGrid();
     };
 
+    // Patient wording only. Original clinician data, answer values and safety flags stay unchanged.
+    const PATIENT_INTAKE_COPY = {
+  "symptoms": {
+    "headache": [
+      "두통",
+      "머리가 아프거나 자주 반복되는 두통"
+    ],
+    "dizziness": [
+      "어지럼",
+      "빙빙 돌거나 아찔하고 중심을 잡기 어려움"
+    ],
+    "cognition": [
+      "기억력 저하",
+      "자주 잊어버리거나 일상생활에서 실수가 늘어남"
+    ],
+    "sleep": [
+      "잠에 관한 불편",
+      "잠들기 어렵거나 자주 깨고, 자는 동안 불편함"
+    ],
+    "numbness": [
+      "손발 저림·감각 변화",
+      "손발이 저리거나 감각이 달라짐"
+    ],
+    "tremor": [
+      "떨림·움직임 불편",
+      "손이나 몸이 떨리거나 움직임이 느리고 뻣뻣함"
+    ],
+    "tinnitus": [
+      "귀에서 나는 소리",
+      "귀에서 삐 소리나 윙윙거리는 소리가 들림"
+    ],
+    "weakness": [
+      "힘 빠짐·팔다리 움직임 불편",
+      "팔이나 다리에 힘이 빠지거나 움직이기 어려움"
+    ],
+    "syncope": [
+      "정신을 잃고 쓰러짐",
+      "정신을 잃고 쓰러졌거나 잠시 기억이 끊김"
+    ],
+    "seizure": [
+      "경련·몸이 굳거나 떨리는 증상",
+      "몸이 굳거나 떨리고 잠시 반응하지 못함"
+    ],
+    "gait": [
+      "걷기·균형 불편",
+      "걷기 어렵거나 비틀거리고 자주 넘어짐"
+    ],
+    "other": [
+      "그 밖의 불편",
+      "얼굴이 떨리거나 찌릿하게 아픈 증상 등"
+    ]
+  },
+  "questions": {
+    "ha_onset": [
+      "두통은 언제 시작됐고, 최근에는 어떻게 달라졌습니까?",
+      [
+        "최근 며칠 사이 갑자기 시작됨",
+        "몇 달~몇 년 전부터 가끔 반복됨",
+        "오래전부터 있었지만 최근 더 자주 또는 더 심하게 아픔"
+      ]
+    ],
+    "ha_thunderclap": [
+      "🚨 두통이 시작된 지 1분 안에 망치로 맞은 듯 매우 심해졌습니까?",
+      [
+        "예 (1분 안에 통증이 가장 심해짐)",
+        "아니오 (서서히 심해짐)"
+      ]
+    ],
+    "ha_freq": [
+      "한 달에 머리가 아픈 날은 평균 며칠입니까?",
+      [
+        "한 달에 1~4일",
+        "한 달에 5~14일",
+        "한 달에 15일 이상"
+      ]
+    ],
+    "ha_features": [
+      "머리가 어떻게 아프고, 움직이면 어떻게 달라집니까?",
+      [
+        "한쪽 머리가 맥박 뛰듯 욱신거리고 계단을 오르면 더 아픔",
+        "머리 전체나 목 뒤가 조이듯 무겁고 움직여도 더 아프지는 않음",
+        "한쪽 눈 주변이 매우 아프고 눈물이나 콧물도 남"
+      ]
+    ],
+    "ha_associated": [
+      "두통과 함께 속이 메스껍거나 토하고, 빛이나 소리가 괴롭게 느껴집니까?",
+      [
+        "속이 메스껍거나 토하고 빛·소리도 괴롭게 느껴짐",
+        "함께 나타나는 증상 없음"
+      ]
+    ],
+    "ha_med_freq": [
+      "머리가 아플 때 먹는 약은 한 달에 며칠 복용하십니까?",
+      [
+        "한 달에 5일 미만",
+        "한 달에 10일 이상",
+        "거의 매일 복용"
+      ]
+    ],
+    "diz_type": [
+      "어지러울 때 어떤 느낌이 가장 두드러집니까?",
+      [
+        "세상이나 내가 빙빙 도는 느낌",
+        "일어설 때 눈앞이 깜깜하고 아득해짐",
+        "걸을 때 중심을 못 잡고 비틀거림"
+      ]
+    ],
+    "diz_duration": [
+      "한 번 어지러우면 얼마나 오래 지속됩니까?",
+      [
+        "머리를 움직일 때 몇 초~1분 이내",
+        "몇 분~몇 시간",
+        "며칠 동안 멈추지 않고 계속됨"
+      ]
+    ],
+    "diz_trigger": [
+      "누웠다 일어나거나 자다가 고개를 돌릴 때 심해집니까?",
+      [
+        "예 (특정 자세로 머리를 움직이면 바로 어지러움)",
+        "아니오 (자세와 관계없이 계속되거나 일어설 때만 아득함)"
+      ]
+    ],
+    "diz_redflags": [
+      "🚨 어지럼과 함께 다음 증상이 있습니까?",
+      [
+        "물체가 둘로 보이거나 발음이 어눌하고 팔다리를 움직이기 어려움",
+        "부축 없이는 혼자 서 있거나 걸을 수 없음",
+        "함께 나타나는 증상 없음"
+      ]
+    ],
+    "cog_onset": [
+      "기억력이 언제부터, 어떻게 나빠졌습니까?",
+      [
+        "1~2년 전부터 서서히 나빠짐",
+        "몇 주~몇 달 사이 빠르게 나빠짐",
+        "뇌졸중을 앓은 뒤 또는 어느 시점마다 뚜렷하게 나빠짐"
+      ]
+    ],
+    "cog_memory_type": [
+      "최근 나눈 대화나 약속을 잊고 같은 질문을 반복합니까?",
+      [
+        "예 (힌트를 주어도 잘 기억하지 못함)",
+        "힌트를 주면 기억해냄"
+      ]
+    ],
+    "cog_daily_life": [
+      "돈 관리, 약 챙겨 먹기, 가전제품 사용 등에서 실수가 있습니까?",
+      [
+        "실수가 생겨 다른 사람의 도움이 필요함",
+        "혼자 일상생활과 사회활동을 할 수 있음"
+      ]
+    ],
+    "cog_triad": [
+      "🚨 기억력이 나빠지면서 발이 잘 안 떨어지거나 종종걸음을 걷고, 소변 실수도 생겼습니까?",
+      [
+        "예",
+        "아니오 (걷기와 소변 보기에 문제없음)"
+      ]
+    ],
+    "slp_pattern": [
+      "잠과 관련해 가장 불편한 점은 무엇입니까?",
+      [
+        "잠들기까지 30분 이상 걸림",
+        "자다가 자주 깨고 다시 잠들기 어려움",
+        "원하는 시간보다 너무 일찍 깸"
+      ]
+    ],
+    "slp_apnea": [
+      "코골이가 심하거나 자다가 숨이 멈춘다는 말을 듣습니까?",
+      [
+        "예 (아침에 머리가 아프거나 입이 마르기도 함)",
+        "아니오"
+      ]
+    ],
+    "slp_rls": [
+      "저녁이나 밤에 누우면 다리가 불편해서 움직이고 싶습니까?",
+      [
+        "예 (움직이면 잠시 편해짐)",
+        "아니오"
+      ]
+    ],
+    "slp_rbd": [
+      "🚨 꿈을 꾸면서 실제로 소리를 지르거나 주먹질·발길질을 합니까?",
+      [
+        "예",
+        "아니오"
+      ]
+    ],
+    "num_distribution": [
+      "어느 부위가 저리거나 감각이 달라졌습니까?",
+      [
+        "양쪽 발끝에서 시작해 발목 위쪽으로 비슷하게 올라옴",
+        "한쪽 손의 엄지·검지·중지가 주로 저림",
+        "목이나 허리 통증과 함께 한쪽 팔이나 다리로 뻗치는 느낌"
+      ]
+    ],
+    "num_redflags": [
+      "🚨 며칠 사이 힘이 빠지는 부위가 위로 퍼지거나, 소변·대변 조절에 문제가 생겼습니까?",
+      [
+        "예",
+        "아니오 (소변·대변에 문제없고 갑자기 힘이 빠지지 않음)"
+      ]
+    ],
+    "trm_type": [
+      "주로 언제 떨립니까?",
+      [
+        "손을 무릎에 가만히 얹고 쉴 때",
+        "글씨를 쓰거나 숟가락을 드는 등 손을 사용할 때"
+      ]
+    ],
+    "trm_features": [
+      "움직임이 느려지거나 몸이 뻣뻣해진 느낌이 있습니까?",
+      [
+        "예 (보폭이 좁아지거나 한쪽 팔을 덜 흔듦)",
+        "아니오 (움직임은 느려지지 않고 떨림만 있음)"
+      ]
+    ],
+    "tin_pulsatile": [
+      "귀에서 나는 소리가 심장 박동처럼 쿵쿵 또는 쉭쉭 규칙적으로 들립니까?",
+      [
+        "예",
+        "아니오 (매미 소리나 삐 소리처럼 계속 들림)"
+      ]
+    ],
+    "tin_sudden": [
+      "🚨 며칠 사이 귀에서 소리가 나면서 한쪽 귀가 갑자기 잘 안 들리게 됐습니까?",
+      [
+        "예",
+        "아니오 (잘 들리거나 서서히 나빠짐)"
+      ]
+    ],
+    "wek_onset": [
+      "🚨 힘이 빠지는 증상은 언제, 어떻게 시작됐습니까?",
+      [
+        "몇 분~몇 시간 전 갑자기 시작됨",
+        "며칠~몇 주에 걸쳐 서서히 진행됨"
+      ]
+    ],
+    "wek_pattern": [
+      "어느 부위에 힘이 빠지고, 함께 나타나는 증상은 무엇입니까?",
+      [
+        "한쪽 팔다리와 얼굴을 움직이기 어렵고 발음도 어눌함",
+        "오후가 되면 눈꺼풀이 처지고 힘이 빠짐",
+        "양쪽 다리부터 힘이 빠져 위로 퍼짐"
+      ]
+    ],
+    "syn_situation": [
+      "어떤 상황에서 정신을 잃고 쓰러졌습니까?",
+      [
+        "오래 서 있거나 피·주사를 보았을 때, 아프거나 피곤할 때",
+        "소변을 보거나 기침을 심하게 한 직후",
+        "운동 중이거나 누워 있을 때, 미리 느껴지는 증상 없이"
+      ]
+    ],
+    "syn_after": [
+      "깨어난 직후에는 어땠습니까?",
+      [
+        "1~2분 안에 정신이 또렷해짐",
+        "깨어난 뒤에도 20분 이상 멍하고 혼란스러웠음"
+      ]
+    ],
+    "sez_history": [
+      "몸이 굳거나 떨리는 증상은 지금까지 몇 번 있었습니까?",
+      [
+        "이번이 처음임",
+        "이전에도 2번 이상 반복된 적 있음"
+      ]
+    ],
+    "sez_pheno": [
+      "당시 모습을 본 분은 어떻게 설명합니까?",
+      [
+        "온몸이 뻣뻣해지며 양쪽 팔다리를 크게 떨었음",
+        "멍하게 있으면서 입맛을 다시거나 손을 만지작거렸음"
+      ]
+    ],
+    "gait_pattern": [
+      "걸을 때 어떤 점이 가장 불편합니까?",
+      [
+        "술에 취한 듯 좌우로 비틀거리고 중심을 잡기 어려움",
+        "발이 바닥에 붙은 듯 잘 안 떨어지고 보폭이 매우 좁음",
+        "어두운 곳이나 눈을 감으면 비틀거림이 훨씬 심해짐"
+      ]
+    ],
+    "gait_fall": [
+      "🚨 최근 6개월 사이 균형을 잃고 넘어진 적이 있습니까?",
+      [
+        "3번 이상 넘어짐",
+        "1~2번 넘어졌거나 넘어진 적 없음"
+      ]
+    ],
+    "oth_type": [
+      "가장 불편한 증상은 무엇입니까?",
+      [
+        "한쪽 눈 밑이나 볼이 실룩거림",
+        "얼굴 한쪽이 번개 치듯 순간적으로 찌릿하게 아픔",
+        "그 밖에 오래가는 온몸의 통증이나 피로"
+      ]
+    ]
+  }
+};
+
     function renderSymptomGrid() {
       const grid = document.getElementById('symptomGrid');
       grid.innerHTML = '';
@@ -1535,8 +1754,8 @@ NEURO_DATA.other = {
         card.innerHTML = `
           <div class="symptom-icon">${item.icon}</div>
           <div>
-            <div style="font-size:15.5px; font-weight:800; color:var(--gray-800);">${item.name}</div>
-            <div style="font-size:11.5px; color:var(--gray-600); margin-top:2px;">${item.desc}</div>
+            <div style="font-size:15.5px; font-weight:800; color:var(--gray-800);">${PATIENT_INTAKE_COPY.symptoms[item.id][0]}</div>
+            <div style="font-size:11.5px; color:var(--gray-600); margin-top:2px;">${PATIENT_INTAKE_COPY.symptoms[item.id][1]}</div>
           </div>
         `;
         grid.appendChild(card);
@@ -1624,7 +1843,7 @@ NEURO_DATA.other = {
       const q = item.question;
       const mod = NEURO_DATA[item.symptomId];
 
-      document.getElementById('wizardSymptomName').innerText = `${mod.icon} ${mod.name} 문진`;
+      document.getElementById('wizardSymptomName').innerText = `${mod.icon} ${PATIENT_INTAKE_COPY.symptoms[mod.id][0]} 문진`;
       const cur = AppState.queueIndex + 1;
       const total = AppState.queue.length;
       document.getElementById('wizardStepCount').innerText = `문항 ${cur} / ${total} (${Math.round((cur/total)*100)}%)`;
@@ -1632,8 +1851,8 @@ NEURO_DATA.other = {
 
       const block = document.getElementById('wizardQuestionBlock');
       block.innerHTML = `
-        <div style="font-size:12px; font-weight:800; color:var(--primary); background:var(--primary-light); padding:3px 8px; border-radius:4px; display:inline-block; margin-bottom:8px;">${mod.name}</div>
-        <div class="question-stem">${q.stem}</div>
+        <div style="font-size:12px; font-weight:800; color:var(--primary); background:var(--primary-light); padding:3px 8px; border-radius:4px; display:inline-block; margin-bottom:8px;">${PATIENT_INTAKE_COPY.symptoms[mod.id][0]}</div>
+        <div class="question-stem">${PATIENT_INTAKE_COPY.questions[q.id][0]}</div>
         <div id="optList"></div>
       `;
 
@@ -1646,11 +1865,11 @@ NEURO_DATA.other = {
         block.appendChild(warning);
       }
       const optList = document.getElementById('optList');
-      q.options.forEach(opt => {
+      q.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
         const isSel = AppState.answers[q.id] === opt.text;
         btn.className = `option-btn ${isSel ? 'selected' : ''} ${opt.redFlag ? 'danger-option' : ''}`;
-        btn.innerHTML = `<span>${opt.text}</span><span>✓</span>`;
+        btn.innerHTML = `<span>${PATIENT_INTAKE_COPY.questions[q.id][1][idx]}</span><span>✓</span>`;
         btn.onclick = () => {
           if (questionAdvanceTimer !== null) return;
           AppState.answers[q.id] = opt.text;
@@ -1713,7 +1932,7 @@ NEURO_DATA.other = {
       let html = `<div style="font-size:14px; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">선택한 주증상</div><div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;">`;
       AppState.selectedSymptoms.forEach(sId => {
         const m = NEURO_DATA[sId];
-        html += `<span style="background:#e0f2fe; color:#0369a1; padding:4px 10px; border-radius:14px; font-size:13px; font-weight:700;">${m.icon} ${m.name}</span>`;
+        html += `<span style="background:#e0f2fe; color:#0369a1; padding:4px 10px; border-radius:14px; font-size:13px; font-weight:700;">${m.icon} ${PATIENT_INTAKE_COPY.symptoms[m.id][0]}</span>`;
       });
       html += `</div><div style="font-size:13px; color:var(--gray-700);">문진 응답은 현재 화면에서만 유지됩니다. 새로고침하거나 창을 닫으면 사라지며 다른 기기로 자동 전달되지 않습니다. 진료실에서 이 화면을 보여주세요.</div>`;
       box.innerHTML = html;
@@ -1794,6 +2013,8 @@ NEURO_DATA.other = {
         });
         document.getElementById('docCaregiverTag').style.display = 'none';
         document.getElementById('eduPrintButton').disabled = true;
+        // The Stage 4 reference library is available without a patient symptom.
+        if (window.NeuroScaleLibrary) window.NeuroScaleLibrary.render(null);
         return;
       }
 
@@ -1895,42 +2116,9 @@ NEURO_DATA.other = {
         `;
       }
 
-      // 4. Stage 4: 임상 척도
-      document.getElementById('docScalesHeadTitle').innerText = `4. [${mod.name}] 관련 임상 설문 도구`;
-      const scalesList = document.getElementById('docScalesList');
-      scalesList.innerHTML = '';
-      if (mod.scales && mod.scales.length > 0) {
-        mod.scales.forEach(sc => {
-          const sCard = document.createElement('div');
-          sCard.className = 'test-candidate-card';
-          sCard.style.borderLeftColor = 'var(--primary)';
-          sCard.innerHTML = `
-            <div style="font-size:15px; font-weight:800; color:var(--primary-dark);">${sc.name}</div>
-            <div style="font-size:12.5px; color:#92400e; margin:4px 0;">📜 <strong>라이선스 및 권리 안내:</strong> ${sc.copyrightNotice}</div>
-            <div style="font-size:13px; color:var(--gray-700);"><strong>채점 및 평가 기준:</strong> ${sc.scoringNotes}</div>
-          `;
-          scalesList.appendChild(sCard);
-        });
-      }
-
-      // Paper assessment score transcription: no copyright questionnaire text copied.
-      if (mod.scales && mod.scales.length) {
-        const sub=document.createElement('div');
-        sub.className='card';sub.style.marginTop='16px';
-        sub.innerHTML='<h3 style="font-size:16px;color:var(--primary);margin-bottom:8px">종이 설문 결과 입력 (실습용 · 저장 없음)</h3><p style="font-size:12px;color:var(--gray-600);margin-bottom:12px">공식 종이 검사지를 별도로 실시한 후 총점만 이 화면에 입력할 수 있습니다. 환자 이름·등록번호를 입력하지 마세요. 이 페이지는 결과를 저장하지 않습니다.</p>';
-        mod.scales.forEach((scale,idx)=>{
-          const wrap=document.createElement('div');wrap.style='margin:10px 0;padding:12px;background:#f8fafc;border-radius:8px;';
-          const title=document.createElement('div');title.textContent=scale.name;title.style='font-weight:700;font-size:14px;margin-bottom:6px';wrap.appendChild(title);
-          const input=document.createElement('input');input.type='number';input.min='0';input.step='1';input.placeholder='종이 설문에서 산출한 총점';input.style='width:100%;max-width:310px;padding:10px;border:1px solid #94a3b8;border-radius:8px;font-size:14px';input.setAttribute('aria-label',scale.name+' 총점');wrap.appendChild(input);
-          const note=document.createElement('p');note.style='font-size:12px;color:#475569;margin-top:6px';note.textContent='채점 및 해석은 공식 매뉴얼과 임상상황을 확인하세요. 자동 진단 없음.';wrap.appendChild(note);
-          const scoreKey = symId + ':' + idx;
-          input.value = AppState.scaleScores[scoreKey] || '';
-          input.oninput=()=>{ AppState.scaleScores[scoreKey]=input.value; const score=Number(input.value);if(!input.value||!Number.isFinite(score)||score<0){note.textContent='유효한 총점을 입력하세요.';return;} note.textContent=`기록용 총점: ${score}점 · ${scale.scoringNotes||'공식 기준을 확인하세요.'} · 환자별 자동판정 없음`; };
-          if (input.value) input.oninput();
-          sub.appendChild(wrap);
-        });
-        scalesList.appendChild(sub);
-      }
+      // 4. Stage 4: rights-aware clinical scale library
+      document.getElementById('docScalesHeadTitle').innerText = '4. 임상척도 라이브러리';
+      if (window.NeuroScaleLibrary) window.NeuroScaleLibrary.render(symId);
 
       // 5. Stage 5: 추적관리 & 교육
       document.getElementById('docFollowupHeadTitle').innerText = `5. [${mod.name}] 추적관리 일정 및 교육자료`;
@@ -2313,10 +2501,10 @@ NEURO_DATA.other = {
   function printState(){return JSON.stringify([key(),fields.map(id=>el(id).value),el('visitIncludeVisuals').checked,typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'']);}
   let printing=false;
   function restore(){const next=key();if(next!==context){save();context=next;fields.forEach((id,i)=>el(id).value=(drafts[context]||[])[i]||'');}el('visitReviewed').checked=false;refreshVisitPrint();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const path=mod?.differentialPathways?.find(p=>p.id===AppState.selectedSubpath[mod.id]);el('visitContext').textContent=mod? '현재 선택: '+mod.name+(path?' / '+path.name:''):'';}
-  function guide(){const selected=AppState.selectedSymptoms;const texts=[];if(selected.includes('headache'))texts.push('<h3>두통 진료 준비</h3><p>두통이 있었던 날과 진통제를 복용한 날, 이전에 사용한 약을 정리해 주세요. 복용 중인 약 목록이나 기존 검사 결과가 있으면 진료에 도움이 됩니다.</p>');if(selected.includes('dizziness'))texts.push('<h3>어지럼 진료 준비</h3><p>언제 시작됐는지, 얼마나 지속되는지, 어떤 자세에서 생기는지 알려주세요. 이전에 받은 검사나 치료가 있으면 함께 말씀해 주세요.</p>');for(const id of selected){const mod=NEURO_DATA[id];if(!mod)continue;texts.push('<details><summary>'+safe(mod.name)+' · 검사 검토 안내</summary><p>아래는 진찰 후 필요에 따라 검토하는 항목입니다. 시행 여부는 담당 의사가 결정합니다.</p>'+ (mod.testConsiderations||[]).map(t=>'<section><h4>'+safe(t.name)+'</h4><p>'+safe(t.why)+'</p></section>').join('')+'</details>');}el('symptomVisitGuide').innerHTML=texts.join('');el('finishedVisitGuide').innerHTML=texts.join('');}
+  function guide(){const selected=AppState.selectedSymptoms;const texts=[];if(selected.includes('headache'))texts.push('<h3>두통 진료 준비</h3><p>두통이 있었던 날과 진통제를 복용한 날, 이전에 사용한 약을 정리해 주세요. 복용 중인 약 목록이나 기존 검사 결과가 있으면 진료에 도움이 됩니다.</p>');if(selected.includes('dizziness'))texts.push('<h3>어지럼 진료 준비</h3><p>언제 시작됐는지, 얼마나 지속되는지, 어떤 자세에서 생기는지 알려주세요. 이전에 받은 검사나 치료가 있으면 함께 말씀해 주세요.</p>');for(const id of selected){const mod=NEURO_DATA[id];if(!mod)continue;texts.push('<details><summary>'+safe(PATIENT_INTAKE_COPY.symptoms[id][0])+' · 진료 준비</summary><p>증상이 시작된 때와 불편한 상황을 알려주세요. 복용 중인 약이나 이전 검사 결과가 있으면 함께 보여주세요. 필요한 검사는 진찰 후 담당 의사가 설명해 드립니다.</p></details>');}el('symptomVisitGuide').innerHTML=texts.join('');el('finishedVisitGuide').innerHTML=texts.join('');}
   window.refreshVisitPrint=function(){el('visitPrint').disabled=!(NEURO_DATA[AppState.activeDoctorSymptom]&&el('visitReviewed').checked&&(fields.some(id=>el(id).value.trim())||(typeof window.hasEducationSelection==='function'&&window.hasEducationSelection())));};
   window.clearVisitDraft=function(){fields.forEach(id=>el(id).value='');if(context)delete drafts[context];el('visitReviewed').checked=false;refreshVisitPrint();};
-  window.printVisitSheet=async function(){if(el('visitPrint').disabled||printing)return;printing=true;const snapshot=printState();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];const sections=fields.map((id,i)=>{const value=el(id).value.trim();return value?'<section><h2>'+labels[i]+'</h2><p>'+safe(value)+'</p></section>':'';}).join('');el('visitPrintSheet').innerHTML='<header><p>김영재내과신경과의원</p><h1>진료 후 안내서</h1><p>'+safe(mod?.name)+' · '+new Date().toLocaleDateString('ko-KR')+'</p></header>'+sections+(typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'')+(el('visitIncludeVisuals').checked?'<div class="print-visuals"><figure class="education-art">'+el('clinicEducationArt').innerHTML+'</figure><div class="mechanism-box">'+el('docMechanismArea').innerHTML+'</div></div>':'')+'<footer>이 안내서는 진료 시 설명한 내용을 정리한 자료입니다. 약물명·용량·복용 횟수는 처방전을 따르세요.</footer>';const sheet=el('visitPrintSheet');namespaceMechanismMarkers(sheet);const contextAtPrint=AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom];try{await Promise.all(Array.from(sheet.querySelectorAll('img')).map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(new Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts&&document.fonts.ready)await document.fonts.ready;if(snapshot!==printState()||el('visitPrint').disabled||contextAtPrint!==AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom])return;document.body.classList.add('visit-printing');window.print();}catch(error){alert('그림을 준비하지 못해 인쇄를 중단했습니다. 파일을 다시 열고 시도해 주세요.');}finally{printing=false;document.body.classList.remove('visit-printing');}};
+  window.printVisitSheet=async function(){if(el('visitPrint').disabled||printing)return;printing=true;const snapshot=printState();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];const sections=fields.map((id,i)=>{const value=el(id).value.trim();return value?'<section><h2>'+labels[i]+'</h2><p>'+safe(value)+'</p></section>':'';}).join('');el('visitPrintSheet').innerHTML='<header><p>NeuroDesk</p><h1>진료 후 안내서</h1><p>'+safe(mod?.name)+' · '+new Date().toLocaleDateString('ko-KR')+'</p></header>'+sections+(typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'')+(el('visitIncludeVisuals').checked?'<div class="print-visuals"><figure class="education-art">'+el('clinicEducationArt').innerHTML+'</figure><div class="mechanism-box">'+el('docMechanismArea').innerHTML+'</div></div>':'')+'<footer>이 안내서는 진료 시 설명한 내용을 정리한 자료입니다. 약물명·용량·복용 횟수는 처방전을 따르세요.</footer>';const sheet=el('visitPrintSheet');namespaceMechanismMarkers(sheet);const contextAtPrint=AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom];try{await Promise.all(Array.from(sheet.querySelectorAll('img')).map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(new Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts&&document.fonts.ready)await document.fonts.ready;if(snapshot!==printState()||el('visitPrint').disabled||contextAtPrint!==AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom])return;document.body.classList.add('visit-printing');window.print();}catch(error){alert('그림을 준비하지 못해 인쇄를 중단했습니다. 파일을 다시 열고 시도해 주세요.');}finally{printing=false;document.body.classList.remove('visit-printing');}};
   const oldToggle=toggleSymptom;toggleSymptom=function(id){oldToggle(id);guide();};
   function quickSummary(){const mod=NEURO_DATA[AppState.activeDoctorSymptom];if(!mod){el('visitQuickSummary').innerHTML='';return;}const questions=mod.questions||[];const answered=questions.filter(q=>AppState.answers[q.id]&&AppState.answers[q.id]!=='건너뜀');const flagged=answered.filter(q=>(q.options||[]).some(o=>o.text===AppState.answers[q.id]&&o.redFlag));el('visitQuickSummary').innerHTML='<h3>핵심 문진 요약</h3><p>'+safe(mod.name)+' · 응답 '+answered.length+'/'+questions.length+' · '+(AppState.isProxy?'보호자 대리 응답':'본인 응답')+'</p>'+(flagged.length?'<p class="quick-warning">위험신호로 표시된 응답 '+flagged.length+'건 · 아래 원문과 진찰로 확인하세요.</p>':'')+(answered.length?'<ul>'+answered.slice(0,3).map(q=>'<li><strong>'+safe(q.stem)+'</strong><span>'+safe(AppState.answers[q.id])+'</span></li>').join('')+'</ul>':'<p>문진 응답이 없습니다. 진료실에서 직접 확인하세요.</p>')+'<p class="field-note">응답 순서대로 최대 3개를 표시합니다. 자동 진단이나 위험신호 배제 결과가 아닙니다. 전체 응답과 위험신호는 아래에서 확인하세요.</p>';}
  const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();restore();quickSummary();};
@@ -2359,5 +2547,9 @@ NEURO_DATA.other = {
 })();
 
 </script>
+  <script src="scales/catalog.js"></script>
+  <script src="scales/library.js"></script>
+  <script src="clinical/headache-data.js"></script>
+  <script src="clinical/headache.js"></script>
 </body>
 </html>

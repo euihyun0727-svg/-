@@ -1,0 +1,280 @@
+{
+  "reviewed": "2026-10-27",
+  "deployment": "한국어 공개 정적 웹앱",
+  "registered": 7,
+  "grades": {
+    "A": 7,
+    "B": 0,
+    "C": 0
+  },
+  "originalCandidateCount": 85,
+  "excludedCount": 81,
+  "scales": [
+    {
+      "id": "phq9",
+      "name": "Patient Health Questionnaire-9",
+      "grade": "A",
+      "language": "ko",
+      "version": "INfORM-27Oct2019",
+      "questionCount": 9,
+      "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "license": "https://www.phqscreeners.com/select-screener",
+      "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+      "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+      "derivation": null,
+      "evidence": [
+        {
+          "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+          "access": "본문 및 한국어 PDF 링크 확인",
+          "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+        },
+        {
+          "url": "https://www.phqscreeners.com/select-screener",
+          "access": "본문 확인",
+          "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
+        },
+        {
+          "url": "https://www.phqscreeners.com/terms",
+          "access": "본문 확인",
+          "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
+        },
+        {
+          "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
+          "access": "PDF 본문 확인",
+          "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
+        }
+      ],
+      "decision": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    },
+    {
+      "id": "phq2",
+      "name": "Patient Health Questionnaire-2",
+      "grade": "A",
+      "language": "ko",
+      "version": "INfORM-27Oct2019",
+      "questionCount": 2,
+      "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "license": "https://www.phqscreeners.com/select-screener",
+      "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+      "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+      "derivation": "공식 PHQ 매뉴얼 p.3·7에 따라 같은 한국어 PHQ-9의 앞 2문항으로 구성. 독립된 한국어 PHQ-2 배포본이나 검증판이라고 주장하지 않습니다.",
+      "evidence": [
+        {
+          "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+          "access": "본문 및 한국어 PDF 링크 확인",
+          "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+        },
+        {
+          "url": "https://www.phqscreeners.com/select-screener",
+          "access": "본문 확인",
+          "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
+        },
+        {
+          "url": "https://www.phqscreeners.com/terms",
+          "access": "본문 확인",
+          "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
+        },
+        {
+          "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
+          "access": "PDF 본문 확인",
+          "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
+        }
+      ],
+      "decision": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    },
+    {
+      "id": "gad7",
+      "name": "Generalized Anxiety Disorder-7",
+      "grade": "A",
+      "language": "ko",
+      "version": "INfORM-27Oct2019",
+      "questionCount": 7,
+      "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "license": "https://www.phqscreeners.com/select-screener",
+      "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+      "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+      "derivation": null,
+      "evidence": [
+        {
+          "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+          "access": "본문 및 한국어 PDF 링크 확인",
+          "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+        },
+        {
+          "url": "https://www.phqscreeners.com/select-screener",
+          "access": "본문 확인",
+          "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
+        },
+        {
+          "url": "https://www.phqscreeners.com/terms",
+          "access": "본문 확인",
+          "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
+        },
+        {
+          "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
+          "access": "PDF 본문 확인",
+          "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
+        }
+      ],
+      "decision": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    },
+    {
+      "id": "gad2",
+      "name": "Generalized Anxiety Disorder-2",
+      "grade": "A",
+      "language": "ko",
+      "version": "INfORM-27Oct2019",
+      "questionCount": 2,
+      "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "license": "https://www.phqscreeners.com/select-screener",
+      "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+      "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+      "derivation": "공식 PHQ 매뉴얼 p.3·7에 따라 같은 한국어 GAD-7의 앞 2문항으로 구성. 독립된 한국어 GAD-2 검증판이라고 주장하지 않습니다.",
+      "evidence": [
+        {
+          "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+          "access": "본문 및 한국어 PDF 링크 확인",
+          "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+        },
+        {
+          "url": "https://www.phqscreeners.com/select-screener",
+          "access": "본문 확인",
+          "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
+        },
+        {
+          "url": "https://www.phqscreeners.com/terms",
+          "access": "본문 확인",
+          "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
+        },
+        {
+          "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
+          "access": "PDF 본문 확인",
+          "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
+        }
+      ],
+      "decision": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    },
+    {
+      "id": "phq4",
+      "name": "Patient Health Questionnaire-4",
+      "grade": "A",
+      "language": "ko",
+      "version": "INfORM-27Oct2019",
+      "questionCount": 4,
+      "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "license": "https://www.phqscreeners.com/select-screener",
+      "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+      "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+      "derivation": null,
+      "evidence": [
+        {
+          "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+          "access": "본문 및 한국어 PDF 링크 확인",
+          "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+        },
+        {
+          "url": "https://www.phqscreeners.com/select-screener",
+          "access": "본문 확인",
+          "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
+        },
+        {
+          "url": "https://www.phqscreeners.com/terms",
+          "access": "본문 확인",
+          "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
+        },
+        {
+          "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
+          "access": "PDF 본문 확인",
+          "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
+        }
+      ],
+      "decision": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    },
+    {
+      "id": "phq8",
+      "name": "Patient Health Questionnaire-8",
+      "grade": "A",
+      "language": "ko",
+      "version": "INfORM-27Oct2019",
+      "questionCount": 8,
+      "source": "https://inform-iadr.com/wp-content/uploads/2024/03/DC-TMD-Korean-Assessment-Instruments_2019_10_27.pdf",
+      "license": "https://www.phqscreeners.com/select-screener",
+      "attribution": "Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute. Korean translation by Jin-Woo Chung and Ji-Woon Park (Seoul National University).",
+      "changes": "선택 입력·합산 UI 추가, 상자 표시 지시를 화면 선택으로 대체, 개인정보 기입란 제외. 척도 문항·선택지·배점 유지. 번역판의 심리측정 검증과 이 웹 구현의 임상 검증은 별개입니다.",
+      "derivation": "공식 PHQ 매뉴얼 p.3·7에 따라 같은 한국어 PHQ-9에서 9번 문항을 제외한 형태. 자해·자살 생각 문항을 포함하지 않아 이를 확인하는 검사로 사용할 수 없습니다.",
+      "evidence": [
+        {
+          "url": "https://inform-iadr.com/index.php/tmd-assessmentdiagnosis/dc-tmd-translations/",
+          "access": "본문 및 한국어 PDF 링크 확인",
+          "note": "Korean Completed Oct2019 · Jin-Woo Chung, Ji-Woon Park."
+        },
+        {
+          "url": "https://www.phqscreeners.com/select-screener",
+          "access": "본문 확인",
+          "note": "PHQ/GAD 및 번역의 복제·표시·배포 허용 안내 확인. 한국어는 INfORM 승인 27Oct2019 번역판을 사용."
+        },
+        {
+          "url": "https://www.phqscreeners.com/terms",
+          "access": "본문 확인",
+          "note": "PHQ 자료의 일반 저작권 제한 예외와 임상의 확인·임상 진단 필요 조건 확인."
+        },
+        {
+          "url": "https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf",
+          "access": "PDF 본문 확인",
+          "note": "p.3·6·7: 범위·합산·선별 기준과 번역판의 PHQ-2/8·GAD-2 구성 허용 확인. 진단 자동화는 하지 않음."
+        }
+      ],
+      "decision": "한국어 페이지에 복제·번역·표시·배포의 별도 허가 불필요 명시 · 출처·저작권·번역자 표시 유지",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    },
+    {
+      "id": "fourat",
+      "name": "4AT: Rapid Assessment Test for Delirium and Cognitive Impairment",
+      "grade": "A",
+      "language": "ko",
+      "version": "1.2",
+      "questionCount": 4,
+      "source": "https://www.the4at.com/wp-content/uploads/2026/07/4AT_Korean_version.pdf",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "4AT © 2011–2014 Alasdair MacLullich, Tracy Ryan and Helen Cash. Licensed under CC BY 4.0.",
+      "changes": "웹 입력·자동 합산 UI 추가, 개인정보 기입란 제외. 문항·선택지·배점 유지. 원 개발자의 보증·승인을 의미하지 않습니다. No warranty is given as to accuracy or fitness for purpose.",
+      "derivation": null,
+      "evidence": [
+        {
+          "url": "https://www.the4at.com/wp-content/uploads/2026/07/4AT_Korean_version.pdf",
+          "access": "PDF 1쪽 본문 확인",
+          "note": "4개 항목·선택지·배점·총점 구간을 원본과 대조. PDF 시각 검증은 미실시."
+        },
+        {
+          "url": "https://www.the4at.com/attribution",
+          "access": "본문 확인",
+          "note": "복제·공유·각색 및 상업적 이용 허용. 출처·라이선스·변경사항 표시 및 면책 유지."
+        },
+        {
+          "url": "https://www.the4at.com/userguide",
+          "access": "본문 확인",
+          "note": "0~12, 4 이상 섬망 가능, 1~3 인지장애 가능. 0점도 배제 진단 아님."
+        }
+      ],
+      "decision": "CC BY 4.0 · 출처·라이선스·변경사항·면책 표시 조건",
+      "clinicalValidation": "별도 웹 구현 검증은 미실시. INfORM 해당 번역판의 심리측정 검증은 확인 필요.",
+      "insurance": "확인 필요 · 수가·인정기준 미검증"
+    }
+  ],
+  "limitations": [
+    "권리자의 명시적 허용 안내를 근거로 한 구현 범위이며 모든 법적 문제가 발생하지 않는다는 보증이 아님.",
+    "INfORM PDF는 텍스트를 직접 확인했으나 PDF 스크린샷 도구가 이미지를 반환하지 않아 시각 대조는 미완료.",
+    "Pfizer 원래 한국어 PDF 주소 직접 열기는 실패. 이번 구현은 해당 파일을 추정 복원하지 않고 INfORM 공식 목록에 연결된 별도 승인 한국어판을 사용."
+  ]
+}
