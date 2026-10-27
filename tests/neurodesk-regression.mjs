@@ -65,7 +65,7 @@ function radio(env,name,value){for(const n of env.doc.querySelectorAll('input[na
 
 var html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
 var externalScripts={};
-for(const path of ['scales/catalog.js','scales/library.js','clinical/headache-data.js','clinical/headache.js','clinical/dizziness-data.js','clinical/dizziness.js'])externalScripts[path]=await fs.readFile(new URL('../'+path,import.meta.url),'utf8');
+for(const path of [...html.matchAll(/<script[^>]*src="([^"]+)"/g)].map(m=>m[1]))externalScripts[path]=await fs.readFile(new URL('../'+path,import.meta.url),'utf8');
 
 
 var env=makeEnv(html);
@@ -95,14 +95,14 @@ env.ctx.switchDocStage('stage5_followup');env.doc.getElementById('eduConfirmed')
 check('legacy approval enables print',!env.doc.getElementById('eduPrintButton').disabled);
 env.eval("AppState.selectedSubpath.sleep='osa'");env.ctx.renderDoctorStage();
 check('legacy invalidates on path switch',env.doc.getElementById('eduPrintButton').disabled&&!env.doc.getElementById('eduConfirmed').checked);
-check('safety followup restored',env.doc.getElementById('docFollowupTableBody').textContent.includes('양압기 순응도'));
-check('original schedule reference retained',env.doc.getElementById('docFollowupTableBody').textContent.includes('증상군 참고'));
+check('safety followup restored',env.doc.getElementById('docFollowupTableBody').textContent.includes(env.ctx.NeuroClinicalModules?.sleep?'사용시간':'양압기 순응도'));
+check('original schedule reference retained',env.doc.getElementById('docFollowupTableBody').textContent.includes(env.ctx.NeuroClinicalModules?.sleep?'담당의 결정':'증상군 참고'));
 check('root image path',env.doc.querySelector('#clinicEducationArt img').getAttribute('src')==='sleep.png');
 
 
 var e=makeEnv(html);
 e.ctx.toggleSymptom('sleep');radio(e,'experienceType','return');radio(e,'returnCourse','악화');radio(e,'returnMedicine','불편감 있음');radio(e,'returnNew','새 증상 있음');e.doc.getElementById('returnNote').value='검증용 변화 메모';
-e.ctx.startPatientIntake();check('return worsening detailed',e.doc.getElementById('screenQuestionnaire').style.display==='block'&&e.eval('AppState.queue.length')===4);
+e.ctx.startPatientIntake();check('return worsening detailed',e.doc.getElementById('screenQuestionnaire').style.display==='block'&&e.eval('AppState.queue.length===NEURO_DATA.sleep.questions.length'));
 e.ctx.switchMode('doctor');check('detailed summary accurate',e.doc.getElementById('experienceSummary').textContent.includes('상세 문진을 함께 진행'));
 e.ctx.copyEmrText();await Promise.resolve();check('EMR return note',e.clips[0].includes('검증용 변화 메모')&&e.clips[0].includes('약 사용 중 불편감: 불편감 있음'));
 check('full EMR question',e.clips[0].includes('코골이가 심하거나 자다가 숨이 컥 하고 멈춘다는 말을 듣습니까?'));
@@ -116,7 +116,8 @@ check('print called and class cleared',e.prints===1&&!e.doc.body.classList.conta
 e.doc.getElementById('visitDiagnosis').value='검증용 안내';e.doc.getElementById('visitDiagnosis').dispatch('input');
 check('editing invalidates',!e.doc.getElementById('visitReviewed').checked&&e.doc.getElementById('visitPrint').disabled);
 e.eval("AppState.selectedSubpath.sleep='osa'");e.ctx.renderDoctorStage();check('disease isolates draft and selection',e.doc.getElementById('visitDiagnosis').value===''&&!e.ctx.hasEducationSelection());
-e.eval("AppState.selectedSubpath.sleep='insomnia'");e.ctx.renderDoctorStage();check('same disease restores draft',e.doc.getElementById('visitDiagnosis').value==='검증용 안내'&&e.ctx.hasEducationSelection());
+e.eval("AppState.selectedSubpath.sleep='insomnia'");e.ctx.renderDoctorStage();check('path return follows module isolation policy',e.ctx.NeuroClinicalModules?.sleep?e.doc.getElementById('visitDiagnosis').value===''&&!e.ctx.hasEducationSelection():e.doc.getElementById('visitDiagnosis').value==='검증용 안내'&&e.ctx.hasEducationSelection());
+if(e.ctx.NeuroClinicalModules?.sleep){e.doc.getElementById('visitDiagnosis').value='새로 작성한 검증 안내';e.doc.getElementById('visitDiagnosis').dispatch('input');}
 check('restored draft unapproved',!e.doc.getElementById('visitReviewed').checked);
 e.doc.getElementById('visitReviewed').checked=true;e.ctx.refreshVisitPrint();var release;e.doc.fonts.ready=new Promise(r=>release=r);var pending=e.ctx.printVisitSheet();
 e.doc.getElementById('visitCare').value='변경된 안내';e.doc.getElementById('visitCare').dispatch('input');e.doc.getElementById('visitReviewed').checked=true;e.ctx.refreshVisitPrint();release();await pending;
@@ -132,7 +133,7 @@ check('new patient clears old completion',e.doc.getElementById('patientSummaryCa
 var all=makeEnv(html);var ids=all.eval('Object.keys(NEURO_DATA)');var pathCount=0;
 for(const id of ids){
  all.eval('AppState.selectedSymptoms=['+JSON.stringify(id)+'];AppState.activeDoctorSymptom='+JSON.stringify(id));all.ctx.initDoctorDashboard();
- check(id+' image file',all.doc.querySelector('#clinicEducationArt img').getAttribute('src')===id+'.png');
+ check(id+' image file',all.doc.querySelector('#clinicEducationArt img')?.getAttribute('src')===id+'.png');
  for(const sub of all.eval('NEURO_DATA['+JSON.stringify(id)+'].differentialPathways.map(p=>p.id)')){
  all.eval('AppState.selectedSubpath['+JSON.stringify(id)+']='+JSON.stringify(sub));all.ctx.renderDoctorStage();
  check(sub+' treatment and education',all.doc.getElementById('docSubpathContent').textContent.trim().length>0&&all.doc.getElementById('docPatientLeafletArea').textContent.includes('질환이 생기는 원리'));pathCount++;

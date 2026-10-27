@@ -1,0 +1,156 @@
+{
+  "base": "6324d33baf5fcb8896d22f8e27bb6443044b6489",
+  "modules": {
+    "headache": "f66a1b5d0b1ee42b24acd4ca0527d08aa473ec0c502b160514d9e60132cc7ac0",
+    "dizziness": "1aac907f4ee0fb7e8f81afed83aa7c5836aec6d570698456dcfddf76cfdc315c",
+    "cognition": "c74920885b3cd8093d1db9be264992bb30801368d61db8797723bfb1451891f1",
+    "sleep": "bce97f87ba48e9d8f6926c6ff211b3177dd06563f1ec7906b2fea53c012ad11d",
+    "numbness": "d942814078eaa462d11d8261aaa6221e8ff43828847fe3ce0515570f5308d6d9",
+    "tremor": "0ebe30b5cf34f0216f16f1bd05a8f368379e64e56f381361409ed1dc42f56cc6",
+    "tinnitus": "7bd168860740be8992591daad2404a24a4d3d300db82cb4b56e560249ab7a74a",
+    "weakness": "dc8981450ec7c15a571af96395541749fc3748fd15e2d36149bac223733dea1d",
+    "syncope": "7068dbedd5e3fc02aeabe53b91dfb62b6ad53ff2966d2fa17eb17fc85e9b09ca",
+    "seizure": "1785595f3570dace10abb4d5db32251be1709f386fb969d8d07da822a37a038f",
+    "gait": "fd34f412080970d7a9498dc9af98183372dfd8aa89a36f1f8b79b40dfe53a31b",
+    "other": "a2bb78fa7d92103b67fc1540bb2c95066a10e3738d64f2f1f70ac6005ce3771e"
+  },
+  "education": {
+    "migraine": {
+      "module": "headache",
+      "hash": "cb5e76d620419b1fea4314203e2e97708c47e2bb7e5fb95052ce881c38b0fafa"
+    },
+    "tension": {
+      "module": "headache",
+      "hash": "589361147f02192b061422d3db1f15188d356858cd2656f7113ad8c3cb7b2162"
+    },
+    "moh": {
+      "module": "headache",
+      "hash": "40b305c5313dd5eb0ee282fe783419efb7240c6892431cb7e18d68771baf7314"
+    },
+    "cluster": {
+      "module": "headache",
+      "hash": "41cb5cf78223d79743d2070a62f47b7458fe814eefaed2b4c9c4c85133af022d"
+    },
+    "headache_trigeminal_neuralgia": {
+      "module": "headache",
+      "hash": "645c92d0862cfac09cb79b4953a600ebe8e53228dc14873f1ac02205d5e716c1"
+    },
+    "secondary_headache_eval": {
+      "module": "headache",
+      "hash": "dc081d688101ab585922ee601fdcf2cf16f58ef618156092891def06b4f2c475"
+    },
+    "bppv": {
+      "module": "dizziness",
+      "hash": "4f4c2b3679c0d783dc4ea46dc0dd298281666612e595eb2d306e89ee9fe86aea"
+    },
+    "vestibular_migraine": {
+      "module": "dizziness",
+      "hash": "cd08a875cd92c7b11a09c41ed096119fab7dc56c6164896c05c8cb3a7c1d5060"
+    },
+    "orthostatic_hypo": {
+      "module": "dizziness",
+      "hash": "e540071a4588f0b6da7001e750897517937d9c5fc01c1660e35988aa9fece436"
+    },
+    "meniere": {
+      "module": "dizziness",
+      "hash": "baf219b5a56a8cdb2ba027796231a92d87afa623201aca015fe60233bad36f85"
+    },
+    "auvp": {
+      "module": "dizziness",
+      "hash": "5ea1a9a1d8ffd84bcf6218d06080b0fb1f7b0b64af7f7856465decbc43fecdef"
+    },
+    "pppd": {
+      "module": "dizziness",
+      "hash": "bc242201513457f64f69cf9d684c15a0684bec21ff7b9cf61494fbbd1c5104cd"
+    },
+    "bilateral_vestibulopathy": {
+      "module": "dizziness",
+      "hash": "ab82ea601020cd280f29983e17ed4b37470d98c16c434b10cb16b378bb1ee4df"
+    },
+    "central_dizziness_eval": {
+      "module": "dizziness",
+      "hash": "3b2c74a94396e0db7dc570918771bbb7853c0ce09e4c5944fbc89190c244d729"
+    },
+    "mci": {
+      "module": "cognition",
+      "hash": "f1eba29927aa91699de76cca7d771257d4757838c5fb71c238d7ae541d6470d4"
+    },
+    "alzheimer": {
+      "module": "cognition",
+      "hash": "6d4fafae31899f7a244daee99f17c62eb539f63f6562683fce2e067836d62bcd"
+    },
+    "insomnia": {
+      "module": "sleep",
+      "hash": "17014e63c23999bb3292c59736c79fd05cb65c1447f74cbc17cbc9560fcb08c0"
+    },
+    "osa": {
+      "module": "sleep",
+      "hash": "f62b2a0690435b9c22cd1cd7d69d380d6d96e3a192cb69fc085e5d35ce8427ba"
+    },
+    "polyneuropathy": {
+      "module": "numbness",
+      "hash": "17987e77d9fabe6311fdf82bc99243a97a3905d54de43a057182168b559934cb"
+    },
+    "cts": {
+      "module": "numbness",
+      "hash": "521c413ecaedb8e87ee701919185b9de17a4bca659dbc9b4d451117875e7453a"
+    },
+    "essential_tremor": {
+      "module": "tremor",
+      "hash": "44b23dadf829fe0f8089d43e25860f2c6b274b3d59df264e6ea2c4fc38fb998e"
+    },
+    "parkinson_disease": {
+      "module": "tremor",
+      "hash": "c1ba1d7744d9933b4515f9a2c6ecae85525567ea719e07d739b582a0ebc032f1"
+    },
+    "sensorineural_tin": {
+      "module": "tinnitus",
+      "hash": "caed42bd47903b972972ca6d79b4475c86068121a36fbd826ce127d5a13c9216"
+    },
+    "acute_stroke_eval": {
+      "module": "weakness",
+      "hash": "0be0613f3ffa49eb2ace821bb9f6a3375c692fdb5264d1da5321851ce361c2f2"
+    },
+    "vasovagal": {
+      "module": "syncope",
+      "hash": "ba6b895be7cae15c987988ae24b3ec163dee8c5bf731b55ca2df24ca0bfb291a"
+    },
+    "first_unprovoked_seizure": {
+      "module": "seizure",
+      "hash": "02262a5e7aef28c859f2c79d41cb2bc5e689e74e2509031e0a890b1ba7af7a77"
+    },
+    "nph_eval": {
+      "module": "gait",
+      "hash": "a6d82bf774f6bebbb887808e87544b1cdd5328aebba0c9478145b5fcade8874d"
+    },
+    "trigeminal_neuralgia": {
+      "module": "other",
+      "hash": "7707b2db828b448bb2037ea91ce5896cea6017ded885f30ac705ae731bfe7d23"
+    }
+  },
+  "patientCopy": {
+    "headache": "2ac234fa3a25d88b3af59786af1bb56fb11ad75152451e5219002805cace08ca",
+    "dizziness": "d31f28af906d32bbc19b8b455810ae9ead7f21fdf3352874fc0db875eab823be",
+    "cognition": "33965b81f1586292453ae573e9ed577aa59b87a6f7c819faca251d8ab9794c0e",
+    "sleep": "25b33a90b6ff5bb9eaafe368fd5ad75836355b90958e19554af019edaa4569d3",
+    "numbness": "124a5a2415515f8dfdee0405393564764f701b873c41eeadc9b3ff551d87cc58",
+    "tremor": "b08fe33990a17068019442c6aafaa38cfd50ed1e347a87a9eb7aa2705117eb4e",
+    "tinnitus": "5a7e3b18a4e6e0c590515066b55c7b92f2911d48ef4638e1426618a625e5fe53",
+    "weakness": "0e98d22cf508ceefb50df8050a7c460cccc4105d452409d940d311bc1a2c9d5f",
+    "syncope": "ffef9d04df91755a15f8ae7cbc1de0900c6ee93512eb9128f70fc3092f9ef4c3",
+    "seizure": "141d815b489fe90d2c0852e7f9251990fbe77481120478b0cb44a76d6dd0f241",
+    "gait": "5ee86e9a60c4ff772b68778892a88e49053f4ac3296f73b2d88cf7aedfcae64b",
+    "other": "3879f9154052c509049120ba5f6846dcffcdac6948035b1a20d8bedaef697db4"
+  },
+  "files": {
+    "clinical/headache-data.js": "78902920b1b83a0dd26d34beef52a6f80fec37c8a3e075177ad8b350d24cebd7",
+    "clinical/headache.js": "5e9cb54a2e8de806d3931c3f2da60204520d103aaf61290c6f411f9e1bba9eef",
+    "clinical/headache.css": "6f6a858fe446ada19ee33655779d0cf6364568ef742fb9dc093a7eafe569d620",
+    "clinical/dizziness-data.js": "dd6ac93de17ec3ba97cbd39daecb726505aabd513ff96f795c50868e8fc3bdfd",
+    "clinical/dizziness.js": "f115761f2fc226a50e871528db1ade13e96a427ee09ca26939825167c9f8a354",
+    "clinical/dizziness.css": "c5a6bc792b05f6bda6d586eb09cb0a7d0751d58a96b6273f80bab64b285b98ab",
+    "scales/catalog.js": "0db67ea493c2a0c749a4c00ddd7fb359297652158e0178509014f9e937f802eb",
+    "scales/library.js": "89b37aa47c9b480a3459f12677287184b2551c1d00f3f1a9edc85d5a27b2c759",
+    "scales/library.css": "29966a8652c3ea643d6bd309e7c8a694399301e1a89679665263aaad1c802ca1"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "headache": [
+    "migraine",
+    "tension",
+    "moh",
+    "cluster",
+    "headache_trigeminal_neuralgia",
+    "secondary_headache_eval"
+  ],
+  "dizziness": [
+    "bppv",
+    "vestibular_migraine",
+    "orthostatic_hypo",
+    "meniere",
+    "auvp",
+    "pppd",
+    "bilateral_vestibulopathy",
+    "central_dizziness_eval"
+  ],
+  "cognition": [
+    "mci",
+    "alzheimer"
+  ],
+  "sleep": [
+    "insomnia",
+    "osa"
+  ],
+  "numbness": [
+    "polyneuropathy",
+    "cts"
+  ],
+  "tremor": [
+    "essential_tremor",
+    "parkinson_disease"
+  ],
+  "tinnitus": [
+    "sensorineural_tin"
+  ],
+  "weakness": [
+    "acute_stroke_eval"
+  ],
+  "syncope": [
+    "vasovagal"
+  ],
+  "seizure": [
+    "first_unprovoked_seizure"
+  ],
+  "gait": [
+    "nph_eval"
+  ],
+  "other": [
+    "trigeminal_neuralgia"
+  ]
+}

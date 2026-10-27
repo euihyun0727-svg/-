@@ -1,3 +1,4 @@
+import {preserved} from './clinical-preservation.mjs';
 import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import {makeEnv,regressionSummary} from './neurodesk-regression.mjs';
@@ -23,10 +24,10 @@ function patient(answers={},ids=['dizziness']){
  e.ctx.switchMode('doctor');return {e,shown};
 }
 ok('12 groups',e.eval('Object.keys(NEURO_DATA).length')===12);
-ok('other11 clinical data unchanged',hash(e.eval("JSON.stringify(Object.fromEntries(Object.entries(NEURO_DATA).filter(([id])=>id!=='dizziness')))"))===expected.otherModules);
-ok('other11 education unchanged',hash(e.eval("JSON.stringify(Object.fromEntries(Object.entries(EDUCATION_V2).filter(([id])=>!window.NeuroDizzinessData.paths.some(p=>p.id===id))))"))===expected.otherEducation);
+ok('unexpanded clinical data unchanged',preserved(e,'modules',["dizziness"]));
+ok('unexpanded education unchanged',preserved(e,'education',["dizziness"]));
 for(const [name,h]of Object.entries(expected.files))ok('unchanged '+name,hash(await fs.readFile(new URL('../'+name,import.meta.url)))===h);
-ok('other patient wording unchanged',hash(e.eval("JSON.stringify(Object.fromEntries(Object.entries(PATIENT_INTAKE_COPY.questions).filter(([id])=>!id.startsWith('diz_'))))"))===expected.patientCopy);
+ok('unexpanded patient wording unchanged',preserved(e,'copy',["dizziness"]));
 ok('8 paths / original3 retained',D.paths.length===8&&['bppv','vestibular_migraine','orthostatic_hypo'].every(id=>D.paths.some(p=>p.id===id)));
 for(const source of Object.values(D.sources))ok('source metadata',source.title&&source.date&&source.access&&new URL(source.url).protocol==='https:');
 for(const p of D.paths){
