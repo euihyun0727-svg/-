@@ -1,0 +1,301 @@
+{
+  "remaining-clinical.mjs": {
+    "modules": [
+      "cognition",
+      "sleep",
+      "numbness"
+    ],
+    "pathCount": 23,
+    "clinicalChecks": 496,
+    "regressionChecks": 110,
+    "cases": [
+      {
+        "module": "cognition",
+        "case": "응급 위험 응답",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "문진·조건 분기·미확인",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "subjective_cognitive_decline 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "mci 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "alzheimer 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "vascular_cognitive_impairment 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "dlb 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "ftd 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "nph_cognition 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "delirium 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "rapid_cognitive_decline 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "cognition",
+        "case": "안정 재진·추적·새 환자 초기화",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "수면/부상 안전 위험 응답",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "문진·조건 분기·미확인",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "insomnia 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "osa 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "rls 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "plmd 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "rbd 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "narcolepsy 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "circadian_sleep 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "central_sleep_apnea 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "sleep",
+        "case": "안정 재진·추적·새 환자 초기화",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "응급 위험 응답",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "문진·조건 분기·미확인",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "polyneuropathy 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "small_fiber_neuropathy 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "cts 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "ulnar_neuropathy 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "radiculopathy 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "acute_neuropathy_eval 검토·검사·치료·교육·모의 인쇄",
+        "result": "PASS"
+      },
+      {
+        "module": "numbness",
+        "case": "안정 재진·추적·새 환자 초기화",
+        "result": "PASS"
+      }
+    ],
+    "FAIL": 0,
+    "NOT_TESTED": [
+      "actual browser/mobile/accessibility",
+      "real PNG decode",
+      "OS clipboard permission",
+      "A4 visual pagination",
+      "Netlify deployment",
+      "clinical sign-off",
+      "unverified Korean indications/coverage"
+    ]
+  },
+  "headache-clinical.mjs": {
+    "headacheChecks": 247,
+    "cases": [
+      {
+        "case": "삽화편두통",
+        "status": "PASS"
+      },
+      {
+        "case": "만성편두통",
+        "status": "PASS"
+      },
+      {
+        "case": "전조편두통",
+        "status": "PASS"
+      },
+      {
+        "case": "약물과용두통",
+        "status": "PASS"
+      },
+      {
+        "case": "군발두통",
+        "status": "PASS"
+      },
+      {
+        "case": "벼락두통",
+        "status": "PASS"
+      },
+      {
+        "case": "예방약 복용 중 재진",
+        "status": "PASS"
+      },
+      {
+        "case": "고령자의 새 두통",
+        "status": "PASS"
+      }
+    ],
+    "FAIL": 0,
+    "NOT_TESTED": [
+      "real browser/layout",
+      "PNG decoding",
+      "clipboard permissions",
+      "A4 visual layout",
+      "Netlify deployment",
+      "clinical sign-off",
+      "2026 Korean coverage criteria"
+    ]
+  },
+  "dizziness-clinical.mjs": {
+    "dizzinessChecks": 381,
+    "hintsCombinations": 27,
+    "cases": [
+      {
+        "name": "후반고리관 BPPV",
+        "result": "PASS"
+      },
+      {
+        "name": "수평 향지성·원지성 BPPV",
+        "result": "PASS"
+      },
+      {
+        "name": "전정편두통",
+        "result": "PASS"
+      },
+      {
+        "name": "메니에르병",
+        "result": "PASS"
+      },
+      {
+        "name": "급성 일측 전정병증·HINTS 적용 조건",
+        "result": "PASS"
+      },
+      {
+        "name": "PPPD",
+        "result": "PASS"
+      },
+      {
+        "name": "양측 전정병증",
+        "result": "PASS"
+      },
+      {
+        "name": "기립성저혈압·실측 계산",
+        "result": "PASS"
+      },
+      {
+        "name": "중추성 위험신호·전원 우선",
+        "result": "PASS"
+      },
+      {
+        "name": "급성 난청 동반 어지럼",
+        "result": "PASS"
+      },
+      {
+        "name": "안정 재진·추적 지표",
+        "result": "PASS"
+      }
+    ],
+    "regressionChecks": 110,
+    "FAIL": 0,
+    "NOT_TESTED": [
+      "real browser/mobile/accessibility",
+      "real PNG decode",
+      "OS clipboard permission",
+      "A4 visual pagination",
+      "source link click navigation",
+      "Netlify deployment",
+      "clinical sign-off",
+      "Korean approvals/coverage"
+    ]
+  },
+  "scale-library.mjs": {
+    "scaleChecks": 594,
+    "fourATCombinations": 54,
+    "regressionChecks": 110,
+    "browserUI": "not tested",
+    "externalLinkNavigation": "not tested; URLs/attributes checked",
+    "imageAndPrint": "mocked"
+  }
+}
