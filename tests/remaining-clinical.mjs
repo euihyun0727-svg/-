@@ -54,7 +54,7 @@ for(const id of active){
   ok(p.id+' source refs',p.sources.every(s=>c.sources[s])&&p.criteria.every(x=>c.sources[x.source])&&p.tests.every(x=>x.sourceIds.every(s=>c.sources[s]))&&p.therapies.every(x=>x.sourceIds.every(s=>c.sources[s])));
   ok(p.id+' render',d.doc.getElementById('cmPlan').textContent.includes('질환별 의사 검토'));
   ok(p.id+' own followup',d.doc.getElementById('docFollowupTableBody').textContent.includes(p.name));
-  ok(p.id+' own education',d.doc.getElementById('docPatientLeafletArea').textContent.includes(p.education[0]));
+  ok(p.id+' own education',d.doc.getElementById('docPatientLeafletArea').textContent.includes(d.ctx.NeuroPatientEducation?.paths[p.id]?.sections[0].text||p.education[0]));
   ok(p.id+' SVG',!!d.doc.querySelector('#docMechanismArea svg'));
   ok(p.id+' private new path image policy',!d.doc.getElementById('clinicEducationArt').hidden||!d.doc.querySelector('#clinicEducationArt img'));
   const choices=d.doc.querySelectorAll('[data-cm-criterion]');ok(p.id+' unchecked criteria',choices.every(n=>n.value===''));
