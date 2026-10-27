@@ -1440,6 +1440,307 @@ NEURO_DATA.other = {
       renderSymptomGrid();
     };
 
+    // Patient wording only. Original clinician data, answer values and safety flags stay unchanged.
+    const PATIENT_INTAKE_COPY = {
+  "symptoms": {
+    "headache": [
+      "두통",
+      "머리가 아프거나 자주 반복되는 두통"
+    ],
+    "dizziness": [
+      "어지럼",
+      "빙빙 돌거나 아찔하고 중심을 잡기 어려움"
+    ],
+    "cognition": [
+      "기억력 저하",
+      "자주 잊어버리거나 일상생활에서 실수가 늘어남"
+    ],
+    "sleep": [
+      "잠에 관한 불편",
+      "잠들기 어렵거나 자주 깨고, 자는 동안 불편함"
+    ],
+    "numbness": [
+      "손발 저림·감각 변화",
+      "손발이 저리거나 감각이 달라짐"
+    ],
+    "tremor": [
+      "떨림·움직임 불편",
+      "손이나 몸이 떨리거나 움직임이 느리고 뻣뻣함"
+    ],
+    "tinnitus": [
+      "귀에서 나는 소리",
+      "귀에서 삐 소리나 윙윙거리는 소리가 들림"
+    ],
+    "weakness": [
+      "힘 빠짐·팔다리 움직임 불편",
+      "팔이나 다리에 힘이 빠지거나 움직이기 어려움"
+    ],
+    "syncope": [
+      "정신을 잃고 쓰러짐",
+      "정신을 잃고 쓰러졌거나 잠시 기억이 끊김"
+    ],
+    "seizure": [
+      "경련·몸이 굳거나 떨리는 증상",
+      "몸이 굳거나 떨리고 잠시 반응하지 못함"
+    ],
+    "gait": [
+      "걷기·균형 불편",
+      "걷기 어렵거나 비틀거리고 자주 넘어짐"
+    ],
+    "other": [
+      "그 밖의 불편",
+      "얼굴이 떨리거나 찌릿하게 아픈 증상 등"
+    ]
+  },
+  "questions": {
+    "ha_onset": [
+      "두통은 언제 시작됐고, 최근에는 어떻게 달라졌습니까?",
+      [
+        "최근 며칠 사이 갑자기 시작됨",
+        "몇 달~몇 년 전부터 가끔 반복됨",
+        "오래전부터 있었지만 최근 더 자주 또는 더 심하게 아픔"
+      ]
+    ],
+    "ha_thunderclap": [
+      "🚨 두통이 시작된 지 1분 안에 망치로 맞은 듯 매우 심해졌습니까?",
+      [
+        "예 (1분 안에 통증이 가장 심해짐)",
+        "아니오 (서서히 심해짐)"
+      ]
+    ],
+    "ha_freq": [
+      "한 달에 머리가 아픈 날은 평균 며칠입니까?",
+      [
+        "한 달에 1~4일",
+        "한 달에 5~14일",
+        "한 달에 15일 이상"
+      ]
+    ],
+    "ha_features": [
+      "머리가 어떻게 아프고, 움직이면 어떻게 달라집니까?",
+      [
+        "한쪽 머리가 맥박 뛰듯 욱신거리고 계단을 오르면 더 아픔",
+        "머리 전체나 목 뒤가 조이듯 무겁고 움직여도 더 아프지는 않음",
+        "한쪽 눈 주변이 매우 아프고 눈물이나 콧물도 남"
+      ]
+    ],
+    "ha_associated": [
+      "두통과 함께 속이 메스껍거나 토하고, 빛이나 소리가 괴롭게 느껴집니까?",
+      [
+        "속이 메스껍거나 토하고 빛·소리도 괴롭게 느껴짐",
+        "함께 나타나는 증상 없음"
+      ]
+    ],
+    "ha_med_freq": [
+      "머리가 아플 때 먹는 약은 한 달에 며칠 복용하십니까?",
+      [
+        "한 달에 5일 미만",
+        "한 달에 10일 이상",
+        "거의 매일 복용"
+      ]
+    ],
+    "diz_type": [
+      "어지러울 때 어떤 느낌이 가장 두드러집니까?",
+      [
+        "세상이나 내가 빙빙 도는 느낌",
+        "일어설 때 눈앞이 깜깜하고 아득해짐",
+        "걸을 때 중심을 못 잡고 비틀거림"
+      ]
+    ],
+    "diz_duration": [
+      "한 번 어지러우면 얼마나 오래 지속됩니까?",
+      [
+        "머리를 움직일 때 몇 초~1분 이내",
+        "몇 분~몇 시간",
+        "며칠 동안 멈추지 않고 계속됨"
+      ]
+    ],
+    "diz_trigger": [
+      "누웠다 일어나거나 자다가 고개를 돌릴 때 심해집니까?",
+      [
+        "예 (특정 자세로 머리를 움직이면 바로 어지러움)",
+        "아니오 (자세와 관계없이 계속되거나 일어설 때만 아득함)"
+      ]
+    ],
+    "diz_redflags": [
+      "🚨 어지럼과 함께 다음 증상이 있습니까?",
+      [
+        "물체가 둘로 보이거나 발음이 어눌하고 팔다리를 움직이기 어려움",
+        "부축 없이는 혼자 서 있거나 걸을 수 없음",
+        "함께 나타나는 증상 없음"
+      ]
+    ],
+    "cog_onset": [
+      "기억력이 언제부터, 어떻게 나빠졌습니까?",
+      [
+        "1~2년 전부터 서서히 나빠짐",
+        "몇 주~몇 달 사이 빠르게 나빠짐",
+        "뇌졸중을 앓은 뒤 또는 어느 시점마다 뚜렷하게 나빠짐"
+      ]
+    ],
+    "cog_memory_type": [
+      "최근 나눈 대화나 약속을 잊고 같은 질문을 반복합니까?",
+      [
+        "예 (힌트를 주어도 잘 기억하지 못함)",
+        "힌트를 주면 기억해냄"
+      ]
+    ],
+    "cog_daily_life": [
+      "돈 관리, 약 챙겨 먹기, 가전제품 사용 등에서 실수가 있습니까?",
+      [
+        "실수가 생겨 다른 사람의 도움이 필요함",
+        "혼자 일상생활과 사회활동을 할 수 있음"
+      ]
+    ],
+    "cog_triad": [
+      "🚨 기억력이 나빠지면서 발이 잘 안 떨어지거나 종종걸음을 걷고, 소변 실수도 생겼습니까?",
+      [
+        "예",
+        "아니오 (걷기와 소변 보기에 문제없음)"
+      ]
+    ],
+    "slp_pattern": [
+      "잠과 관련해 가장 불편한 점은 무엇입니까?",
+      [
+        "잠들기까지 30분 이상 걸림",
+        "자다가 자주 깨고 다시 잠들기 어려움",
+        "원하는 시간보다 너무 일찍 깸"
+      ]
+    ],
+    "slp_apnea": [
+      "코골이가 심하거나 자다가 숨이 멈춘다는 말을 듣습니까?",
+      [
+        "예 (아침에 머리가 아프거나 입이 마르기도 함)",
+        "아니오"
+      ]
+    ],
+    "slp_rls": [
+      "저녁이나 밤에 누우면 다리가 불편해서 움직이고 싶습니까?",
+      [
+        "예 (움직이면 잠시 편해짐)",
+        "아니오"
+      ]
+    ],
+    "slp_rbd": [
+      "🚨 꿈을 꾸면서 실제로 소리를 지르거나 주먹질·발길질을 합니까?",
+      [
+        "예",
+        "아니오"
+      ]
+    ],
+    "num_distribution": [
+      "어느 부위가 저리거나 감각이 달라졌습니까?",
+      [
+        "양쪽 발끝에서 시작해 발목 위쪽으로 비슷하게 올라옴",
+        "한쪽 손의 엄지·검지·중지가 주로 저림",
+        "목이나 허리 통증과 함께 한쪽 팔이나 다리로 뻗치는 느낌"
+      ]
+    ],
+    "num_redflags": [
+      "🚨 며칠 사이 힘이 빠지는 부위가 위로 퍼지거나, 소변·대변 조절에 문제가 생겼습니까?",
+      [
+        "예",
+        "아니오 (소변·대변에 문제없고 갑자기 힘이 빠지지 않음)"
+      ]
+    ],
+    "trm_type": [
+      "주로 언제 떨립니까?",
+      [
+        "손을 무릎에 가만히 얹고 쉴 때",
+        "글씨를 쓰거나 숟가락을 드는 등 손을 사용할 때"
+      ]
+    ],
+    "trm_features": [
+      "움직임이 느려지거나 몸이 뻣뻣해진 느낌이 있습니까?",
+      [
+        "예 (보폭이 좁아지거나 한쪽 팔을 덜 흔듦)",
+        "아니오 (움직임은 느려지지 않고 떨림만 있음)"
+      ]
+    ],
+    "tin_pulsatile": [
+      "귀에서 나는 소리가 심장 박동처럼 쿵쿵 또는 쉭쉭 규칙적으로 들립니까?",
+      [
+        "예",
+        "아니오 (매미 소리나 삐 소리처럼 계속 들림)"
+      ]
+    ],
+    "tin_sudden": [
+      "🚨 며칠 사이 귀에서 소리가 나면서 한쪽 귀가 갑자기 잘 안 들리게 됐습니까?",
+      [
+        "예",
+        "아니오 (잘 들리거나 서서히 나빠짐)"
+      ]
+    ],
+    "wek_onset": [
+      "🚨 힘이 빠지는 증상은 언제, 어떻게 시작됐습니까?",
+      [
+        "몇 분~몇 시간 전 갑자기 시작됨",
+        "며칠~몇 주에 걸쳐 서서히 진행됨"
+      ]
+    ],
+    "wek_pattern": [
+      "어느 부위에 힘이 빠지고, 함께 나타나는 증상은 무엇입니까?",
+      [
+        "한쪽 팔다리와 얼굴을 움직이기 어렵고 발음도 어눌함",
+        "오후가 되면 눈꺼풀이 처지고 힘이 빠짐",
+        "양쪽 다리부터 힘이 빠져 위로 퍼짐"
+      ]
+    ],
+    "syn_situation": [
+      "어떤 상황에서 정신을 잃고 쓰러졌습니까?",
+      [
+        "오래 서 있거나 피·주사를 보았을 때, 아프거나 피곤할 때",
+        "소변을 보거나 기침을 심하게 한 직후",
+        "운동 중이거나 누워 있을 때, 미리 느껴지는 증상 없이"
+      ]
+    ],
+    "syn_after": [
+      "깨어난 직후에는 어땠습니까?",
+      [
+        "1~2분 안에 정신이 또렷해짐",
+        "깨어난 뒤에도 20분 이상 멍하고 혼란스러웠음"
+      ]
+    ],
+    "sez_history": [
+      "몸이 굳거나 떨리는 증상은 지금까지 몇 번 있었습니까?",
+      [
+        "이번이 처음임",
+        "이전에도 2번 이상 반복된 적 있음"
+      ]
+    ],
+    "sez_pheno": [
+      "당시 모습을 본 분은 어떻게 설명합니까?",
+      [
+        "온몸이 뻣뻣해지며 양쪽 팔다리를 크게 떨었음",
+        "멍하게 있으면서 입맛을 다시거나 손을 만지작거렸음"
+      ]
+    ],
+    "gait_pattern": [
+      "걸을 때 어떤 점이 가장 불편합니까?",
+      [
+        "술에 취한 듯 좌우로 비틀거리고 중심을 잡기 어려움",
+        "발이 바닥에 붙은 듯 잘 안 떨어지고 보폭이 매우 좁음",
+        "어두운 곳이나 눈을 감으면 비틀거림이 훨씬 심해짐"
+      ]
+    ],
+    "gait_fall": [
+      "🚨 최근 6개월 사이 균형을 잃고 넘어진 적이 있습니까?",
+      [
+        "3번 이상 넘어짐",
+        "1~2번 넘어졌거나 넘어진 적 없음"
+      ]
+    ],
+    "oth_type": [
+      "가장 불편한 증상은 무엇입니까?",
+      [
+        "한쪽 눈 밑이나 볼이 실룩거림",
+        "얼굴 한쪽이 번개 치듯 순간적으로 찌릿하게 아픔",
+        "그 밖에 오래가는 온몸의 통증이나 피로"
+      ]
+    ]
+  }
+};
+
     function renderSymptomGrid() {
       const grid = document.getElementById('symptomGrid');
       grid.innerHTML = '';
@@ -1452,8 +1753,8 @@ NEURO_DATA.other = {
         card.innerHTML = `
           <div class="symptom-icon">${item.icon}</div>
           <div>
-            <div style="font-size:15.5px; font-weight:800; color:var(--gray-800);">${item.name}</div>
-            <div style="font-size:11.5px; color:var(--gray-600); margin-top:2px;">${item.desc}</div>
+            <div style="font-size:15.5px; font-weight:800; color:var(--gray-800);">${PATIENT_INTAKE_COPY.symptoms[item.id][0]}</div>
+            <div style="font-size:11.5px; color:var(--gray-600); margin-top:2px;">${PATIENT_INTAKE_COPY.symptoms[item.id][1]}</div>
           </div>
         `;
         grid.appendChild(card);
@@ -1541,7 +1842,7 @@ NEURO_DATA.other = {
       const q = item.question;
       const mod = NEURO_DATA[item.symptomId];
 
-      document.getElementById('wizardSymptomName').innerText = `${mod.icon} ${mod.name} 문진`;
+      document.getElementById('wizardSymptomName').innerText = `${mod.icon} ${PATIENT_INTAKE_COPY.symptoms[mod.id][0]} 문진`;
       const cur = AppState.queueIndex + 1;
       const total = AppState.queue.length;
       document.getElementById('wizardStepCount').innerText = `문항 ${cur} / ${total} (${Math.round((cur/total)*100)}%)`;
@@ -1549,8 +1850,8 @@ NEURO_DATA.other = {
 
       const block = document.getElementById('wizardQuestionBlock');
       block.innerHTML = `
-        <div style="font-size:12px; font-weight:800; color:var(--primary); background:var(--primary-light); padding:3px 8px; border-radius:4px; display:inline-block; margin-bottom:8px;">${mod.name}</div>
-        <div class="question-stem">${q.stem}</div>
+        <div style="font-size:12px; font-weight:800; color:var(--primary); background:var(--primary-light); padding:3px 8px; border-radius:4px; display:inline-block; margin-bottom:8px;">${PATIENT_INTAKE_COPY.symptoms[mod.id][0]}</div>
+        <div class="question-stem">${PATIENT_INTAKE_COPY.questions[q.id][0]}</div>
         <div id="optList"></div>
       `;
 
@@ -1563,11 +1864,11 @@ NEURO_DATA.other = {
         block.appendChild(warning);
       }
       const optList = document.getElementById('optList');
-      q.options.forEach(opt => {
+      q.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
         const isSel = AppState.answers[q.id] === opt.text;
         btn.className = `option-btn ${isSel ? 'selected' : ''} ${opt.redFlag ? 'danger-option' : ''}`;
-        btn.innerHTML = `<span>${opt.text}</span><span>✓</span>`;
+        btn.innerHTML = `<span>${PATIENT_INTAKE_COPY.questions[q.id][1][idx]}</span><span>✓</span>`;
         btn.onclick = () => {
           if (questionAdvanceTimer !== null) return;
           AppState.answers[q.id] = opt.text;
@@ -1630,7 +1931,7 @@ NEURO_DATA.other = {
       let html = `<div style="font-size:14px; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">선택한 주증상</div><div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;">`;
       AppState.selectedSymptoms.forEach(sId => {
         const m = NEURO_DATA[sId];
-        html += `<span style="background:#e0f2fe; color:#0369a1; padding:4px 10px; border-radius:14px; font-size:13px; font-weight:700;">${m.icon} ${m.name}</span>`;
+        html += `<span style="background:#e0f2fe; color:#0369a1; padding:4px 10px; border-radius:14px; font-size:13px; font-weight:700;">${m.icon} ${PATIENT_INTAKE_COPY.symptoms[m.id][0]}</span>`;
       });
       html += `</div><div style="font-size:13px; color:var(--gray-700);">문진 응답은 현재 화면에서만 유지됩니다. 새로고침하거나 창을 닫으면 사라지며 다른 기기로 자동 전달되지 않습니다. 진료실에서 이 화면을 보여주세요.</div>`;
       box.innerHTML = html;
@@ -2199,7 +2500,7 @@ NEURO_DATA.other = {
   function printState(){return JSON.stringify([key(),fields.map(id=>el(id).value),el('visitIncludeVisuals').checked,typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'']);}
   let printing=false;
   function restore(){const next=key();if(next!==context){save();context=next;fields.forEach((id,i)=>el(id).value=(drafts[context]||[])[i]||'');}el('visitReviewed').checked=false;refreshVisitPrint();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const path=mod?.differentialPathways?.find(p=>p.id===AppState.selectedSubpath[mod.id]);el('visitContext').textContent=mod? '현재 선택: '+mod.name+(path?' / '+path.name:''):'';}
-  function guide(){const selected=AppState.selectedSymptoms;const texts=[];if(selected.includes('headache'))texts.push('<h3>두통 진료 준비</h3><p>두통이 있었던 날과 진통제를 복용한 날, 이전에 사용한 약을 정리해 주세요. 복용 중인 약 목록이나 기존 검사 결과가 있으면 진료에 도움이 됩니다.</p>');if(selected.includes('dizziness'))texts.push('<h3>어지럼 진료 준비</h3><p>언제 시작됐는지, 얼마나 지속되는지, 어떤 자세에서 생기는지 알려주세요. 이전에 받은 검사나 치료가 있으면 함께 말씀해 주세요.</p>');for(const id of selected){const mod=NEURO_DATA[id];if(!mod)continue;texts.push('<details><summary>'+safe(mod.name)+' · 검사 검토 안내</summary><p>아래는 진찰 후 필요에 따라 검토하는 항목입니다. 시행 여부는 담당 의사가 결정합니다.</p>'+ (mod.testConsiderations||[]).map(t=>'<section><h4>'+safe(t.name)+'</h4><p>'+safe(t.why)+'</p></section>').join('')+'</details>');}el('symptomVisitGuide').innerHTML=texts.join('');el('finishedVisitGuide').innerHTML=texts.join('');}
+  function guide(){const selected=AppState.selectedSymptoms;const texts=[];if(selected.includes('headache'))texts.push('<h3>두통 진료 준비</h3><p>두통이 있었던 날과 진통제를 복용한 날, 이전에 사용한 약을 정리해 주세요. 복용 중인 약 목록이나 기존 검사 결과가 있으면 진료에 도움이 됩니다.</p>');if(selected.includes('dizziness'))texts.push('<h3>어지럼 진료 준비</h3><p>언제 시작됐는지, 얼마나 지속되는지, 어떤 자세에서 생기는지 알려주세요. 이전에 받은 검사나 치료가 있으면 함께 말씀해 주세요.</p>');for(const id of selected){const mod=NEURO_DATA[id];if(!mod)continue;texts.push('<details><summary>'+safe(PATIENT_INTAKE_COPY.symptoms[id][0])+' · 진료 준비</summary><p>증상이 시작된 때와 불편한 상황을 알려주세요. 복용 중인 약이나 이전 검사 결과가 있으면 함께 보여주세요. 필요한 검사는 진찰 후 담당 의사가 설명해 드립니다.</p></details>');}el('symptomVisitGuide').innerHTML=texts.join('');el('finishedVisitGuide').innerHTML=texts.join('');}
   window.refreshVisitPrint=function(){el('visitPrint').disabled=!(NEURO_DATA[AppState.activeDoctorSymptom]&&el('visitReviewed').checked&&(fields.some(id=>el(id).value.trim())||(typeof window.hasEducationSelection==='function'&&window.hasEducationSelection())));};
   window.clearVisitDraft=function(){fields.forEach(id=>el(id).value='');if(context)delete drafts[context];el('visitReviewed').checked=false;refreshVisitPrint();};
   window.printVisitSheet=async function(){if(el('visitPrint').disabled||printing)return;printing=true;const snapshot=printState();const mod=NEURO_DATA[AppState.activeDoctorSymptom];const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];const sections=fields.map((id,i)=>{const value=el(id).value.trim();return value?'<section><h2>'+labels[i]+'</h2><p>'+safe(value)+'</p></section>':'';}).join('');el('visitPrintSheet').innerHTML='<header><p>NeuroDesk</p><h1>진료 후 안내서</h1><p>'+safe(mod?.name)+' · '+new Date().toLocaleDateString('ko-KR')+'</p></header>'+sections+(typeof window.getSelectedEducationHTML==='function'?window.getSelectedEducationHTML():'')+(el('visitIncludeVisuals').checked?'<div class="print-visuals"><figure class="education-art">'+el('clinicEducationArt').innerHTML+'</figure><div class="mechanism-box">'+el('docMechanismArea').innerHTML+'</div></div>':'')+'<footer>이 안내서는 진료 시 설명한 내용을 정리한 자료입니다. 약물명·용량·복용 횟수는 처방전을 따르세요.</footer>';const sheet=el('visitPrintSheet');namespaceMechanismMarkers(sheet);const contextAtPrint=AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom];try{await Promise.all(Array.from(sheet.querySelectorAll('img')).map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(new Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts&&document.fonts.ready)await document.fonts.ready;if(snapshot!==printState()||el('visitPrint').disabled||contextAtPrint!==AppState.activeDoctorSymptom+':'+AppState.selectedSubpath[AppState.activeDoctorSymptom])return;document.body.classList.add('visit-printing');window.print();}catch(error){alert('그림을 준비하지 못해 인쇄를 중단했습니다. 파일을 다시 열고 시도해 주세요.');}finally{printing=false;document.body.classList.remove('visit-printing');}};
