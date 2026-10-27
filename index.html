@@ -2052,7 +2052,9 @@ NEURO_DATA.other = {
           txt += `- ${q.stem.slice(0, 25)}... : ${AppState.answers[q.id] || '미응답'}\n`;
         });
       }
-      txt += `\n■ 확인된 위험신호:\n` + (mod.redFlags ? mod.redFlags.map(r => `- ${r}`).join('\n') : '없음') + `\n`;
+      txt += `\n■ 진료 시 확인할 위험신호 (일반 확인목록):\n`;
+      txt += `아래 목록은 환자에게 확인된 소견이 아닙니다. 문진 응답과 진찰로 별도 확인이 필요합니다.\n`;
+      txt += (mod.redFlags && mod.redFlags.length ? mod.redFlags.map(r => `- ${r}`).join('\n') : '제공된 일반 확인목록 없음') + `\n`;
 
       navigator.clipboard.writeText(txt).then(() => {
         alert(`${mod.name} EMR 텍스트가 복사되었습니다. 차트에 붙여넣기(Ctrl+V) 하세요.`);
