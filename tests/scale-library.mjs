@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
-import { makeEnv } from './neurodesk-regression.mjs';
+import { makeEnv, regressionSummary } from './neurodesk-regression.mjs';
 const html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
 const catalogJS=await fs.readFile(new URL('../scales/catalog.js',import.meta.url),'utf8');
 const libraryJS=await fs.readFile(new URL('../scales/library.js',import.meta.url),'utf8');
@@ -144,4 +144,4 @@ gated.ctx.NEURO_SCALE_CATALOG.scales.find(s=>s.id==='phq9').grade='A';gated.ctx.
 check('wrong language denied',!gated.ctx.NeuroScaleLibrary.canUseElectronic('phq9'));
 gated.ctx.NEURO_SCALE_FORMS.phq9.language='ko';gated.ctx.NEURO_SCALE_FORMS.phq9.version='other';
 check('wrong version denied',!gated.ctx.NeuroScaleLibrary.canUseElectronic('phq9'));
-console.log(JSON.stringify({scaleChecks:passed,fourATCombinations:combinations,regressionChecks:85,browserUI:'not tested',externalLinkNavigation:'not tested; URLs/attributes checked',imageAndPrint:'mocked'},null,2));
+console.log(JSON.stringify({scaleChecks:passed,fourATCombinations:combinations,regressionChecks:regressionSummary.passed,browserUI:'not tested',externalLinkNavigation:'not tested; URLs/attributes checked',imageAndPrint:'mocked'},null,2));

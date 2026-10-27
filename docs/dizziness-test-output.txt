@@ -1,0 +1,122 @@
+{
+  "passed": 93,
+  "paths": 28,
+  "scope": "DOM simulation; image decode, clipboard and print mocked"
+}
+{
+  "dizzinessChecks": 376,
+  "hintsCombinations": 27,
+  "cases": [
+    {
+      "name": "후반고리관 BPPV",
+      "result": "PASS"
+    },
+    {
+      "name": "수평 향지성·원지성 BPPV",
+      "result": "PASS"
+    },
+    {
+      "name": "전정편두통",
+      "result": "PASS"
+    },
+    {
+      "name": "메니에르병",
+      "result": "PASS"
+    },
+    {
+      "name": "급성 일측 전정병증·HINTS 적용 조건",
+      "result": "PASS"
+    },
+    {
+      "name": "PPPD",
+      "result": "PASS"
+    },
+    {
+      "name": "양측 전정병증",
+      "result": "PASS"
+    },
+    {
+      "name": "기립성저혈압·실측 계산",
+      "result": "PASS"
+    },
+    {
+      "name": "중추성 위험신호·전원 우선",
+      "result": "PASS"
+    },
+    {
+      "name": "급성 난청 동반 어지럼",
+      "result": "PASS"
+    },
+    {
+      "name": "안정 재진·추적 지표",
+      "result": "PASS"
+    }
+  ],
+  "regressionChecks": 93,
+  "FAIL": 0,
+  "NOT_TESTED": [
+    "real browser/mobile/accessibility",
+    "real PNG decode",
+    "OS clipboard permission",
+    "A4 visual pagination",
+    "source link click navigation",
+    "Netlify deployment",
+    "clinical sign-off",
+    "Korean approvals/coverage"
+  ]
+}
+{
+  "headacheChecks": 247,
+  "cases": [
+    {
+      "case": "삽화편두통",
+      "status": "PASS"
+    },
+    {
+      "case": "만성편두통",
+      "status": "PASS"
+    },
+    {
+      "case": "전조편두통",
+      "status": "PASS"
+    },
+    {
+      "case": "약물과용두통",
+      "status": "PASS"
+    },
+    {
+      "case": "군발두통",
+      "status": "PASS"
+    },
+    {
+      "case": "벼락두통",
+      "status": "PASS"
+    },
+    {
+      "case": "예방약 복용 중 재진",
+      "status": "PASS"
+    },
+    {
+      "case": "고령자의 새 두통",
+      "status": "PASS"
+    }
+  ],
+  "FAIL": 0,
+  "NOT_TESTED": [
+    "real browser/layout",
+    "PNG decoding",
+    "clipboard permissions",
+    "A4 visual layout",
+    "Netlify deployment",
+    "clinical sign-off",
+    "2026 Korean coverage criteria"
+  ]
+}
+{
+  "scaleChecks": 594,
+  "fourATCombinations": 54,
+  "regressionChecks": 93,
+  "browserUI": "not tested",
+  "externalLinkNavigation": "not tested; URLs/attributes checked",
+  "imageAndPrint": "mocked"
+}
