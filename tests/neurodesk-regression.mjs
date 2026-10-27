@@ -48,13 +48,14 @@ function simple(n,sel){
  const tag=sel.match(/^[\w-]+/);return !tag||n.tagName===tag[0].toUpperCase();
 }
 function select(root,selector){return descendants(root).filter(n=>selector.split(',').some(part=>{const chunks=part.trim().split(/\s+/);if(!simple(n,chunks.pop()))return false;let p=n.parentNode;while(chunks.length){const target=chunks.pop();while(p&&!simple(p,target))p=p.parentNode;if(!p)return false;p=p.parentNode;}return true;}));}
-function makeEnv(source){
+function makeEnv(source, storageMode='normal'){
  const root=new TestNode('document',null);const doc={root,getElementById(id){return descendants(root).find(n=>n.id===id)||null},createElement(tag){return new TestNode(tag,doc)},querySelectorAll(s){return root.querySelectorAll(s)},querySelector(s){return root.querySelector(s)},addEventListener(){},fonts:{ready:Promise.resolve()}};
  root.doc=doc;parseInto(source.replace(/<script[^>]*>[\s\S]*?<\/script>/g,'').replace(/<style[^>]*>[\s\S]*?<\/style>/g,''),root,doc);doc.body=root.querySelector('body');
  const timers=new Map(),alerts=[],clips=[],events={};let tick=0,prints=0;
- const ctx={document:doc,console,Promise,Date,Math,alert:m=>alerts.push(m),navigator:{clipboard:{writeText:t=>{clips.push(t);return Promise.resolve()}}},setTimeout:f=>{const id=++tick;timers.set(id,f);return id},clearTimeout:id=>timers.delete(id),addEventListener:(k,f)=>(events[k]??=[]).push(f),print:()=>prints++};
+ const memory=new Map();
+ const ctx={URL,localStorage:{getItem:k=>{if(storageMode==='blocked')throw Error('blocked');return storageMode==='corrupt'?'broken-json':memory.get(k)??null},setItem:(k,v)=>{if(storageMode==='blocked')throw Error('blocked');memory.set(k,String(v))}},document:doc,console,Promise,Date,Math,alert:m=>alerts.push(m),navigator:{clipboard:{writeText:t=>{clips.push(t);return Promise.resolve()}}},setTimeout:f=>{const id=++tick;timers.set(id,f);return id},clearTimeout:id=>timers.delete(id),addEventListener:(k,f)=>(events[k]??=[]).push(f),print:()=>prints++};
  ctx.window=ctx;vm.createContext(ctx);
- for(const [i,b]of [...source.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].entries())new vm.Script(b[1],{filename:'index-script-'+i}).runInContext(ctx);
+ for(const [i,b]of [...source.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)].entries()){const src=b[1].match(/src="([^"]+)"/);const code=src?externalScripts[src[1]]:b[2];if(src&&!code)throw Error('Missing local script '+src[1]);new vm.Script(code,{filename:src?src[1]:'index-script-'+i}).runInContext(ctx);}
  ctx.onload();for(const f of events.load||[])f({});
  return {ctx,doc,alerts,clips,timers,eval:s=>vm.runInContext(s,ctx),flush(){const fs=[...timers.values()];timers.clear();fs.forEach(f=>f())},get prints(){return prints}};
 }
@@ -63,6 +64,8 @@ function check(name,condition){if(!condition)throw Error(name);checks.push(name)
 function radio(env,name,value){for(const n of env.doc.querySelectorAll('input[name="'+name+'"]'))n.checked=n.value===value;}
 
 var html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
+var externalScripts={};
+for(const path of ['scales/catalog.js','scales/library.js'])externalScripts[path]=await fs.readFile(new URL('../'+path,import.meta.url),'utf8');
 
 
 var env=makeEnv(html);
@@ -86,8 +89,8 @@ check('reset clears doctor and art',env.doc.getElementById('docSubpathContent').
 env.ctx.toggleSymptom('sleep');env.ctx.switchMode('doctor');var snapshot=env.eval('JSON.stringify(AppState)');env.ctx.runAutomatedIntegrityTest();
 check('integrity preserves state',env.eval('JSON.stringify(AppState)')===snapshot);
 check('integrity 95 pass',env.doc.getElementById('testOutputLog').innerHTML.includes('95 / 95'));
-env.ctx.switchDocStage('stage4_scales');var score=env.doc.querySelector('#docScalesList input');score.value='12';score.oninput();env.ctx.switchDocStage('stage1_summary');env.ctx.switchDocStage('stage4_scales');
-check('score retained',env.doc.querySelector('#docScalesList input').value==='12');
+env.ctx.switchDocStage('stage4_scales');env.ctx.NeuroScaleLibrary.open('phq9');var score=env.doc.getElementById('scaleManual');score.value='12';score.oninput();env.ctx.switchDocStage('stage1_summary');env.ctx.switchDocStage('stage4_scales');
+check('score retained',env.doc.getElementById('scaleManual').value==='12');
 env.ctx.switchDocStage('stage5_followup');env.doc.getElementById('eduConfirmed').checked=true;env.ctx.toggleEducationPrint();
 check('legacy approval enables print',!env.doc.getElementById('eduPrintButton').disabled);
 env.eval("AppState.selectedSubpath.sleep='osa'");env.ctx.renderDoctorStage();
@@ -141,7 +144,7 @@ check('skip not counted as answer',proof.doc.getElementById('visitQuickSummary')
 proof.ctx.navigator.clipboard.writeText=()=>Promise.reject(Error('denied'));proof.ctx.copyEmrText();await Promise.resolve();await Promise.resolve();check('clipboard rejection reported',proof.alerts.some(t=>t.includes('복사하지 못했습니다')));
 proof.ctx.navigator.clipboard=undefined;proof.ctx.copyEmrText();check('missing clipboard reported',proof.alerts.some(t=>t.includes('복사를 사용할 수 없습니다')));
 proof.ctx.switchMode('patient');var b=proof.doc.querySelector('#optList button');b.click();proof.ctx.switchMode('doctor');proof.flush();check('switching mode cancels advance',proof.eval('AppState.queueIndex')===1);proof.ctx.switchMode('patient');check('question buttons usable on return',!proof.doc.querySelector('#optList button').disabled);
-var blocks=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);blocks.forEach(b=>new vm.Script(b));check('all inline scripts parse',blocks.length===19);
+var blocks=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);blocks.forEach(b=>new vm.Script(b));check('all inline scripts parse',blocks.length===21);
 check('print header has important override',html.includes('#visitPrintSheet header{display:block!important;'));
 
 
@@ -152,3 +155,5 @@ var originalId=z.doc.querySelector('#docMechanismArea marker').id,printId=z.doc.
 check('copied SVG has separate marker namespace',originalId!==printId);
 check('copied arrows target copied marker',z.doc.querySelector('#visitPrintSheet line').getAttribute('marker-end')==='url(#'+printId+')');
 console.log(JSON.stringify({passed:checks.length,paths:20,scope:'DOM simulation; image decode, clipboard and print mocked'},null,2));
+
+export { makeEnv };

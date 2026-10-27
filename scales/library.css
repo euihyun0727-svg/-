@@ -1,0 +1,24 @@
+/* Scoped to the existing Stage 4; other screens and print targets unchanged. */
+#docStage_stage4_scales .scale-toolbar{display:flex;gap:14px;align-items:end;flex-wrap:wrap;margin:18px 0}
+#docStage_stage4_scales .scale-toolbar label{display:grid;gap:5px;font-size:14px}
+#docStage_stage4_scales input[type=search],#docStage_stage4_scales input[type=number],#docStage_stage4_scales select{max-width:100%;padding:10px;border:1px solid var(--gray-300);border-radius:4px;background:#fff;color:var(--gray-800);font:inherit}
+#docStage_stage4_scales input[type=search]{width:320px}
+#docStage_stage4_scales .scale-columns{display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,1.6fr);gap:24px}
+#docStage_stage4_scales .scale-list-row{border-top:1px solid var(--gray-200);padding:14px 0}
+#docStage_stage4_scales .scale-list-row p{font-size:12px;margin:6px 0;color:var(--gray-600)}
+#docStage_stage4_scales .scale-open{display:block;background:transparent;border:0;text-align:left;cursor:pointer;color:var(--primary);font-size:15px;font-weight:700;line-height:1.6}
+#docStage_stage4_scales .scale-open[aria-pressed=true]{text-decoration:underline}
+#docStage_stage4_scales .scale-favorite{background:#fff;border:1px solid var(--gray-300);border-radius:4px;padding:5px 10px;cursor:pointer;color:var(--primary)}
+#docStage_stage4_scales .scale-metadata{display:grid;grid-template-columns:145px minmax(0,1fr);gap:8px 12px;font-size:14px;margin:16px 0}
+#docStage_stage4_scales .scale-metadata dt{font-weight:700}
+#docStage_stage4_scales .scale-metadata dd{margin:0;overflow-wrap:anywhere}
+#docStage_stage4_scales #scaleDetail{border-left:1px solid var(--gray-200);padding-left:24px;min-width:0}
+#docStage_stage4_scales #scaleDetail a{color:var(--primary);overflow-wrap:anywhere;text-decoration:underline}
+#docStage_stage4_scales .scale-note{font-size:12px;color:var(--gray-600);line-height:1.8;margin:10px 0}
+#docStage_stage4_scales .scale-calculator,#docStage_stage4_scales #scaleElectronic{border-top:1px solid var(--gray-200);margin-top:20px;padding-top:16px}
+#docStage_stage4_scales .scale-calculator label,#docStage_stage4_scales .scale-paper-label{display:grid;gap:6px;margin:12px 0}
+#docStage_stage4_scales .scale-calculator p,#docStage_stage4_scales #scaleElectronic p{line-height:1.8;margin:10px 0}
+#docStage_stage4_scales fieldset{border:1px solid var(--gray-200);padding:15px;margin:16px 0}
+#docStage_stage4_scales legend{font-weight:700;padding:0 5px}
+#docStage_stage4_scales #scaleElectronic select{width:100%;white-space:normal}
+@media(max-width:800px){#docStage_stage4_scales .scale-columns{grid-template-columns:1fr}#docStage_stage4_scales #scaleDetail{border-left:0;border-top:1px solid var(--gray-200);padding:20px 0}#docStage_stage4_scales .scale-metadata{grid-template-columns:1fr;gap:3px}#docStage_stage4_scales .scale-metadata dd{margin-bottom:10px}}

@@ -1,0 +1,98 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import { makeEnv } from './neurodesk-regression.mjs';
+const html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
+const env=makeEnv(html),api=env.ctx.NeuroScaleLibrary,scales=api.catalog.scales;
+let passed=0;
+function check(name,condition){assert.ok(condition,name);passed++;}
+env.ctx.toggleSymptom('headache');env.ctx.switchMode('doctor');env.ctx.switchDocStage('stage4_scales');
+check('85 unique registered scales',scales.length===85&&new Set(scales.map(s=>s.id)).size===85);
+const required=['hit6','midas','msq','headache-diary','dhi','vss','abc','vadl','mmse','k-mmse','mmse2','moca','cist','cdr','gds-dementia','ad8','iqcode','kiadl','siadl','npi','npiq','mdsupdrs','hy','seadl','pdq39','pdq8','nmss','nmsq','scopaaut','fogq','woq9','isi','psqi','ess','stopbang','berlin','rbdsq','irls','rls6','dn4','paindetect','nrs','vas','bpi','npsi','mnsi','tcns','incat','nihss','mrs','barthel','fma','mrc','compass31','ohq','qolie10','qolie31','lsss','tug','bbs','poma','sppb','fga','10mwt','thi','tfi','hhie','phq9','phq2','gad7','hads','bdiii','gds-depression'];
+check('all 73 requested unique tools registered',required.length===73&&required.every(id=>scales.some(s=>s.id===id)));
+check('SCOPA-AUT in both groups',scales.find(s=>s.id==='scopaaut').groups.includes('tremor')&&scales.find(s=>s.id==='scopaaut').groups.includes('syncope'));
+check('GDS meanings kept distinct',scales.find(s=>s.id==='gds-dementia').name!==scales.find(s=>s.id==='gds-depression').name);
+check('VAS deduplicated across indications',scales.filter(s=>s.id==='vas').length===1&&scales.find(s=>s.id==='vas').groups.includes('tinnitus'));
+check('A/B/C counts',scales.filter(s=>s.grade==='A').length===1&&scales.filter(s=>s.grade==='B').length===15&&scales.filter(s=>s.grade==='C').length===69);
+const fields=['name','abbr','purpose','method','items','duration','scoreRange','interpretation','korean','license','electronic','internalUse','insurance','paper','sourceScope','reviewed'];
+check('metadata fields explicit or marked unknown',scales.every(s=>fields.every(k=>typeof s[k]==='string'&&s[k].length>0)&&s.groups.length));
+check('official URLs use HTTPS',scales.every(s=>new URL(s.sourceUrl||api.catalog.sources[s.source].url).protocol==='https:'));
+check('no fabricated reimbursement approval',scales.every(s=>s.insurance.includes('확인 필요')));
+check('paper holdings from user',scales.filter(s=>api.getPaperStatus(s.id)==='보유').map(s=>s.id).sort().join(',')==='mmse,phq9');
+check('K-MMSE not conflated with owned MMSE',api.getPaperStatus('k-mmse')==='미보유'&&api.getPaperStatus('mmse2')==='미보유');
+check('title search case-insensitive',api.filteredScales({query:'moca',group:'',rights:'',favoritesOnly:false}).some(s=>s.id==='moca'));
+check('full-name search',api.filteredScales({query:'Dizziness Handicap',group:'',rights:'',favoritesOnly:false})[0].id==='dhi');
+check('Korean purpose search',api.filteredScales({query:'자율신경',group:'',rights:'',favoritesOnly:false}).some(s=>s.id==='compass31'));
+check('rights filter',api.filteredScales({query:'',group:'',rights:'A',favoritesOnly:false}).length===1);
+check('group filter',api.filteredScales({query:'',group:'seizure',rights:'',favoritesOnly:false}).some(s=>s.id==='qolie31'));
+check('empty search',api.filteredScales({query:'not-a-real-scale',group:'',rights:'',favoritesOnly:false}).length===0);
+env.doc.getElementById('scaleSearch').value='MoCA';env.doc.getElementById('scaleSearch').oninput();
+check('search input searches all groups',env.doc.getElementById('scaleGroup').value===''&&env.doc.getElementById('scaleLibraryList').textContent.includes('MoCA'));
+env.doc.querySelector('.scale-favorite').click();
+check('favorite button filters by ID',api.filteredScales({query:'',group:'',rights:'',favoritesOnly:true})[0]?.id==='moca');
+env.doc.getElementById('scaleFavoritesOnly').checked=true;env.doc.getElementById('scaleFavoritesOnly').onchange();
+check('favorites UI reports selected count',env.doc.getElementById('scaleCount').textContent.includes('1 / 85'));
+api.open('phq9');check('details include license and source',env.doc.getElementById('scaleDetail').textContent.includes('한국어 원본')||env.doc.getElementById('scaleDetail').textContent.includes('판본 대조'));
+const anchors=env.doc.querySelectorAll('#scaleDetail a');
+check('source links safe new-tab anchors',anchors.length>=2&&anchors.every(a=>a.getAttribute('target')==='_blank'&&a.getAttribute('rel')==='noopener noreferrer'&&a.getAttribute('href').startsWith('https://')));
+env.doc.getElementById('scalePaper').value='보유';env.doc.getElementById('scalePaper').onchange();
+check('paper control updates only preference',api.getPaperStatus('phq9')==='보유');
+const prefKey='neurodesk.scale-preferences.v1';
+env.doc.getElementById('scaleManual').value='19';env.doc.getElementById('scaleManual').oninput();
+check('manual entry shows official band',env.doc.getElementById('scaleManualResult').textContent.includes('Moderately Severe'));
+check('scores excluded from browser storage',!env.ctx.localStorage.getItem(prefKey).includes('19')&&!env.ctx.localStorage.getItem(prefKey).includes('manual')&&!env.ctx.localStorage.getItem(prefKey).includes('answers'));
+for(const [value,expected] of [[0,'None-minimal'],[4,'None-minimal'],[5,'Mild'],[9,'Mild'],[10,'Moderate'],[14,'Moderate'],[15,'Moderately Severe'],[19,'Moderately Severe'],[20,'Severe'],[27,'Severe']]){
+ check('PHQ9 boundary '+value,api.validateManual('phq9',value).message.includes(expected));
+}
+for(const value of ['',-1,28,1.5,'NaN','Infinity','0x10','<script>'])check('PHQ9 rejects '+value,!api.validateManual('phq9',value).valid);
+for(const [value,expected]of [[0,'Minimal'],[4,'Minimal'],[5,'Mild'],[9,'Mild'],[10,'Moderate'],[14,'Moderate'],[15,'Severe'],[21,'Severe']])check('GAD7 boundary '+value,api.validateManual('gad7',value).message.includes(expected));
+check('PHQ2 below threshold',api.validateManual('phq2',2).message.includes('미만'));
+check('PHQ2 at threshold',api.validateManual('phq2',3).message.includes('해당'));
+check('PHQ2 out of range',!api.validateManual('phq2',7).valid);
+check('DHI even values',api.validateManual('dhi',100).valid&&!api.validateManual('dhi',99).valid);
+check('unknown metadata not promoted to validated score',api.validateManual('midas',5).valid&&api.validateManual('midas',5).verified===false&&api.validateManual('midas',5).message.includes('확인 필요'));
+check('TUG seconds positive decimal',api.validateManual('tug',12.75).valid&&!api.validateManual('tug',0).valid);
+check('10MWT correct speed',api.calculateSpeed(6,5).speed===1.2);
+for(const pair of [[0,5],[6,0],[-1,5],[6,''],['Infinity',5]])check('speed invalid '+pair.join('/'),!api.calculateSpeed(...pair).valid);
+check('only licensed form in distribution',Object.keys(env.ctx.NEURO_SCALE_FORMS).join(',')==='fourat');
+for(const s of scales)check('electronic gate '+s.id,api.canUseElectronic(s.id)===(s.id==='fourat'));
+api.open('moca');check('B no hidden questionnaire',!env.doc.getElementById('scaleAnswer0')&&env.doc.getElementById('scaleElectronic').textContent.includes('미제공'));
+api.open('phq9');check('C no hidden questionnaire',!env.doc.getElementById('scaleAnswer0'));
+api.open('fourat');check('four official question fields',env.doc.querySelectorAll('#scaleElectronic fieldset').length===4);
+check('attribution and changes visible',env.doc.getElementById('scaleElectronic').textContent.includes('MacLullich')&&env.doc.getElementById('scaleElectronic').textContent.includes('개인정보 기입란 제외'));
+check('no patient identity text fields in electronic form',env.doc.querySelectorAll('#scaleElectronic input').length===0);
+check('incomplete not zero',!api.calculateElectronic('fourat',[null,null,null,null]).valid);
+check('sparse answers rejected',!api.calculateElectronic('fourat',Array(4)).valid);
+check('missing item rejected',!api.calculateElectronic('fourat',[0,0,0]).valid);
+check('bad option rejected',!api.calculateElectronic('fourat',[99,0,0,0]).valid);
+check('numeric strings rejected',!api.calculateElectronic('fourat',['0',0,0,0]).valid);
+check('non-A cannot score',!api.calculateElectronic('moca',[0,0,0,0]).valid);
+let combinations=0;
+const q=env.ctx.NEURO_SCALE_FORMS.fourat.questions;
+for(let a=0;a<3;a++)for(let b=0;b<3;b++)for(let c=0;c<3;c++)for(let d=0;d<2;d++){
+ const expected=q[0].options[a].score+q[1].options[b].score+q[2].options[c].score+q[3].options[d].score;
+ const result=api.calculateElectronic('fourat',[a,b,c,d]);check('4AT combination '+[a,b,c,d].join(''),result.valid&&result.score===expected);combinations++;
+}
+check('4AT zero interpretation',api.calculateElectronic('fourat',[0,0,0,0]).message.includes('가능성 낮음'));
+check('4AT mild interpretation',api.calculateElectronic('fourat',[0,1,0,0]).message.includes('인지장애 가능'));
+check('untestable AMT/attention triggers 4',api.calculateElectronic('fourat',[0,2,2,0]).score===4);
+check('4AT max12',api.calculateElectronic('fourat',[2,2,2,1]).score===12);
+for(const [i,value]of [2,2,2,1].entries()){env.doc.getElementById('scaleAnswer'+i).value=String(value);env.doc.getElementById('scaleAnswer'+i).onchange();}
+check('electronic UI sums12',env.doc.getElementById('scaleElectronicResult').textContent.includes('12 / 12'));
+env.ctx.switchDocStage('stage1_summary');env.ctx.switchDocStage('stage4_scales');
+check('electronic responses survive stage switch',env.doc.getElementById('scaleElectronicResult').textContent.includes('12 / 12'));
+check('electronic answers not in browser storage',!env.ctx.localStorage.getItem(prefKey).includes('answers'));
+env.doc.getElementById('scaleClear').click();check('clear current scale removes responses',env.doc.getElementById('scaleAnswer0').value==='');
+env.ctx.resetPatientIntake();env.ctx.toggleSymptom('cognition');env.ctx.switchMode('doctor');env.ctx.switchDocStage('stage4_scales');api.open('fourat');
+check('new patient has no electronic answers',env.doc.getElementById('scaleAnswer0').value==='');
+api.open('phq9');check('new patient has no paper score',env.doc.getElementById('scaleManual').value==='');
+check('favorite and paper preference survive patient reset',api.getPaperStatus('phq9')==='보유'&&api.filteredScales({query:'',group:'',rights:'',favoritesOnly:true}).some(s=>s.id==='moca'));
+for(const mode of ['blocked','corrupt']){
+ const isolated=makeEnv(html,mode);isolated.ctx.toggleSymptom('headache');isolated.ctx.switchMode('doctor');isolated.ctx.switchDocStage('stage4_scales');
+ check(mode+' preferences do not break render',!!isolated.doc.getElementById('scaleToolbar'));
+ isolated.ctx.NeuroScaleLibrary.open('phq9');
+ check(mode+' scoring still available',isolated.ctx.NeuroScaleLibrary.validateManual('phq9',5).valid);
+}
+const c=await fs.readFile(new URL('../scales/catalog.js',import.meta.url),'utf8'),j=await fs.readFile(new URL('../scales/library.js',import.meta.url),'utf8');
+check('no questionnaire auto-download',![c,j].some(s=>/\bfetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket|eval\s*\(/.test(s)));
+check('one allowlisted storage write',(j.match(/localStorage\.setItem/g)||[]).length===1);
+console.log(JSON.stringify({scaleChecks:passed,fourATCombinations:combinations,regressionChecks:85,browserUI:'not tested',externalLinkNavigation:'not tested; anchor URLs and attributes checked',imageAndPrint:'mocked in regression'},null,2));
