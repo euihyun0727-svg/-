@@ -4,7 +4,8 @@
   "scales": {
     "scales/catalog.js": "0db67ea493c2a0c749a4c00ddd7fb359297652158e0178509014f9e937f802eb",
     "scales/library.js": "89b37aa47c9b480a3459f12677287184b2551c1d00f3f1a9edc85d5a27b2c759",
-    "scales/library.css": "29966a8652c3ea643d6bd309e7c8a694399301e1a89679665263aaad1c802ca1",
-    "tests/scale-library.mjs": "df633de9c6d53ee1561540fae28c73f0a82d75d4dbf894e3905c832ce6ca666b"
-  }
+    "scales/library.css": "29966a8652c3ea643d6bd309e7c8a694399301e1a89679665263aaad1c802ca1"
+  },
+  "otherSymptomsExceptDizziness": "3fd81cb8c6a2dad546b44ee6d8a012ca427a707fa2e65c720cdca9101caf0a58",
+  "otherEducationExceptDizziness": "5268d71c57a2d2ca051fdf9240285c6090257dbb9224b7163727e396dcfc9143"
 }

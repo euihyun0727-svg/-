@@ -1,0 +1,76 @@
+{
+  "baseCommit": "5d956516b314cab0ed2623a7d5b876a832aa3db4",
+  "otherModules": "666160c3a9443b64ec0fdc27c4fdaafd125a862fb2a2ac98569ac8b7f80bde8c",
+  "otherEducation": "3493ec746affc8e39639594902576bf9c05d9bcd17a4be67227d200e7b9bc235",
+  "files": {
+    "clinical/headache-data.js": "78902920b1b83a0dd26d34beef52a6f80fec37c8a3e075177ad8b350d24cebd7",
+    "clinical/headache.js": "5e9cb54a2e8de806d3931c3f2da60204520d103aaf61290c6f411f9e1bba9eef",
+    "clinical/headache.css": "6f6a858fe446ada19ee33655779d0cf6364568ef742fb9dc093a7eafe569d620",
+    "scales/catalog.js": "0db67ea493c2a0c749a4c00ddd7fb359297652158e0178509014f9e937f802eb",
+    "scales/library.js": "89b37aa47c9b480a3459f12677287184b2551c1d00f3f1a9edc85d5a27b2c759",
+    "scales/library.css": "29966a8652c3ea643d6bd309e7c8a694399301e1a89679665263aaad1c802ca1"
+  },
+  "assets": [
+    {
+      "path": "cognition.png",
+      "sha": "ff684525780bf493fb82c3fc02bf5aad22846b91",
+      "size": 2176255
+    },
+    {
+      "path": "dizziness.png",
+      "sha": "8649ab02abeb7e096616d2894121328a1782f961",
+      "size": 1917030
+    },
+    {
+      "path": "gait.png",
+      "sha": "da8a9d04b4cc642b04d16f0da88e5455c106c83c",
+      "size": 1920098
+    },
+    {
+      "path": "headache.png",
+      "sha": "c9cd65170e7a944474957fdf675b186e7c90f9e9",
+      "size": 2470344
+    },
+    {
+      "path": "numbness.png",
+      "sha": "841832b93811dc7409c3c11fa0fa09ea8746bb17",
+      "size": 1927282
+    },
+    {
+      "path": "other.png",
+      "sha": "803f500d7b226a41fb158c09f95c612648ef97ca",
+      "size": 2276561
+    },
+    {
+      "path": "seizure.png",
+      "sha": "f8ebc6e581f579cc49d44cdd32e3d8fda4520bb2",
+      "size": 2291059
+    },
+    {
+      "path": "sleep.png",
+      "sha": "5afb1ddf4641a3192edb900cc189adaf79f2e126",
+      "size": 2325558
+    },
+    {
+      "path": "syncope.png",
+      "sha": "97dda6cc07ca60187286ab2b67b3cc39fd5bc46e",
+      "size": 2234323
+    },
+    {
+      "path": "tinnitus.png",
+      "sha": "391d62a83bbf806c99423874fc4e732803801dc1",
+      "size": 2465263
+    },
+    {
+      "path": "tremor.png",
+      "sha": "bce200b2af07dd145904da175eb7f3b076902866",
+      "size": 2384457
+    },
+    {
+      "path": "weakness.png",
+      "sha": "73dd3c4911e866d8e070490b2a43244479152f93",
+      "size": 2608816
+    }
+  ],
+  "patientCopy": "a6c5b22b8c2efde9402c26c8ef34d6cae66467adbd89ba708cbf38c7dac51f00"
+}

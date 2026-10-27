@@ -1,0 +1,784 @@
+{
+  "title": "NeuroDesk 어지럼 모듈 임상 고도화 — 검토 보고",
+  "date": "2026-10-27",
+  "branch": "feat/dizziness-clinical-v1",
+  "base": "main",
+  "baseCommit": "5d956516b314cab0ed2623a7d5b876a832aa3db4",
+  "status": "구현·모의 테스트 완료; 전문의 임상 검수 전; 병합/배포 안 함",
+  "files": {
+    "index.html": "어지럼 CSS 1개·로컬 스크립트 2개 연결만 추가",
+    "clinical/dizziness-data.js": "23개 중립 문진·8개 경로·16개 출처·검사·치료·교육",
+    "clinical/dizziness.js": "어지럼 전용 조건 분기·의사 검토·HINTS 제한·혈압 차이·전환 초기화·교육/EMR/인쇄 연결",
+    "clinical/dizziness.css": "어지럼 전용 클래스와 비교표 가로 스크롤",
+    "tests/neurodesk-regression.mjs": "로컬 스크립트 로더 확장·실제 집계 export; 기존 검증 유지",
+    "tests/headache-clinical.mjs": "승인된 어지럼 확장만 기존 보존 해시에서 제외; 나머지 검증 유지",
+    "tests/headache-preservation.json": "어지럼 제외 보존 해시 추가; 집계 변경된 테스트 파일 자체 해시 검사 제거",
+    "tests/scale-library.mjs": "실행 시 회귀 검사 수를 가져오도록 집계 문구만 변경; 척도 검증 내용 유지",
+    "tests/dizziness-clinical.mjs": "대표 사례·HINTS 27조합·문진 이동·혈압/결측·초기화·EMR·모의 인쇄",
+    "tests/dizziness-preservation.json": "다른 11개 증상/교육·환자 표시 문구·두통/척도 파일 해시·GitHub PNG 메타데이터",
+    "docs/dizziness-test-output.txt": "실제 최종 통합 실행 출력",
+    "docs/dizziness-clinical-v1.json": "이번 변경·근거·국내 미확인 상태·검수 목록"
+  },
+  "paths": {
+    "retained": [
+      "bppv",
+      "vestibular_migraine",
+      "orthostatic_hypo"
+    ],
+    "added": [
+      "meniere",
+      "auvp",
+      "pppd",
+      "bilateral_vestibulopathy",
+      "central_dizziness_eval"
+    ],
+    "classification": "BPPV는 기존 경로 안에서 후반고리관·수평 향지성·수평 원지성·비전형과 환측을 구분. VM/메니에르의 확실/가능성 높은 분류도 같은 경로에서 수동 검토. 중추성 경로는 확정 질환이 아닌 감별/긴급도 평가.",
+    "totalSymptoms": 12,
+    "totalPaths": 28
+  },
+  "implementation": [
+    "환자 문진은 증상 중심 표현. 시간 경과·유발 요인을 구분하고 위치/기립/귀/두통 연관/만성/복약 후속 질문만 조건부 표시.",
+    "조건을 바꾸어 숨겨진 응답 삭제; 모름/건너뜀을 정상이나 음성으로 처리하지 않음.",
+    "응급 답변 시 자동 진행 중단·즉시 의료진 평가 안내. 새 난청은 신속한 청각/중추 원인 평가 표시.",
+    "HINTS는 현재 AVS·안진·훈련 조건을 모두 의사가 확인해야 적용 검토 표시. 결과 채점·말초 판정·뇌졸중 배제 없음.",
+    "BPPV 아형 및 단일 환측 확인 전 정복술 후보 없음. 후반고리관/수평 향지성/원지성의 후보를 다르게 표시. 유발 방향으로 환측 자동 선택 안 함.",
+    "검사는 경로별 목적·제한·시행 장소 미확인 상태를 표시. 관행적 시행 제한 항목은 오더 후보 체크박스로 만들지 않음.",
+    "기립 혈압은 안정 조건·측정 시각·양수/수축기>이완기·결측 확인 후 차이만 계산. 지속·증상·원인 확인 필요하며 초기/지연성 OH나 POTS 배제 안 함.",
+    "최근 30일 어지럼일과 기능/낙상/청력/부작용 검토 메모는 메모리만 사용. 환자 식별정보 입력하지 않도록 표시.",
+    "경로/아형/환측/분류 변경 시 이전 검사·치료·의사 기준 확인·메모·교육 선택·안내 초안·승인·출력 내용 초기화. 이전 경로 복귀에도 과거 초안 자동 재사용 방지.",
+    "선택 검토 내용은 명시적 버튼으로 안내 초안에 반영. 실제 처방·검사 오더·진단 확정 아님.",
+    "기존 안내서/교육 인쇄·EMR 연결 유지. 임상 선택 변경 도중 대기한 인쇄는 재승인해도 과거 스냅샷 취소.",
+    "두통과 어지럼 혼합 선택의 조건부 문진·이전 이동 확인. 다른 11개 데이터/교육과 환자 표시 문구, 두통/척도 실행 파일 해시 동일성 확인.",
+    "기존 dizziness.png는 말초 귀 구조 설명에만 공통 참고로 표시. VM·PPPD·기립성·중추성 경로에서는 맞지 않는 귀 PNG를 숨기고 경로별 SVG를 사용. 파일은 삭제/변경하지 않음.",
+    "새 환자 초기화, 외부 자동 요청·실제 환자 저장·AI 전송 없음."
+  ],
+  "sources": {
+    "bppv": {
+      "title": "Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update)",
+      "date": "2017-03-01",
+      "url": "https://aao-hnsfjournals.onlinelibrary.wiley.com/doi/full/10.1177/0194599816689667",
+      "access": "본문·KAS·수평반고리관 치료 절 확인",
+      "type": "AAO-HNS 진료지침",
+      "checked": "2026-10-27"
+    },
+    "grace": {
+      "title": "GRACE-3: Acute Dizziness and Vertigo in the Emergency Department",
+      "date": "2023",
+      "url": "https://www.saem.org/docs/default-source/grace/grace-3-infographic-051023.pdf?sfvrsn=4b4e50e_2",
+      "access": "SAEM 공식 권고 요약 PDF 확인; 전체 지침 본문 미열람",
+      "type": "응급실 지침 요약",
+      "checked": "2026-10-27"
+    },
+    "vm": {
+      "title": "Vestibular migraine: Diagnostic criteria (Update): Literature update 2021",
+      "date": "2021-10-22 온라인 / 2022 권호",
+      "url": "https://journals.sagepub.com/doi/10.3233/VES-201644",
+      "access": "본문 확인",
+      "type": "공식 합의문",
+      "checked": "2026-10-27"
+    },
+    "meniere": {
+      "title": "Clinical Practice Guideline: Ménière’s Disease",
+      "date": "2020-04-08",
+      "url": "https://aao-hnsfjournals.onlinelibrary.wiley.com/doi/10.1177/0194599820909438",
+      "access": "본문·KAS 확인",
+      "type": "AAO-HNS 진료지침",
+      "checked": "2026-10-27"
+    },
+    "mdcriteria": {
+      "title": "Diagnostic criteria for Menière’s disease",
+      "date": "2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25882471/",
+      "access": "PubMed 초록 확인; 전체판 미열람",
+      "type": "Bárány 등 공동 합의문",
+      "checked": "2026-10-27"
+    },
+    "auvp": {
+      "title": "Acute unilateral vestibulopathy/vestibular neuritis: Diagnostic criteria",
+      "date": "2022-06-11 온라인 / 2022-10-20 권호",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9661346/",
+      "access": "본문 확인",
+      "type": "공식 합의문",
+      "checked": "2026-10-27"
+    },
+    "pppd": {
+      "title": "Diagnostic criteria for persistent postural-perceptual dizziness (PPPD)",
+      "date": "2017-10-07 온라인",
+      "url": "https://journals.sagepub.com/doi/full/10.3233/VES-170622",
+      "access": "본문 확인",
+      "type": "공식 합의문",
+      "checked": "2026-10-27"
+    },
+    "bilateral": {
+      "title": "Bilateral vestibulopathy: Diagnostic criteria",
+      "date": "2017-09-23 온라인",
+      "url": "https://journals.sagepub.com/doi/10.3233/VES-170619",
+      "access": "본문 확인",
+      "type": "공식 합의문",
+      "checked": "2026-10-27"
+    },
+    "orthostatic": {
+      "title": "Hemodynamic orthostatic dizziness/vertigo: Diagnostic criteria",
+      "date": "2019-03-11 온라인 / 2019 권호",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9249281/",
+      "access": "공식 논문 검색 본문에서 진단기준 확인; 페이지 직접 열람은 별도 미수행",
+      "type": "공식 합의문",
+      "checked": "2026-10-27"
+    },
+    "aha": {
+      "title": "Orthostatic Hypotension in Adults With Hypertension: A Scientific Statement From the AHA",
+      "date": "2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11067441/",
+      "access": "PMC 본문 확인; AHA 직접 페이지 403",
+      "type": "AHA 과학적 성명",
+      "checked": "2026-10-27"
+    },
+    "rehab": {
+      "title": "Vestibular Rehabilitation for Peripheral Vestibular Hypofunction: An Updated Clinical Practice Guideline",
+      "date": "2022-04 권호",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8920012/",
+      "access": "공식 논문 검색 본문 및 ANPT 현행 지침 목록 확인",
+      "type": "ANPT/APTA 진료지침",
+      "checked": "2026-10-27"
+    },
+    "pppdDrugs": {
+      "title": "Pharmacological interventions for persistent postural-perceptual dizziness (PPPD)",
+      "date": "2023-03-09",
+      "url": "https://www.cochrane.org/evidence/CD015188_what-are-benefits-and-risks-different-medications-used-treat-persistent-postural-perceptual",
+      "access": "Cochrane 공식 요약 확인",
+      "type": "체계적 문헌고찰",
+      "checked": "2026-10-27"
+    },
+    "pppd2025": {
+      "title": "Effect of conservative therapy for PPPD: a systematic review and meta-analysis",
+      "date": "2025-10-30",
+      "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1676218/full",
+      "access": "본문·GRADE 및 제한점 확인",
+      "type": "체계적 문헌고찰",
+      "checked": "2026-10-27"
+    },
+    "investment": {
+      "title": "A placebo controlled, randomized clinical trial of galcanezumab for vestibular migraine: The INVESTMENT study",
+      "date": "2024-09-30 온라인",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39344988/",
+      "access": "PubMed 초록 확인; 단일기관 소규모 시험",
+      "type": "무작위 임상시험",
+      "checked": "2026-10-27"
+    },
+    "vm2026": {
+      "title": "CGRP-Targeted Therapy in Vestibular Migraine—How Strong Is the Evidence?",
+      "date": "2026-07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42396702/",
+      "access": "PubMed 초록 확인; EAN 공식 치료 권고로 취급하지 않음",
+      "type": "근거 검토 논문",
+      "checked": "2026-10-27"
+    },
+    "japan": {
+      "title": "Diagnostic and therapeutic strategies for vestibular neuritis of the Japan Society for Equilibrium Research",
+      "date": "2022-12-28 온라인 / 2024-02 권호",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36581537/",
+      "access": "초록만 확인. 세부 CQ·등급·용량 미열람; 해당 수치 적용 안 함",
+      "type": "일본학회 진단·치료 전략",
+      "checked": "2026-10-27"
+    }
+  },
+  "comparisons": [
+    {
+      "path": "bppv",
+      "name": "BPPV — 반고리관·안진형 분류",
+      "tests": [
+        {
+          "id": "positional",
+          "name": "반고리관별 체위검사",
+          "indications": "Dix-Hallpike: 후반고리관. 수평/무안진이면서 병력 합당 시 supine roll",
+          "limitations": "검사 전 운동 제한·안전성 확인; 병력만으로 확정하지 않음",
+          "sourceIds": [
+            "bppv"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "avoidImaging",
+          "name": "관행적 영상·전정기능검사 제한",
+          "indications": "전형적 기준을 충족하고 추가 이상이 없으면 일률적 영상/전정검사 불필요",
+          "limitations": "신경학적 이상·비전형/지속 증상에는 재평가; 불필요 기준을 검사 금지로 해석하지 않음",
+          "sourceIds": [
+            "bppv"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "아형·환측 확인 후 해당 정복술을 의료진이 선택합니다. 후반고리관 정복 후 일률적 자세 제한을 권하지 않습니다."
+      ],
+      "drugs": [
+        "정복술을 전정억제제로 대체하지 않습니다. 심한 구토 등 제한적 단기 증상 완화는 별도 검토합니다."
+      ],
+      "choices": [],
+      "followUp": [
+        "관찰/치료 후 1개월 이내 호전·잔여 안진·재발·낙상 평가 (AAO-HNS 권고). 지속 시 미해결 BPPV/다른 원인 재평가."
+      ],
+      "sources": [
+        "bppv"
+      ]
+    },
+    {
+      "path": "vestibular_migraine",
+      "name": "전정편두통",
+      "tests": [
+        {
+          "id": "vmClinical",
+          "name": "병력·신경학적 진찰 및 청력 평가",
+          "indications": "진단기준과 메니에르/중추성 감별",
+          "limitations": "단일 전정검사나 약물 반응으로 확정하지 않음",
+          "sourceIds": [
+            "vm"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "수면·식사·활동을 규칙적으로 유지하고 어지럼/두통/유발 상황 일지를 함께 검토합니다."
+      ],
+      "drugs": [
+        "예방약은 동반 두통·질환·내약성·선호를 고려한 개별 검토. 반응 자체는 진단 기준이 아닙니다."
+      ],
+      "choices": [
+        {
+          "id": "vmPrevent",
+          "name": "편두통 예방약 계열 검토",
+          "role": "예방",
+          "evidence": "VM 합의문은 특정 약의 확립된 우열을 제시하지 않음. 두통 모듈은 동반 두통 치료 참고이며 VM 효과 보장은 아님.",
+          "safety": "임신 가능성·맥박/혈압·신기능·기분/인지·병용약 등 선택 약제별 금기와 감시 계획 확인. 검증 안 된 VM 용량 제시 안 함.",
+          "sourceIds": [
+            "vm"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        },
+        {
+          "id": "vmCgrp",
+          "name": "CGRP 표적치료 — 제한된 VM 근거",
+          "role": "전문 검토",
+          "evidence": "2024 단일기관 소규모 위약 대조 시험은 유망한 결과. 2026 근거 검토도 자료의 제한과 두통 효과의 단순 외삽을 경고. 정식 VM 1차 권고로 표시하지 않음.",
+          "safety": "제품별 과민반응·임신·동반질환 확인. 기존 두통 예방 허가 확인이 VM 적응증 확인을 뜻하지 않음.",
+          "sourceIds": [
+            "investment",
+            "vm2026"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        }
+      ],
+      "followUp": [
+        "어지럼일·삽화 부담·두통일·일상 기능·약 부작용 평가. 고정 재진 간격 대신 치료/위험도에 따라 결정."
+      ],
+      "sources": [
+        "vm",
+        "investment",
+        "vm2026"
+      ]
+    },
+    {
+      "path": "orthostatic_hypo",
+      "name": "기립성저혈압·혈역학적 기립성 어지럼",
+      "tests": [
+        {
+          "id": "bp",
+          "name": "기립 혈압·맥박",
+          "indications": "기립 유발 양상과 증상-혈압 연관 확인",
+          "limitations": "단일 측정이나 정상 3분 값만으로 초기/지연성 OH 배제 안 함",
+          "sourceIds": [
+            "aha",
+            "orthostatic"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "cause",
+          "name": "원인별 심전도·혈액검사/자율신경 검사",
+          "indications": "심계항진·실신·출혈/탈수 등 병력에 따라 개별 선택",
+          "limitations": "일률적 검사 패널이 아님. 의심되는 원인과 의뢰 경로를 담당의가 정함",
+          "sourceIds": [
+            "orthostatic",
+            "aha"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "천천히 일어서기·낙상 예방, 필요 시 보조기/압박을 개별 검토합니다. 수분·염분은 심부전·신기능·누운 자세 고혈압을 고려해 조정하며 일률적 증량하지 않습니다."
+      ],
+      "drugs": [
+        "유발 약·혈압 조절을 검토하되 항고혈압제를 자동 중단하지 않습니다. 비약물 조치 후 증상성 신경성 OH의 승압제는 전문 검토합니다."
+      ],
+      "choices": [
+        {
+          "id": "pressor",
+          "name": "Midodrine 등 승압제 — 개별 검토",
+          "role": "증상성 신경성 OH",
+          "evidence": "AHA 성명: 보존적 조치 후 필요한 환자에 단계적 검토. 미국 허가 언급은 국내 승인 주장 아님.",
+          "safety": "Midodrine 누운 자세 고혈압 감시. Fludrocortisone은 근거가 약하고 심부전에서 피해야 함; 신기능·부종·전해질·병용약 확인.",
+          "sourceIds": [
+            "aha"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        }
+      ],
+      "followUp": [
+        "증상·낙상·기립/누운 자세 혈압·복약 변화를 평가. 악화/실신은 조기 재평가; 다음 날짜는 담당의 결정."
+      ],
+      "sources": [
+        "orthostatic",
+        "aha"
+      ]
+    },
+    {
+      "path": "meniere",
+      "name": "메니에르병",
+      "tests": [
+        {
+          "id": "audiogram",
+          "name": "순음/어음 청력검사",
+          "indications": "메니에르 진단 평가에 시행 (강한 권고)",
+          "limitations": "정상 단일 검사로 변동성 청력 소견을 배제하지 않음",
+          "sourceIds": [
+            "meniere"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "iacMRI",
+          "name": "내이도·후두개와 MRI",
+          "indications": "청력검사로 비대칭 감각신경성 난청이 확인된 경우 선택 검토",
+          "limitations": "메니에르 모든 환자의 일률적 필수 영상 아님 (Option)",
+          "sourceIds": [
+            "meniere"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "avoidEcoG",
+          "name": "관행적 전정기능검사·전기와우도 제한",
+          "indications": "메니에르 진단 확립만을 목적으로 일률적 시행하지 않음",
+          "limitations": "다른 임상 목적의 검사는 별도 판단",
+          "sourceIds": [
+            "meniere"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "개인별 식이·생활 유발요인 조정과 질환 경과 교육. 만성 불균형에는 재활을 고려하되 급성 발작 치료로 재활을 대체하지 않습니다."
+      ],
+      "drugs": [
+        "발작 중 제한적 전정억제제, 유지 치료는 이뇨제/베타히스틴을 선택지로 검토합니다. 확정된 필수 1차로 표시하지 않습니다."
+      ],
+      "choices": [
+        {
+          "id": "mdMaintenance",
+          "name": "이뇨제 / betahistine",
+          "role": "유지",
+          "evidence": "AAO-HNS KAS9: Option. 발작 감소/예방을 위한 선택지이며 효능을 보장하지 않음.",
+          "safety": "제품별 전해질·신기능·혈압·동반질환·상호작용 확인. 베타히스틴 염 형태·품목별 금기/용량은 공식 확인 전 제시 안 함.",
+          "sourceIds": [
+            "meniere"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        },
+        {
+          "id": "mdAttack",
+          "name": "제한적 전정억제제",
+          "role": "발작 중 증상 완화",
+          "evidence": "AAO-HNS KAS7: 발작 중 한정된 기간 사용 권고.",
+          "safety": "진정·낙상·인지·운전·다른 중추 억제약 병용 위험을 검토하고 장기 관행 복용을 피하도록 계획. 제품별 금기 확인 필요.",
+          "sourceIds": [
+            "meniere",
+            "bppv"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        },
+        {
+          "id": "mdRefer",
+          "name": "고실내 치료/수술 상담 의뢰",
+          "role": "불응 질환",
+          "evidence": "스테로이드 Option; 비절제 치료 불응 시 gentamicin 권고. 환측 청력·위험·선호를 반영한 전문 진료.",
+          "safety": "난청·전정기능 손실 위험과 반대쪽 기능을 전문의가 검토. 이번 화면에서 용량/시술 오더 생성 없음.",
+          "sourceIds": [
+            "meniere"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        }
+      ],
+      "followUp": [
+        "발작 횟수·청력·이명·기능·부작용·치료 후 잔여 불균형 평가; 청력 악화 시 조기 의뢰."
+      ],
+      "sources": [
+        "meniere",
+        "mdcriteria"
+      ]
+    },
+    {
+      "path": "auvp",
+      "name": "급성 일측 전정병증(AUVP/전정신경염)",
+      "tests": [
+        {
+          "id": "avsexam",
+          "name": "AVS 신경·안구운동·청력·보행 평가",
+          "indications": "현재 급성 지속성 증후군 평가; HINTS 조건 확인",
+          "limitations": "훈련 부족·적용 대상 밖·검사 불명확이면 말초성 결론 금지",
+          "sourceIds": [
+            "grace",
+            "auvp"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "vor",
+          "name": "vHIT / 필요 시 온도안진검사",
+          "indications": "일측 VOR 저하 확인; 검사별 주파수 영역·장비 기준 고려",
+          "limitations": "vHIT만으로 모든 중추성 원인 배제 불가",
+          "sourceIds": [
+            "auvp"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "mri",
+          "name": "응급 MRI/MRA 등 평가",
+          "indications": "중추/불명확 HINTS 또는 임상적 중추 우려·적절한 검사 불가 시 의뢰 판단",
+          "limitations": "관행적 CT로 중추성 배제하지 않음; 영상 선택 때문에 전원을 지연하지 않음",
+          "sourceIds": [
+            "grace"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "말초 전정기능저하 확인 후 안전한 범위에서 개별 전정재활·낙상 예방을 검토합니다."
+      ],
+      "drugs": [
+        "발병 초기 스테로이드는 확정적 표준으로 제시하지 않습니다. GRACE-3: 첫 3일 내 공동 의사결정, 근거 확실성 매우 낮음."
+      ],
+      "choices": [
+        {
+          "id": "steroid",
+          "name": "단기 스테로이드 공동 의사결정",
+          "role": "초기 선택적 검토",
+          "evidence": "GRACE-3: 발병 첫 3일 내, 매우 낮은 확실성. 일본학회 2024 전략의 세부 약제/등급은 초록만 확인하여 적용 안 함.",
+          "safety": "당뇨·감염·위장관·정신/수면·임신·병용약을 포함한 제품별 금기/위험을 확인. 용량/기간 추정 안 함.",
+          "sourceIds": [
+            "grace",
+            "japan"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        },
+        {
+          "id": "rehab",
+          "name": "개별 전정재활",
+          "role": "보상·기능 회복",
+          "evidence": "ANPT/APTA 2022: 일측/양측 말초 전정기능저하에 강한 권고.",
+          "safety": "낙상 위험·운동 유발 오심·경추/시각/인지 상태를 고려한 감독. 중앙/PPPD에 같은 근거를 그대로 적용하지 않음.",
+          "sourceIds": [
+            "rehab"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        }
+      ],
+      "followUp": [
+        "급성기 위험신호·청력 변화·섭취/보행·안진/VOR·재활 반응과 약 부작용 재평가. 호전 없음/새 증상은 진단 재검토."
+      ],
+      "sources": [
+        "auvp",
+        "grace",
+        "rehab",
+        "japan"
+      ]
+    },
+    {
+      "path": "pppd",
+      "name": "지속성 자세-지각 어지럼(PPPD)",
+      "tests": [
+        {
+          "id": "pppdClinical",
+          "name": "기준·기능 및 공존 질환 평가",
+          "indications": "병력과 진찰로 PPPD 기준과 다른 원인 확인",
+          "limitations": "정상 영상/전정검사만으로 확정하지 않음. 배제 검사 패널 일괄 주문 금지",
+          "sourceIds": [
+            "pppd"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "질환 설명·점진적인 활동/전정 적응·필요 시 인지행동 접근을 개별 검토합니다. 약물·재활 효과의 불확실성과 목표를 함께 설명합니다."
+      ],
+      "drugs": [
+        "SSRI/SNRI를 확립된 필수 1차 치료로 단정하지 않습니다. 2023 Cochrane은 적격 위약 대조시험 부재, 2025 메타분석은 조합 치료 이득 가능성과 매우 낮음~중등도 근거 및 비뚤림을 보고합니다."
+      ],
+      "choices": [
+        {
+          "id": "pppdCombined",
+          "name": "교육·적응훈련/CBT·약물의 개별 조합",
+          "role": "공동 의사결정",
+          "evidence": "2025 메타분석은 SSRI+재활 등 조합의 이득 가능성을 제시하나 근거는 매우 낮음~중등도이며 비뚤림·이질성 제한. 2023 적격 위약 대조 근거 부재와 비교 대상/포함 기준이 다름.",
+          "safety": "약 선택 시 기분/자살사고·저나트륨·출혈·세로토닌성 병용·금단 등 제품별 감시 필요 여부를 확인. 임신/고령/신기능별 적합성·용량 미확인.",
+          "sourceIds": [
+            "pppdDrugs",
+            "pppd2025"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        }
+      ],
+      "followUp": [
+        "어지럼일·직립/시각 노출 시 기능·활동 복귀·동반 질환·부작용/중단 증상 평가. 고정 횟수/기간 대신 개별 계획."
+      ],
+      "sources": [
+        "pppd",
+        "pppdDrugs",
+        "pppd2025"
+      ]
+    },
+    {
+      "path": "bilateral_vestibulopathy",
+      "name": "양측 전정병증",
+      "tests": [
+        {
+          "id": "bivor",
+          "name": "vHIT·온도안진검사 / 필요 시 회전의자",
+          "indications": "양측 VOR 손실을 장비·검사 조건에 맞춰 확인",
+          "limitations": "검사별 주파수 영역이 다름. 동적 시력/Romberg만으로 진단 안 함",
+          "sourceIds": [
+            "bilateral"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "개별 전정재활·조명·보행 보조·낙상 예방, 확인된 원인/이독성 노출 관리 검토."
+      ],
+      "drugs": [
+        "특정 약을 기능 회복 치료로 자동 제시하지 않습니다. 장기 전정억제제와 기능 회복 영향·필요성을 검토합니다."
+      ],
+      "choices": [
+        {
+          "id": "rehab",
+          "name": "개별 전정재활",
+          "role": "기능 회복",
+          "evidence": "ANPT/APTA 말초 양측 기능저하에 강한 권고.",
+          "safety": "개별 균형·시선 안정화·보행 훈련 및 안전 감시. 머리 움직임 없는 안구 운동만으로 대체하지 않음.",
+          "sourceIds": [
+            "rehab"
+          ],
+          "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+          "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+        }
+      ],
+      "followUp": [
+        "동요시·보행/일상 기능·낙상·재활 순응도·잔존 기능과 원인 질환 평가."
+      ],
+      "sources": [
+        "bilateral",
+        "rehab"
+      ]
+    },
+    {
+      "path": "central_dizziness_eval",
+      "name": "중추성·혈관성 어지럼 평가 — 감별 경로",
+      "tests": [
+        {
+          "id": "centralExam",
+          "name": "응급 신경·안구운동·청력·보행 평가",
+          "indications": "현재 증후군 및 긴급도에 맞는 전문 평가",
+          "limitations": "HINTS 자동 점수/환자 자가검사로 배제하지 않음",
+          "sourceIds": [
+            "grace"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        },
+        {
+          "id": "centralMRI",
+          "name": "MRI/MRA 또는 원인별 혈관 영상",
+          "indications": "중추/불명확 HINTS, TIA 혈관 병변 우려 등 원인별 선택",
+          "limitations": "단순 CT는 말초/중추 감별 배제 수단이 아님; 영상 미시행을 안전으로 해석하지 않음",
+          "sourceIds": [
+            "grace"
+          ],
+          "site": "원내 시행/외부 의뢰 가능 여부 확인 필요"
+        }
+      ],
+      "nonPharm": [
+        "넘어지지 않도록 보호하고 안전한 응급/전문 평가 경로를 마련합니다."
+      ],
+      "drugs": [
+        "뇌졸중 등 원인별 치료는 응급 평가 후 담당 팀이 결정합니다. 이 화면은 항혈전제·혈전용해제·전정억제제 자동 처방을 하지 않습니다."
+      ],
+      "choices": [],
+      "followUp": [
+        "의뢰/검사 결과와 진단에 따른 추적 계획. 새 신경 증상 또는 악화 시 즉시 재평가."
+      ],
+      "sources": [
+        "grace"
+      ]
+    }
+  ],
+  "evidenceDifferences": [
+    "BPPV 원본 안내의 일률적 고개 제한과 고정 1~2주 추적 대신, AAO-HNS의 후반고리관 정복 후 일률적 자세 제한 반대와 1개월 이내 재평가를 반영. 필요한 조기 진료를 제한하지 않음.",
+    "전정편두통 진단 합의문의 당시 약물 근거 부족과 이후 2024 소규모 RCT/2026 검토를 구분. 두통 편두통의 CGRP 1차 권고를 VM 1차 치료로 복제하지 않음.",
+    "PPPD 2023 Cochrane의 적격 위약 대조시험 부재와 2025 메타분석의 활성/조합 비교 이득은 포함 기준·비교군 차이. 중등도~매우 낮음 근거·비뚤림을 표시하고 확립된 필수 약물치료로 단정하지 않음.",
+    "AUVP 진단 합의문과 GRACE-3 응급실 스테로이드 선택적 공동 의사결정, 말초 기능저하의 재활 지침을 구분. 일본학회 전략은 초록만 확인하여 약물 용량/CQ 등급을 추정 적용하지 않음.",
+    "기립성저혈압에서 항고혈압제 자동 중단·모든 환자 수분/염분 증량을 삭제하고 고혈압·심부전·신기능을 반영한 AHA 개별 검토 원칙 사용."
+  ],
+  "korea": {
+    "status": "이번 어지럼 치료의 국내 품목별 허가·적응증·급여·공급은 미확인. 미확인을 불허/비급여로 표시하지 않음.",
+    "attempts": [
+      {
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197700201",
+        "topic": "베타히스틴 메실산염 품목",
+        "result": "직접 접근 실패. 제3자 정보로 국내 허가/용량을 확정하지 않음"
+      },
+      {
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199302799",
+        "topic": "미도드린 품목",
+        "result": "직접 접근 실패. 국내 용량/금기/급여 미확인"
+      },
+      {
+        "url": "https://www.hira.or.kr/",
+        "topic": "베타히스틴/전정재활 급여 검색",
+        "result": "이번 검색에서 해당 현행 공식 인정기준을 확보하지 못함. 급여/비급여 추정 안 함"
+      }
+    ],
+    "doses": "공식 허가 원문을 확보하지 못했으므로 새 어지럼 약물 시작·증량·범위 수치를 넣지 않음.",
+    "caution": "두통 모듈의 특정 편두통 예방 품목 허가 확인은 전정편두통 허가 확인으로 취급하지 않음. 제3자 약가/설명·학회 설문만으로 급여 인정 여부 단정하지 않음."
+  },
+  "tests": {
+    "command": "node --input-type=module -e \"await import('./tests/dizziness-clinical.mjs');await import('./tests/headache-clinical.mjs');await import('./tests/scale-library.mjs');\"",
+    "exitCode": 0,
+    "PASS": {
+      "regression": 93,
+      "dizziness": 376,
+      "headache": 247,
+      "scales": 594,
+      "total": 1310
+    },
+    "FAIL": 0,
+    "dizzinessCases": [
+      {
+        "name": "후반고리관 BPPV",
+        "result": "PASS"
+      },
+      {
+        "name": "수평 향지성·원지성 BPPV",
+        "result": "PASS"
+      },
+      {
+        "name": "전정편두통",
+        "result": "PASS"
+      },
+      {
+        "name": "메니에르병",
+        "result": "PASS"
+      },
+      {
+        "name": "급성 일측 전정병증·HINTS 적용 조건",
+        "result": "PASS"
+      },
+      {
+        "name": "PPPD",
+        "result": "PASS"
+      },
+      {
+        "name": "양측 전정병증",
+        "result": "PASS"
+      },
+      {
+        "name": "기립성저혈압·실측 계산",
+        "result": "PASS"
+      },
+      {
+        "name": "중추성 위험신호·전원 우선",
+        "result": "PASS"
+      },
+      {
+        "name": "급성 난청 동반 어지럼",
+        "result": "PASS"
+      },
+      {
+        "name": "안정 재진·추적 지표",
+        "result": "PASS"
+      }
+    ],
+    "headacheCases": [
+      {
+        "case": "삽화편두통",
+        "status": "PASS"
+      },
+      {
+        "case": "만성편두통",
+        "status": "PASS"
+      },
+      {
+        "case": "전조편두통",
+        "status": "PASS"
+      },
+      {
+        "case": "약물과용두통",
+        "status": "PASS"
+      },
+      {
+        "case": "군발두통",
+        "status": "PASS"
+      },
+      {
+        "case": "벼락두통",
+        "status": "PASS"
+      },
+      {
+        "case": "예방약 복용 중 재진",
+        "status": "PASS"
+      },
+      {
+        "case": "고령자의 새 두통",
+        "status": "PASS"
+      }
+    ],
+    "hintsCombinations": 27,
+    "NOT_TESTED": [
+      "실제 Chrome/Edge 및 모바일 UI/반응형 배치/접근성",
+      "실제 PNG 디코딩과 표시",
+      "운영체제 클립보드 권한",
+      "실제 A4 출력·페이지 넘김",
+      "출처 링크 실제 클릭 이동",
+      "Netlify 배포",
+      "전문의 최종 임상 검수",
+      "국내 현행 허가·급여 확정"
+    ],
+    "scope": "모의 DOM·VM 로직 검증. 이미지 디코딩·클립보드·인쇄는 대체 구현. PNG는 GitHub 추적·크기·루트 경로만 확인. 실제 환자 자료 사용 안 함. 사용자 화면 조작 안 함.",
+    "countPolicy": "각 테스트의 실제 카운터에서 집계. 공통 회귀 모듈은 한 번만 실행되어 합계에 중복 포함하지 않음. 테스트 파일의 변경 불가 해시 검사를 기능 보존 검사와 분리하여 이전 고정 테스트 숫자를 재사용하지 않음."
+  },
+  "reviewNeeded": [
+    "AVS·삽화성·유발성 분류 및 위험신호의 의원 전원 프로토콜·HINTS 숙련도/적용 조건",
+    "BPPV 아형·환측·술기 선택 및 경추/체위 안전성; 비전형/양측의 전문 의뢰 경로",
+    "메니에르/VM 확실·가능성 높은 분류의 기준 요약·청력검사/영상 적응증",
+    "VM 약물 근거 외삽 제한과 CGRP의 제한적 근거 설명",
+    "AUVP 초기 스테로이드 공동 의사결정·말초 저하 재활 계획",
+    "PPPD 진단과 공존 질환·조합 치료의 근거 불확실성·약제별 전체 안전성",
+    "양측 전정병증 VOR 기준/장비 프로토콜·감별·재활 목표",
+    "기립 혈압 측정 프로토콜·지속/초기/지연성 평가·개인별 수분/염분/약 조정",
+    "모든 선택 약물의 국내 허가 원문·급여·용량·금기·상호작용·고령/임신/신기능 및 감시 계획",
+    "환자 교육과 기존 귀 구조 PNG·새 SVG의 정확성 및 실제 A4 출력 일치"
+  ],
+  "limitations": [
+    "일부 PMC/출판사/식약처 페이지 접근 실패. 성공한 대체 공식 원문·초록·공식 요약의 열람 범위를 개별 기록.",
+    "새로운 보편적 어지럼 약물 용량 프로토콜·정복술 자가 시행 지시·DHI 등 제한된 척도 문항 추가 없음.",
+    "기존 index.html의 원래 어지럼 데이터는 보존하며, 런타임 기준 데이터는 clinical/dizziness-data.js로 대체. 다른 모듈은 수정하지 않음.",
+    "다음 인지장애 모듈은 진행하지 않으며 이 PR 보고 후 사용자 검토를 기다림."
+  ]
+}
