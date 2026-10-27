@@ -1795,6 +1795,8 @@ NEURO_DATA.other = {
         });
         document.getElementById('docCaregiverTag').style.display = 'none';
         document.getElementById('eduPrintButton').disabled = true;
+        // The Stage 4 reference library is available without a patient symptom.
+        if (window.NeuroScaleLibrary) window.NeuroScaleLibrary.render(null);
         return;
       }
 

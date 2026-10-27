@@ -5,7 +5,10 @@ const html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
 const env=makeEnv(html),api=env.ctx.NeuroScaleLibrary,scales=api.catalog.scales;
 let passed=0;
 function check(name,condition){assert.ok(condition,name);passed++;}
-env.ctx.toggleSymptom('headache');env.ctx.switchMode('doctor');env.ctx.switchDocStage('stage4_scales');
+env.ctx.switchMode('doctor');env.ctx.switchDocStage('stage4_scales');
+check('library available without a patient symptom',!!env.doc.getElementById('scaleToolbar')&&env.doc.getElementById('scaleCount').textContent.includes('85 / 85'));
+check('library browsing does not invent symptom',env.eval('AppState.selectedSymptoms.length')===0);
+env.ctx.switchMode('patient');env.ctx.toggleSymptom('headache');env.ctx.switchMode('doctor');env.ctx.switchDocStage('stage4_scales');
 check('85 unique registered scales',scales.length===85&&new Set(scales.map(s=>s.id)).size===85);
 const required=['hit6','midas','msq','headache-diary','dhi','vss','abc','vadl','mmse','k-mmse','mmse2','moca','cist','cdr','gds-dementia','ad8','iqcode','kiadl','siadl','npi','npiq','mdsupdrs','hy','seadl','pdq39','pdq8','nmss','nmsq','scopaaut','fogq','woq9','isi','psqi','ess','stopbang','berlin','rbdsq','irls','rls6','dn4','paindetect','nrs','vas','bpi','npsi','mnsi','tcns','incat','nihss','mrs','barthel','fma','mrc','compass31','ohq','qolie10','qolie31','lsss','tug','bbs','poma','sppb','fga','10mwt','thi','tfi','hhie','phq9','phq2','gad7','hads','bdiii','gds-depression'];
 check('all 73 requested unique tools registered',required.length===73&&required.every(id=>scales.some(s=>s.id===id)));
