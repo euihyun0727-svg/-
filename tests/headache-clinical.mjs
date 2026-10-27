@@ -1,3 +1,4 @@
+import {preserved} from './clinical-preservation.mjs';
 import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import {makeEnv} from './neurodesk-regression.mjs';
@@ -21,8 +22,8 @@ function patient(answers={}){
  e.ctx.switchMode('doctor');return {e,shown};
 }
 ok('12 symptoms',e.eval('Object.keys(NEURO_DATA).length')===12);
-ok('other11 unchanged',hash(e.eval("JSON.stringify(Object.fromEntries(Object.entries(NEURO_DATA).filter(([id])=>id!=='headache'&&(!window.NeuroDizziness||id!=='dizziness'))))"))===(e.ctx.NeuroDizziness?baseline.otherSymptomsExceptDizziness:baseline.otherSymptoms));
-ok('other education unchanged',hash(e.eval("JSON.stringify(Object.fromEntries(Object.entries(EDUCATION_V2).filter(([id])=>!['migraine','tension','moh','cluster','headache_trigeminal_neuralgia','secondary_headache_eval'].includes(id)&&(!window.NeuroDizziness||!window.NeuroDizzinessData.paths.some(p=>p.id===id)))))"))===(e.ctx.NeuroDizziness?baseline.otherEducationExceptDizziness:baseline.otherEducation));
+ok('unexpanded clinical data unchanged',preserved(e,'modules',["headache"]));
+ok('unexpanded education unchanged',preserved(e,'education',["headache"]));
 for(const [p,h] of Object.entries(baseline.scales))ok(p+' unchanged',hash(await fs.readFile(new URL('../'+p,import.meta.url)))===h);
 ok('six paths original3 preserved',D.paths.map(p=>p.id).join(',')==='migraine,tension,moh,cluster,headache_trigeminal_neuralgia,secondary_headache_eval');
 for(const s of Object.values(D.sources))ok('source fields',s.title&&s.date&&new URL(s.url).protocol==='https:');
