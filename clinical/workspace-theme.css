@@ -1,0 +1,198 @@
+/* Shared screen design; patient content, clinical state and A4 rules stay separate. */
+@media screen {
+  :root{--primary:#276d72;--primary-dark:#263f4b;--primary-light:#edf5f5;--accent:#276d72;--gray-50:#f7f9fa;--gray-100:#eef2f4;--gray-200:#dce4e8;--gray-300:#bfcdd5;--gray-600:#536672;--gray-700:#39505d;--gray-800:#263942;--product-border:#dce4e8;--product-radius:16px;--product-shadow:none}
+  body{background:#eef2f4;background-image:none;color:#263942;font-size:16px;line-height:1.7;color-scheme:light}
+  body>header{padding:20px max(28px,calc((100vw - 1384px)/2));background:#fff;border-bottom:0;box-shadow:none;gap:18px}
+  .brand-badge{background:#263f4b;border-radius:12px;box-shadow:none}
+  .brand-title{font-size:23px;font-weight:750;letter-spacing:-.8px;color:#263942}
+  .clinic-brand-sub{font-size:13px;color:#536672}
+  .header-controls{display:flex;gap:7px;flex-wrap:wrap}
+  button,input,textarea,select{font-family:var(--font-base)}
+  button{min-height:44px;box-shadow:none!important;transition:none!important}
+  button:disabled{opacity:.55}
+  .btn-mode,.btn-test{border:1px solid #dce4e8;background:#f7f9fa;color:#39505d;font-size:14px;line-height:1.6;border-radius:9px;padding:10px 14px}
+  .btn-mode.active{background:#263f4b;border-color:#263f4b;color:#fff}
+  .btn-mode:hover:not(:disabled),.btn-test:hover:not(:disabled){background:#e9f0f2;color:#263f4b;border-color:#bdcdd4}
+  .btn-mode.active:hover{background:#263f4b;color:#fff}
+  main{max-width:1440px;padding:24px 28px 36px}
+  .banner-safe{background:#e7edf0;color:#455a67;border:0;border-radius:10px;padding:12px 16px;font-size:14px;line-height:1.8;margin-bottom:24px}
+  .banner-safe strong{color:#304c5a}
+  .card{background:#fff;border:1px solid #e0e7eb;border-radius:16px;padding:24px;box-shadow:none}
+  .symptom-switcher-bar{background:#fff;border:0;box-shadow:none;padding:10px max(28px,calc((100vw - 1384px)/2)) 12px;gap:12px;flex-wrap:wrap}
+  .symptom-switcher-label{font-size:14px;color:#536672}
+  .btn-sym-switch{border:1px solid #dce4e8;border-radius:8px;background:#f7f9fa;color:#39505d;font-size:14px;padding:9px 13px}
+  .btn-sym-switch.active{background:#e5eff0;border-color:#92b6bc;color:#23585e;font-weight:700}
+  nav.doctor-nav{padding:8px max(28px,calc((100vw - 1384px)/2)) 16px;background:#fff;border:0;box-shadow:none;gap:6px;flex-wrap:wrap}
+  .doctor-nav .nav-btn{flex:1 1 180px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;min-height:48px;padding:11px 10px;background:transparent;color:#4c606e;font-size:15px;font-weight:500;line-height:1.5;white-space:normal}
+  .doctor-nav .nav-btn.active{background:#263f4b;color:#fff;font-weight:750;box-shadow:none}
+  .doctor-nav .nav-btn:hover:not(.active){background:#edf3f5;color:#263f4b}
+  #doctorSection h2{font-size:26px!important;font-weight:750!important;line-height:1.45;color:#263942!important;letter-spacing:-.7px}
+  #doctorSection h3{font-size:18px;line-height:1.6;color:#263942;letter-spacing:-.3px}
+  .nd-stage-heading{border-bottom:1px solid #dce4e8!important;padding-bottom:20px!important;margin-bottom:22px!important;gap:16px;flex-wrap:wrap}
+  .nd-stage-heading>p,.nd-stage-heading p{font-size:14px!important;color:#536672;line-height:1.8;margin-top:8px!important}
+  .nd-stage-heading .no-print{flex:0 0 auto}
+  .table-clean{width:100%;font-size:15px}
+  .table-clean th{background:#f4f7f8;color:#39505d;font-weight:650}
+  .table-clean td,.table-clean th{border-color:#e1e8ec;padding:13px 12px;line-height:1.8;overflow-wrap:anywhere}
+  .btn-subpath{border:1px solid #c8d5dc;border-radius:9px;background:#fff;color:#39505d;min-height:44px;font-size:15px;line-height:1.6;padding:10px 14px}
+  .btn-subpath.active{background:#e5eff0;color:#23585e;border-color:#82aab1;font-weight:700}
+  .btn-subpath:hover:not(.active){background:#f2f7f8;border-color:#9fb8c2}
+  input:not([type=checkbox]):not([type=radio]):not([type=file]),textarea,select{box-sizing:border-box;border:1px solid #bfcdd5;border-radius:9px;padding:10px 12px;background:#fff;color:#263942;font-size:16px;line-height:1.6;min-height:44px;max-width:100%;box-shadow:none}
+  input[type=checkbox],input[type=radio]{accent-color:#276d72}
+  input::placeholder,textarea::placeholder{color:#687b87;opacity:1}
+  textarea{resize:vertical}
+  a{color:#276d72;text-underline-offset:3px}
+  summary{color:#276d72;line-height:1.7;min-height:44px}
+  .danger-box{border:1px solid #e5abab;border-left:4px solid #b53737;border-radius:10px;background:#fff1f1;color:#842c2c}
+  .danger-title{color:#9b2929}
+  .quick-warning{color:#9a3412}
+  .ha-clinical,.dz-clinical,.cm-review{border:0;border-top:1px solid #dce4e8;border-radius:0;padding:22px 0;margin-top:22px;background:transparent;color:#263942;line-height:1.8}
+  .ha-clinical details,.dz-clinical details,.cm-review details{background:transparent;border:0;border-bottom:1px solid #e1e8ec;border-radius:0;padding:10px 0;margin:0}
+  .ha-clinical summary,.dz-clinical summary,.cm-review summary{color:#263f4b;font-size:16px;font-weight:650;min-height:44px;padding:8px 0}
+  .ha-clinical label,.dz-clinical label,.cm-review label{font-size:16px;line-height:1.8;margin:10px 0}
+  .ha-clinical select,.dz-clinical select,.cm-review select,.ha-clinical input[type=number],.dz-clinical input[type=number],.cm-review input[type=number],.dz-clinical textarea,.cm-review textarea{border-color:#bfcdd5;background:#fff;color:#263942;border-radius:9px;font-size:16px;min-height:44px;padding:10px}
+  .ha-note,.dz-note,.cm-note{background:#edf4f5;color:#39535f;padding:14px 16px;border-radius:9px;font-size:15px;line-height:1.8}
+  .ha-sources,.dz-sources,.cm-sources{font-size:14px;color:#536672;line-height:1.8;overflow-wrap:anywhere}
+  .ha-scroll,.dz-scroll,.cm-scroll{max-width:100%;overflow-x:auto}
+  .ha-scroll table,.dz-scroll table,.cm-scroll table{font-size:15px;line-height:1.8}
+  .ha-scroll td,.ha-scroll th,.dz-scroll td,.dz-scroll th,.cm-scroll td,.cm-scroll th{padding:12px;vertical-align:top}
+
+  /* Summary: urgent findings precede the compact context and wide answer review. */
+  .nd-summary-card{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:22px 24px;align-items:start}
+  .nd-summary-card>.nd-stage-heading{grid-column:1/-1;order:0;margin-bottom:0!important}
+  .nd-summary-card>#docRedFlagsArea{grid-column:1/-1;order:1}
+  .nd-summary-card>#docRedFlagsArea:empty{display:none}
+  .nd-summary-card>#visitQuickSummary{order:2}
+  .nd-summary-card>#experienceSummary{order:3}
+  .nd-summary-card>.two-col{grid-column:1/-1;order:4;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:24px;align-items:start}
+  .nd-summary-card>.two-col>div{min-width:0}
+  .quick-summary,.experience-doctor-summary{background:transparent;border:0;border-radius:0;padding:0;margin:0}
+  .quick-summary h3,.experience-doctor-summary h3{margin-bottom:12px}
+  .quick-summary li{border-color:#e1e8ec;padding:10px 0}
+  .quick-summary li strong,.quick-summary li span{font-size:16px;line-height:1.8}
+  .experience-doctor-summary dl{grid-template-columns:110px minmax(0,1fr);font-size:15px;gap:10px 12px;margin:12px 0}
+  .experience-doctor-summary p{font-size:16px;line-height:1.8}
+  #docClinicalAssessmentBox{background:#f6f9fa!important;border:0!important;border-radius:10px!important;padding:18px!important;color:#263942!important;font-size:16px!important;line-height:1.85!important}
+  #docCaregiverTag{font-size:13px!important;line-height:1.7}
+  #docStage_stage1_summary .two-col h3{font-size:18px!important;margin-bottom:12px!important}
+
+  /* Test review uses readable rows rather than a stack of identical boxes. */
+  #docTestCandidatesList .test-candidate-card{display:grid;grid-template-columns:minmax(160px,.38fr) minmax(0,1fr);gap:20px;background:transparent;border:0;border-bottom:1px solid #dce4e8;border-radius:0;padding:20px 0;margin:0}
+  #docTestCandidatesList .test-head{background:transparent;border:0;padding:0;margin:0}
+  #docTestCandidatesList .test-name{font-size:18px;line-height:1.6;color:#263942}
+  #docTestCandidatesList .test-body{font-size:16px;line-height:1.85;padding:0}
+  #docTestCandidatesList .test-body>div+div{margin-top:8px}
+
+  /* Treatment: compact path selector and a broad continuous clinical work area. */
+  .nd-treatment-layout{display:grid;grid-template-columns:252px minmax(0,1fr);gap:24px;align-items:start}
+  .nd-treatment-layout .subpath-selector{display:flex;flex-direction:column;align-items:stretch;gap:7px;margin:0;padding:0 20px 0 0;border:0;border-right:1px solid #dce4e8;background:transparent;min-width:0}
+  .nd-treatment-layout .btn-subpath{text-align:left;white-space:normal;width:100%;border-color:transparent;background:transparent;padding:12px 13px}
+  .nd-treatment-layout .btn-subpath.active{background:#e5eff0;border-color:#b6cfd3;box-shadow:inset 3px 0 #276d72!important}
+  #docSubpathContent{min-width:0}
+  #docSubpathContent>div:first-child{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important}
+  #docSubpathContent>div:first-child>div:first-child{font-size:21px!important;line-height:1.5;color:#263942!important;margin-bottom:8px!important}
+  #docSubpathContent>div:first-child>div:nth-child(2){font-size:16px!important;line-height:1.85!important;color:#536672!important;margin-bottom:22px!important}
+  #docSubpathContent>div:first-child>div:nth-child(n+3){padding:18px 0;margin:0!important;border-top:1px solid #e1e8ec}
+  #docSubpathContent strong{font-size:16px!important;line-height:1.8}
+  #docSubpathContent ul{font-size:16px!important;line-height:1.9!important;padding-left:21px!important;margin:10px 0!important}
+  #docSubpathContent li+li{margin-top:6px}
+
+  /* Scales: discover on the left, interview and enter answers on the right. */
+  #docStage_stage4_scales .scale-toolbar{background:#f4f7f8;border:0;border-radius:10px;padding:16px;margin:0 0 24px;gap:14px 20px;align-items:end}
+  #docStage_stage4_scales .scale-toolbar label{font-size:14px;line-height:1.7;min-width:0}
+  #docStage_stage4_scales .scale-toolbar input[type=search]{width:320px;max-width:100%;font-size:16px}
+  #docStage_stage4_scales .scale-columns{grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:24px;align-items:start}
+  #docStage_stage4_scales .scale-list-row{border:0;border-bottom:1px solid #e1e8ec;border-radius:0;padding:16px 12px;margin:0;background:transparent}
+  #docStage_stage4_scales .scale-list-row:has(.scale-open[aria-pressed=true]){background:#e9f2f3;border-color:#cadde0;border-radius:9px}
+  #docStage_stage4_scales .scale-open{color:#276d72;font-size:17px;line-height:1.65;min-height:44px;padding:4px 0}
+  #docStage_stage4_scales .scale-open[aria-pressed=true]{color:#23585e;text-decoration-thickness:2px}
+  #docStage_stage4_scales .scale-list-row p,#docStage_stage4_scales .scale-note{font-size:14px;line-height:1.8;color:#536672}
+  #docStage_stage4_scales #scaleDetail{border-left:1px solid #dce4e8;padding-left:24px;min-width:0}
+  #docStage_stage4_scales #scaleDetail h3{font-size:22px;line-height:1.5;margin-bottom:12px}
+  #docStage_stage4_scales #scaleDetail p{font-size:16px;line-height:1.85}
+  #docStage_stage4_scales .scale-metadata{grid-template-columns:145px minmax(0,1fr);font-size:15px;line-height:1.8;gap:10px 16px}
+  #docStage_stage4_scales .scale-favorite{border-color:#c8d5dc;background:#fff;color:#39505d;border-radius:8px;font-size:14px;min-height:44px}
+  #docStage_stage4_scales #scaleElectronic fieldset{border:0;border-top:1px solid #dce4e8;border-radius:0;background:transparent;padding:20px 0;margin:0}
+  #docStage_stage4_scales #scaleElectronic legend{font-size:18px;line-height:1.8;padding:0;font-weight:650}
+  #docStage_stage4_scales #scaleElectronic select{font-size:17px;min-height:52px;border-color:#bfcdd5;border-radius:9px;margin-top:10px}
+  #docStage_stage4_scales .scale-safety{border-color:#b53737;background:#fff1f1;color:#842c2c;border-radius:9px;font-size:16px}
+
+  /* Patient flow: a clear task canvas, large response targets, a quiet guide rail. */
+  .patient-container{max-width:none;padding:0 0 24px}
+  #screenSymptomSelect.card{padding:0;background:transparent;border:0;border-radius:0}
+  .nd-patient-heading{margin-bottom:24px}
+  .intake-kicker{font-size:14px;font-weight:650;letter-spacing:.2px;color:#276d72;margin-bottom:8px}
+  .patient-title{font-size:30px;line-height:1.5;letter-spacing:-.8px;color:#263942;margin-bottom:10px}
+  .patient-subtitle{font-size:18px;line-height:1.8;color:#536672;margin:0}
+  .nd-intake-layout{display:grid;grid-template-columns:minmax(0,1fr) 252px;gap:22px;align-items:start}
+  .nd-intake-main{min-width:0;background:#fff;border:1px solid #e0e7eb;border-radius:16px;padding:24px}
+  .nd-intake-guide{min-width:0;background:#f7f9fa;border:1px solid #dce4e8;border-radius:16px;padding:20px}
+  .nd-intake-guide .visit-guide{margin:0;padding:0;border:0;background:transparent;border-radius:0}
+  .nd-intake-guide .visit-guide h2{font-size:18px;line-height:1.6;margin:0 0 18px;color:#263942}
+  .nd-intake-guide .visit-guide ol{display:grid;grid-template-columns:1fr;gap:18px;padding:0}
+  .nd-intake-guide .visit-guide li{font-size:15px;line-height:1.8}
+  .nd-intake-guide .visit-guide li span{font-size:15px;line-height:1.8;color:#536672}
+  .nd-intake-guide .visit-guide details{font-size:15px;line-height:1.85;margin-top:20px}
+  #symptomVisitGuide p{font-size:16px;line-height:1.85;color:#39505d}
+  .nd-proxy-label{display:flex;align-items:flex-start;gap:10px;border:0;background:#edf4f5!important;color:#39535f!important;padding:14px 16px!important;border-radius:10px!important;font-size:17px;font-weight:600!important;line-height:1.8}
+  .nd-proxy-label input{margin-top:6px;flex:0 0 20px;width:20px!important;height:20px!important}
+  .intake-progress{background:transparent;border:0;border-bottom:1px solid #dce4e8;border-radius:0;padding:16px 0;margin:12px 0 20px;gap:22px;font-size:15px;line-height:1.7;flex-wrap:wrap;color:#536672}
+  .intake-progress .current{color:#23585e;font-weight:750}
+  .symptom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 24px}
+  .symptom-card{display:flex;align-items:flex-start;gap:12px;min-height:112px;padding:18px 32px 18px 16px;background:#fff;border:1px solid #d5e0e5;border-radius:11px;box-shadow:none;transition:none}
+  .symptom-card:hover{background:#f6fafb;border-color:#91b1ba;box-shadow:none}
+  .symptom-card.selected{background:#e9f3f3;border-color:#276d72;box-shadow:inset 0 0 0 1px #276d72}
+  .symptom-card::after{top:14px;right:10px;width:18px;height:18px;border-color:#9fb3bf}
+  .symptom-card.selected::after{background:#276d72;color:#fff}
+  .symptom-icon{width:30px;height:36px;flex:0 0 30px;font-size:23px}
+  .symptom-card>div:last-child{min-width:0}
+  .symptom-card>div:last-child>div:first-child{font-size:19px!important;color:#263942;line-height:1.55;font-weight:700}
+  .symptom-card>div:last-child>div:last-child{font-size:15px!important;line-height:1.75;color:#536672!important;margin-top:6px!important}
+  .experience-panel{border:0;border-top:1px solid #dce4e8;border-radius:0;background:transparent;padding:24px 0 0;margin:0 0 24px}
+  .experience-panel h2{font-size:22px;line-height:1.6;color:#263942;margin:0 0 18px}
+  .experience-panel fieldset{margin:20px 0 24px;padding:0;border:0;min-width:0}
+  .experience-panel legend{font-size:19px;line-height:1.7;font-weight:650;color:#263942;margin-bottom:12px}
+  .experience-panel label{font-size:18px;line-height:1.8;min-height:48px;padding:10px 0}
+  .experience-panel input{width:21px;height:21px;flex:0 0 21px;margin-top:6px}
+  .experience-panel .experience-note,.experience-note{font-size:16px!important;line-height:1.85;color:#536672}
+  .experience-panel legend span,.experience-text-label span{font-size:16px;color:#536672}
+  .experience-text-label textarea{font-size:18px;line-height:1.8;min-height:110px}
+  .btn-nav{border-radius:10px;font-size:18px;line-height:1.6;min-height:56px;padding:14px 20px;font-weight:700}
+  .btn-primary{background:#276d72;color:#fff;border-color:#276d72;box-shadow:none}
+  .btn-primary:hover:not(:disabled){background:#205b60}
+  .btn-secondary{background:#edf2f4;color:#39505d;border-color:#d3dfe5}
+  .btn-skip{background:#fff;color:#536672;border:1px solid #bfcdd5}
+  .nd-intake-main>.btn-primary{width:100%;height:auto!important;min-height:58px;font-size:19px!important}
+  #screenQuestionnaire{max-width:900px;margin:0 auto;padding:32px}
+  .wizard-status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:16px;line-height:1.7;color:#39535f;margin-bottom:14px}
+  .progress-bar-bg{height:6px;background:#e5ecef;border:0;border-radius:8px;margin-bottom:30px}
+  .progress-bar-fill{background:#276d72;border-radius:8px;transition:none}
+  .question-stem{font-size:26px;line-height:1.7;letter-spacing:-.5px;color:#263942;margin-bottom:22px}
+  .option-btn{font-size:21px;line-height:1.8;min-height:72px;padding:18px 20px;border:1px solid #c9d7df;border-radius:11px;background:#fff;color:#263942}
+  .option-btn:hover{background:#f6fafb;border-color:#8cabb6}
+  .option-btn.selected{background:#e9f3f3;color:#23585e;border-color:#276d72;box-shadow:inset 0 0 0 1px #276d72!important}
+  .option-btn.danger-option.selected{background:#fff1f1;color:#9b2929;border-color:#b53737;box-shadow:inset 0 0 0 1px #b53737!important}
+  .wizard-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid #dce4e8}
+  #screenPatientFinish{padding:28px;text-align:left!important}
+  #screenPatientFinish>div:first-child{font-size:16px!important;color:#276d72;font-weight:650;margin-bottom:10px!important}
+  #screenPatientFinish>h2{font-size:28px!important;line-height:1.5;letter-spacing:-.6px;color:#263942!important}
+  #screenPatientFinish>p{font-size:18px!important;line-height:1.9;color:#536672!important;margin:12px 0 24px!important}
+  .nd-completion-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:24px;align-items:start}
+  #patientSummaryCard{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;margin:0!important;font-size:18px;line-height:1.9;min-width:0}
+  .nd-completion-support{min-width:0;background:#f7f9fa;border:1px solid #dce4e8;border-radius:12px;padding:20px}
+  #finishedVisitGuide{background:transparent;border:0;border-radius:0;padding:0;margin:0 0 20px;font-size:16px;line-height:1.85}
+  #finishedVisitGuide h2{font-size:19px;line-height:1.6;margin-bottom:12px;color:#263942}
+  #finishedVisitGuide ol{grid-template-columns:1fr;gap:14px}
+  #finishedVisitGuide li,#finishedVisitGuide li span{font-size:16px;line-height:1.8}
+  .nd-completion-actions{display:grid;gap:10px}
+  .nd-completion-actions button{font-size:17px;white-space:normal;width:100%}
+  .clinic-footer{color:#536672;font-size:14px;background:transparent;border:0;padding:20px 28px}
+  .modal-overlay{background:rgba(26,43,54,.45)}
+  .modal-box{border:1px solid #dce4e8;border-radius:16px;background:#fff;color:#263942;box-shadow:0 12px 40px rgba(26,43,54,.12)}
+
+  @media(min-width:1160px){.doctor-nav .nav-btn{flex-basis:0}}
+  @media(max-width:1120px){.symptom-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nd-intake-layout{grid-template-columns:minmax(0,1fr) 236px}.nd-treatment-layout{grid-template-columns:230px minmax(0,1fr)}}
+  @media(max-width:980px){main{padding:20px}.nd-summary-card,.nd-summary-card>.two-col{grid-template-columns:1fr}.nd-summary-card>.nd-stage-heading,.nd-summary-card>#docRedFlagsArea,.nd-summary-card>.two-col{grid-column:auto}.nd-intake-layout{grid-template-columns:1fr}.nd-intake-guide .visit-guide ol{grid-template-columns:repeat(3,minmax(0,1fr))}.nd-treatment-layout{grid-template-columns:1fr}.nd-treatment-layout .subpath-selector{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid #dce4e8;padding:0 0 20px;gap:8px}.nd-treatment-layout .btn-subpath{width:auto;flex:1 1 190px}.nd-completion-layout{grid-template-columns:1fr}#docStage_stage4_scales .scale-columns{grid-template-columns:220px minmax(0,1fr)}#docStage_stage4_scales .scale-metadata{grid-template-columns:1fr;gap:4px}#docStage_stage4_scales .scale-metadata dd{margin-bottom:12px}}
+  @media(max-width:760px){body>header{padding:18px 16px;gap:14px}.header-controls{width:100%}.header-controls .btn-mode{flex:1}.symptom-switcher-bar{padding:12px 16px}nav.doctor-nav{padding:8px 12px 14px}.doctor-nav .nav-btn{flex-basis:130px;font-size:14px}.card{padding:20px}.patient-title{font-size:27px}.nd-patient-heading{margin-bottom:20px}.nd-intake-main{padding:20px}.nd-intake-guide .visit-guide ol{grid-template-columns:1fr}.nd-summary-card{gap:20px}#doctorSection h2{font-size:24px!important}#docTestCandidatesList .test-candidate-card{grid-template-columns:1fr;gap:10px}#docStage_stage4_scales .scale-columns{grid-template-columns:1fr}#docStage_stage4_scales #scaleDetail{border-left:0;border-top:1px solid #dce4e8;padding:22px 0 0}#docStage_stage4_scales .scale-toolbar{padding:14px}#docStage_stage4_scales .scale-toolbar>label{width:100%}#docStage_stage4_scales .scale-toolbar input[type=search]{width:100%}#screenQuestionnaire{padding:24px}.question-stem{font-size:24px}.option-btn{font-size:20px}.experience-doctor-summary dl{grid-template-columns:1fr;gap:4px}.experience-doctor-summary dd{margin-bottom:10px}.nd-completion-support{padding:20px}}
+  @media(max-width:480px){main{padding:18px 12px}.symptom-grid{grid-template-columns:1fr}.symptom-card{min-height:92px;padding:18px 36px 18px 16px;align-items:center}.nd-intake-main{padding:20px}.patient-title{font-size:25px}.patient-subtitle{font-size:18px}.intake-progress{gap:10px;font-size:14px}.experience-panel h2{font-size:21px}.experience-panel legend{font-size:19px}.wizard-actions{gap:8px}.wizard-actions button{font-size:17px;padding:12px 8px}#screenQuestionnaire,#screenPatientFinish{padding:20px}.question-stem{font-size:23px}.option-btn{font-size:19px}.table-clean td,.table-clean th{font-size:14px;padding:10px 8px}.nd-stage-heading h2{overflow-wrap:anywhere}}
+}

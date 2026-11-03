@@ -480,6 +480,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
 </style>
   <link rel="stylesheet" href="clinical/visit-materials.css">
   <link rel="stylesheet" href="clinical/followup-workspace.css" media="screen">
+  <link rel="stylesheet" href="clinical/workspace-theme.css" media="screen">
 </head>
 <body>
 
@@ -521,16 +522,16 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
       
       <!-- Step 1: 12개 주증상 선택 -->
       <div id="screenSymptomSelect" class="card">
-        <div class="intake-kicker">진료 전 문진</div>
+        <div class="nd-patient-heading"><div class="intake-kicker">진료 전 문진</div>
         <h1 class="patient-title">오늘 어떤 증상으로 내원하셨나요?</h1>
-        <p class="patient-subtitle">불편하신 증상을 모두 선택해 주세요. (복수 선택 가능)</p>
-
-        <label style="display:flex; align-items:center; gap:8px; margin-bottom:16px; background:#eff6ff; padding:10px 14px; border-radius:8px; font-weight:700; color:#1e40af; cursor:pointer;">
+        <p class="patient-subtitle">불편하신 증상을 모두 선택해 주세요. (복수 선택 가능)</p></div>
+        <div class="nd-intake-layout"><div class="nd-intake-main">
+        <label class="nd-proxy-label" style="display:flex; align-items:center; gap:8px; margin-bottom:16px; background:#eff6ff; padding:10px 14px; border-radius:8px; font-weight:700; color:#1e40af; cursor:pointer;">
           <input type="checkbox" id="chkProxyCaregiver" style="width:18px; height:18px;">
           <span>보호자/가족이 대신 작성하고 있습니다.</span>
         </label>
 
-        <section class="visit-guide" aria-labelledby="visitGuideTitle"><h2 id="visitGuideTitle">진료는 이렇게 진행됩니다</h2><ol><li><b>불편한 증상 확인</b><span>문진이 어려우시면 직원에게 말씀해 주세요. 보호자가 도와주셔도 됩니다.</span></li><li><b>진찰 후 필요한 검사·치료 안내</b><span>검사는 증상만으로 정해지지 않습니다. 진찰 후 필요한 항목과 비용을 안내합니다.</span></li><li><b>진료 후 관리 방법 안내</b><span>오늘 설명한 내용과 다음 진료 계획을 안내문으로 받으실 수 있습니다.</span></li></ol><div id="symptomVisitGuide" aria-live="polite"></div><details><summary>우리 의원의 검사·치료 안내</summary><p>경동맥초음파 · 뇌파검사(EEG) · 신경전도검사(NCS) · 자율신경검사 · 프렌젤 고글을 이용한 평가 · 이석정복술</p><p>모든 환자에게 시행하는 목록이 아닙니다. 필요한 검사·치료는 담당 의사가 판단합니다.</p></details></section><div class="intake-progress" aria-label="문진 순서"><span class="current">01 증상 선택</span><span>02 문진 응답</span><span>03 완료</span></div>
+        <div class="intake-progress" aria-label="문진 순서"><span class="current">01 증상 선택</span><span>02 문진 응답</span><span>03 완료</span></div>
         <div class="symptom-grid" id="symptomGrid"></div>
 <section class="experience-panel" aria-labelledby="visitTypeTitle"><h2 id="visitTypeTitle">오늘의 진료를 선택해 주세요</h2><fieldset><legend>진료 구분</legend><label><input type="radio" name="experienceType" value="first" checked onchange="setExperienceType('first')"> 처음 진료·새로운 증상 — 기존 문진</label><label><input type="radio" name="experienceType" value="return" onchange="setExperienceType('return')"> 같은 증상의 경과 확인 — 간단 재진 문진</label></fieldset><p class="experience-note">처음 생긴 증상이나 새롭게 달라진 증상은 기존 문진으로 자세히 알려주세요. 작성이 어려우시면 직원에게 말씀해 주세요.</p>
 <div id="returnBrief" hidden><fieldset><legend>지난 진료 이후 증상은 어떤가요?</legend><label><input type="radio" name="returnCourse" value="호전"> 좋아졌습니다</label><label><input type="radio" name="returnCourse" value="비슷함"> 비슷합니다</label><label><input type="radio" name="returnCourse" value="악화"> 나빠졌습니다</label><label><input type="radio" name="returnCourse" value="판단 어려움"> 잘 모르겠습니다</label></fieldset><fieldset><legend>약을 사용하면서 불편한 점이 있었나요?</legend><label><input type="radio" name="returnMedicine" value="불편감 있음"> 있었습니다</label><label><input type="radio" name="returnMedicine" value="불편감 없음"> 없었습니다</label><label><input type="radio" name="returnMedicine" value="약 사용 안 함"> 약을 사용하지 않았습니다</label><label><input type="radio" name="returnMedicine" value="판단 어려움"> 잘 모르겠습니다</label></fieldset><fieldset><legend>새롭게 생긴 증상이 있나요?</legend><label><input type="radio" name="returnNew" value="새 증상 있음"> 있습니다</label><label><input type="radio" name="returnNew" value="새 증상 없음"> 없습니다</label><label><input type="radio" name="returnNew" value="판단 어려움"> 잘 모르겠습니다</label></fieldset><label class="experience-text-label">달라진 점이나 약 복용 중 불편한 점 <span>(선택, 이름·연락처 입력 금지)</span><textarea id="returnNote" maxlength="400" rows="3"></textarea></label><p class="experience-note">이 문진은 응급 여부를 판단하지 않습니다. 새 증상이나 악화는 의료진에게 직접 말씀해 주세요.</p></div>
@@ -539,6 +540,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
         <button class="btn-nav btn-primary" style="width:100%; height:54px; font-size:17px;" onclick="startPatientIntake()">
           선택한 증상 문진 시작하기
         </button>
+      </div><aside class="nd-intake-guide"><section class="visit-guide" aria-labelledby="visitGuideTitle"><h2 id="visitGuideTitle">진료는 이렇게 진행됩니다</h2><ol><li><b>불편한 증상 확인</b><span>문진이 어려우시면 직원에게 말씀해 주세요. 보호자가 도와주셔도 됩니다.</span></li><li><b>진찰 후 필요한 검사·치료 안내</b><span>검사는 증상만으로 정해지지 않습니다. 진찰 후 필요한 항목과 비용을 안내합니다.</span></li><li><b>진료 후 관리 방법 안내</b><span>오늘 설명한 내용과 다음 진료 계획을 안내문으로 받으실 수 있습니다.</span></li></ol><div id="symptomVisitGuide" aria-live="polite"></div><details><summary>우리 의원의 검사·치료 안내</summary><p>경동맥초음파 · 뇌파검사(EEG) · 신경전도검사(NCS) · 자율신경검사 · 프렌젤 고글을 이용한 평가 · 이석정복술</p><p>모든 환자에게 시행하는 목록이 아닙니다. 필요한 검사·치료는 담당 의사가 판단합니다.</p></details></section></aside></div>
       </div>
 
       <!-- Step 2: 조건부 순차 문진 화면 -->
@@ -568,13 +570,13 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
           진료실에 들어가실 때 <strong>의사선생님께 화면을 보여주시거나 원내 스태프에게 알려주세요.</strong>
         </p>
 
-        <section id="finishedVisitGuide" class="visit-guide" aria-label="진료 과정 안내"></section>
+        <div class="nd-completion-layout">
         <div id="patientSummaryCard" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; text-align:left; margin-bottom:20px;"></div>
 
-        <div style="display:flex; flex-direction:column; gap:8px;">
+        <aside class="nd-completion-support"><section id="finishedVisitGuide" class="visit-guide" aria-label="진료 과정 안내"></section><div class="nd-completion-actions">
           <button class="btn-nav btn-primary" onclick="switchMode('doctor')">의사용 진료 데스크 열기</button>
           <button class="btn-nav btn-secondary" style="max-width:100%;" onclick="resetPatientIntake()">새 환자 문진 시작</button>
-        </div>
+        </div></aside></div>
       </div>
 
     </div>
@@ -586,8 +588,8 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
 
       <!-- Stage 1: 문진 종합 요약 및 위험신호 -->
       <div id="docStage_stage1_summary" class="doc-stage active">
-        <div class="card">
-          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:12px;">
+        <div class="card nd-summary-card">
+          <div class="nd-stage-heading" style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:12px;">
             <div>
               <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docSummaryHeadTitle">1. 문진 종합 요약 & 위험신호</h2>
               <span id="docCaregiverTag" style="display:none; background:#fef3c7; color:#92400e; font-size:11px; font-weight:700; padding:2px 6px; border-radius:4px;">보호자 대리 응답</span>
@@ -617,7 +619,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
       <!-- Stage 2: 증상별 검사 검토 (후보 목록 및 적응증) -->
       <div id="docStage_stage2_tests" class="doc-stage">
         <div class="card">
-          <div style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
+          <div class="nd-stage-heading" style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
             <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docTestsHeadTitle">2. 증상별 검사 검토 (후보 목록 및 적응증)</h2>
             <p style="font-size:12.5px; color:var(--gray-600); margin-top:4px;">
               ※ 검사는 무조건 시행하는 목록이 아닙니다. 환자의 병력에 따라 적응증과 유의점을 검토한 뒤 의사가 최종 선택합니다.
@@ -630,22 +632,22 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
       <!-- Stage 3: 원인별 치료계획 검토 -->
       <div id="docStage_stage3_tx" class="doc-stage">
         <div class="card">
-          <div style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
+          <div class="nd-stage-heading" style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
             <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docTxHeadTitle">3. 원인별 치료계획 템플릿</h2>
             <p style="font-size:12.5px; color:var(--gray-600); margin-top:4px;">
               ※ 의사가 감별하고 판단한 원인 질환을 선택하면 해당 질환에 특화된 비약물/약물원칙/의뢰기준이 표시됩니다.
             </p>
           </div>
 
-          <div class="subpath-selector" id="docSubpathButtons"></div>
-          <div id="docSubpathContent"></div>
+          <div class="nd-treatment-layout"><div class="subpath-selector" id="docSubpathButtons"></div>
+          <div id="docSubpathContent"></div></div>
         </div>
       </div>
 
       <!-- Stage 4: 임상 설문 도구 안내 -->
       <div id="docStage_stage4_scales" class="doc-stage">
         <div class="card">
-          <div style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
+          <div class="nd-stage-heading" style="border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
             <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docScalesHeadTitle">4. 증상별 임상 설문 및 평가도구</h2>
             <p style="font-size:12.5px; color:var(--gray-600); margin-top:4px;">
               ※ 한국어 문항의 전자 표시·배포 조건을 확인한 척도만 제공합니다. 척도를 선택해 원문 질문을 읽고 환자의 응답을 입력하세요. 총점은 모든 채점 문항에 응답한 뒤 계산합니다. 점수·응답은 현재 창에만 유지되며, 즐겨찾기와 종이 보유 설정만 이 브라우저에 저장합니다.
