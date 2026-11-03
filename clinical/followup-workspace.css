@@ -1,0 +1,70 @@
+/* Screen-only layout. No selectors apply to the A4 sheet. */
+@media screen {
+  body.nd-followup-workspace{--primary:#276d72;--primary-dark:#263f4b;--primary-light:#edf5f5;background:#eef2f4;color:#263942;font-size:16px;line-height:1.7}
+  body.nd-followup-workspace>header{box-shadow:none;border-bottom:0;background:#fff}
+  body.nd-followup-workspace .brand-badge{background:#263f4b;box-shadow:none}
+  body.nd-followup-workspace main{max-width:1440px;padding:24px 28px 36px}
+  body.nd-followup-workspace .doctor-nav{max-width:1384px;margin:0 auto;padding:8px 28px 16px;background:#fff;border:0;box-shadow:none;gap:6px;border-radius:0;flex-wrap:wrap}
+  body.nd-followup-workspace .doctor-nav .nav-btn{flex:1 1 180px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border:0;border-radius:12px;background:transparent;color:#4c606e;font-size:15px;line-height:1.5;font-weight:500;box-shadow:none;white-space:normal}
+  body.nd-followup-workspace .doctor-nav .nav-btn.active{background:#263f4b;color:#fff;font-weight:700;box-shadow:none}
+  body.nd-followup-workspace .symptom-switcher-bar{background:#fff;border:0;box-shadow:none;padding-top:10px;padding-bottom:12px}
+  body.nd-followup-workspace .banner-safe{background:#e7edf0;border:0;color:#455a67;margin-bottom:20px}
+  #docStage_stage5_followup .nd-workspace-heading{margin:0 0 22px}
+  #docStage_stage5_followup .nd-workspace-heading h2{font-size:28px!important;font-weight:750!important;line-height:1.4;color:#263942!important;letter-spacing:-.8px}
+  #docStage_stage5_followup .nd-workspace-heading p{font-size:15px;color:#536672;margin:7px 0 0}
+  #docStage_stage5_followup #printableArea{display:grid;grid-template-columns:minmax(0,1fr) 252px;gap:22px;align-items:start;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+  #docStage_stage5_followup .nd-followup-main{min-width:0;background:#fff;border:1px solid #e0e7eb;border-radius:16px;padding:24px}
+  #docStage_stage5_followup .visit-editor{padding:0;margin:0;border:0;border-radius:0;background:transparent}
+  #docStage_stage5_followup .visit-editor>.section-label{font-size:13px;color:#276d72;font-weight:650;margin-bottom:7px}
+  #docStage_stage5_followup .visit-editor>h3{font-size:20px;line-height:1.5;letter-spacing:-.4px;color:#263942;margin:0 0 8px}
+  #docStage_stage5_followup .visit-editor>p{font-size:14px;line-height:1.8;color:#536672}
+  #docStage_stage5_followup #visitContext{margin:12px 0 18px;color:#39535f;font-size:14px}
+  #docStage_stage5_followup .visit-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+  #docStage_stage5_followup .visit-fields>label{font-size:15px;font-weight:650;line-height:1.6;display:block;min-width:0}
+  #docStage_stage5_followup .visit-fields>label:first-child{grid-column:1/-1}
+  #docStage_stage5_followup input:not([type=checkbox]):not([type=file]),#docStage_stage5_followup textarea,#docStage_stage5_followup select{width:100%;box-sizing:border-box;border:1px solid #bfcdd5;border-radius:9px;padding:11px 12px;background:#fff;color:#263942;font:400 16px/1.6 var(--font-base);margin-top:8px;min-height:48px;box-shadow:none}
+  #docStage_stage5_followup textarea{resize:vertical;min-height:104px}
+  #docStage_stage5_followup input::placeholder,#docStage_stage5_followup textarea::placeholder{color:#687b87;opacity:1}
+  #docStage_stage5_followup input[type=checkbox]{width:19px;height:19px;flex:0 0 19px;accent-color:#276d72;margin-top:4px}
+  #docStage_stage5_followup button{min-height:44px;font-size:14px;line-height:1.6;border-radius:9px;box-shadow:none;white-space:normal}
+  #docStage_stage5_followup button:disabled{opacity:.55}
+  #docStage_stage5_followup #vmEditor{padding:24px 0;margin:24px 0 0;border:0;border-top:1px solid #dce4e8;border-bottom:1px solid #dce4e8;border-radius:0;background:transparent;box-shadow:none}
+  #docStage_stage5_followup #vmEditor>h3,#docStage_stage5_followup .education-picker h4{font-size:19px;color:#263942;line-height:1.5;margin:0 0 10px;letter-spacing:-.4px}
+  #docStage_stage5_followup #vmEditor>p{font-size:14px;color:#536672;line-height:1.8;margin:8px 0}
+  #docStage_stage5_followup .vm-upload{display:flex;flex-wrap:wrap;align-items:center;gap:12px;border:1px dashed #c3d1d8;border-radius:10px;background:#f8fafb;padding:14px 16px;font-size:15px;font-weight:600;margin-top:14px}
+  #docStage_stage5_followup .vm-upload input{font-size:14px;min-width:0;max-width:100%;flex:1 1 240px}
+  #docStage_stage5_followup .vm-file{border:0;border-top:1px solid #dce4e8;border-radius:0;padding:20px 0;background:transparent;margin:0;grid-template-columns:130px minmax(0,1fr)}
+  #docStage_stage5_followup .vm-fields{min-width:0}
+  #docStage_stage5_followup .vm-fields label{font-size:14px;color:#263942}
+  #docStage_stage5_followup .education-picker{padding:24px 0 0;margin:0;border:0}
+  #docStage_stage5_followup .education-picker>p{font-size:14px;color:#536672;line-height:1.8}
+  #docStage_stage5_followup #educationChoices{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin:16px 0}
+  #docStage_stage5_followup #educationChoices>button{justify-self:start;margin:0 0 10px;padding:8px 12px}
+  #docStage_stage5_followup #educationChoices>label,#docStage_stage5_followup .education-picker>label{font-size:15px;line-height:1.7;padding:8px 0;gap:10px}
+  #docStage_stage5_followup summary{font-size:15px;padding:10px 0;color:#276d72;font-weight:600}
+  #docStage_stage5_followup .selected-education p{font-size:17px;line-height:1.9}
+  #docStage_stage5_followup .nd-output-desk{min-width:0;border:1px solid #dce4e8;border-radius:16px;background:#f7f9fa;padding:20px}
+  #docStage_stage5_followup .nd-output-desk h3{font-size:17px;line-height:1.5;margin:0 0 14px;color:#263942}
+  #docStage_stage5_followup .nd-output-order{padding:0 0 0 21px;margin:0 0 18px;font-size:14px;color:#39535f}
+  #docStage_stage5_followup .nd-output-order li{padding-left:5px;margin:0 0 10px;line-height:1.6}
+  #docStage_stage5_followup .nd-output-desk label{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.8;margin:10px 0;padding:0;color:#263942}
+  #docStage_stage5_followup .nd-output-desk button{width:100%;margin:0;padding:10px 12px;background:#fff;color:#263942;border:1px solid #c6d3db}
+  #docStage_stage5_followup #vmPreviewButton,#docStage_stage5_followup #visitPrint{background:#276d72;color:#fff;border-color:#276d72}
+  #docStage_stage5_followup .nd-output-section{border-top:1px solid #dce4e8;padding-top:18px;margin-top:20px}
+  #docStage_stage5_followup .visit-actions{display:grid;gap:10px;margin:14px 0}
+  #docStage_stage5_followup .nd-output-desk .edu-plan{margin:0;padding:0;border:0;background:transparent}
+  #docStage_stage5_followup .nd-output-desk p{font-size:13px;line-height:1.8;color:#536672;margin:12px 0 0}
+  #docStage_stage5_followup .nd-followup-reference{border-top:1px solid #dce4e8;margin-top:24px;padding-top:24px;min-width:0}
+  #docStage_stage5_followup .nd-followup-reference>h3{font-size:18px!important;line-height:1.6;color:#263942!important;margin:0 0 14px!important}
+  #docStage_stage5_followup .table-clean{table-layout:fixed;width:100%}
+  #docStage_stage5_followup .table-clean th,#docStage_stage5_followup .table-clean td{font-size:14px;line-height:1.8;padding:12px 10px;overflow-wrap:anywhere}
+  #docStage_stage5_followup #docPatientLeafletArea{border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;font-size:16px!important;line-height:1.85!important}
+  #docStage_stage5_followup .vm-education-reference>details{border:0;border-bottom:1px solid #e3e9ed;padding:5px 0;margin:0;background:transparent}
+  #docStage_stage5_followup .vm-education-reference p{font-size:17px;line-height:1.9}
+  #docStage_stage5_followup .nd-preview-area:empty{display:none}
+  #docStage_stage5_followup .vm-preview:empty{display:none}
+  #docStage_stage5_followup .vm-preview{padding:20px;margin-top:24px;border:1px solid #dce4e8;border-radius:12px;background:#fff;overflow-wrap:anywhere}
+  @media(min-width:1160px){body.nd-followup-workspace .doctor-nav .nav-btn{flex-basis:0}}
+  @media(max-width:980px){#docStage_stage5_followup #printableArea{grid-template-columns:minmax(0,1fr) 230px;gap:16px}#docStage_stage5_followup .nd-followup-main{padding:22px}#docStage_stage5_followup .visit-fields,#docStage_stage5_followup #educationChoices{grid-template-columns:1fr}#docStage_stage5_followup .visit-fields>label:first-child{grid-column:auto}body.nd-followup-workspace main{padding:20px}}
+  @media(max-width:720px){#docStage_stage5_followup #printableArea{grid-template-columns:1fr}#docStage_stage5_followup .nd-workspace-heading h2{font-size:24px!important}#docStage_stage5_followup .nd-followup-main{padding:20px}body.nd-followup-workspace main{padding:16px 12px}body.nd-followup-workspace .doctor-nav{padding:8px 12px 14px}body.nd-followup-workspace .doctor-nav .nav-btn{flex-basis:130px;font-size:14px}#docStage_stage5_followup .vm-file{grid-template-columns:1fr}#docStage_stage5_followup .vm-thumbnail{max-width:180px}#docStage_stage5_followup .table-clean th{width:auto!important}}
+}
