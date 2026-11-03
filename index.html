@@ -479,6 +479,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
 }
 </style>
   <link rel="stylesheet" href="clinical/visit-materials.css">
+  <link rel="stylesheet" href="clinical/followup-workspace.css" media="screen">
 </head>
 <body>
 
@@ -656,17 +657,9 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
 
       <!-- Stage 5: 추적관리 및 환자 교육자료 -->
       <div id="docStage_stage5_followup" class="doc-stage">
+        <div class="nd-workspace-heading no-print"><h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docFollowupHeadTitle">5. 증상별 추적관리 계획 및 환자 교육자료</h2><p>설명·검사 결과·교육자료를 정리해 안내서를 준비합니다.</p></div>
         <div class="card" id="printableArea">
-          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--primary-light); padding-bottom:10px; margin-bottom:14px;">
-            <div>
-              <h2 style="font-size:18px; font-weight:800; color:var(--primary-dark);" id="docFollowupHeadTitle">5. 증상별 추적관리 계획 및 환자 교육자료</h2>
-            </div>
-            <div class="no-print">
-              <button class="btn-mode" style="background:var(--primary); color:white;" id="eduPrintButton" disabled onclick="printEducationSheet()">의사 확인 후 인쇄 (A4)</button>
-            </div>
-          </div>
-
-          <h3 style="font-size:14.5px; font-weight:800; color:var(--primary); margin-bottom:8px;">선택한 질환별 추적관리 계획</h3>
+          <div class="nd-followup-main"><section class="visit-editor no-print" aria-labelledby="visitEditorTitle"><div class="section-label">진료 후 안내</div><h3 id="visitEditorTitle">오늘 설명한 내용을 정리합니다</h3><p>의료진이 직접 작성·확인한 내용만 별도의 안내서에 포함합니다. 이름·연락처는 입력하지 마세요.</p><p id="visitContext"></p><div class="visit-fields"><label>오늘의 설명<input id="visitDiagnosis" maxlength="180" placeholder="환자에게 설명한 진료 내용을 입력"></label><label>검사 계획<textarea id="visitTests" rows="2" maxlength="600" placeholder="선택한 검사와 목적, 또는 검사 계획 없음"></textarea></label><label>치료 및 생활 안내<textarea id="visitCare" rows="3" maxlength="1000" placeholder="실제 설명한 내용을 기록. 약 복용은 처방전 기준"></textarea></label><label>다음 진료 시점과 목적<input id="visitReturn" maxlength="250" placeholder="예: 담당의가 정한 시점과 확인할 내용"></label><label>주의사항 및 연락이 필요한 상황<textarea id="visitCaution" rows="3" maxlength="800" placeholder="환자에게 안내한 주의사항을 입력"></textarea></label></div><section class="education-picker" aria-labelledby="educationPickerTitle"><h4 id="educationPickerTitle">함께 드릴 교육자료</h4><p>현재 검토하는 질환의 기존 교육자료에서 필요한 부분을 선택하세요. 질환 선택은 진단 확정을 뜻하지 않습니다.</p><p id="educationContext"></p><div id="educationChoices"></div><label><input type="checkbox" id="educationFamily" onchange="changeEducationChoice()"> 안내서 제목에 ‘환자·보호자 함께 보기’ 표시</label><p class="experience-note">교육자료 선택·본문 변경 시 의료진 확인이 해제됩니다. 복약 세부사항은 처방전을 따릅니다.</p><details><summary>선택 자료 미리보기</summary><div id="educationPreview"></div></details></section></section><div id="ndPreviewArea" class="nd-preview-area no-print"></div><section class="nd-followup-reference">          <h3 style="font-size:14.5px; font-weight:800; color:var(--primary); margin-bottom:8px;">선택한 질환별 추적관리 계획</h3>
           <table class="table-clean" style="margin-bottom:20px;">
             <thead>
               <tr>
@@ -678,12 +671,14 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
             <tbody id="docFollowupTableBody"></tbody>
           </table>
 
-          <section class="visit-editor no-print" aria-labelledby="visitEditorTitle"><div class="section-label">진료 후 안내</div><h3 id="visitEditorTitle">오늘 설명한 내용을 정리합니다</h3><p>의료진이 직접 작성·확인한 내용만 별도의 안내서에 포함합니다. 이름·연락처는 입력하지 마세요.</p><p id="visitContext"></p><div class="visit-fields"><label>오늘의 설명<input id="visitDiagnosis" maxlength="180" placeholder="환자에게 설명한 진료 내용을 입력"></label><label>검사 계획<textarea id="visitTests" rows="2" maxlength="600" placeholder="선택한 검사와 목적, 또는 검사 계획 없음"></textarea></label><label>치료 및 생활 안내<textarea id="visitCare" rows="3" maxlength="1000" placeholder="실제 설명한 내용을 기록. 약 복용은 처방전 기준"></textarea></label><label>다음 진료 시점과 목적<input id="visitReturn" maxlength="250" placeholder="예: 담당의가 정한 시점과 확인할 내용"></label><label>주의사항 및 연락이 필요한 상황<textarea id="visitCaution" rows="3" maxlength="800" placeholder="환자에게 안내한 주의사항을 입력"></textarea></label></div><section class="education-picker" aria-labelledby="educationPickerTitle"><h4 id="educationPickerTitle">함께 드릴 교육자료</h4><p>현재 검토하는 질환의 기존 교육자료에서 필요한 부분을 선택하세요. 질환 선택은 진단 확정을 뜻하지 않습니다.</p><p id="educationContext"></p><div id="educationChoices"></div><label><input type="checkbox" id="educationFamily" onchange="changeEducationChoice()"> 안내서 제목에 ‘환자·보호자 함께 보기’ 표시</label><p class="experience-note">교육자료 선택·본문 변경 시 의료진 확인이 해제됩니다. 복약 세부사항은 처방전을 따릅니다.</p><details><summary>선택 자료 미리보기</summary><div id="educationPreview"></div></details></section><label class="confirm-line"><input type="checkbox" id="visitReviewed" onchange="refreshVisitPrint()"> 작성 내용과 현재 선택한 증상을 확인했습니다.</label><label class="confirm-line"><input type="checkbox" id="visitIncludeVisuals" checked onchange="document.getElementById('visitReviewed').checked=false;refreshVisitPrint()"> 안내서에 그림과 기전 도식 포함</label><div class="visit-actions"><button class="btn-mode" id="visitPrint" disabled onclick="printVisitSheet()">진료 안내서 인쇄</button><button class="btn-mode" onclick="clearVisitDraft()">작성 내용 지우기</button></div><p class="field-note">자동 저장·외부 전송은 하지 않습니다. 증상 또는 질환 선택이 바뀌면 확인 상태가 해제됩니다.</p></section>
+          
           <figure class="education-art" id="clinicEducationArt" hidden></figure>
           <div id="docMechanismArea" class="mechanism-box"></div>
 
           <h3 style="font-size:14.5px; font-weight:800; color:var(--primary); margin-bottom:8px;">환자 제공용 표준 교육 안내문</h3>
           <div id="docPatientLeafletArea" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; padding:16px; white-space:pre-wrap; font-size:13.5px; line-height:1.6;"></div>
+</section></div>
+          <aside class="nd-output-desk no-print" aria-label="안내서 구성과 출력 확인"><h3>안내서 구성</h3><ol class="nd-output-order"><li>오늘의 설명·계획</li><li>선택한 검사 이미지</li><li>선택한 교육자료</li><li>다음 진료·주의사항</li></ol><div id="ndPreviewAction"></div><section class="nd-output-section"><h3>의료진 확인 후 출력</h3><label class="confirm-line"><input type="checkbox" id="visitReviewed" onchange="refreshVisitPrint()"> 작성 내용과 현재 선택한 증상을 확인했습니다.</label><label class="confirm-line"><input type="checkbox" id="visitIncludeVisuals" checked onchange="document.getElementById('visitReviewed').checked=false;refreshVisitPrint()"> 안내서에 그림과 기전 도식 포함</label><div class="visit-actions"><button class="btn-mode" id="visitPrint" disabled onclick="printVisitSheet()">진료 안내서 인쇄</button><button class="btn-mode" onclick="clearVisitDraft()">작성 내용 지우기</button></div><p class="field-note">자동 저장·외부 전송은 하지 않습니다. 증상 또는 질환 선택이 바뀌면 확인 상태가 해제됩니다.</p></section><section class="nd-output-section"><div id="ndEducationApproval"></div><button class="btn-mode" style="background:var(--primary); color:white;" id="eduPrintButton" disabled onclick="printEducationSheet()">의사 확인 후 인쇄 (A4)</button></section></aside>
         </div>
       </div>
 
@@ -2759,6 +2754,7 @@ NEURO_DATA.other = {
   <script src="clinical/modules/other.js"></script>
   <script src="clinical/module-review.js"></script>
   <script src="clinical/patient-education-data.js"></script>
+  <script src="clinical/followup-workspace.js"></script>
   <script src="clinical/visit-materials.js"></script>
 </body>
 </html>
