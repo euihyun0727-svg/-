@@ -165,17 +165,19 @@ function epleyHandout(side){
 function outputHTML(){
   const current=path();
   if(!current)return '';
-  const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];
+  const labels=['오늘의 설명','검사 계획'];
   const sections=fields.map((id,index)=>{
     const value=el(id).value.trim();
-    return value?'<section class="handout-entry"><h3>'+labels[index]+'</h3><p>'+safe(value)+'</p></section>':'';
+    if(!value)return '';
+    return '<section class="handout-entry">'+(labels[index]?'<h3>'+labels[index]+'</h3>':'')+'<p>'+safe(value)+'</p></section>';
   });
   const group=(title,content,kind)=>content?'<section class="handout-group '+kind+'"><h2>'+title+'</h2>'+content+'</section>':'';
   const name={'essential_tremor':'본태성 떨림','bppv':'이석증'}[current.id];
   return '<header class="handout-header patient-leaflet'+(current.id==='bppv'?' dizziness-leaflet':'')+'"><h1>진료 후 안내서</h1>'+(name?'<p>'+name+'</p>':'')+'</header>'
     +group('오늘 확인한 것',sections.slice(0,2).join(''),'handout-plan')
-    +group('집에서 할 것',sections[2],'handout-plan')
-    +group('다시 연락할 때',sections.slice(3).join(''),'handout-next')
+    +group('오늘 할 일',sections[2],'handout-plan')
+    +group('다음 진료',sections[3],'handout-plan')
+    +group('바로 연락해야 할 상황',sections[4],'handout-next')
     +attachmentHTML()+handoutVisual(current.id)+selectedEducation();
 }
 function fingerprint(){return JSON.stringify([generation,revision,key(),outputHTML(),window.NeuroHeadache?.getState(),window.NeuroDizziness?.getState(),window.NeuroModuleReview?.getState(),el('dzRevision')?.textContent,el('cmRevision')?.textContent]);}
