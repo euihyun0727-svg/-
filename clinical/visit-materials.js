@@ -6,11 +6,78 @@ const types=['혈액검사','NCS/EMG','EEG','영상검사','기타'],limits={cou
 let files=[],sequence=0,generation=0,revision=0,pending=0,queue=Promise.resolve(),context='',selection=[],seenContext=false,busy=false,zoomReturn=null;const loading=new Set();
 const key=()=>AppState.activeDoctorSymptom?AppState.activeDoctorSymptom+':'+(AppState.selectedSubpath[AppState.activeDoctorSymptom]||''):'';
 const path=()=>{const m=NEURO_DATA[AppState.activeDoctorSymptom];return m?.differentialPathways.find(p=>p.id===AppState.selectedSubpath[m.id])||m?.differentialPathways[0];};
-const pack=()=>window.NeuroPatientEducation?.paths[path()?.id];
+const tendonEducation={
+  title:'집에서 하는 손가락 힘줄 운동',
+  text:'진료에서 이 운동을 배운 경우에만 하세요. 손목을 곧게 두고 손가락을 천천히 움직이세요. 반복 횟수는 진료에서 받은 안내를 따르세요. 저림이나 통증이 늘면 멈추고 의료진에게 알려주세요.'
+};
+const pack=()=>{
+  const id=path()?.id;
+  const p=window.NeuroPatientEducation?.paths[id];
+  const exercise=id==='cts'?tendonEducation:id==='ulnar_neuropathy'?ulnarEducation:null;
+  return p&&exercise?{...p,sections:[...p.sections,exercise]}:p;
+};
+// Kent Community Health NHS Foundation Trust: Carpal tunnel syndrome – conservative management.
+function tendonSteps(){
+  const poses=[
+    ['손가락 펴기','손가락을 모두 곧게 펴세요.','M45 49V15'],
+    ['손바닥과 만나는 마디 굽히기','손가락 자체는 편 채 손바닥과 만나는 마디만 굽히세요.','M45 49H80'],
+    ['손끝 마디만 편 주먹','손바닥과 만나는 마디와 가운데 마디를 굽히고, 손끝 마디는 더 굽히지 마세요.','M45 49H64L52 63'],
+    ['갈고리 모양 만들기','손바닥과 만나는 마디는 편 채 가운데와 손끝 마디를 굽히세요.','M45 49V29H65L60 42'],
+    ['가볍게 주먹 쥐기','손가락 마디를 모두 굽혀 가볍게 주먹을 쥐세요.','M45 49H67V62H53']
+  ];
+  return '<ol class="epley-steps handout-safety-steps tendon-steps">'+poses.map(([title,body,shape],index)=>
+    '<li><svg viewBox="0 0 96 84" aria-hidden="true"><rect x="4" y="4" width="88" height="76" rx="8" fill="#e7f2f6"/><path d="M36 73V51Q45 44 53 51V73" fill="#c6dfe5" stroke="#154e62" stroke-width="2"/><path d="'+shape+'" fill="none" stroke="#154e62" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="45" cy="49" r="4" fill="#fff" stroke="#154e62" stroke-width="2"/></svg><h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>'
+  ).join('')+'</ol>';
+}
+const ulnarEducation={
+  title:'팔꿈치에서 눌린 척골신경 운동',
+  text:'팔꿈치에서 척골신경이 눌린 것을 확인하고 진료에서 이 동작을 배운 경우에만 하세요. 팔을 억지로 당기지 말고, 유지 시간과 횟수는 진료에서 받은 안내를 따르세요. 통증이나 저림이 심해지면 멈추고 의료진에게 알려주세요.'
+};
+// East Kent Hospitals University NHS Foundation Trust: Cubital tunnel syndrome, ulnar nerve gliding exercises.
+function ulnarSteps(){
+  const poses=[
+    ['팔을 옆으로 펴기','팔을 옆으로 펴고 손바닥을 바닥 쪽으로 향하게 하세요.','M30 40H83'],
+    ['손끝을 위로 향하기','팔꿈치를 편 채 손목을 뒤로 젖혀 손가락이 위를 향하게 하세요.','M30 40H71V24'],
+    ['팔꿈치 굽히기','손목 자세를 유지한 채 팔꿈치를 굽혀 손이 머리 쪽을 향하게 하세요.','M30 40H55L46 23L34 18'],
+    ['처음 자세로 돌아가기','팔꿈치와 손목을 펴서 처음 자세로 돌아오세요.','M30 40H83']
+  ];
+  return '<ol class="epley-steps handout-safety-steps ulnar-steps">'+poses.map(([title,body,shape],index)=>
+    '<li><svg viewBox="0 0 96 84" aria-hidden="true"><rect x="4" y="4" width="88" height="76" rx="8" fill="#e7f2f6"/><path d="M18 72V45Q18 38 30 40V72" fill="#c6dfe5" stroke="#154e62" stroke-width="2"/><path d="'+shape+'" fill="none" stroke="#154e62" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="26" r="9" fill="#fff" stroke="#154e62" stroke-width="2"/></svg><h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>'
+  ).join('')+'</ol>';
+}
 const fields=['visitDiagnosis','visitTests','visitCare','visitReturn','visitCaution'];
 function invalidate(){revision++;el('visitReviewed').checked=false;if(el('eduConfirmed'))el('eduConfirmed').checked=false;toggleEducationPrint();refreshVisitPrint();el('visitPrintSheet').innerHTML='';if(el('vmPreview'))el('vmPreview').innerHTML='';window.NeuroFollowupWorkspace?.updateMini();}
-function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p></section>').join('')+'</section>';}
-function attachmentHTML(){return files.filter(f=>f.include).map(f=>'<section class="vm-print-attachment"><h2>'+safe(f.title||'검사 결과')+'</h2><p>'+safe(f.type)+(f.date?' · 검사일 '+safe(f.date):'')+'</p><img src="'+safe(f.url)+'" alt="'+safe(f.title||'첨부한 검사 결과')+'" width="'+f.width+'" height="'+f.height+'"><p class="vm-caption">'+safe(f.description||'설명 미입력 — 담당의에게 확인하세요.')+'</p></section>').join('');}
+function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p>'+(el('visitIncludeVisuals').checked?(s===tendonEducation?tendonSteps():s===ulnarEducation?ulnarSteps():''):'')+'</section>').join('')+'</section>';}
+const markLimit=5;
+function markedImage(f,editor=false){
+  const markers=f.marks.map((m,i)=>'<span aria-hidden="true" class="vm-mark'+(m.arrow?' vm-mark-arrow':'')+'" style="left:'+m.x+'%;top:'+m.y+'%">'+(i+1)+'</span>').join('');
+  const img='<img src="'+safe(f.url)+'" alt="'+safe(f.title||'첨부한 검사 결과')+'" width="'+f.width+'" height="'+f.height+'">';
+  return '<div class="vm-mark-image" style="--vm-mark-width:'+Math.round(135*f.width/f.height)+'mm">'+
+    (editor?'<button type="button" data-vm-mark-point aria-label="이미지를 눌러 표시 추가. 키보드로 누르면 중앙에 추가">'+img+markers+'</button>':img+markers)+'</div>';
+}
+function markEditor(f){
+  return markedImage(f,true)+f.marks.map((m,i)=>'<div class="vm-row"><label>'+(i+1)+'번 한 줄 설명<input data-vm-mark-text="'+i+'" maxlength="120" value="'+safe(m.text)+'"></label><button type="button" class="btn-subpath" data-vm-mark-delete="'+i+'">'+(i+1)+'번 삭제</button></div>').join('');
+}
+function bindMarks(panel,f){
+  const body=panel.querySelector('[data-vm-mark-body]');
+  const refresh=()=>{
+    body.innerHTML=markEditor(f);
+    const point=body.querySelector('[data-vm-mark-point]');
+    point.disabled=f.marks.length>=markLimit;
+    point.onclick=e=>{
+      if(f.marks.length>=markLimit)return;
+      const r=point.querySelector('img').getBoundingClientRect();
+      const percent=(v,start,size)=>Math.max(0,Math.min(100,100*(v-start)/size));
+      f.marks.push({x:e.detail?percent(e.clientX,r.left,r.width):50,y:e.detail?percent(e.clientY,r.top,r.height):50,arrow:panel.querySelector('select').value==='arrow',text:''});
+      changed();refresh();body.querySelectorAll('[data-vm-mark-text]')[f.marks.length-1].focus();
+    };
+    body.querySelectorAll('[data-vm-mark-text]').forEach(n=>n.oninput=()=>{f.marks[Number(n.dataset.vmMarkText)].text=n.value.slice(0,120);changed();});
+    body.querySelectorAll('[data-vm-mark-delete]').forEach(n=>n.onclick=()=>{f.marks.splice(Number(n.dataset.vmMarkDelete),1);changed();refresh();});
+  };
+  const changed=()=>{invalidate();renderEducationPrint();};
+  refresh();
+}
+function attachmentHTML(){return files.filter(f=>f.include).map(f=>'<section class="vm-print-attachment"><h2>'+safe(f.title||'검사 결과')+'</h2><p>'+safe(f.type)+(f.date?' · 검사일 '+safe(f.date):'')+'</p>'+(f.marks.length?markedImage(f):'<img src="'+safe(f.url)+'" alt="'+safe(f.title||'첨부한 검사 결과')+'" width="'+f.width+'" height="'+f.height+'">')+ (f.marks.length?'<ol class="vm-mark-notes">'+f.marks.map(m=>'<li>'+safe(m.text.trim()||'설명 없음')+'</li>').join('')+'</ol>':'')+'<p class="vm-caption">'+safe(f.description||'설명 미입력 — 담당의에게 확인하세요.')+'</p></section>').join('');}
 function handoutVisual(id){
   if(!el('visitIncludeVisuals').checked)return '';
   if(id==='essential_tremor')return "<section class=\"et-daily-art\" aria-label=\"손떨림이 불편한 일상 동작\"><h2>손떨림이 불편한 일상 동작</h2><div class=\"et-scenes\"><figure class=\"et-scene\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"컵 손잡이를 잡고 드는 손\"></div><figcaption>컵 들기</figcaption></figure><figure class=\"et-scene et-scene-writing\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"펜을 잡고 종이에 글씨를 쓰는 손\"></div><figcaption>글씨 쓰기</figcaption></figure></div></section>";
@@ -106,9 +173,10 @@ function outputHTML(){
   const group=(title,content,kind)=>content?'<section class="handout-group '+kind+'"><h2>'+title+'</h2>'+content+'</section>':'';
   const name={'essential_tremor':'본태성 떨림','bppv':'이석증'}[current.id];
   return '<header class="handout-header patient-leaflet'+(current.id==='bppv'?' dizziness-leaflet':'')+'"><h1>진료 후 안내서</h1>'+(name?'<p>'+name+'</p>':'')+'</header>'
-    +group('오늘 정한 계획',sections.slice(0,3).join(''),'handout-plan')
-    +attachmentHTML()+handoutVisual(current.id)+selectedEducation()
-    +group('다음 진료와 주의사항',sections.slice(3).join(''),'handout-next');
+    +group('오늘 확인한 것',sections.slice(0,2).join(''),'handout-plan')
+    +group('집에서 할 것',sections[2],'handout-plan')
+    +group('다시 연락할 때',sections.slice(3).join(''),'handout-next')
+    +attachmentHTML()+handoutVisual(current.id)+selectedEducation();
 }
 function fingerprint(){return JSON.stringify([generation,revision,key(),outputHTML(),window.NeuroHeadache?.getState(),window.NeuroDizziness?.getState(),window.NeuroModuleReview?.getState(),el('dzRevision')?.textContent,el('cmRevision')?.textContent]);}
 function updateSelection(){selection=Array.from(document.querySelectorAll('#educationChoices input[data-education]:checked')).map(n=>Number(n.getAttribute('data-education')));invalidate();el('educationPreview').innerHTML=selectedEducation()||'<p>선택한 자료가 없습니다.</p>';renderEducationPrint();}
@@ -118,7 +186,8 @@ function renderEducation(){const p=pack();if(!p)return;window.NeuroFollowupWorks
  el('educationContext').textContent='선택한 교육자료: '+path().name;el('educationChoices').innerHTML='<button type="button" class="btn-subpath" id="vmCore">핵심 교육 선택</button> <button type="button" class="btn-subpath" id="vmNone">교육 선택 해제</button>'+p.sections.map((s,i)=>'<label><input type="checkbox" data-education="'+i+'" '+(selection.includes(i)?'checked':'')+' onchange="changeEducationChoice()"> '+safe(s.title)+(p.core.includes(i)?' · 핵심':'')+'</label>').join('');
  el('vmCore').onclick=()=>{document.querySelectorAll('#educationChoices [data-education]').forEach(n=>n.checked=p.core.includes(Number(n.getAttribute('data-education'))));updateSelection();};el('vmNone').onclick=()=>{document.querySelectorAll('#educationChoices [data-education]').forEach(n=>n.checked=false);updateSelection();};el('educationPreview').innerHTML=selectedEducation()||'<p>선택한 자료가 없습니다. 핵심 교육 선택으로 기본 항목을 추가할 수 있습니다.</p>';renderEducationPrint();toggleEducationPrint();window.NeuroFollowupWorkspace?.arrange();}
 function closeZoom(){el('vmZoom').hidden=true;el('vmZoomImage').src='data:,';zoomReturn?.focus?.();}
-function renderFiles(){const box=el('vmFileList');box.innerHTML=files.map(f=>'<article class="vm-file" data-vm-id="'+f.id+'"><button type="button" class="vm-thumbnail" data-vm-zoom="'+f.id+'" aria-label="검사 이미지 확대"><img src="'+f.url+'" alt="검사 결과 미리보기"></button><div class="vm-fields"><label>검사 분류<select data-vm-field="type" data-vm-id="'+f.id+'">'+types.map(t=>'<option '+(f.type===t?'selected':'')+'>'+t+'</option>').join('')+'</select></label><label>검사일 (선택)<input type="date" data-vm-field="date" data-vm-id="'+f.id+'" value="'+safe(f.date)+'"></label><label>제목<input maxlength="100" data-vm-field="title" data-vm-id="'+f.id+'" value="'+safe(f.title)+'"></label><label>환자에게 전달할 설명<textarea maxlength="1500" rows="3" data-vm-field="description" data-vm-id="'+f.id+'"></textarea></label><label>의사용 메모 — 화면에서만 표시<textarea maxlength="1000" rows="2" data-vm-field="note" data-vm-id="'+f.id+'"></textarea></label><label><input type="checkbox" data-vm-include="'+f.id+'" '+(f.include?'checked':'')+'> 안내서에 포함</label><div class="vm-row"><button type="button" class="btn-subpath" data-vm-up="'+f.id+'" '+(files.indexOf(f)===0?'disabled':'')+'>위로</button><button type="button" class="btn-subpath" data-vm-down="'+f.id+'" '+(files.indexOf(f)===files.length-1?'disabled':'')+'>아래로</button><button type="button" class="btn-subpath" data-vm-delete="'+f.id+'">삭제</button></div></div></article>').join('')||'<p>첨부한 검사 이미지가 없습니다.</p>';
+function renderFiles(){const box=el('vmFileList');box.innerHTML=files.map(f=>'<article class="vm-file" data-vm-id="'+f.id+'"><button type="button" class="vm-thumbnail" data-vm-zoom="'+f.id+'" aria-label="검사 이미지 확대"><img src="'+f.url+'" alt="검사 결과 미리보기"></button><div class="vm-fields"><label>검사 분류<select data-vm-field="type" data-vm-id="'+f.id+'">'+types.map(t=>'<option '+(f.type===t?'selected':'')+'>'+t+'</option>').join('')+'</select></label><label>검사일 (선택)<input type="date" data-vm-field="date" data-vm-id="'+f.id+'" value="'+safe(f.date)+'"></label><label>제목<input maxlength="100" data-vm-field="title" data-vm-id="'+f.id+'" value="'+safe(f.title)+'"></label><label>환자에게 전달할 설명<textarea maxlength="1500" rows="3" data-vm-field="description" data-vm-id="'+f.id+'"></textarea></label><label>의사용 메모 — 화면에서만 표시<textarea maxlength="1000" rows="2" data-vm-field="note" data-vm-id="'+f.id+'"></textarea></label><label><input type="checkbox" data-vm-include="'+f.id+'" '+(f.include?'checked':'')+'> 안내서에 포함</label><details class="vm-mark-editor" data-vm-marks="'+f.id+'"><summary>이미지에 번호·화살표 표시</summary><label>표시 종류<select><option value="number">번호</option><option value="arrow">번호와 화살표</option></select></label><p>볼 곳을 누르세요. 이미지마다 최대 5곳을 표시할 수 있습니다.</p><div data-vm-mark-body></div></details><div class="vm-row"><button type="button" class="btn-subpath" data-vm-up="'+f.id+'" '+(files.indexOf(f)===0?'disabled':'')+'>위로</button><button type="button" class="btn-subpath" data-vm-down="'+f.id+'" '+(files.indexOf(f)===files.length-1?'disabled':'')+'>아래로</button><button type="button" class="btn-subpath" data-vm-delete="'+f.id+'">삭제</button></div></div></article>').join('')||'<p>첨부한 검사 이미지가 없습니다.</p>';
+ box.querySelectorAll('[data-vm-marks]').forEach(panel=>bindMarks(panel,files.find(f=>f.id===Number(panel.dataset.vmMarks))));
  box.querySelectorAll('[data-vm-field]').forEach(n=>{const f=files.find(f=>f.id===Number(n.getAttribute('data-vm-id'))),field=n.getAttribute('data-vm-field');if(n.tagName==='TEXTAREA')n.value=f[field];const edit=()=>{let v=n.value;if(field==='type'&&!types.includes(v))v='기타';if(field==='date'&&v){const d=new Date(v+'T00:00:00Z');if(!/^\d{4}-\d{2}-\d{2}$/.test(v)||!Number.isFinite(d.getTime())||d.toISOString().slice(0,10)!==v)v='';}f[field]=v.slice(0,field==='description'?1500:field==='note'?1000:100);invalidate();renderEducationPrint();};if(n.tagName==='SELECT'||field==='date')n.onchange=edit;else n.oninput=edit;});
  box.querySelectorAll('[data-vm-include]').forEach(n=>n.onchange=()=>{files.find(f=>f.id===Number(n.getAttribute('data-vm-include'))).include=n.checked;invalidate();renderEducationPrint();});
  const action=(attr,fn)=>box.querySelectorAll('['+attr+']').forEach(n=>n.onclick=()=>fn(Number(n.getAttribute(attr)),n));
@@ -128,7 +197,7 @@ function renderFiles(){const box=el('vmFileList');box.innerHTML=files.map(f=>'<a
  el('vmUsage').textContent=files.length+' / '+limits.count+'장 · '+(files.reduce((n,f)=>n+f.size,0)/1024/1024).toFixed(1)+' / 32 MB';window.NeuroFollowupWorkspace?.updateMini();}
 async function decode(url){const img=document.createElement('img');img.src=url;if(img.decode)await img.decode();else await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;});if(!img.naturalWidth||!img.naturalHeight)throw Error('이미지를 읽지 못했습니다.');if(img.naturalWidth*img.naturalHeight>limits.pixels)throw Error('이미지는 4천만 화소 이하로 준비하세요.');return {width:img.naturalWidth,height:img.naturalHeight};}
 async function validate(file){if(!file||!file.size||file.size>limits.file)throw Error('파일은 0바이트 초과, 8 MB 이하여야 합니다.');const ext=(file.name||'').split('.').pop().toLowerCase(),b=new Uint8Array(await file.slice(0,16).arrayBuffer());let mime='';if(b[0]===255&&b[1]===216&&b[2]===255)mime='image/jpeg';if(b.length>=8&&[137,80,78,71,13,10,26,10].every((v,i)=>b[i]===v))mime='image/png';if(b.length>=12&&String.fromCharCode(...b.slice(0,4))==='RIFF'&&String.fromCharCode(...b.slice(8,12))==='WEBP')mime='image/webp';const expected={jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp'}[ext];if(!expected||expected!==mime||(file.type&&file.type!==mime))throw Error('JPG·PNG·WebP만 지원합니다. PDF·DICOM·SVG와 형식이 다른 파일은 제외됩니다.');}
-function acceptFiles(input){const batch=Array.from(input||[]),token=generation;pending++;invalidate();const job=queue.then(async()=>{const errors=[];for(const file of batch){if(token!==generation)break;let url='';try{if(files.length>=limits.count)throw Error('최대 8장까지 첨부할 수 있습니다.');if(files.reduce((n,f)=>n+f.size,0)+file.size>limits.total)throw Error('전체 이미지 합계는 32 MB 이하여야 합니다.');await validate(file);if(token!==generation)break;const signature=[file.name,file.size,file.lastModified].join('|');if(files.some(f=>f.signature===signature))throw Error('이미 첨부한 같은 파일입니다. 삭제 후 다시 추가할 수 있습니다.');url=URL.createObjectURL(file);loading.add(url);const dimensions=await decode(url);if(token!==generation){URL.revokeObjectURL(url);loading.delete(url);break;}loading.delete(url);files.push({id:++sequence,url,size:file.size,signature,...dimensions,type:'기타',date:'',title:'검사 결과 '+sequence,description:'',note:'',include:false});url='';}catch(error){if(url){URL.revokeObjectURL(url);loading.delete(url);}if(token===generation)errors.push(error.message);}}if(token===generation){invalidate();el('vmFileStatus').textContent=errors.length?errors.join(' / '):'첨부 완료. 설명과 출력 포함 여부를 확인하세요.';renderFiles();renderEducationPrint();}}).finally(()=>{pending--;refreshVisitPrint();});queue=job.catch(()=>{});return job;}
+function acceptFiles(input){const batch=Array.from(input||[]),token=generation;pending++;invalidate();const job=queue.then(async()=>{const errors=[];for(const file of batch){if(token!==generation)break;let url='';try{if(files.length>=limits.count)throw Error('최대 8장까지 첨부할 수 있습니다.');if(files.reduce((n,f)=>n+f.size,0)+file.size>limits.total)throw Error('전체 이미지 합계는 32 MB 이하여야 합니다.');await validate(file);if(token!==generation)break;const signature=[file.name,file.size,file.lastModified].join('|');if(files.some(f=>f.signature===signature))throw Error('이미 첨부한 같은 파일입니다. 삭제 후 다시 추가할 수 있습니다.');url=URL.createObjectURL(file);loading.add(url);const dimensions=await decode(url);if(token!==generation){URL.revokeObjectURL(url);loading.delete(url);break;}loading.delete(url);files.push({id:++sequence,url,size:file.size,signature,...dimensions,type:'기타',date:'',title:'검사 결과 '+sequence,description:'',note:'',marks:[],include:false});url='';}catch(error){if(url){URL.revokeObjectURL(url);loading.delete(url);}if(token===generation)errors.push(error.message);}}if(token===generation){invalidate();el('vmFileStatus').textContent=errors.length?errors.join(' / '):'첨부 완료. 설명과 출력 포함 여부를 확인하세요.';renderFiles();renderEducationPrint();}}).finally(()=>{pending--;refreshVisitPrint();});queue=job.catch(()=>{});return job;}
 async function print(mode='visit'){const approval=mode==='education'?'eduConfirmed':'visitReviewed';if(busy||pending||!path()||!el(approval)?.checked)return;busy=true;const stamp=fingerprint(),sheet=el('visitPrintSheet');sheet.innerHTML=outputHTML();namespaceMechanismMarkers(sheet);try{const images=Array.from(sheet.querySelectorAll('img'));await Promise.all(images.map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts?.ready)await document.fonts.ready;if(stamp!==fingerprint()||pending||!el(approval)?.checked)return;document.body.classList.add('visit-printing');window.print();}catch{if(stamp===fingerprint()&&el(approval)?.checked)alert('이미지 파일을 준비하지 못해 인쇄를 중단했습니다. 첨부와 그림 파일을 확인하세요.');}finally{document.body.classList.remove('visit-printing');busy=false;}}
 const oldRefresh=refreshVisitPrint;refreshVisitPrint=function(){oldRefresh();if(path()&&el('visitReviewed').checked&&files.some(f=>f.include))el('visitPrint').disabled=false;if(pending)el('visitPrint').disabled=true;};
 window.getVisitAttachmentsHTML=attachmentHTML;window.getSelectedEducationHTML=selectedEducation;window.hasEducationSelection=()=>selection.length>0;window.changeEducationChoice=updateSelection;
