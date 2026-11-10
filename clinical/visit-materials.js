@@ -6,10 +6,30 @@ const types=['혈액검사','NCS/EMG','EEG','영상검사','기타'],limits={cou
 let files=[],sequence=0,generation=0,revision=0,pending=0,queue=Promise.resolve(),context='',selection=[],seenContext=false,busy=false,zoomReturn=null;const loading=new Set();
 const key=()=>AppState.activeDoctorSymptom?AppState.activeDoctorSymptom+':'+(AppState.selectedSubpath[AppState.activeDoctorSymptom]||''):'';
 const path=()=>{const m=NEURO_DATA[AppState.activeDoctorSymptom];return m?.differentialPathways.find(p=>p.id===AppState.selectedSubpath[m.id])||m?.differentialPathways[0];};
-const pack=()=>window.NeuroPatientEducation?.paths[path()?.id];
+const ulnarEducation={
+  title:'팔꿈치에서 눌린 척골신경 운동',
+  text:'팔꿈치에서 척골신경이 눌린 것을 확인하고 진료에서 이 동작을 배운 경우에만 하세요. 팔을 억지로 당기지 말고, 유지 시간과 횟수는 진료에서 받은 안내를 따르세요. 통증이나 저림이 심해지면 멈추고 의료진에게 알려주세요.'
+};
+const pack=()=>{
+  const id=path()?.id;
+  const p=window.NeuroPatientEducation?.paths[id];
+  return id==='ulnar_neuropathy'&&p?{...p,sections:[...p.sections,ulnarEducation]}:p;
+};
+// East Kent Hospitals University NHS Foundation Trust: Cubital tunnel syndrome, ulnar nerve gliding exercises.
+function ulnarSteps(){
+  const poses=[
+    ['팔을 옆으로 펴기','팔을 옆으로 펴고 손바닥을 바닥 쪽으로 향하게 하세요.','M30 40H83'],
+    ['손끝을 위로 향하기','팔꿈치를 편 채 손목을 뒤로 젖혀 손가락이 위를 향하게 하세요.','M30 40H71V24'],
+    ['팔꿈치 굽히기','손목 자세를 유지한 채 팔꿈치를 굽혀 손이 머리 쪽을 향하게 하세요.','M30 40H55L46 23L34 18'],
+    ['처음 자세로 돌아가기','팔꿈치와 손목을 펴서 처음 자세로 돌아오세요.','M30 40H83']
+  ];
+  return '<ol class="epley-steps handout-safety-steps ulnar-steps">'+poses.map(([title,body,shape],index)=>
+    '<li><svg viewBox="0 0 96 84" aria-hidden="true"><rect x="4" y="4" width="88" height="76" rx="8" fill="#e7f2f6"/><path d="M18 72V45Q18 38 30 40V72" fill="#c6dfe5" stroke="#154e62" stroke-width="2"/><path d="'+shape+'" fill="none" stroke="#154e62" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="26" r="9" fill="#fff" stroke="#154e62" stroke-width="2"/></svg><h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>'
+  ).join('')+'</ol>';
+}
 const fields=['visitDiagnosis','visitTests','visitCare','visitReturn','visitCaution'];
 function invalidate(){revision++;el('visitReviewed').checked=false;if(el('eduConfirmed'))el('eduConfirmed').checked=false;toggleEducationPrint();refreshVisitPrint();el('visitPrintSheet').innerHTML='';if(el('vmPreview'))el('vmPreview').innerHTML='';window.NeuroFollowupWorkspace?.updateMini();}
-function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p></section>').join('')+'</section>';}
+function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p>'+(s===ulnarEducation&&el('visitIncludeVisuals').checked?ulnarSteps():'')+'</section>').join('')+'</section>';}
 function attachmentHTML(){return files.filter(f=>f.include).map(f=>'<section class="vm-print-attachment"><h2>'+safe(f.title||'검사 결과')+'</h2><p>'+safe(f.type)+(f.date?' · 검사일 '+safe(f.date):'')+'</p><img src="'+safe(f.url)+'" alt="'+safe(f.title||'첨부한 검사 결과')+'" width="'+f.width+'" height="'+f.height+'"><p class="vm-caption">'+safe(f.description||'설명 미입력 — 담당의에게 확인하세요.')+'</p></section>').join('');}
 function handoutVisual(id){
   if(!el('visitIncludeVisuals').checked)return '';
