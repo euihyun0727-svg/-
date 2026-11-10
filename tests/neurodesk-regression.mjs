@@ -124,7 +124,7 @@ e.doc.getElementById('visitCare').value='변경된 안내';e.doc.getElementById(
 check('stale print snapshot aborts',e.prints===1);
 e.doc.fonts.ready=Promise.resolve();e.doc.getElementById('visitReviewed').checked=true;e.ctx.refreshVisitPrint();var count=e.prints;await Promise.all([e.ctx.printVisitSheet(),e.ctx.printVisitSheet()]);check('double print guard',e.prints===count+1);
 e.doc.getElementById('eduConfirmed').checked=true;e.ctx.toggleEducationPrint();await e.ctx.printEducationSheet();check('legacy print waits then prints',e.prints===count+2);
-e.doc.querySelector('#clinicEducationArt img').decode=()=>Promise.reject(Error('mock missing image'));await e.ctx.printEducationSheet();check('legacy image failure stops print',e.prints===count+2&&e.alerts.some(t=>t.includes('이미지 파일')));
+e.doc.querySelector('#clinicEducationArt img').decode=()=>Promise.reject(Error('mock missing image'));await e.ctx.printEducationSheet();check('unused reference art does not block patient print',e.prints===count+3);
 e.ctx.resetPatientIntake();check('new patient clears score memory',e.eval('Object.keys(AppState.scaleScores).length')===0);
 check('new patient clears draft and education',!e.ctx.hasEducationSelection()&&e.doc.getElementById('visitDiagnosis').value==='');
 check('new patient clears old completion',e.doc.getElementById('patientSummaryCard').innerHTML==='');
@@ -136,7 +136,7 @@ for(const id of ids){
  check(id+' image file',all.doc.querySelector('#clinicEducationArt img')?.getAttribute('src')===id+'.png');
  for(const sub of all.eval('NEURO_DATA['+JSON.stringify(id)+'].differentialPathways.map(p=>p.id)')){
  all.eval('AppState.selectedSubpath['+JSON.stringify(id)+']='+JSON.stringify(sub));all.ctx.renderDoctorStage();
- check(sub+' treatment and education',all.doc.getElementById('docSubpathContent').textContent.trim().length>0&&all.doc.getElementById('docPatientLeafletArea').textContent.includes('질환이 생기는 원리'));pathCount++;
+ check(sub+' treatment and education',all.doc.getElementById('docSubpathContent').textContent.trim().length>0&&all.doc.getElementById('docPatientLeafletArea').textContent.includes(sub==='essential_tremor'?'본태성 떨림이란?':'질환이 생기는 원리'));pathCount++;
  }}
 var svg1=all.ctx.buildFlowSvg('검증',[['A','a'],['B','b']]),svg2=all.ctx.buildFlowSvg('검증',[['A','a'],['B','b']]);
 check('unique SVG marker ID',svg1.match(/marker id="([^"]+)"/)[1]!==svg2.match(/marker id="([^"]+)"/)[1]);
@@ -152,9 +152,8 @@ check('print header has important override',html.includes('#visitPrintSheet head
 var z=makeEnv(html);z.ctx.toggleSymptom('headache');z.ctx.startPatientIntake();z.ctx.skipQuestion();z.doc.querySelector('#optList button').click();z.ctx.switchMode('doctor');z.ctx.switchMode('patient');
 check('emergency warning retained after mode switch',!!z.doc.getElementById('questionEmergencyNotice'));
 z.ctx.switchMode('doctor');z.ctx.switchDocStage('stage5_followup');z.doc.getElementById('visitDiagnosis').value='검증용';z.doc.getElementById('visitReviewed').checked=true;z.ctx.refreshVisitPrint();await z.ctx.printVisitSheet();
-var originalId=z.doc.querySelector('#docMechanismArea marker').id,printId=z.doc.querySelector('#visitPrintSheet marker').id;
-check('copied SVG has separate marker namespace',originalId!==printId);
-check('copied arrows target copied marker',z.doc.querySelector('#visitPrintSheet line').getAttribute('marker-end')==='url(#'+printId+')');
+check('doctor diagram remains available',!!z.doc.querySelector('#docMechanismArea marker'));
+check('patient print excludes doctor diagram',!z.doc.querySelector('#visitPrintSheet marker'));
 console.log(JSON.stringify({passed:checks.length,paths:pathCount,scope:'DOM simulation; image decode, clipboard and print mocked'},null,2));
 
 const regressionSummary={passed:checks.length,paths:pathCount};

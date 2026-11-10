@@ -3746,8 +3746,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "주로 자세를 유지하거나 손을 쓸 때 떨리는 양상을 평가합니다. 본태떨림과 추가 신경 소견이 있는 상태를 구분합니다.",
+          "title": "본태성 떨림이란?",
+          "text": "손을 쓰거나 일정한 자세를 유지할 때 손이 떨릴 수 있습니다.",
           "sources": [
             "tremor:tremor",
             "tremor:et2019"
@@ -3755,8 +3755,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "글씨·식사·컵 들기와 머리·목소리 떨림의 영향을 살핍니다. 약물·갑상선·파킨슨증 등 다른 원인도 확인합니다.",
+          "title": "어떤 때 불편한가요?",
+          "text": "글씨를 쓰거나 식사할 때, 컵을 들 때 손떨림이 불편할 수 있습니다.",
           "sources": [
             "tremor:tremor",
             "tremor:et2019"
@@ -3764,8 +3764,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰과 경과가 중심이며 모든 떨림에 같은 영상·도파민 검사가 필요한 것은 아닙니다.",
+          "title": "검사는 어떻게 정하나요?",
+          "text": "떨림은 진찰과 증상의 경과를 보고 확인합니다. 필요한 검사는 진료에서 안내합니다.",
           "sources": [
             "tremor:tremor",
             "tremor:et2019"
@@ -3773,8 +3773,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "생활 지장에 따라 보조 도구·약물과 전문 시술을 검토합니다. 치료 반응과 근거의 확실성에는 한계가 있어 개인 목표를 정합니다.",
+          "title": "치료 목표",
+          "text": "식사나 글씨 쓰기처럼 불편한 동작을 조금 더 편하게 하는 것이 목표입니다.",
           "sources": [
             "tremor:tremor",
             "tremor:et2019"
@@ -3782,8 +3782,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "불편한 동작과 카페인·피로의 영향을 기록하고 잡기 편한 도구를 시험하세요. 술을 떨림 치료로 사용하지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "어떤 동작이 불편했는지, 피곤하거나 카페인을 섭취한 뒤 떨림이 달라졌는지 적어보세요. 잡기 편한 도구를 써보세요. 술을 떨림 치료로 사용하지 마세요.",
           "sources": [
             "tremor:tremor",
             "tremor:et2019"
@@ -3791,7 +3791,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약에 따라 맥박·혈압·천식·졸림·낙상을 확인합니다. 다른 약과 함께 복용할 때의 적합성을 상담하세요.",
           "sources": [
             "tremor:tremor",
@@ -3800,8 +3800,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "떨림 세기보다 식사·글씨·직업 활동이 나아지는지와 부작용을 비교합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "식사나 글씨 쓰기가 전보다 편해졌는지, 치료 중 불편했던 점이 있었는지 알려주세요.",
           "sources": [
             "tremor:tremor",
             "tremor:et2019"
@@ -3809,7 +3809,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "갑자기 생긴 떨림과 마비·보행/언어 변화, 새 약 뒤 급격한 악화는 신속히 평가받으세요.",
           "sources": [
             "tremor:tremor",

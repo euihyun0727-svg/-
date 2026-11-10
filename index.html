@@ -482,6 +482,62 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
   <link rel="stylesheet" href="clinical/followup-workspace.css" media="screen">
   <link rel="stylesheet" href="clinical/workspace-theme.css" media="screen">
   <link rel="stylesheet" href="clinical/brand-b.css" media="screen">
+
+<style>
+
+.et-daily-art{margin:18px auto;max-width:540px;break-inside:avoid}
+.et-daily-art h2{color:#234940;margin-bottom:10px}
+.et-scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.et-scene{margin:0;border:1px solid #b7cec5;border-radius:12px;overflow:hidden;background:#eaf4ef}
+.et-scene-writing{border-color:#dfcbb3;background:#faf0e3}
+.et-scene-picture{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:1.17}
+.et-scene-picture img{position:absolute;display:block;width:200%;max-width:none;height:auto;left:0;top:50%;transform:translateY(-50%);mix-blend-mode:multiply}
+.et-scene-writing img{left:-100%}
+.et-scene figcaption{border-top:1px solid #b7cec5;padding:6px 8px;text-align:center;color:#234940;font-weight:700}
+.et-scene-writing figcaption{border-color:#dfcbb3;color:#62452e}
+@media print{#visitPrintSheet .et-scenes{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+@media print{
+ body.visit-printing #visitPrintSheet{position:static!important;width:auto}
+ body.visit-printing #visitPrintSheet header{position:static!important;box-shadow:none!important}
+ #visitPrintSheet .et-daily-art{max-width:135mm}
+}
+</style>
+
+<style>
+:is(#visitPrintSheet,#vmPreview) .handout-header{background:#e4f0eb;border-bottom:3px solid #2b6d62;padding:14px 18px;margin-bottom:16px}
+:is(#visitPrintSheet,#vmPreview) :is(.handout-group,.handout-treatment,.selected-education,.et-daily-art){border:1px solid #c8dcd5;border-radius:8px;background:#f3f8f5;padding:12px 16px;margin:0 0 14px;break-inside:auto}
+:is(#visitPrintSheet,#vmPreview) :is(.handout-group,.handout-treatment,.selected-education,.et-daily-art)>h2{color:#234940;border-bottom:1px solid #c8dcd5;padding-bottom:5px;break-after:avoid}
+:is(#visitPrintSheet,#vmPreview) .handout-next{background:#f9f1e5;border-color:#ddc9ad}
+:is(#visitPrintSheet,#vmPreview) .handout-entry{margin:8px 0;break-inside:avoid}
+:is(#visitPrintSheet,#vmPreview) .handout-entry h3{font-size:1em;margin:0}
+:is(#visitPrintSheet,#vmPreview) .handout-treatment figure{margin:8px auto;max-width:155mm;break-inside:avoid}
+:is(#visitPrintSheet,#vmPreview) .handout-treatment img{display:block;width:100%;height:auto}
+:is(#visitPrintSheet,#vmPreview) .handout-treatment figcaption{font-size:.85em;text-align:center}
+@media print{body.visit-printing #visitPrintSheet .handout-header{padding:12px 16px;border-bottom:3px solid #2b6d62}#visitPrintSheet{print-color-adjust:exact;-webkit-print-color-adjust:exact}#visitPrintSheet .et-daily-art{break-inside:avoid}}
+</style>
+<style>
+.epley-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;list-style:none;margin:10px 0;padding:0}.epley-steps li{background:#fff;border:1px solid #c8dcd5;border-radius:7px;padding:8px;break-inside:avoid}.epley-steps svg{display:block;width:100%;height:18mm}.epley-steps h3{font-size:1em;margin:3px 0}.epley-steps p{margin:0}.epley-steps li:last-child{grid-column:1/-1}
+</style>
+
+<style>
+@media print{
+  body.visit-printing #visitPrintSheet{font-size:11pt;line-height:1.5}
+  body.visit-printing #visitPrintSheet .handout-header{padding:8px 12px;margin-bottom:10px}
+  body.visit-printing #visitPrintSheet .handout-header h1{font-size:20pt;margin:0 0 3px}
+  body.visit-printing #visitPrintSheet :is(.handout-group,.handout-treatment,.selected-education,.et-daily-art){padding:9px 12px;margin:0 0 9px}
+  body.visit-printing #visitPrintSheet :is(.handout-group,.handout-treatment,.selected-education,.et-daily-art)>h2{margin:0 0 5px;padding-bottom:4px}
+  body.visit-printing #visitPrintSheet .handout-entry{margin:5px 0}
+  body.visit-printing #visitPrintSheet .selected-education{break-before:auto}
+  body.visit-printing #visitPrintSheet .selected-education h3{margin:7px 0 2px}
+  body.visit-printing #visitPrintSheet .selected-education p{line-height:1.5}
+  body.visit-printing #visitPrintSheet :is(.handout-treatment,.et-daily-art,.handout-next){break-inside:avoid}
+  body.visit-printing #visitPrintSheet .et-daily-art{max-width:120mm}
+  body.visit-printing #visitPrintSheet .epley-steps{gap:6px;margin:6px 0}
+  body.visit-printing #visitPrintSheet .epley-steps li{padding:5px 7px}
+  body.visit-printing #visitPrintSheet .epley-steps svg{height:17mm}
+  body.visit-printing #visitPrintSheet .handout-treatment + .selected-education{break-inside:avoid}
+}
+</style>
 </head>
 <body>
 
@@ -681,7 +737,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
           <h3 style="font-size:14.5px; font-weight:800; color:var(--primary); margin-bottom:8px;">환자 제공용 표준 교육 안내문</h3>
           <div id="docPatientLeafletArea" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; padding:16px; white-space:pre-wrap; font-size:13.5px; line-height:1.6;"></div>
 </section></div>
-          <aside class="nd-output-desk no-print" aria-label="안내서 구성과 출력 확인"><div class="nd-b-output-heading"><h3>안내서 구성</h3></div><div class="nd-b-output-body"><ol class="nd-output-order"><li>오늘의 설명·계획</li><li>선택한 검사 이미지</li><li>선택한 교육자료</li><li>다음 진료·주의사항</li></ol><div id="ndPreviewAction"></div></div><section class="nd-output-section"><h3 class="nd-b-print-title">의료진 확인 후 출력</h3><label class="confirm-line"><input type="checkbox" id="visitReviewed" onchange="refreshVisitPrint()"> 작성 내용과 현재 선택한 증상을 확인했습니다.</label><label class="confirm-line"><input type="checkbox" id="visitIncludeVisuals" checked onchange="document.getElementById('visitReviewed').checked=false;refreshVisitPrint()"> 안내서에 그림과 기전 도식 포함</label><div class="visit-actions"><button class="btn-mode" id="visitPrint" disabled onclick="printVisitSheet()">진료 안내서 인쇄</button><button class="btn-mode" onclick="clearVisitDraft()">작성 내용 지우기</button></div><p class="field-note">자동 저장·외부 전송은 하지 않습니다. 증상 또는 질환 선택이 바뀌면 확인 상태가 해제됩니다.</p></section><section class="nd-output-section"><div id="ndEducationApproval"></div><button class="btn-mode" style="background:var(--primary); color:white;" id="eduPrintButton" disabled onclick="printEducationSheet()">의사 확인 후 인쇄 (A4)</button></section><div id="ndBrandMini" class="nd-b-mini-wrap" aria-label="선택한 내용의 구성 미리보기"><div class="nd-b-mini-caption"><span>구성 미리보기</span><span id="ndMiniCount" aria-live="polite"></span></div><div class="nd-b-mini-paper"><strong>NeuroDesk</strong><h3>진료 후 안내서</h3><p id="ndMiniToday"></p><div id="ndMiniPlan"></div><h4>선택한 검사 이미지</h4><ul id="ndMiniAttachments"></ul><h4>함께 드리는 교육자료</h4><ul id="ndMiniEducation"></ul></div><p class="field-note">선택 내용의 요약입니다. 전체 내용은 안내서 미리보기에서 확인하세요.</p></div></aside>
+          <aside class="nd-output-desk no-print" aria-label="안내서 구성과 출력 확인"><div class="nd-b-output-heading"><h3>안내서 구성</h3></div><div class="nd-b-output-body"><ol class="nd-output-order"><li>오늘의 설명·계획</li><li>선택한 검사 이미지</li><li>선택한 교육자료</li><li>다음 진료·주의사항</li></ol><div id="ndPreviewAction"></div></div><section class="nd-output-section"><h3 class="nd-b-print-title">의료진 확인 후 출력</h3><label class="confirm-line"><input type="checkbox" id="visitReviewed" onchange="refreshVisitPrint()"> 작성 내용과 현재 선택한 증상을 확인했습니다.</label><label class="confirm-line"><input type="checkbox" id="visitIncludeVisuals" checked onchange="document.getElementById('visitReviewed').checked=false;refreshVisitPrint()"> 안내서에 그림과 기전 도식 포함</label><div class="visit-actions"><button class="btn-mode" id="visitPrint" disabled onclick="printVisitSheet()">진료 안내서 인쇄</button><button class="btn-mode" onclick="clearVisitDraft()">작성 내용 지우기</button></div><p class="field-note">자동 저장·외부 전송은 하지 않습니다. 증상 또는 질환 선택이 바뀌면 확인 상태가 해제됩니다.</p></section><section class="nd-output-section"><div id="ndEducationApproval"></div><button class="btn-mode" style="background:var(--primary); color:white;" id="eduPrintButton" disabled onclick="printEducationSheet()">의사 확인 후 인쇄 (A4)</button></section><div id="ndBrandMini" class="nd-b-mini-wrap" aria-label="선택한 내용의 구성 미리보기"><div class="nd-b-mini-caption"><span>구성 미리보기</span><span id="ndMiniCount" aria-live="polite"></span></div><div class="nd-b-mini-paper"><h3>진료 후 안내서</h3><p id="ndMiniToday"></p><div id="ndMiniPlan"></div><h4>선택한 검사 이미지</h4><ul id="ndMiniAttachments"></ul><h4>함께 드리는 교육자료</h4><ul id="ndMiniEducation"></ul></div><p class="field-note">선택 내용의 요약입니다. 전체 내용은 안내서 미리보기에서 확인하세요.</p></div></aside>
         </div>
       </div>
 
