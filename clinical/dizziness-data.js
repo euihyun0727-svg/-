@@ -1374,9 +1374,21 @@ window.NeuroDizzinessData = {
     "horizontal_geo": [
       {
         "id": "hcGeoManeuver",
-        "name": "수평 향지성 정복술: barbecue roll / Gufoni 검토",
+        "name": "구포니 정복술 (향지성 · 코 아래)",
         "role": "의료진 시행",
-        "evidence": "AAO-HNS 본문: 수평 향지성 형태의 해당 정복술 근거.",
+        "evidence": "향지성 수평반고리관 이석증 무작위 대조 연구 (Kim 등, 2012).",
+        "safety": "환측과 안진형을 확인. 후반고리관 Epley를 동일하게 적용하지 않음. 경추/체위 안전성·수행 가능성 확인.",
+        "sourceIds": [
+          "bppv"
+        ],
+        "dose": "용량·증량 미제공: 국내 품목별 공식 허가사항 확인 필요",
+        "domestic": "국내 해당 적응증·급여·공급 미확인. 해외 권고와 국내 허가는 별개"
+      },
+      {
+        "id": "hcGeoRoll",
+        "name": "바비큐 회전 정복술 (향지성 · 270°)",
+        "role": "의료진 시행",
+        "evidence": "향지성 수평반고리관 이석증 무작위 대조 연구 (Kim 등, 2012).",
         "safety": "환측과 안진형을 확인. 후반고리관 Epley를 동일하게 적용하지 않음. 경추/체위 안전성·수행 가능성 확인.",
         "sourceIds": [
           "bppv"
@@ -1388,9 +1400,9 @@ window.NeuroDizzinessData = {
     "horizontal_apo": [
       {
         "id": "hcApoManeuver",
-        "name": "수평 원지성: 변형 Gufoni 등 전문 검토",
+        "name": "아피아니 정복술 (원지성 · 코 위)",
         "role": "의료진 시행",
-        "evidence": "AAO-HNS 본문: 선호 술기 확정을 위한 근거 제한; 향지성과 같은 방향/술기로 자동 적용 안 함.",
+        "evidence": "원지성 수평반고리관 이석증에서 평가된 Appiani 방식. 안진형 전환 여부는 시행 후 재확인.",
         "safety": "병태·환측·안진 전환을 직접 평가. 지시 방향과 시행 순서는 확인된 전문 프로토콜을 따름.",
         "sourceIds": [
           "bppv"
