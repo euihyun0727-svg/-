@@ -16,6 +16,7 @@ function handoutVisual(id){
   if(id==='essential_tremor')return "<section class=\"et-daily-art\" aria-label=\"손떨림이 불편한 일상 동작\"><h2>손떨림이 불편한 일상 동작</h2><div class=\"et-scenes\"><figure class=\"et-scene\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"컵 손잡이를 잡고 드는 손\"></div><figcaption>컵 들기</figcaption></figure><figure class=\"et-scene et-scene-writing\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"펜을 잡고 종이에 글씨를 쓰는 손\"></div><figcaption>글씨 쓰기</figcaption></figure></div></section>";
   const vestibular=window.NeuroDizziness?.getState();
   if(id==='bppv'&&vestibular?.canal==='posterior'&&['left','right'].includes(vestibular.side))return epleyHandout(vestibular.side);
+  if(id==='bppv')return horizontalHandout(vestibular);
   return safetySteps(id);
 }
 // Sources: CDC STEADI Postural Hypotension and CDC First Aid for Seizures.
@@ -36,6 +37,39 @@ function safetySteps(id){
   return '<section class="handout-treatment"><h2>'+title+'</h2><ol class="epley-steps handout-safety-steps">'+steps.map(([label,body,drawing],index)=>
     '<li><svg viewBox="0 0 116 86" aria-hidden="true"><rect x="7" y="7" width="102" height="72" rx="8" fill="#e1eee9"/><g stroke="#33514e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">'+drawing+'</g></svg><h3>'+(index+1)+'. '+label+'</h3><p>'+body+'</p></li>'
   ).join('')+'</ol></section>';
+}
+// 270° roll: PMID 22855868 and the lateral-canal sequence in the AAO-HNS guideline.
+// Side-lying head-up variant: PMCID PMC10471904.
+function horizontalHandout(state){
+  if(!state||!['left','right'].includes(state.side)||state.therapies.length!==1)return '';
+  const [choice]=state.therapies;
+  const geo=state.canal==='horizontal_geo';
+  const apo=state.canal==='horizontal_apo';
+  if(!(geo&&['hcGeoManeuver','hcGeoRoll'].includes(choice)||apo&&choice==='hcApoManeuver'))return '';
+  const affected=state.side==='right'?'오른쪽':'왼쪽';
+  const other=state.side==='right'?'왼쪽':'오른쪽';
+  const direction=state.side==='right'?-1:1;
+  const roll=choice==='hcGeoRoll';
+  const down=geo?other:affected;
+  const name=roll?'바비큐 회전 정복술 (270°)':geo?'구포니 정복술':'아피아니 정복술';
+  const steps=roll?[
+    ['환측 귀가 아래로','의료진이 '+affected+' 귀가 아래로 가도록 자세를 잡습니다.',90*direction],
+    ['등을 대고 눕기',other+' 방향으로 90° 돌아 얼굴이 천장을 향합니다.',0],
+    ['반대쪽 귀가 아래로',other+' 방향으로 90° 더 돌아 '+other+' 귀가 아래로 갑니다.',-90*direction],
+    ['엎드리기',other+' 방향으로 90° 더 돌아 얼굴이 침대 쪽을 향합니다.',180],
+    ['다시 앉기','의료진의 도움을 받아 앉습니다.',null]
+  ]:[
+    ['침대 가장자리에 앉기','의료진이 몸과 머리를 지지하며 시작합니다.',null],
+    [down+'으로 돌아눕기',down+' 귀가 아래로 가도록 눕습니다.',geo?-90*direction:90*direction],
+    [geo?'코를 침대 쪽으로 돌리기':'코를 천장 쪽으로 돌리기','몸은 옆으로 누운 채 머리를 '+(geo?'아래로':'위로')+' 45° 돌립니다. 자세는 의료진이 안내한 시간 동안 유지합니다.',(geo?-90*direction:90*direction)+(geo?-45*direction:-45*direction)],
+    ['다시 앉기','의료진의 도움을 받아 일어나 앉습니다.',null]
+  ];
+  function diagram(angle){
+    const seated=angle===null;
+    const torso=seated?'<path d="M53 64h53M77 49v15h19v11" stroke="#33514e" stroke-width="3" fill="none"/>' :'<g transform="rotate('+(roll?angle:steps[1][2])+' 80 53)"><rect x="62" y="46" width="36" height="14" rx="6" fill="#659b91"/><path d="M67 53h26" stroke="#33514e" stroke-width="1.5"/></g>';
+    return '<svg viewBox="0 0 160 86" aria-hidden="true"><rect x="43" y="8" width="74" height="70" rx="7" fill="#e1eee9" stroke="#92b5ac"/>'+torso+'<g transform="rotate('+(angle??0)+' 80 32)"><circle cx="80" cy="32" r="13" fill="#efd4b9" stroke="#33514e"/><path d="M80 32V15m-5 5 5-5 5 5" stroke="#33514e" stroke-width="2" fill="none"/></g></svg>';
+  }
+  return '<section class="handout-treatment horizontal-treatment"><h2>'+name+' · '+affected+' 수평반고리관 ('+(geo?'향지성':'원지성')+')</h2><p>진료실에서 의료진과 함께 하는 치료입니다. 그림의 화살표는 얼굴이 향하는 방향을 보여줍니다. 몸을 돌리는 쪽은 각 단계의 설명을 읽어주세요.</p><ol class="epley-steps'+(roll?'':' horizontal-four')+'">'+steps.map(([label,body,angle],index)=>'<li>'+diagram(angle)+'<h3>'+(index+1)+'. '+label+'</h3><p>'+body+'</p></li>').join('')+'</ol><p>혼자 따라 하기 전에 본인에게 맞는 술기와 안전한 자세를 의료진에게 확인하세요.</p></section>';
 }
 function epleyHandout(side){
   const right=side==='right';

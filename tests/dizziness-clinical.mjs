@@ -50,6 +50,16 @@ ok('posterior correct nystagmus',p.e.doc.getElementById('dzPlan').textContent.in
 ok('no automatic diagnostic criteria',Object.keys(p.e.ctx.NeuroDizziness.getState().criteria).length===0);cases.push({name:'후반고리관 BPPV',result:'PASS'});
 const hc=doctor();choose(hc,'dzCanal','horizontal_geo');choose(hc,'dzSide','left');
 ok('horizontal geo correct maneuver',!!hc.doc.querySelector('[data-dz-therapy="hcGeoManeuver"]')&&!hc.doc.querySelector('[data-dz-therapy="epley"]'));
+
+function horizontalChoice(e,id){const box=e.doc.querySelector('[data-dz-therapy="'+id+'"]');box.checked=true;box.onchange();}
+function horizontalPreview(e){e.ctx.switchDocStage('stage5_followup');e.doc.getElementById('vmPreviewButton').click();return e.doc.getElementById('vmPreview').innerHTML;}
+ok('horizontal no art before selection',!horizontalPreview(hc).includes('구포니 정복술'));
+horizontalChoice(hc,'hcGeoManeuver');
+ok('left geotropic lies right',horizontalPreview(hc).includes('오른쪽으로 돌아눕기'));
+horizontalChoice(hc,'hcGeoRoll');
+ok('horizontal choice is exclusive',hc.ctx.NeuroDizziness.getState().therapies.join(',')==='hcGeoRoll');
+ok('changing maneuver clears stale preview',!hc.doc.getElementById('vmPreview').innerHTML);
+ok('barbecue diagram rendered',horizontalPreview(hc).includes('바비큐 회전 정복술 (270°)'));
 choose(hc,'dzCanal','horizontal_apo');ok('horizontal apo independent',!!hc.doc.querySelector('[data-dz-therapy="hcApoManeuver"]')&&!hc.doc.querySelector('[data-dz-therapy="hcGeoManeuver"]'));
 ok('apo no automatic cupulolithiasis',hc.doc.getElementById('dzPlan').textContent.includes('단정하지 않음'));
 choose(hc,'dzSide','bilateral');ok('complex side requires specialist',hc.doc.querySelectorAll('[data-dz-therapy]').length===0);cases.push({name:'수평 향지성·원지성 BPPV',result:'PASS'});
