@@ -105,7 +105,7 @@ function outputHTML(){
   });
   const group=(title,content,kind)=>content?'<section class="handout-group '+kind+'"><h2>'+title+'</h2>'+content+'</section>':'';
   const name={'essential_tremor':'본태성 떨림','bppv':'이석증'}[current.id];
-  return '<header class="handout-header'+(current.id==='bppv'?' dizziness-leaflet':'')+'"><h1>진료 후 안내서</h1>'+(name?'<p>'+name+'</p>':'')+'</header>'
+  return '<header class="handout-header patient-leaflet'+(current.id==='bppv'?' dizziness-leaflet':'')+'"><h1>진료 후 안내서</h1>'+(name?'<p>'+name+'</p>':'')+'</header>'
     +group('오늘 정한 계획',sections.slice(0,3).join(''),'handout-plan')
     +attachmentHTML()+handoutVisual(current.id)+selectedEducation()
     +group('다음 진료와 주의사항',sections.slice(3).join(''),'handout-next');
