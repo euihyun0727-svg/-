@@ -136,7 +136,7 @@ for(const id of ids){
  check(id+' image file',all.doc.querySelector('#clinicEducationArt img')?.getAttribute('src')===id+'.png');
  for(const sub of all.eval('NEURO_DATA['+JSON.stringify(id)+'].differentialPathways.map(p=>p.id)')){
  all.eval('AppState.selectedSubpath['+JSON.stringify(id)+']='+JSON.stringify(sub));all.ctx.renderDoctorStage();
- check(sub+' treatment and education',all.doc.getElementById('docSubpathContent').textContent.trim().length>0&&all.doc.getElementById('docPatientLeafletArea').textContent.includes(sub==='essential_tremor'?'본태성 떨림이란?':'질환이 생기는 원리'));pathCount++;
+ check(sub+' treatment and education',all.doc.getElementById('docSubpathContent').textContent.trim().length>0&&all.doc.getElementById('docPatientLeafletArea').textContent.includes(sub==='essential_tremor'?'본태성 떨림이란?':'어떤 상태인가요?'));pathCount++;
  }}
 var svg1=all.ctx.buildFlowSvg('검증',[['A','a'],['B','b']]),svg2=all.ctx.buildFlowSvg('검증',[['A','a'],['B','b']]);
 check('unique SVG marker ID',svg1.match(/marker id="([^"]+)"/)[1]!==svg2.match(/marker id="([^"]+)"/)[1]);
