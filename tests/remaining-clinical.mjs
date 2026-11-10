@@ -68,7 +68,7 @@ for(const id of active){
   const t=d.doc.querySelector('[data-cm-test]');if(t){t.checked=true;t.onchange();}
   d.doc.getElementById('cmApply').click();ok(p.id+' manual draft',d.doc.getElementById('visitDiagnosis').value.includes(p.name));
   d.ctx.copyEmrText();await Promise.resolve();ok(p.id+' manual EMR',d.clips.at(-1).includes('의사 확인')&&d.clips.at(-1).includes(p.name));
-  d.ctx.switchDocStage('stage5_followup');d.doc.querySelector('[data-education]').checked=true;d.ctx.changeEducationChoice();d.doc.getElementById('visitReviewed').checked=true;d.ctx.refreshVisitPrint();const before=d.prints;await d.ctx.printVisitSheet();ok(p.id+' mock A4',d.prints===before+1&&d.doc.getElementById('visitPrintSheet').innerHTML.includes(p.education[0]));
+  d.ctx.switchDocStage('stage5_followup');d.doc.querySelector('[data-education]').checked=true;d.ctx.changeEducationChoice();d.doc.getElementById('visitReviewed').checked=true;d.ctx.refreshVisitPrint();const before=d.prints;await d.ctx.printVisitSheet();ok(p.id+' mock A4',d.prints===before+1&&d.doc.getElementById('visitPrintSheet').innerHTML.includes(d.ctx.NeuroPatientEducation.paths[p.id].sections[0].title.replace(/^\d+\.\s*/, '')));
   const next=c.paths.find(x=>x.id!==p.id);path(d,id,next.id);ok(p.id+' switch clears selection/draft/education',d.ctx.NeuroModuleReview.getState().tests.length===0&&d.ctx.NeuroModuleReview.getState().therapies.length===0&&d.doc.getElementById('visitCare').value===''&&!d.ctx.hasEducationSelection());
   path(d,id,p.id);ok(p.id+' return no stale draft',d.doc.getElementById('visitDiagnosis').value===''&&!d.ctx.hasEducationSelection());
   cases.push({module:id,case:p.id+' 검토·검사·치료·교육·모의 인쇄',result:'PASS'});

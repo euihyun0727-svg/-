@@ -9,10 +9,54 @@ const path=()=>{const m=NEURO_DATA[AppState.activeDoctorSymptom];return m?.diffe
 const pack=()=>window.NeuroPatientEducation?.paths[path()?.id];
 const fields=['visitDiagnosis','visitTests','visitCare','visitReturn','visitCaution'];
 function invalidate(){revision++;el('visitReviewed').checked=false;if(el('eduConfirmed'))el('eduConfirmed').checked=false;toggleEducationPrint();refreshVisitPrint();el('visitPrintSheet').innerHTML='';if(el('vmPreview'))el('vmPreview').innerHTML='';window.NeuroFollowupWorkspace?.updateMini();}
-function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2><p class="education-disease">'+safe(path().name)+'</p>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title)+'</h3><p>'+safe(s.text)+'</p></section>').join('')+'</section>';}
+function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p></section>').join('')+'</section>';}
 function attachmentHTML(){return files.filter(f=>f.include).map(f=>'<section class="vm-print-attachment"><h2>'+safe(f.title||'검사 결과')+'</h2><p>'+safe(f.type)+(f.date?' · 검사일 '+safe(f.date):'')+'</p><img src="'+safe(f.url)+'" alt="'+safe(f.title||'첨부한 검사 결과')+'" width="'+f.width+'" height="'+f.height+'"><p class="vm-caption">'+safe(f.description||'설명 미입력 — 담당의에게 확인하세요.')+'</p></section>').join('');}
-function patientArtHTML(){const n=el('clinicEducationArt');return (n.querySelector('h3')?.outerHTML||'')+(n.querySelector('img')?.outerHTML||'');}
-function outputHTML(){if(!path())return '';const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];const section=i=>fields.map((id,n)=>n===i&&el(id).value.trim()?'<section><h2>'+labels[i]+'</h2><p>'+safe(el(id).value.trim())+'</p></section>':'').join('');const visuals=el('visitIncludeVisuals').checked?'<div class="print-visuals"><figure class="education-art">'+patientArtHTML()+'</figure><div class="mechanism-box">'+el('docMechanismArea').innerHTML.replaceAll('환자 설명용 평가 흐름 — 확정 병태생리/검사 결과 아님','평가·관리 흐름')+'</div></div>':'';return '<header><p>NeuroDesk</p><h1>진료 후 안내서</h1><p>'+safe(NEURO_DATA[AppState.activeDoctorSymptom].name)+' · '+safe(path().name)+'</p></header>'+[0,1,2].map(section).join('')+attachmentHTML()+selectedEducation()+visuals+[3,4].map(section).join('')+'<footer>NeuroDesk</footer>';}
+function handoutVisual(id){
+  if(!el('visitIncludeVisuals').checked)return '';
+  if(id==='essential_tremor')return "<section class=\"et-daily-art\" aria-label=\"손떨림이 불편한 일상 동작\"><h2>손떨림이 불편한 일상 동작</h2><div class=\"et-scenes\"><figure class=\"et-scene\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"컵 손잡이를 잡고 드는 손\"></div><figcaption>컵 들기</figcaption></figure><figure class=\"et-scene et-scene-writing\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"펜을 잡고 종이에 글씨를 쓰는 손\"></div><figcaption>글씨 쓰기</figcaption></figure></div></section>";
+  const vestibular=window.NeuroDizziness?.getState();
+  if(id==='bppv'&&vestibular?.canal==='posterior'&&['left','right'].includes(vestibular.side))return epleyHandout(vestibular.side);
+  return '';
+}
+function epleyHandout(side){
+  const right=side==='right';
+  const affected=right?'오른쪽':'왼쪽';
+  const opposite=right?'왼쪽':'오른쪽';
+  const direction=right?-1:1;
+  const steps=[
+    ['앉아서 고개 돌리기','침대에 앉아 고개를 '+affected+'으로 45° 돌립니다.'],
+    ['고개를 유지하며 눕기','고개 방향을 유지한 채 바로 눕습니다. 베개는 머리가 아니라 어깨 아래에 둡니다. 30초 유지합니다.'],
+    ['누운 채 반대로 돌리기','머리를 들지 않고 '+opposite+'으로 90° 돌립니다. 얼굴이 '+opposite+' 45°를 향합니다. 30초 유지합니다.'],
+    ['몸도 옆으로 돌리기','머리와 몸을 함께 '+opposite+'으로 90° 더 돌려 코가 침대 쪽을 향하게 합니다. 30초 유지합니다.'],
+    ['옆으로 앉기',opposite+'으로 돌아누운 쪽에서 몸을 일으켜 앉습니다.']
+  ];
+  function pose(index){
+    const seated=index===0||index===4;
+    const rolled=index===3;
+    const angle=index<2?45*direction:index===2?-45*direction:0;
+    const head=rolled
+      ? '<ellipse cx="80" cy="32" rx="11" ry="13" fill="#efd4b9" stroke="#33514e"/><path d="M80 40v9m-4-4 4 4 4-4" stroke="#33514e" stroke-width="2" fill="none"/>'
+      : '<g transform="rotate('+angle+' 80 30)"><circle cx="80" cy="30" r="12" fill="#efd4b9" stroke="#33514e"/><path d="M76 23l4-5 4 5" stroke="#33514e" stroke-width="2" fill="none"/><circle cx="76" cy="29" r="1"/><circle cx="84" cy="29" r="1"/></g>';
+    const body=rolled?'<rect x="70" y="43" width="20" height="34" rx="8" fill="#659b91"/>':'<rect x="61" y="43" width="38" height="32" rx="10" fill="#659b91"/>';
+    return '<svg viewBox="0 0 160 86" role="img" aria-label="'+safe(steps[index][0])+'"><rect x="43" y="9" width="74" height="72" rx="7" fill="#e1eee9" stroke="#92b5ac"/>'+(seated?'<path d="M51 67h58" stroke="#92b5ac" stroke-width="2"/>':'<rect x="53" y="43" width="54" height="14" rx="4" fill="#faf4e7" stroke="#c6b698"/>')+body+head+'</svg>';
+  }
+  return '<section class="handout-treatment"><h2>에플리 이석정복술 · '+affected+' 후반고리관</h2><p>진료에서 집에서도 해도 된다고 안내받고 동작을 배운 경우에 따라 하세요. 목·허리 질환이나 움직임 제한이 있으면 먼저 의료진에게 확인하세요.</p><ol class="epley-steps">'+steps.map(([title,body],index)=>'<li>'+pose(index)+'<h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>').join('')+'</ol><p>그림은 자세를 구분하는 간단한 도식입니다. 반복 횟수는 진료에서 받은 안내를 따르세요.</p></section>';
+}
+function outputHTML(){
+  const current=path();
+  if(!current)return '';
+  const labels=['오늘의 설명','검사 계획','치료 및 생활 안내','다음 진료','주의사항'];
+  const sections=fields.map((id,index)=>{
+    const value=el(id).value.trim();
+    return value?'<section class="handout-entry"><h3>'+labels[index]+'</h3><p>'+safe(value)+'</p></section>':'';
+  });
+  const group=(title,content,kind)=>content?'<section class="handout-group '+kind+'"><h2>'+title+'</h2>'+content+'</section>':'';
+  const name={'essential_tremor':'본태성 떨림','bppv':'이석증'}[current.id];
+  return '<header class="handout-header"><h1>진료 후 안내서</h1>'+(name?'<p>'+name+'</p>':'')+'</header>'
+    +group('오늘 정한 계획',sections.slice(0,3).join(''),'handout-plan')
+    +attachmentHTML()+handoutVisual(current.id)+selectedEducation()
+    +group('다음 진료와 주의사항',sections.slice(3).join(''),'handout-next');
+}
 function fingerprint(){return JSON.stringify([generation,revision,key(),outputHTML(),window.NeuroHeadache?.getState(),window.NeuroDizziness?.getState(),window.NeuroModuleReview?.getState(),el('dzRevision')?.textContent,el('cmRevision')?.textContent]);}
 function updateSelection(){selection=Array.from(document.querySelectorAll('#educationChoices input[data-education]:checked')).map(n=>Number(n.getAttribute('data-education')));invalidate();el('educationPreview').innerHTML=selectedEducation()||'<p>선택한 자료가 없습니다.</p>';renderEducationPrint();}
 function renderEducationPrint(){const n=el('vmSelectedEducation');if(n)n.innerHTML=selectedEducation()||'<p>교육 항목을 선택하면 이곳에 표시됩니다.</p>';const a=el('vmSelectedAttachments');if(a)a.innerHTML=attachmentHTML();window.NeuroFollowupWorkspace?.updateMini();}
@@ -32,7 +76,7 @@ function renderFiles(){const box=el('vmFileList');box.innerHTML=files.map(f=>'<a
 async function decode(url){const img=document.createElement('img');img.src=url;if(img.decode)await img.decode();else await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;});if(!img.naturalWidth||!img.naturalHeight)throw Error('이미지를 읽지 못했습니다.');if(img.naturalWidth*img.naturalHeight>limits.pixels)throw Error('이미지는 4천만 화소 이하로 준비하세요.');return {width:img.naturalWidth,height:img.naturalHeight};}
 async function validate(file){if(!file||!file.size||file.size>limits.file)throw Error('파일은 0바이트 초과, 8 MB 이하여야 합니다.');const ext=(file.name||'').split('.').pop().toLowerCase(),b=new Uint8Array(await file.slice(0,16).arrayBuffer());let mime='';if(b[0]===255&&b[1]===216&&b[2]===255)mime='image/jpeg';if(b.length>=8&&[137,80,78,71,13,10,26,10].every((v,i)=>b[i]===v))mime='image/png';if(b.length>=12&&String.fromCharCode(...b.slice(0,4))==='RIFF'&&String.fromCharCode(...b.slice(8,12))==='WEBP')mime='image/webp';const expected={jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',webp:'image/webp'}[ext];if(!expected||expected!==mime||(file.type&&file.type!==mime))throw Error('JPG·PNG·WebP만 지원합니다. PDF·DICOM·SVG와 형식이 다른 파일은 제외됩니다.');}
 function acceptFiles(input){const batch=Array.from(input||[]),token=generation;pending++;invalidate();const job=queue.then(async()=>{const errors=[];for(const file of batch){if(token!==generation)break;let url='';try{if(files.length>=limits.count)throw Error('최대 8장까지 첨부할 수 있습니다.');if(files.reduce((n,f)=>n+f.size,0)+file.size>limits.total)throw Error('전체 이미지 합계는 32 MB 이하여야 합니다.');await validate(file);if(token!==generation)break;const signature=[file.name,file.size,file.lastModified].join('|');if(files.some(f=>f.signature===signature))throw Error('이미 첨부한 같은 파일입니다. 삭제 후 다시 추가할 수 있습니다.');url=URL.createObjectURL(file);loading.add(url);const dimensions=await decode(url);if(token!==generation){URL.revokeObjectURL(url);loading.delete(url);break;}loading.delete(url);files.push({id:++sequence,url,size:file.size,signature,...dimensions,type:'기타',date:'',title:'검사 결과 '+sequence,description:'',note:'',include:false});url='';}catch(error){if(url){URL.revokeObjectURL(url);loading.delete(url);}if(token===generation)errors.push(error.message);}}if(token===generation){invalidate();el('vmFileStatus').textContent=errors.length?errors.join(' / '):'첨부 완료. 설명과 출력 포함 여부를 확인하세요.';renderFiles();renderEducationPrint();}}).finally(()=>{pending--;refreshVisitPrint();});queue=job.catch(()=>{});return job;}
-async function print(mode='visit'){const approval=mode==='education'?'eduConfirmed':'visitReviewed';if(busy||pending||!path()||!el(approval)?.checked)return;busy=true;const stamp=fingerprint(),sheet=el('visitPrintSheet');sheet.innerHTML=outputHTML();namespaceMechanismMarkers(sheet);try{const images=Array.from(sheet.querySelectorAll('img'));if(el('visitIncludeVisuals').checked)images.push(...Array.from(el('clinicEducationArt').querySelectorAll('img')));await Promise.all(images.map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts?.ready)await document.fonts.ready;if(stamp!==fingerprint()||pending||!el(approval)?.checked)return;document.body.classList.add('visit-printing');window.print();}catch{if(stamp===fingerprint()&&el(approval)?.checked)alert('이미지 파일을 준비하지 못해 인쇄를 중단했습니다. 첨부와 그림 파일을 확인하세요.');}finally{document.body.classList.remove('visit-printing');busy=false;}}
+async function print(mode='visit'){const approval=mode==='education'?'eduConfirmed':'visitReviewed';if(busy||pending||!path()||!el(approval)?.checked)return;busy=true;const stamp=fingerprint(),sheet=el('visitPrintSheet');sheet.innerHTML=outputHTML();namespaceMechanismMarkers(sheet);try{const images=Array.from(sheet.querySelectorAll('img'));await Promise.all(images.map(img=>img.decode?img.decode():new Promise((resolve,reject)=>{if(img.complete){img.naturalWidth?resolve():reject(Error('image'));return;}img.onload=resolve;img.onerror=reject;})));if(document.fonts?.ready)await document.fonts.ready;if(stamp!==fingerprint()||pending||!el(approval)?.checked)return;document.body.classList.add('visit-printing');window.print();}catch{if(stamp===fingerprint()&&el(approval)?.checked)alert('이미지 파일을 준비하지 못해 인쇄를 중단했습니다. 첨부와 그림 파일을 확인하세요.');}finally{document.body.classList.remove('visit-printing');busy=false;}}
 const oldRefresh=refreshVisitPrint;refreshVisitPrint=function(){oldRefresh();if(path()&&el('visitReviewed').checked&&files.some(f=>f.include))el('visitPrint').disabled=false;if(pending)el('visitPrint').disabled=true;};
 window.getVisitAttachmentsHTML=attachmentHTML;window.getSelectedEducationHTML=selectedEducation;window.hasEducationSelection=()=>selection.length>0;window.changeEducationChoice=updateSelection;
 const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();const next=key();if(context!==next){const initial=!!next&&!seenContext;context=next;selection=initial?[...(pack()?.core||[])]:[];if(next)seenContext=true;files.forEach(f=>f.include=false);invalidate();closeZoom();}renderEducation();renderFiles();};
