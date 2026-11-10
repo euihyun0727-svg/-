@@ -106,9 +106,10 @@ function outputHTML(){
   const group=(title,content,kind)=>content?'<section class="handout-group '+kind+'"><h2>'+title+'</h2>'+content+'</section>':'';
   const name={'essential_tremor':'본태성 떨림','bppv':'이석증'}[current.id];
   return '<header class="handout-header patient-leaflet'+(current.id==='bppv'?' dizziness-leaflet':'')+'"><h1>진료 후 안내서</h1>'+(name?'<p>'+name+'</p>':'')+'</header>'
-    +group('오늘 정한 계획',sections.slice(0,3).join(''),'handout-plan')
-    +attachmentHTML()+handoutVisual(current.id)+selectedEducation()
-    +group('다음 진료와 주의사항',sections.slice(3).join(''),'handout-next');
+    +group('오늘 확인한 것',sections.slice(0,2).join(''),'handout-plan')
+    +group('집에서 할 것',sections[2],'handout-plan')
+    +group('다시 연락할 때',sections.slice(3).join(''),'handout-next')
+    +attachmentHTML()+handoutVisual(current.id)+selectedEducation();
 }
 function fingerprint(){return JSON.stringify([generation,revision,key(),outputHTML(),window.NeuroHeadache?.getState(),window.NeuroDizziness?.getState(),window.NeuroModuleReview?.getState(),el('dzRevision')?.textContent,el('cmRevision')?.textContent]);}
 function updateSelection(){selection=Array.from(document.querySelectorAll('#educationChoices input[data-education]:checked')).map(n=>Number(n.getAttribute('data-education')));invalidate();el('educationPreview').innerHTML=selectedEducation()||'<p>선택한 자료가 없습니다.</p>';renderEducationPrint();}
