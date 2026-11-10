@@ -546,6 +546,21 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
 </style>
 <style>.horizontal-four li:last-child{grid-column:auto}
 @media print{body.visit-printing #visitPrintSheet .horizontal-treatment + .selected-education{break-before:page}}</style>
+<style>
+/* BPPV leaflet: the preview and the print sheet use the same sections. */
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet{background:#e7f2f6;border-bottom:4px solid #24677d;border-radius:8px 8px 0 0;color:#153c4d}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet p{font-weight:700}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet ~ :is(.handout-plan,.handout-treatment,.selected-education,.handout-next){border:1px solid #b8cdd3;border-radius:8px;background:#fff}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet ~ :is(.handout-plan,.handout-treatment,.selected-education,.handout-next)>h2{background:#e8f2f5;color:#153c4d;padding:7px 10px;border:0;border-radius:4px}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet ~ .handout-next>h2{background:#fff0d9;color:#573911}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet ~ .handout-treatment .epley-steps li{background:#f5f9fa;border-color:#bfd3db}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet ~ .handout-treatment .epley-steps h3{color:#154e62;font-weight:800}
+:is(#visitPrintSheet,#vmPreview) .dizziness-leaflet ~ .handout-treatment .epley-steps svg{height:28mm}
+@media print{
+  body.visit-printing #visitPrintSheet .dizziness-leaflet ~ .handout-treatment .epley-steps svg{height:28mm}
+  body.visit-printing #visitPrintSheet .dizziness-leaflet ~ .handout-treatment + .selected-education{break-before:page}
+}
+</style>
 </head>
 <body>
 
