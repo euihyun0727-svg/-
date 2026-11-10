@@ -6,10 +6,31 @@ const types=['혈액검사','NCS/EMG','EEG','영상검사','기타'],limits={cou
 let files=[],sequence=0,generation=0,revision=0,pending=0,queue=Promise.resolve(),context='',selection=[],seenContext=false,busy=false,zoomReturn=null;const loading=new Set();
 const key=()=>AppState.activeDoctorSymptom?AppState.activeDoctorSymptom+':'+(AppState.selectedSubpath[AppState.activeDoctorSymptom]||''):'';
 const path=()=>{const m=NEURO_DATA[AppState.activeDoctorSymptom];return m?.differentialPathways.find(p=>p.id===AppState.selectedSubpath[m.id])||m?.differentialPathways[0];};
-const pack=()=>window.NeuroPatientEducation?.paths[path()?.id];
+const tendonEducation={
+  title:'집에서 하는 손가락 힘줄 운동',
+  text:'진료에서 이 운동을 배운 경우에만 하세요. 손목을 곧게 두고 손가락을 천천히 움직이세요. 반복 횟수는 진료에서 받은 안내를 따르세요. 저림이나 통증이 늘면 멈추고 의료진에게 알려주세요.'
+};
+const pack=()=>{
+  const id=path()?.id;
+  const p=window.NeuroPatientEducation?.paths[id];
+  return id==='cts'&&p?{...p,sections:[...p.sections,tendonEducation]}:p;
+};
+// Kent Community Health NHS Foundation Trust: Carpal tunnel syndrome – conservative management.
+function tendonSteps(){
+  const poses=[
+    ['손가락 펴기','손가락을 모두 곧게 펴세요.','M45 49V15'],
+    ['손바닥과 만나는 마디 굽히기','손가락 자체는 편 채 손바닥과 만나는 마디만 굽히세요.','M45 49H80'],
+    ['손끝 마디만 편 주먹','손바닥과 만나는 마디와 가운데 마디를 굽히고, 손끝 마디는 더 굽히지 마세요.','M45 49H64L52 63'],
+    ['갈고리 모양 만들기','손바닥과 만나는 마디는 편 채 가운데와 손끝 마디를 굽히세요.','M45 49V29H65L60 42'],
+    ['가볍게 주먹 쥐기','손가락 마디를 모두 굽혀 가볍게 주먹을 쥐세요.','M45 49H67V62H53']
+  ];
+  return '<ol class="epley-steps handout-safety-steps tendon-steps">'+poses.map(([title,body,shape],index)=>
+    '<li><svg viewBox="0 0 96 84" aria-hidden="true"><rect x="4" y="4" width="88" height="76" rx="8" fill="#e7f2f6"/><path d="M36 73V51Q45 44 53 51V73" fill="#c6dfe5" stroke="#154e62" stroke-width="2"/><path d="'+shape+'" fill="none" stroke="#154e62" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="45" cy="49" r="4" fill="#fff" stroke="#154e62" stroke-width="2"/></svg><h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>'
+  ).join('')+'</ol>';
+}
 const fields=['visitDiagnosis','visitTests','visitCare','visitReturn','visitCaution'];
 function invalidate(){revision++;el('visitReviewed').checked=false;if(el('eduConfirmed'))el('eduConfirmed').checked=false;toggleEducationPrint();refreshVisitPrint();el('visitPrintSheet').innerHTML='';if(el('vmPreview'))el('vmPreview').innerHTML='';window.NeuroFollowupWorkspace?.updateMini();}
-function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p></section>').join('')+'</section>';}
+function selectedEducation(){const p=pack();if(!p||!selection.length)return '';return '<section class="selected-education"><h2>'+ (el('educationFamily').checked?'환자·보호자 함께 보기':'함께 드리는 교육자료')+'</h2>'+p.sections.filter((s,i)=>selection.includes(i)).map(s=>'<section><h3>'+safe(s.title.replace(/^\d+\.\s*/,''))+'</h3><p>'+safe(s.text)+'</p>'+(s===tendonEducation&&el('visitIncludeVisuals').checked?tendonSteps():'')+'</section>').join('')+'</section>';}
 function attachmentHTML(){return files.filter(f=>f.include).map(f=>'<section class="vm-print-attachment"><h2>'+safe(f.title||'검사 결과')+'</h2><p>'+safe(f.type)+(f.date?' · 검사일 '+safe(f.date):'')+'</p><img src="'+safe(f.url)+'" alt="'+safe(f.title||'첨부한 검사 결과')+'" width="'+f.width+'" height="'+f.height+'"><p class="vm-caption">'+safe(f.description||'설명 미입력 — 담당의에게 확인하세요.')+'</p></section>').join('');}
 function handoutVisual(id){
   if(!el('visitIncludeVisuals').checked)return '';
