@@ -16,7 +16,26 @@ function handoutVisual(id){
   if(id==='essential_tremor')return "<section class=\"et-daily-art\" aria-label=\"손떨림이 불편한 일상 동작\"><h2>손떨림이 불편한 일상 동작</h2><div class=\"et-scenes\"><figure class=\"et-scene\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"컵 손잡이를 잡고 드는 손\"></div><figcaption>컵 들기</figcaption></figure><figure class=\"et-scene et-scene-writing\"><div class=\"et-scene-picture\"><img src=\"assets/ui/tremor-daily.png\" alt=\"펜을 잡고 종이에 글씨를 쓰는 손\"></div><figcaption>글씨 쓰기</figcaption></figure></div></section>";
   const vestibular=window.NeuroDizziness?.getState();
   if(id==='bppv'&&vestibular?.canal==='posterior'&&['left','right'].includes(vestibular.side))return epleyHandout(vestibular.side);
-  return '';
+  return safetySteps(id);
+}
+// Sources: CDC STEADI Postural Hypotension and CDC First Aid for Seizures.
+function safetySteps(id){
+  const standing=['orthostatic_hypo','syncope_orthostatic'].includes(id);
+  const seizure=['epilepsy_classification','status_seizure_eval'].includes(id);
+  if(!standing&&!seizure)return '';
+  const title=standing?'어지럼을 줄이며 일어나기':'발작이 날 때 곁에서 돕기';
+  const steps=standing?[
+    ['상체부터 세우세요','침대에서 바로 서지 말고 먼저 몸을 일으켜 앉으세요.','<path d="M17 60h81v12H17zM31 45l24 12h25m-25 0-11-20"/><circle cx="38" cy="28" r="7"/>'],
+    ['침대 가장자리에 앉으세요','발을 바닥에 두고 어지럽지 않은지 잠시 확인하세요.','<path d="M15 58h49v12H15zM54 37v20h20v19m-20-32 17 10"/><circle cx="54" cy="27" r="7"/>'],
+    ['잡을 곳을 짚고 서세요','손잡이처럼 단단한 곳을 잡고 천천히 일어나세요. 어지러우면 걷지 마세요.','<path d="M86 25v50M85 46H66l-9-11m0 0v22L48 76m9-19 11 19"/><circle cx="57" cy="25" r="7"/>']
+  ]:[
+    ['주변을 안전하게','딱딱하거나 날카로운 물건을 치우고 머리 아래에 부드러운 것을 받쳐 주세요.','<path d="M15 69h84M24 63h26v6H24zM46 61h31l14 8"/><circle cx="36" cy="54" r="8"/>'],
+    ['옆에 있으면서 시간 확인','누워 있으면 조심스럽게 옆으로 돌려 입이 바닥 쪽을 향하게 해 주세요. 억지로 붙잡거나 입에 아무것도 넣지 마세요.','<path d="M15 69h84M30 60h16l21 3 14 6m-18-5 12-9 12 8"/><ellipse cx="24" cy="57" rx="8" ry="6"/><path d="M21 63v3"/>'],
+    ['응급 도움이 필요한 때','5분 이상 계속되거나, 곧 다시 발작하거나, 숨쉬기 어렵거나 깨어나지 않으면 119에 전화하세요. 첫 발작이나 다친 경우, 물속에서 발생한 경우에도 응급 도움을 요청하세요.','<circle cx="59" cy="44" r="23"/><path d="M59 28v17l11 6"/>']
+  ];
+  return '<section class="handout-treatment"><h2>'+title+'</h2><ol class="epley-steps handout-safety-steps">'+steps.map(([label,body,drawing],index)=>
+    '<li><svg viewBox="0 0 116 86" aria-hidden="true"><rect x="7" y="7" width="102" height="72" rx="8" fill="#e1eee9"/><g stroke="#33514e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">'+drawing+'</g></svg><h3>'+(index+1)+'. '+label+'</h3><p>'+body+'</p></li>'
+  ).join('')+'</ol></section>';
 }
 function epleyHandout(side){
   const right=side==='right';

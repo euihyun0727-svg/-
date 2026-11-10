@@ -655,8 +655,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "편두통은 머리 통증과 함께 감각이 예민해지는 발작이 반복되는 질환입니다. 전조 유무와 두통 빈도는 서로 다른 분류이므로 함께 확인합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "편두통은 두통이 반복되면서 빛이나 소리에 예민해질 수 있는 병입니다. 두통이 얼마나 자주 생기는지와 두통 전후에 눈이나 감각에 변화가 있는지를 따로 확인합니다.",
           "sources": [
             "ha:ichd",
             "ha:aura"
@@ -664,7 +664,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "욱신거림·메스꺼움·빛과 소리의 불편이 동반될 수 있습니다. 전조는 시야나 감각의 변화로 나타날 수 있지만 처음 생긴 신경 증상을 전조로 단정하지 않습니다.",
           "sources": [
             "nhsMigraine",
@@ -673,8 +673,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "병력과 신경학적 진찰이 진단의 중심입니다. 영상은 다른 원인이 의심될 때 선택하며 정상 영상만으로 편두통을 확인하거나 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "언제부터 어떻게 아팠는지 듣고 신경 기능을 진찰합니다. 다른 원인이 의심될 때 영상 검사를 합니다. 영상이 정상이라는 사실만으로 편두통인지 아닌지 결정할 수는 없습니다.",
           "sources": [
             "ha:ichd",
             "ha:aura"
@@ -682,8 +682,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "발작 때 사용하는 치료와 반복을 줄이는 예방치료의 목표가 다릅니다. 빈도뿐 아니라 일상 지장·기존 치료 반응을 함께 보고 방법을 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "두통이 시작됐을 때 통증을 줄이는 치료와, 두통이 자주 생기지 않도록 돕는 치료가 있습니다. 두통이 얼마나 자주 오는지, 일상이 얼마나 불편한지, 써 본 치료가 얼마나 도움이 됐는지 함께 보고 정합니다.",
           "sources": [
             "ha:ichd",
             "ha:aura"
@@ -691,7 +691,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "두통이 있었던 날·불편 정도·복용한 약과 날짜를 기록하세요. 식사와 수면의 큰 변동을 줄이고 본인에게 반복되는 유발 요인을 살펴보세요.",
           "sources": [
             "nhsMigraine",
@@ -700,7 +700,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "급성기 약의 잦은 사용은 두통을 더 자주 만들 수 있습니다. 임신 계획·심혈관 질환·다른 약을 알리고 복용 방법은 처방대로 따르세요.",
           "sources": [
             "ha:ichd",
@@ -709,7 +709,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "다음 진료에는 두통 일수·약 복용 일수·생활 지장·부작용을 가져오세요. 예방치료의 유지·변경 시점은 담당의와 정합니다.",
           "sources": [
             "ha:ichd",
@@ -718,8 +718,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑자기 최고로 심한 두통, 새 편측 마비·언어장애·의식 변화, 발열과 목 경직은 기존 편두통으로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 최고로 심한 두통, 갑자기 한쪽 몸에 힘이 빠짐·말이 어눌하거나 말이 잘 나오지 않음·의식 변화, 발열과 목이 뻣뻣해짐은 기존 편두통으로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -727,7 +727,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "발작 중 조용히 쉴 환경을 돕고 약 복용일과 증상 변화를 함께 기록해 주세요.",
           "sources": [
             "nhsMigraine",
@@ -748,7 +748,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "긴장형두통은 조이거나 누르는 듯한 통증이 흔한 두통입니다. 이름만으로 스트레스가 유일한 원인이라는 뜻은 아닙니다.",
           "sources": [
             "ha:tth",
@@ -757,7 +757,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "양쪽 머리가 무겁거나 목 주변이 불편할 수 있습니다. 이전과 다른 양상이나 심한 동반 증상은 다른 원인 확인이 필요합니다.",
           "sources": [
             "ha:tth",
@@ -766,7 +766,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "통증의 빈도·지속시간·진찰로 평가합니다. 모든 반복 두통에 영상검사가 필요한 것은 아니며 위험신호에 따라 선택합니다.",
           "sources": [
             "ha:tth",
@@ -775,8 +775,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "생활 조절과 필요한 급성기 치료를 함께 검토합니다. 자주 반복되고 생활에 지장이 있으면 예방치료의 이득과 불편을 상의합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "생활 습관을 조절하고, 두통이 생겼을 때 필요한 치료를 함께 정합니다. 두통이 자주 생겨 생활이 불편하면 예방 치료의 장점과 불편을 상의합니다.",
           "sources": [
             "ha:tth",
             "ha:vadod"
@@ -784,8 +784,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "오래 같은 자세를 유지할 때 쉬는 시간을 갖고 수면·식사 리듬을 정리하세요. 활동은 통증과 몸 상태에 맞춰 조절하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "오래 같은 자세를 유지할 때 쉬는 시간을 갖고 잠과 식사 리듬을 정리하세요. 활동은 통증과 몸 상태에 맞춰 조절하세요.",
           "sources": [
             "ha:tth",
             "ha:vadod"
@@ -793,7 +793,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "진통제를 반복해서 추가하기보다 복용 날짜를 기록하세요. 처방약과 일반약에 같은 성분이 겹치지 않는지 확인받으세요.",
           "sources": [
             "ha:tth",
@@ -802,8 +802,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "빈도·약 복용일·목 통증과 생활 지장을 비교합니다. 치료 후 달라지지 않거나 양상이 바뀌면 진단과 계획을 재검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "두통이 온 횟수, 약을 먹은 날, 목 통증과 일상에서 불편했던 점을 알려주세요. 치료 후에도 달라지지 않거나 두통이 달라지면 원인과 계획을 다시 살펴봅니다.",
           "sources": [
             "ha:tth",
             "ha:vadod"
@@ -811,8 +811,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "벼락처럼 시작한 통증, 마비·의식 변화·발열 또는 외상 뒤 악화는 긴장형두통으로 판단하지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "벼락처럼 시작한 통증, 마비·의식 변화·발열 또는 외상 뒤 악화는 긴장형두통으로 판단하지 말고 즉시 진료받으세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -832,7 +832,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "두통약의 잦은 사용이 기존 두통을 악화시키는 경우입니다. 약 종류와 사용한 기간·날짜를 함께 확인해야 하며 의지 부족의 문제가 아닙니다.",
           "sources": [
             "ha:moh",
@@ -841,7 +841,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "두통이 잦아지고 약 효과가 짧게 느껴질 수 있습니다. 원래 있던 두통과 약물과용두통이 함께 존재할 수 있습니다.",
           "sources": [
             "ha:moh",
@@ -850,7 +850,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "처방약·일반 진통제·복합제를 모두 적어 가져오세요. 정해진 복용 날짜 기준은 약 종류에 따라 달라 담당의가 확인합니다.",
           "sources": [
             "ha:moh",
@@ -859,8 +859,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "사용 약의 조절과 원래 두통의 예방·급성기 치료 계획을 함께 세웁니다. 약에 따라 중단 방식과 관찰 장소가 달라집니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "지금 드시는 두통약을 어떻게 조절할지, 평소 두통을 어떻게 예방하고 치료할지 함께 정합니다. 약마다 줄이거나 끊는 방법과 상태를 지켜볼 장소가 다를 수 있습니다.",
           "sources": [
             "ha:moh",
             "ha:ihs2025"
@@ -868,7 +868,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "약 이름과 복용 날짜를 한 기록지에 모으세요. 다른 약으로 계속 바꾸어 복용하는 것도 의료진에게 알려주세요.",
           "sources": [
             "ha:moh",
@@ -877,7 +877,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "스스로 한꺼번에 끊거나 증량하지 마세요. 특히 일부 진통제·진정 성분은 감량 계획이 필요하며 조절 초기에 불편이 늘 수 있습니다.",
           "sources": [
             "ha:moh",
@@ -886,7 +886,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "계획을 시행한 뒤 두통·약 복용일·금단 증상과 재사용 상황을 확인합니다. 악화 시 연락 방법도 미리 정해 두세요.",
           "sources": [
             "ha:moh",
@@ -895,8 +895,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "의식 저하·호흡 이상·심한 구토/탈수 또는 새로운 신경 증상은 즉시 평가받으세요. 약 조절 뒤의 모든 악화를 금단으로 넘기지 마세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "의식 저하·호흡 이상·심한 구토/탈수 또는 새로운 신경 증상은 즉시 진료받으세요. 약 조절 뒤의 모든 악화를 금단으로 넘기지 마세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -916,7 +916,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "군발두통은 한쪽 눈 주위의 매우 심한 통증 발작이 일정 기간 반복될 수 있는 두통입니다. 다른 원인의 안구·두통과 구분해야 합니다.",
           "sources": [
             "ha:cluster"
@@ -924,7 +924,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "같은 쪽 눈물·충혈·콧물과 안절부절못함이 동반될 수 있습니다. 발작이 생기는 시간과 지속시간을 기록하면 도움이 됩니다.",
           "sources": [
             "ha:cluster"
@@ -932,7 +932,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "발작 양상과 진찰을 확인하고 필요한 영상 등으로 이차 원인을 평가합니다. 통증이 눈 주변이라고 모두 군발두통은 아닙니다.",
           "sources": [
             "ha:cluster"
@@ -940,23 +940,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "빠르게 발작을 조절하는 치료와 군발 기간의 예방치료를 구분합니다. 산소·약물의 적합성과 사용 방법은 의료진이 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "통증이 시작됐을 때 빨리 가라앉히는 치료와, 두통이 반복되는 기간에 발작을 줄이는 치료가 있습니다. 산소나 약을 쓸 수 있는지와 사용법은 의료진과 정합니다.",
           "sources": [
             "ha:cluster"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "발작 시간표를 기록하고 활동 중 위험에 대비하세요. 음주와 발작의 관련성을 알리고 수면 리듬을 일정하게 유지하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "발작 시간표를 기록하고 활동 중 위험에 대비하세요. 술과 발작의 관련성을 알리고 수면 리듬을 일정하게 유지하세요.",
           "sources": [
             "ha:cluster"
           ]
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "예방약은 맥박·심전도 등 별도 확인이 필요할 수 있습니다. 산소나 주사·비강 약은 교육받은 방법으로만 사용하세요.",
           "sources": [
             "ha:cluster"
@@ -964,7 +964,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "발작 횟수·지속시간·구제치료 효과·부작용을 확인합니다. 군발 기간의 종료와 예방약 조절은 의료진과 상의합니다.",
           "sources": [
             "ha:cluster"
@@ -972,8 +972,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 시력 저하, 지속되는 안구 통증, 갑작스러운 극심한 두통이나 마비는 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 시력 저하, 지속되는 안구 통증, 갑작스러운 극심한 두통이나 마비는 즉시 진료받으세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -993,7 +993,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "얼굴 감각을 전달하는 신경과 관련된 통증입니다. 전형적인 경우 짧고 전기가 오는 듯한 통증이 반복되지만 원인 확인이 필요합니다.",
           "sources": [
             "ha:tn"
@@ -1001,7 +1001,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "씹기·말하기·세수 같은 가벼운 자극으로 유발될 수 있습니다. 지속 통증·감각 저하·양측 증상도 빠짐없이 알려주세요.",
           "sources": [
             "ha:tn"
@@ -1009,7 +1009,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "통증 분포·진찰과 필요한 MRI 등으로 다른 원인을 확인합니다. 치과·안과 문제와도 구분하며 영상 소견만으로 판단하지 않습니다.",
           "sources": [
             "ha:tn"
@@ -1017,15 +1017,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "신경성 통증 약을 먼저 검토하고 효과·내약성이 부족하면 전문 시술/수술 평가를 상의할 수 있습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "신경통에 쓰는 약부터 상의합니다. 약이 충분히 듣지 않거나 부작용이 불편하면 시술이나 수술이 도움이 될지 전문 진료에서 상의할 수 있습니다.",
           "sources": [
             "ha:tn"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "어떤 자극에 통증이 생기는지 기록하고 먹기 쉬운 음식으로 식사를 유지하세요. 음식 섭취와 세면을 오래 피하지 않도록 도움을 받으세요.",
           "sources": [
             "ha:tn"
@@ -1033,7 +1033,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "어지럼·졸림·발진과 약물 상호작용을 확인해야 합니다. 처방된 검사·감시를 따르고 약을 임의로 조절하지 마세요.",
           "sources": [
             "ha:tn"
@@ -1041,15 +1041,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "통증 횟수뿐 아니라 식사·수면·대화가 얼마나 회복되는지 확인합니다. 약 효과가 줄거나 부작용이 생기면 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "통증 횟수뿐 아니라 식사·수면·대화가 얼마나 회복되는지 확인합니다. 약 효과가 줄거나 부작용이 생기면 다음 진료에서 다시 살펴봅니다.",
           "sources": [
             "ha:tn"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "심한 발진·점막 증상·의식 변화, 새 마비나 시력 변화는 즉시 진료받으세요. 먹거나 마시기 어려울 정도면 빨리 연락하세요.",
           "sources": [
             "ha:snoop",
@@ -1070,8 +1070,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "이 항목은 확정 질환명이 아니라 다른 원인으로 생긴 두통을 먼저 확인하는 평가 경로입니다.",
+          "title": "어떤 상태인가요?",
+          "text": "평소와 다른 두통이라면 다른 병이나 상황 때문에 생긴 두통인지 먼저 확인해야 합니다.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -1079,7 +1079,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "발병 속도·이전 두통과의 차이·발열·외상·임신/출산·면역 상태와 동반 신경 증상을 확인합니다.",
           "sources": [
             "ha:snoop",
@@ -1088,8 +1088,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰 결과에 따라 응급 영상·혈액검사·추가 검사 또는 병원 의뢰를 선택합니다. 검사 하나가 정상이라고 모든 위험 원인이 배제되지는 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰 결과에 따라 영상 검사나 피검사를 서둘러 하거나 병원으로 안내할 수 있습니다. 검사 하나가 정상이어도 위험한 원인이 모두 없다고 볼 수는 없습니다.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -1097,8 +1097,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인에 따라 치료가 크게 다르므로 일반 두통약으로 버티기 전에 평가의 긴급도를 결정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "두통의 원인에 따라 치료가 달라집니다. 평소 두통약으로 버티기 전에 얼마나 빨리 진료받아야 하는지 확인합니다.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -1106,8 +1106,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "시작 시각과 복용약·최근 외상·기존 질환을 정리하세요. 응급 증상이 있으면 기록이나 예약 때문에 평가를 지연하지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "증상이 시작된 시각과 현재 드시는 약·최근 외상·기존 질환을 정리하세요. 응급 증상이 있으면 기록이나 예약 때문에 진료를 미루지 마세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -1115,7 +1115,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "다른 사람의 약이나 남은 처방약을 추가해 증상을 가리지 마세요. 항응고제 등 복용 중인 약을 의료진에게 알리세요.",
           "sources": [
             "ha:snoop",
@@ -1124,8 +1124,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "의뢰·검사 후 결과 확인 시점과 악화 시 연락 경로를 정합니다. 평가 중 증상이 바뀌면 즉시 다시 알려주세요.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "검사 결과를 언제 확인할지, 더 아파지면 어디에 연락할지 정해 두세요. 진료를 기다리는 동안 증상이 바뀌면 바로 알려주세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -1133,8 +1133,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "벼락두통·새 마비/언어장애·의식 변화·심한 발열과 목 경직은 즉시 응급 평가가 필요합니다. 직접 운전하지 마세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "벼락두통·새 마비/말이 어눌하거나 말이 잘 나오지 않음·의식 변화·심한 발열과 목이 뻣뻣해짐은 즉시 응급 평가가 필요합니다. 직접 운전하지 마세요.",
           "sources": [
             "ha:snoop",
             "ha:imaging"
@@ -1154,7 +1154,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "귀 안에서 균형을 돕는 작은 입자가 제자리에서 벗어나 특정 자세에서 어지럼을 만드는 상태입니다. 어느 반고리관·어느 쪽인지 확인해야 합니다.",
           "sources": [
             "dz:bppv"
@@ -1162,7 +1162,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "눕기·돌아눕기·고개 움직임 뒤 짧게 도는 느낌이 반복될 수 있습니다. 지속되는 어지럼이나 새로운 신경 증상은 별도로 확인합니다.",
           "sources": [
             "nhsVertigo",
@@ -1171,7 +1171,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "자세 검사에서 눈 움직임을 관찰해 아형을 판단합니다. 목·허리 상태에 따라 검사 방법을 조절하며 증상만으로 방향을 정하지 않습니다.",
           "sources": [
             "dz:bppv"
@@ -1179,16 +1179,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "확인한 반고리관과 안진형에 맞는 정복술이 중심입니다. 어지럼약이 입자를 제자리로 옮기는 치료를 대신하지는 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어느 반고리관에 문제가 있는지와 눈이 떨리는 방향을 확인한 뒤, 그에 맞는 이석정복술을 합니다. 어지럼약은 귀 속 입자를 옮기는 정복술을 대신하지 못합니다.",
           "sources": [
             "dz:bppv"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "어지러울 때는 지지물을 잡고 천천히 움직이세요. 낙상 위험을 줄이고 자가 정복술은 해당 아형·방향과 금기를 교육받은 경우에만 시행하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "어지러울 때는 손잡이나 단단한 곳을 잡고 천천히 움직이세요. 넘어질 위험을 줄이고 집에서 하는 정복술은 해당 아형·방향과 금기를 교육받은 경우에만 시행하세요.",
           "sources": [
             "nhsVertigo",
             "dz:bppv"
@@ -1196,7 +1196,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "증상 완화 약은 졸림과 낙상에 영향을 줄 수 있습니다. 사용 기간을 확인하고 약만 반복하며 재평가를 미루지 마세요.",
           "sources": [
             "dz:bppv"
@@ -1204,7 +1204,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "정복 후 어떤 자세에서 증상이 남는지 기록하세요. 지속·재발 시 같은 아형인지 다른 원인인지 다시 확인할 수 있습니다.",
           "sources": [
             "dz:bppv"
@@ -1212,8 +1212,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑자기 걷지 못함, 새 마비·말/시야 변화·심한 두통·급성 청력 저하는 이석증으로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 걷지 못함, 새 마비·말/시야 변화·심한 두통·급성 청력 저하는 이석증으로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "dz:bppv"
           ]
@@ -1232,8 +1232,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "편두통과 관련된 반복 어지럼을 평가하는 경로입니다. 어지럼 때마다 머리가 아픈 것은 아니며 다른 전정질환과 구분합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "편두통과 관련해 어지럼이 반복될 수 있습니다. 어지러울 때마다 머리가 아픈 것은 아니어서 귀의 균형기관에 다른 문제가 없는지도 확인합니다.",
           "sources": [
             "dz:vm",
             "dz:investment"
@@ -1241,7 +1241,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어지럼의 지속시간과 빛·소리 불편, 두통·전조 및 과거 편두통을 함께 확인합니다. 청력 변화나 자세 유발 증상도 알려주세요.",
           "sources": [
             "dz:vm",
@@ -1250,7 +1250,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력과 진찰이 중요하며 필요하면 청력·전정 검사나 영상을 선택합니다. 한 가지 정상 검사만으로 확정하지 않습니다.",
           "sources": [
             "dz:vm",
@@ -1259,8 +1259,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "생활 리듬 관리와 편두통 치료를 함께 검토합니다. 예방치료·전정재활의 필요성은 증상 빈도와 기능에 맞춰 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "일정한 생활 습관과 편두통 치료를 함께 상의합니다. 어지럼이 오는 횟수와 일상의 불편을 보고 예방약이나 균형 재활이 필요한지 정합니다.",
           "sources": [
             "dz:vm",
             "dz:investment"
@@ -1268,7 +1268,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "어지럼·두통·약 사용·수면 변화를 함께 기록하세요. 일정한 식사·수면을 유지하고 넘어짐 위험이 있는 활동은 조절하세요.",
           "sources": [
             "dz:vm",
@@ -1277,8 +1277,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "편두통약·어지럼약의 졸림·다른 약과의 상호작용을 확인하세요. 임신 계획과 동반질환에 따라 선택이 달라집니다.",
+          "title": "약을 복용할 때",
+          "text": "편두통약·어지럼약의 졸림·다른 약과의 상호작용을 확인하세요. 임신 계획과 함께 앓는 질환에 따라 선택이 달라집니다.",
           "sources": [
             "dz:vm",
             "dz:investment"
@@ -1286,8 +1286,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "발작 횟수와 일상 복귀, 치료 반응을 확인합니다. 새 청력 변화나 양상 변화가 생기면 진단을 다시 검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "어지럼이 몇 번 왔는지, 일상으로 돌아가는 데 어려움이 있는지, 치료가 얼마나 도움이 됐는지 알려주세요. 새로 귀가 잘 안 들리거나 증상이 달라지면 원인을 다시 확인합니다.",
           "sources": [
             "dz:vm",
             "dz:investment"
@@ -1295,8 +1295,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "지속성 새 어지럼에 마비·언어장애·걷기 불능·심한 두통이 동반되면 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "지속성 새 어지럼에 마비·말이 어눌하거나 말이 잘 나오지 않음·걷기 불능·심한 두통이 동반되면 즉시 진료받으세요.",
           "sources": [
             "dz:vm",
             "dz:investment"
@@ -1316,7 +1316,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "일어설 때 혈압 조절이 충분하지 않아 어지럼·눈앞이 흐려짐·실신이 생길 수 있습니다. 탈수·약물·자율신경 원인 등을 구분합니다.",
           "sources": [
             "dz:orthostatic",
@@ -1325,7 +1325,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "누웠다 일어날 때, 식후·더운 환경 등 증상이 생기는 상황을 확인합니다. 넘어짐·실신·두근거림을 함께 알려주세요.",
           "sources": [
             "dz:orthostatic",
@@ -1334,8 +1334,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "정해진 자세와 시간에 혈압·맥박을 측정하고 증상과 비교합니다. 한 번 정상 측정으로 반복 증상을 모두 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "정해진 자세와 시간에 혈압과 맥박을 재고, 그때 어떤 증상이 있었는지 함께 살펴봅니다. 한 번 정상이어도 반복되는 증상의 원인이 없다고 볼 수는 없습니다.",
           "sources": [
             "dz:orthostatic",
             "dz:aha"
@@ -1343,8 +1343,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "유발 요인·복용약을 검토하고 자세 조절 등으로 안전을 확보합니다. 필요 시 압박 의류나 약물의 적합성을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어떤 때 어지러운지와 현재 드시는 약을 살펴봅니다. 안전하게 자세를 바꾸는 방법부터 익히고, 압박 의류나 약이 도움이 될지 상의합니다.",
           "sources": [
             "dz:orthostatic",
             "dz:aha"
@@ -1352,8 +1352,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "일어나기 전 잠시 앉아 상태를 확인하고 지지물을 사용하세요. 수분·염분 조절은 심장·신장 질환과 누운 자세의 고혈압을 고려해 개별로 정합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "일어나기 전 잠시 앉아 상태를 확인하고 손잡이나 단단한 곳을 잡으세요. 물과 소금 섭취량 조절은 심장·신장 질환과 누운 자세의 고혈압을 고려해 몸 상태에 맞춰 정합니다.",
           "sources": [
             "dz:orthostatic",
             "dz:aha"
@@ -1361,7 +1361,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "혈압약·이뇨제·기타 약을 스스로 끊지 마세요. 새 약 이후 악화, 누워 있을 때 두통·혈압 상승을 담당의에게 알리세요.",
           "sources": [
             "dz:orthostatic",
@@ -1370,7 +1370,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "증상이 생긴 시각·자세·혈압/맥박·낙상을 기록합니다. 수치뿐 아니라 실제 활동과 실신 감소를 함께 평가합니다.",
           "sources": [
             "dz:orthostatic",
@@ -1379,8 +1379,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "흉통·호흡곤란·운동 중 실신·회복 지연·새 마비는 단순 기립성저혈압으로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "흉통·숨쉬기 어려움·운동 중 실신·회복 지연·새 마비는 단순 기립성저혈압으로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "dz:orthostatic",
             "dz:aha"
@@ -1400,7 +1400,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "반복되는 어지럼과 청력 변화·귀 먹먹함·이명이 함께 나타날 수 있는 귀의 질환입니다. 증상 조합과 검사로 다른 원인과 구분합니다.",
           "sources": [
             "dz:meniere",
@@ -1409,7 +1409,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "발작 지속시간과 좌우 청력 변화를 기록하세요. 어지럼이 없는 날에도 청력이나 균형의 불편이 남을 수 있습니다.",
           "sources": [
             "dz:meniere",
@@ -1418,7 +1418,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "청력검사가 중요한 자료이며 증상에 따라 반복할 수 있습니다. 모든 환자에게 같은 전정검사나 영상이 필요한 것은 아닙니다.",
           "sources": [
             "dz:meniere",
@@ -1427,8 +1427,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "발작 완화와 장기 기능·청력 관리를 나눠 계획합니다. 생활 조절·약물·전문 시술은 이득과 위험을 비교해 선택합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어지럼이 올 때 불편을 줄이는 방법과 평소 청력과 일상 기능을 관리하는 방법을 따로 정합니다. 생활 조절, 약, 시술은 도움이 되는 점과 위험을 비교해 선택합니다.",
           "sources": [
             "dz:meniere",
             "dz:mdcriteria"
@@ -1436,8 +1436,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "발작 때는 안전하게 앉거나 누워 넘어짐을 피하세요. 식사·음주·카페인과 증상의 관계를 기록하고 식이 조절은 개별적으로 상의하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "발작 때는 안전하게 앉거나 누워 넘어짐을 피하세요. 식사·음주·카페인과 증상의 관계를 기록하고 식이 조절은 진료에서 본인에게 맞는 방법을 상의하세요.",
           "sources": [
             "dz:meniere",
             "dz:mdcriteria"
@@ -1445,7 +1445,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "발작 완화 약을 오래 계속할지와 졸림을 확인하세요. 이뇨제 등을 쓰는 경우 혈압·전해질·신장 상태의 감시 계획을 따릅니다.",
           "sources": [
             "dz:meniere",
@@ -1454,8 +1454,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "어지럼 횟수뿐 아니라 청력·이명·낙상·일상 지장을 확인합니다. 증상이 반복되면 청력검사와 치료 계획을 재검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "어지럼이 온 횟수뿐 아니라 청력이나 귀에서 들리는 소리, 넘어진 일과 생활의 불편도 알려주세요. 증상이 반복되면 청력 검사와 치료 계획을 다시 살펴봅니다.",
           "sources": [
             "dz:meniere",
             "dz:mdcriteria"
@@ -1463,8 +1463,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑작스러운 청력 저하는 다음 예약까지 기다리지 마세요. 새 마비·걷기 불능·언어장애는 즉시 응급 평가가 필요합니다.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑작스러운 청력 저하는 다음 예약까지 기다리지 마세요. 새 마비·걷기 불능·말이 어눌하거나 말이 잘 나오지 않음는 즉시 응급 평가가 필요합니다.",
           "sources": [
             "dz:meniere",
             "dz:mdcriteria"
@@ -1484,8 +1484,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "한쪽 균형신경의 기능이 갑자기 떨어져 지속적인 어지럼이 생기는 상태를 평가합니다. 처음에는 뇌졸중 등 다른 원인 감별이 중요합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "한쪽 귀의 균형 신경이 갑자기 제 역할을 하지 못하면 어지럼이 계속될 수 있습니다. 처음에는 뇌졸중처럼 비슷한 증상을 만드는 다른 원인이 없는지 확인하는 것이 중요합니다.",
           "sources": [
             "dz:auvp",
             "dz:grace"
@@ -1493,7 +1493,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "수시간 이상 이어지는 회전감·구역과 보행 불안이 나타날 수 있습니다. 새 청력 저하나 신경 증상은 별도로 평가해야 합니다.",
           "sources": [
             "dz:auvp",
@@ -1502,7 +1502,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "눈 움직임·신경 진찰과 전정기능을 확인하고 필요하면 영상 등을 선택합니다. HINTS는 적합한 환자에게 숙련된 검사자가 시행하는 검사입니다.",
           "sources": [
             "dz:auvp",
@@ -1511,8 +1511,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "급성 불편을 조절한 뒤 안전한 활동 회복과 전정재활을 검토합니다. 스테로이드의 이득·위험은 담당의와 상의합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "처음에는 심한 불편을 줄이고, 이후 안전하게 움직임을 되찾는 방법과 균형 재활을 상의합니다. 스테로이드를 쓸 때의 장점과 위험은 담당의와 상의합니다.",
           "sources": [
             "dz:auvp",
             "dz:grace"
@@ -1520,8 +1520,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "초기에는 낙상을 피하고 호전되면 교육받은 범위에서 점진적으로 움직이세요. 재활은 몸 상태에 맞춰 강도를 조절합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "초기에는 낙상을 피하고 증상이 나아지면 교육받은 범위에서 점진적으로 움직이세요. 재활은 몸 상태에 맞춰 강도를 조절합니다.",
           "sources": [
             "dz:auvp",
             "dz:grace"
@@ -1529,7 +1529,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "어지럼 억제 약은 졸림과 회복 과정에 영향을 줄 수 있어 사용 기간을 확인합니다. 증상에 따라 임의로 장기 복용하지 마세요.",
           "sources": [
             "dz:auvp",
@@ -1538,8 +1538,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "보행·시선 안정·구역·일상 복귀를 확인합니다. 예상과 다르게 악화되거나 회복이 지연되면 다른 원인을 재검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "걸을 때나 시선을 한 곳에 둘 때 어떤지, 메스꺼움이 줄었는지, 일상으로 돌아가고 있는지 알려주세요. 더 심해지거나 회복이 늦으면 다른 원인도 다시 살펴봅니다.",
           "sources": [
             "dz:auvp",
             "dz:grace"
@@ -1547,8 +1547,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 마비·복시·언어/연하 변화·앉거나 걷기 불능·심한 두통·청력 저하는 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 마비·물체가 두 개로 보임·언어/연하 변화·앉거나 걷기 불능·심한 두통·청력 저하는 즉시 진료받으세요.",
           "sources": [
             "dz:auvp",
             "dz:grace"
@@ -1568,7 +1568,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "서 있거나 움직임·복잡한 시각 자극에서 어지럼이 지속되는 상태입니다. 실제 증상이며 단순히 마음이 약해서 생긴 것으로 보지 않습니다.",
           "sources": [
             "dz:pppd",
@@ -1577,7 +1577,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "빙빙 도는 느낌보다 흔들림·불안정감이 지속될 수 있고 기존 전정질환과 함께 있을 수 있습니다. 시작 계기와 일상 지장을 확인합니다.",
           "sources": [
             "dz:pppd",
@@ -1586,7 +1586,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력·진찰로 다른 전정·신경·순환 원인과 구분합니다. 검사 결과가 정상이라는 이유만으로 증상이 없다고 판단하지 않습니다.",
           "sources": [
             "dz:pppd",
@@ -1595,8 +1595,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "증상 이해, 점진적인 활동·재활, 필요 시 심리적 치료를 조합합니다. 약물 선택과 근거의 한계는 개별적으로 상의합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어떤 상황에서 불편한지 이해하고, 활동과 재활을 조금씩 늘립니다. 필요하면 심리 치료를 함께 하고, 약이 얼마나 도움이 될지와 한계는 진료에서 상의합니다.",
           "sources": [
             "dz:pppd",
             "dz:pppdDrugs"
@@ -1604,7 +1604,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "피하는 활동을 무리해서 한꺼번에 늘리지 말고 계획한 작은 단계로 연습하세요. 어떤 장소·화면·동작이 불편한지 기록하세요.",
           "sources": [
             "dz:pppd",
@@ -1613,8 +1613,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "장기간 어지럼 억제 약에만 의존하지 않도록 사용 목적을 확인하세요. 불안·우울 등 공존 문제의 치료도 함께 검토할 수 있습니다.",
+          "title": "약을 복용할 때",
+          "text": "어지럼을 가라앉히는 약을 오래 쓰기 전에 약을 쓰는 목적을 확인하세요. 불안하거나 우울한 증상이 함께 있으면 그 치료도 상의할 수 있습니다.",
           "sources": [
             "dz:pppd",
             "dz:pppdDrugs"
@@ -1622,7 +1622,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "증상 세기만 아니라 외출·보행·화면 사용의 회복을 확인합니다. 악화 요인과 재활 후 변화에 따라 계획을 조절합니다.",
           "sources": [
             "dz:pppd",
@@ -1631,8 +1631,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑자기 다른 양상의 어지럼, 새 마비·말/시야 변화·실신은 기존 증상의 일부로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 다른 양상의 어지럼, 새 마비·말/시야 변화·실신은 기존 증상의 일부로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "dz:pppd",
             "dz:pppdDrugs"
@@ -1652,7 +1652,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "양쪽 균형기관 기능이 떨어져 움직일 때 시야가 흔들리거나 균형이 불안할 수 있는 상태입니다.",
           "sources": [
             "dz:bilateral",
@@ -1661,7 +1661,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어두운 곳·울퉁불퉁한 바닥에서 더 불안하고 걸으며 글씨가 흔들려 보일 수 있습니다. 청력·약물·다른 신경 증상도 확인합니다.",
           "sources": [
             "dz:bilateral",
@@ -1670,7 +1670,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "양측 전정기능 검사를 병력·진찰과 함께 해석합니다. 보행 문제에는 시력·말초신경·근력 등 여러 요인이 겹칠 수 있습니다.",
           "sources": [
             "dz:bilateral",
@@ -1679,8 +1679,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "시선 안정과 균형을 위한 맞춤 전정재활, 보행 보조·낙상 예방이 중요합니다. 원인에 따라 치료 가능성을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "움직일 때도 시선을 안정시키고 균형을 잡는 연습을 몸 상태에 맞춰 배웁니다. 걷기 보조와 넘어짐 예방도 함께 챙기고, 원인에 맞는 치료가 있는지 확인합니다.",
           "sources": [
             "dz:bilateral",
             "dz:rehab"
@@ -1688,8 +1688,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "야간 조명과 손잡이를 마련하고 위험한 바닥에서는 도움을 받으세요. 재활 동작은 교육받은 범위에서 안전하게 연습하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "밤에 켜둘 조명과 손잡이를 마련하고 위험한 바닥에서는 도움을 받으세요. 재활 동작은 교육받은 범위에서 안전하게 연습하세요.",
           "sources": [
             "dz:bilateral",
             "dz:rehab"
@@ -1697,7 +1697,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "균형을 악화시킬 수 있는 약과 귀에 영향을 줄 수 있는 약의 이력을 알리세요. 필요한 약을 임의로 중단하지 마세요.",
           "sources": [
             "dz:bilateral",
@@ -1706,7 +1706,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "낙상·어두운 곳 보행·시야 흔들림·활동 범위와 재활 반응을 확인합니다.",
           "sources": [
             "dz:bilateral",
@@ -1715,8 +1715,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "급격한 보행 악화나 새 마비·복시·언어장애는 기존 균형 저하로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "급격한 보행 악화나 새 마비·물체가 두 개로 보임·말이 어눌하거나 말이 잘 나오지 않음는 기존 균형 저하로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "dz:bilateral",
             "dz:rehab"
@@ -1736,15 +1736,15 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "뇌·뇌간·소뇌 등 중추 원인을 먼저 확인하는 어지럼 평가 경로이며 확정 진단명은 아닙니다.",
+          "title": "어떤 상태인가요?",
+          "text": "어지럼은 뇌나 소뇌 등의 문제로도 생길 수 있습니다. 진찰과 검사를 통해 뇌 쪽 원인이 있는지 먼저 확인합니다.",
           "sources": [
             "dz:grace"
           ]
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "갑작스러운 지속 어지럼·심한 보행 불안·새 신경 증상을 확인합니다. 뚜렷한 마비가 없어도 중추 원인을 평가할 수 있습니다.",
           "sources": [
             "nhsStroke",
@@ -1753,24 +1753,24 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "신경 진찰과 적절한 영상·혈관 평가를 선택합니다. 초기 영상이나 일부 검사만으로 모든 뇌졸중을 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "신경 기능을 진찰하고 필요한 경우 뇌나 혈관을 검사합니다. 초기 영상이나 일부 검사에서 이상이 없어도 뇌졸중 가능성이 완전히 없어지는 것은 아닙니다.",
           "sources": [
             "dz:grace"
           ]
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "응급 원인이 의심되면 일반 어지럼약·재활보다 신속한 병원 평가가 우선입니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "응급 원인이 의심되면 어지럼약을 먹거나 재활을 시작하기 전에 병원에서 빠르게 진료받는 것이 우선입니다.",
           "sources": [
             "dz:grace"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "마지막으로 정상이었던 시각, 시작 시각, 복용약을 알려주세요. 평가 전 혼자 걷거나 직접 운전하지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "마지막으로 정상이었던 시각, 증상이 시작된 시각, 현재 드시는 약을 알려주세요. 평가 전 혼자 걷거나 직접 운전하지 마세요.",
           "sources": [
             "nhsStroke",
             "dz:grace"
@@ -1778,7 +1778,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "아스피린 등 남은 약을 임의로 추가하지 말고 항응고제·항혈소판제 복용 여부를 즉시 알리세요.",
           "sources": [
             "dz:grace"
@@ -1786,7 +1786,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "응급 의뢰 뒤 결과와 후속 계획을 확인합니다. 증상이 줄어도 원인 평가를 임의로 취소하지 마세요.",
           "sources": [
             "dz:grace"
@@ -1794,8 +1794,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 마비·복시·말/삼킴 변화·걷기 불능·의식 변화는 즉시 응급 도움을 요청하세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 마비·물체가 두 개로 보임·말/삼킴 변화·걷기 불능·의식 변화는 즉시 응급 도움을 요청하세요.",
           "sources": [
             "nhsStroke",
             "dz:grace"
@@ -1815,7 +1815,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "기억력 저하를 느끼지만 현재 검사에서 뚜렷한 객관적 저하가 확인되지 않은 상태를 평가합니다. 곧바로 치매라는 뜻은 아닙니다.",
           "sources": [
             "cognition:detect",
@@ -1824,8 +1824,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "언제부터 어떤 일을 잊는지와 수면·기분·스트레스·청력·복용약을 함께 살핍니다. 가족이 관찰한 변화도 도움이 됩니다.",
+          "title": "어떤 증상이 있나요?",
+          "text": "언제부터 어떤 일을 잊는지와 수면·기분·스트레스·청력·현재 드시는 약을 함께 살핍니다. 가족이 관찰한 변화도 도움이 됩니다.",
           "sources": [
             "nhsDementia",
             "cognition:detect"
@@ -1833,8 +1833,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "선별검사와 병력·일상 기능을 함께 비교합니다. 한 번의 정상 점수가 이후 변화를 모두 배제하지는 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "간단한 기억력 검사뿐 아니라 어떤 일에서 불편한지와 일상생활이 달라졌는지를 함께 살펴봅니다. 한 번 정상 점수를 받아도 이후에 달라지는 점을 알려주세요.",
           "sources": [
             "cognition:detect",
             "cognition:dementia"
@@ -1842,8 +1842,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "교정할 요인을 찾아 관리하고 경과에 따라 재평가합니다. 이 상태만으로 치매 약을 자동 시작하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "기억력에 영향을 줄 수 있는 원인을 찾아 관리하고, 이후 어떻게 달라지는지 살펴봅니다. 이 상태만으로 바로 치매 약을 시작하지는 않습니다.",
           "sources": [
             "cognition:detect",
             "cognition:dementia"
@@ -1851,7 +1851,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "약속·일정을 메모하고 익숙한 활동과 사회적 관계를 유지하세요. 운동·수면 계획은 몸 상태에 맞춰 정하세요.",
           "sources": [
             "nhsDementia",
@@ -1860,7 +1860,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "수면제·진정제·일반약을 포함한 약 목록을 보여주세요. 기억력에 좋다는 보충제를 추가하기 전에 필요성과 상호작용을 확인하세요.",
           "sources": [
             "cognition:detect",
@@ -1869,7 +1869,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "구체적으로 달라진 사례와 일상생활의 영향을 기록합니다. 가족의 관찰과 필요 시 반복 검사로 변화 여부를 살핍니다.",
           "sources": [
             "cognition:detect",
@@ -1878,8 +1878,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑작스러운 혼돈·새 마비/언어장애·빠른 악화는 단순 건망증으로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 정신이 혼란스러워짐·새 마비/말이 어눌하거나 말이 잘 나오지 않음·빠른 악화는 단순 건망증으로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "cognition:detect",
             "cognition:dementia"
@@ -1899,7 +1899,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "검사나 평가에서 인지 저하가 확인되지만 일상생활의 독립성은 대체로 유지되는 상태입니다. 원인과 이후 경과는 사람마다 다릅니다.",
           "sources": [
             "cognition:detect",
@@ -1908,7 +1908,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "기억·집중·언어 등 어떤 영역이 변했는지와 약 관리·금전·운전 등의 실제 기능을 함께 살핍니다.",
           "sources": [
             "nhsDementia",
@@ -1917,7 +1917,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "인지검사·일상 기능 평가와 필요한 원인 검사를 함께 해석합니다. 선별 점수 하나만으로 치매나 원인 질환을 확정하지 않습니다.",
           "sources": [
             "cognition:detect",
@@ -1926,8 +1926,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인·수면·기분·혈관 위험 등을 관리합니다. 모든 경도인지장애에 같은 약이나 항아밀로이드 치료를 적용하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "기억력에 영향을 줄 수 있는 수면, 기분, 혈관 건강과 다른 원인을 함께 살펴봅니다. 경도인지장애라고 해서 모두 같은 약이나 항아밀로이드 치료를 받는 것은 아닙니다.",
           "sources": [
             "cognition:detect",
             "cognition:dementia"
@@ -1935,8 +1935,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "실천 가능한 활동과 규칙적인 생활을 유지하고 일정표·복약 도구를 활용하세요. 위험한 활동은 현재 능력에 맞춰 점검합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "실천 가능한 활동과 규칙적인 생활을 유지하고 일정표·약 챙기는 도구를 활용하세요. 위험한 활동은 현재 능력에 맞춰 점검합니다.",
           "sources": [
             "nhsDementia",
             "cognition:detect"
@@ -1944,8 +1944,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "현재 약이 인지·균형에 미치는 영향을 검토합니다. 특정 치료는 원인 확인·적합성·감시 조건을 충족하는지 전문 평가가 필요합니다.",
+          "title": "약을 복용할 때",
+          "text": "지금 드시는 약이 기억력이나 균형에 영향을 주는지 살펴봅니다. 일부 치료는 원인, 사용 조건과 안전하게 관찰할 수 있는지를 전문 진료에서 확인해야 합니다.",
           "sources": [
             "cognition:detect",
             "cognition:dementia"
@@ -1953,7 +1953,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "인지 점수와 생활 기능·가족이 느끼는 변화를 함께 비교합니다. 검사 간격은 변화 속도와 위험에 맞춰 정합니다.",
           "sources": [
             "cognition:detect",
@@ -1962,7 +1962,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "급성 혼돈이나 새 국소 신경 증상, 수주 내 뚜렷한 악화는 예정된 재검까지 기다리지 마세요.",
           "sources": [
             "cognition:detect",
@@ -1971,7 +1971,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "필요한 부분을 돕되 가능한 활동을 모두 대신하지 마세요. 복약·돈 관리·운전에서 실제 어려움을 구체적으로 알려주세요.",
           "sources": [
             "nhsDementia",
@@ -1992,8 +1992,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "알츠하이머병은 기억 등 인지기능과 생활 능력에 영향을 주는 질환입니다. 증상 단계와 다른 원인·동반 질환을 함께 평가합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "알츠하이머병은 기억이나 생각하는 능력, 일상생활에 영향을 주는 병입니다. 증상이 어느 정도인지, 다른 원인이나 함께 앓는 질환이 있는지 살펴봅니다.",
           "sources": [
             "cognition:dementia",
             "cognition:detect"
@@ -2001,7 +2001,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "기억뿐 아니라 약속·길 찾기·일 처리·행동 변화가 생길 수 있습니다. 진행 속도와 도움의 필요 정도는 개인마다 다릅니다.",
           "sources": [
             "nhsDementia",
@@ -2010,7 +2010,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "인지·일상 기능 평가와 구조 영상 등을 조합합니다. 원인 확인을 위한 전문 검사는 치료 결정에 도움이 되는 경우 선택합니다.",
           "sources": [
             "cognition:dementia",
@@ -2019,8 +2019,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "기능 유지·안전·불편 감소와 보호자 지원을 목표로 합니다. 증상 치료와 특정 조건에서 검토하는 원인 표적 치료는 역할이 다릅니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "일상생활을 가능한 한 유지하고 불편과 위험을 줄이는 것이 목표입니다. 가족을 돕는 방법도 함께 정합니다. 증상을 줄이는 약과 특정 조건에서 쓰는 원인 표적 치료의 역할은 다릅니다.",
           "sources": [
             "cognition:dementia",
             "cognition:detect"
@@ -2028,7 +2028,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "하루 일과와 물건 위치를 일정하게 유지하고 한 번에 한 가지씩 안내하세요. 복약·가스·외출·운전의 안전을 점검합니다.",
           "sources": [
             "nhsDementia",
@@ -2037,7 +2037,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약의 도움과 함께 메스꺼움·체중 변화·실신·맥박·수면 문제를 살핍니다. 새로운 치료는 출혈 등 위험과 감시 계획을 별도로 확인합니다.",
           "sources": [
             "cognition:dementia",
@@ -2046,7 +2046,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "인지·생활 기능·행동·체중·부작용과 보호자 부담을 확인합니다. 증상 변화와 치료 목표에 맞춰 계획을 조절합니다.",
           "sources": [
             "cognition:dementia",
@@ -2055,8 +2055,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑작스러운 혼돈·발열·낙상 뒤 변화·새 마비/언어장애는 질환 진행으로 넘기지 말고 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 정신이 혼란스러워짐·발열·낙상 뒤 변화·새 마비/말이 어눌하거나 말이 잘 나오지 않음는 질환 진행으로 넘기지 말고 빠르게 진료받으세요.",
           "sources": [
             "cognition:dementia",
             "cognition:detect"
@@ -2064,7 +2064,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "실수를 꾸짖기보다 짧고 익숙한 표현으로 돕고 돌봄을 나눌 방법을 상의하세요. 보호자의 수면과 부담도 진료에서 알려주세요.",
           "sources": [
             "nhsDementia",
@@ -2085,7 +2085,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "뇌혈관 손상과 관련된 인지 변화를 평가합니다. 알츠하이머병 등 다른 원인이 함께 있을 수 있습니다.",
           "sources": [
             "cognition:dementia"
@@ -2093,7 +2093,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "생각·처리 속도·계획하기·보행과 기억의 변화를 살핍니다. 뇌졸중 이후의 변화와 이전 상태를 비교합니다.",
           "sources": [
             "cognition:dementia"
@@ -2101,7 +2101,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "인지·기능 검사와 영상·혈관 위험을 함께 봅니다. 영상의 작은 혈관 변화만으로 모든 인지 문제의 원인을 단정하지 않습니다.",
           "sources": [
             "cognition:dementia"
@@ -2109,15 +2109,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "혈압·당뇨·지질·흡연 등 위험 관리와 기능 회복 지원이 중심입니다. 인지 약은 동반 원인과 적응증에 따라 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "혈압, 혈당, 콜레스테롤, 흡연을 관리하고 일상 기능을 되찾도록 돕습니다. 기억력 관련 약은 함께 있는 원인과 약을 쓸 조건을 확인해 정합니다.",
           "sources": [
             "cognition:dementia"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "처방과 재활 계획을 꾸준히 따르고 안전한 활동을 유지하세요. 혈압·식사·운동 목표는 다른 질환과 몸 상태에 맞춰 정합니다.",
           "sources": [
             "cognition:dementia"
@@ -2125,7 +2125,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "항혈소판제·항응고제·인지 약은 각각 사용 이유가 다릅니다. 영상 이상만 보고 약을 추가하거나 중단하지 마세요.",
           "sources": [
             "cognition:dementia"
@@ -2133,7 +2133,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "인지·생활 기능·재발 증상·혈관 위험 조절과 낙상을 함께 확인합니다.",
           "sources": [
             "cognition:dementia"
@@ -2141,7 +2141,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "얼굴·팔다리 힘 빠짐, 말·시야 변화가 갑자기 생기면 잠깐 좋아져도 즉시 응급 평가받으세요.",
           "sources": [
             "cognition:dementia"
@@ -2149,7 +2149,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "발병 전후의 실제 기능 변화와 복약 상태를 함께 정리해 주세요.",
           "sources": [
             "cognition:dementia"
@@ -2169,7 +2169,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "인지 변화와 함께 각성의 변동·환시·파킨슨 증상·꿈 행동 등이 나타날 수 있는 질환을 평가합니다.",
           "sources": [
             "cognition:dementia"
@@ -2177,7 +2177,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "하루 중 상태가 크게 달라지거나 없는 것이 보이는 경험, 움직임·기립 어지럼·수면 중 행동을 구체적으로 알려주세요.",
           "sources": [
             "cognition:dementia"
@@ -2185,7 +2185,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력·신경 진찰·인지검사를 함께 보고 필요 시 전문 검사를 선택합니다. 한 가지 증상이나 점수만으로 확정하지 않습니다.",
           "sources": [
             "cognition:dementia"
@@ -2193,15 +2193,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "인지·행동·운동·수면 문제를 균형 있게 조절합니다. 한 증상의 약이 다른 증상을 악화시킬 수 있어 우선순위를 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "기억과 행동, 움직임, 수면 중 무엇이 가장 불편한지 함께 정합니다. 한 증상에 쓰는 약이 다른 증상을 더 불편하게 할 수 있어 우선순위가 중요합니다.",
           "sources": [
             "cognition:dementia"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "잘 보이는 조명과 단순한 동선을 마련하고 갑자기 일어나지 않도록 돕습니다. 수면 중 다칠 만한 물건을 치우세요.",
           "sources": [
             "cognition:dementia"
@@ -2209,7 +2209,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "일부 항정신병약에 심한 민감 반응이 있을 수 있어 다른 진료에서도 이 질환의 평가 여부를 알려주세요. 약은 의료진과 조정합니다.",
           "sources": [
             "cognition:dementia"
@@ -2217,7 +2217,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "환시·상태 변동·낙상·혈압·수면과 약 반응을 기록합니다.",
           "sources": [
             "cognition:dementia"
@@ -2225,15 +2225,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "약 변경 뒤 심한 경직·고열·의식 저하 또는 급성 혼돈은 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "약 변경 뒤 심한 경직·고열·의식 저하 또는 급성 혼돈은 즉시 진료받으세요.",
           "sources": [
             "cognition:dementia"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "보이는 경험을 강하게 논박하기보다 안전을 확보하고 불안·불편 정도를 알려주세요.",
           "sources": [
             "cognition:dementia"
@@ -2253,7 +2253,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "행동·성격이나 언어의 변화가 먼저 두드러질 수 있는 전두측두엽 질환을 평가합니다. 단순한 고집으로만 해석하지 않습니다.",
           "sources": [
             "cognition:dementia"
@@ -2261,7 +2261,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "충동·공감·식습관·판단·말하기의 변화를 살핍니다. 기억검사 점수가 비교적 좋아도 생활 문제가 있을 수 있습니다.",
           "sources": [
             "cognition:dementia"
@@ -2269,7 +2269,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "가족 병력과 언어·행동·인지 평가, 필요한 영상을 함께 확인합니다. 정신건강 문제 등 다른 원인과도 구분합니다.",
           "sources": [
             "cognition:dementia"
@@ -2277,15 +2277,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "안전·의사소통·행동 관리와 가족 지원을 중심으로 계획합니다. 알츠하이머병의 약이 그대로 적용되는 것은 아닙니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "생활의 안전, 대화 방법, 행동 변화에 대처하는 방법을 정하고 가족을 돕습니다. 알츠하이머병에 쓰는 약을 그대로 사용하는 것은 아닙니다.",
           "sources": [
             "cognition:dementia"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "일과를 단순하게 하고 돈·온라인 구매·운전·위험 행동의 보호 방안을 상의하세요. 언어 문제에 맞는 의사소통 방법을 사용합니다.",
           "sources": [
             "cognition:dementia"
@@ -2293,7 +2293,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "행동 증상 약은 목표 증상과 부작용을 함께 살핍니다. 인지 약을 관행적으로 추가하기보다 원인과 적합성을 확인합니다.",
           "sources": [
             "cognition:dementia"
@@ -2301,7 +2301,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "행동·언어·기능 변화와 가족의 돌봄 부담을 구체적으로 비교합니다.",
           "sources": [
             "cognition:dementia"
@@ -2309,15 +2309,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑작스러운 혼돈·새 마비·삼킴/호흡 변화는 기존 행동 변화로 넘기지 말고 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 정신이 혼란스러워짐·새 마비·삼킴/호흡 변화는 기존 행동 변화로 넘기지 말고 빠르게 진료받으세요.",
           "sources": [
             "cognition:dementia"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "안전한 한계를 일관되게 정하고 돌봄 자원을 나누세요. 금전 피해나 위험 행동을 진료에서 숨기지 마세요.",
           "sources": [
             "cognition:dementia"
@@ -2337,7 +2337,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "뇌척수액 순환 문제와 관련해 보행·인지·배뇨 변화가 나타날 수 있는 상태를 평가합니다. 모든 증상이 동시에 있어야 하는 것은 아닙니다.",
           "sources": [
             "cognition:nph"
@@ -2345,7 +2345,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "걸음 시작이 어렵거나 짧은 보폭·균형 저하, 생각·소변 조절의 변화를 함께 살핍니다.",
           "sources": [
             "cognition:nph"
@@ -2353,39 +2353,39 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰과 뇌영상, 필요 시 뇌척수액 배액 전후 기능 평가를 조합합니다. 배액 검사 한 번이 음성이어도 가능성을 완전히 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰과 뇌 영상을 보고, 필요하면 뇌척수액을 일부 빼기 전후에 걷기나 일상 기능이 달라지는지 확인합니다. 한 번 검사에서 차이가 없어도 가능성이 완전히 없어지는 것은 아닙니다.",
           "sources": [
             "cognition:nph"
           ]
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "적합한 경우 수술적 치료의 이득과 위험을 전문팀이 평가합니다. 영상에서 뇌실이 커 보인다는 이유만으로 수술을 정하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "수술을 고려할 수 있는 경우 전문 의료진이 도움이 되는 점과 위험을 살펴봅니다. 뇌 영상에서 뇌실이 커 보이는 것만으로 수술을 정하지는 않습니다.",
           "sources": [
             "cognition:nph"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "낙상 위험을 줄이고 안전한 보행 보조를 사용하세요. 치료 전후 비교를 위해 같은 환경의 걷기·일상 기능 변화를 기록합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "넘어질 위험을 줄이고 안전한 보행 보조를 사용하세요. 치료 전후 비교를 위해 같은 환경의 걷기·일상 기능 변화를 기록합니다.",
           "sources": [
             "cognition:nph"
           ]
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "약으로 모든 원인을 해결할 수 있는 상태는 아닙니다. 배액 검사·수술 전 항응고제 등 복용약을 알리고 임의 조절하지 마세요.",
+          "title": "약을 복용할 때",
+          "text": "약으로 모든 원인을 해결할 수 있는 상태는 아닙니다. 배액 검사·수술 전 항응고제 등 현재 드시는 약을 알리고 임의 조절하지 마세요.",
           "sources": [
             "cognition:nph"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "보행 속도·균형·인지·배뇨·낙상을 함께 확인합니다. 시술/수술 후에도 동반 원인의 영향을 평가합니다.",
           "sources": [
             "cognition:nph"
@@ -2393,15 +2393,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑자기 걷지 못함·의식 변화·새 마비, 시술/수술 후 발열·심한 두통은 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 걷지 못함·의식 변화·새 마비, 시술/수술 후 발열·심한 두통은 빠르게 진료받으세요.",
           "sources": [
             "cognition:nph"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "기존 보행과 인지 상태를 알려주고 이동·화장실 동선의 안전을 도와주세요.",
           "sources": [
             "cognition:nph"
@@ -2421,7 +2421,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "섬망은 짧은 기간에 주의력·의식·생각이 달라지는 상태입니다. 치매의 자연스러운 진행으로 넘기지 말고 원인을 찾아야 합니다.",
           "sources": [
             "cognition:delirium"
@@ -2429,7 +2429,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "초조함뿐 아니라 조용해짐·졸림·반응 저하로 나타날 수 있고 상태가 시간에 따라 변할 수 있습니다.",
           "sources": [
             "cognition:delirium"
@@ -2437,7 +2437,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "평소 상태와 비교하고 감염·약물·통증·탈수·대사 문제 등을 평가합니다. 선별검사 결과만으로 원인을 확정하지 않습니다.",
           "sources": [
             "cognition:delirium"
@@ -2445,15 +2445,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 치료와 안전·환경 조절이 우선입니다. 진정시키는 약이 모든 섬망의 기본 치료는 아닙니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "갑작스러운 혼란을 일으킨 원인을 치료하고 다치지 않도록 환경을 정리합니다. 모든 환자에게 진정시키는 약이 필요한 것은 아닙니다.",
           "sources": [
             "cognition:delirium"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "익숙한 사람·시계·안경·보청기를 활용하고 밤낮의 환경을 구분해 주세요. 음식·수분은 삼킴과 몸 상태에 따라 의료진 안내를 따릅니다.",
           "sources": [
             "cognition:delirium"
@@ -2461,7 +2461,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "최근 시작·중단·변경한 약과 일반약을 모두 알리세요. 졸리게 하는 약을 임의로 추가하지 마세요.",
           "sources": [
             "cognition:delirium"
@@ -2469,15 +2469,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "주의력·수면·식사·원인 질환의 회복을 확인합니다. 회복 후 남는 인지 변화는 안정된 상태에서 다시 평가할 수 있습니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "주의력·잠과 식사·원인 질환의 회복을 확인합니다. 회복 후 남는 인지 변화는 안정된 상태에서 다시 평가할 수 있습니다.",
           "sources": [
             "cognition:delirium"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 혼돈·깨우기 어려움·호흡 이상·고열·마비는 신속한 의료진 평가가 필요합니다.",
           "sources": [
             "cognition:delirium"
@@ -2485,7 +2485,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "평소 기능과 변화 시점을 알려주세요. 혼자 이동하지 않게 돕고 안전 확보 방법은 의료진과 상의하세요.",
           "sources": [
             "cognition:delirium"
@@ -2505,8 +2505,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "짧은 기간에 인지·행동 기능이 뚜렷하게 떨어지는 상황을 평가하는 경로입니다. 원인이 다양해 신속한 전문 평가가 필요합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "짧은 기간에 기억이나 행동이 크게 달라지면 서둘러 원인을 확인해야 합니다. 여러 원인이 있을 수 있어 빠른 전문 진료가 필요합니다.",
           "sources": [
             "cognition:dementia",
             "cognition:detect"
@@ -2514,7 +2514,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "변화의 시작·속도와 발작·보행·정신행동·전신 증상을 함께 확인합니다.",
           "sources": [
             "cognition:dementia",
@@ -2523,7 +2523,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "원인에 따라 영상·뇌파·혈액·뇌척수액 등 검사를 선택합니다. 한 번의 인지 점수나 정상 기본 검사로 평가를 끝내지 않습니다.",
           "sources": [
             "cognition:dementia",
@@ -2532,8 +2532,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "치료 가능한 원인을 놓치지 않도록 의뢰와 원인 확인을 우선합니다. 특정 치매 약만 시도하며 시간을 보내지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "치료할 수 있는 원인을 놓치지 않도록 필요한 검사와 전문 진료를 먼저 진행합니다. 치매 약만 써 보면서 원인 확인을 늦추지 않습니다.",
           "sources": [
             "cognition:dementia",
             "cognition:detect"
@@ -2541,7 +2541,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "증상 시간표·약 목록·기존 검사 자료를 준비하고 혼자 운전·금전 관리 등 위험 활동을 피하도록 돕습니다.",
           "sources": [
             "cognition:dementia",
@@ -2550,7 +2550,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "처방약·일반약·보충제·독성 물질 노출과 갑작스러운 중단 여부를 모두 알려주세요.",
           "sources": [
             "cognition:dementia",
@@ -2559,7 +2559,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "검사 결과를 누가 언제 확인할지와 다음 평가 계획을 정합니다. 더 빠른 악화는 예약을 기다리지 않고 알립니다.",
           "sources": [
             "cognition:dementia",
@@ -2568,7 +2568,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "의식 변화·발작·새 마비·발열·삼킴/호흡 이상은 즉시 응급 평가받으세요.",
           "sources": [
             "cognition:dementia",
@@ -2577,7 +2577,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "처음 달라진 날짜와 실제 생활 사례를 기록하고 이전 자료를 함께 가져오세요.",
           "sources": [
             "cognition:dementia",
@@ -2598,7 +2598,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "잠들기 어렵거나 자주 깨는 문제와 낮의 불편이 이어지는 상태입니다. 필요한 수면량과 원인은 사람마다 다릅니다.",
           "sources": [
             "sleep:insomnia"
@@ -2606,8 +2606,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "잠드는 시간·깨는 시간·낮 졸림과 걱정, 통증·코골이·다리 불편·복용약을 함께 살핍니다.",
+          "title": "어떤 증상이 있나요?",
+          "text": "잠드는 시간·깨는 시간·낮 졸림과 걱정, 통증·코골이·다리 불편·현재 드시는 약을 함께 살핍니다.",
           "sources": [
             "nhsInsomnia",
             "sleep:insomnia"
@@ -2615,7 +2615,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "수면일지와 병력 평가가 기본입니다. 불면만으로 모든 사람에게 수면다원검사가 필요한 것은 아니며 다른 수면질환이 의심될 때 선택합니다.",
           "sources": [
             "sleep:insomnia"
@@ -2623,16 +2623,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "불면 인지행동치료는 수면 습관과 잠에 대한 반응을 함께 다룹니다. 약의 필요성과 사용 기간은 반응·안전을 보고 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "불면 인지행동치료에서는 잠자는 습관과 잠이 오지 않을 때의 대처를 함께 배웁니다. 약이 필요한지, 얼마나 쓸지는 효과와 안전을 보고 정합니다.",
           "sources": [
             "sleep:insomnia"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "일어나는 시각을 일정하게 하고 졸릴 때 잠자리에 드세요. 늦은 카페인·음주와 낮잠의 영향을 살피고 수면 계획은 개별로 조정합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "일어나는 시각을 일정하게 하고 졸릴 때 잠자리에 드세요. 늦은 카페인·술과 낮잠의 영향을 살피고 수면 계획은 개별로 조정합니다.",
           "sources": [
             "nhsInsomnia",
             "sleep:insomnia"
@@ -2640,15 +2640,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "수면제와 술을 함께 사용하지 마세요. 졸림·낙상·기억 변화가 있으면 알리고 지속 복용약을 갑자기 끊지 말고 조절 방법을 상의하세요.",
+          "title": "약을 복용할 때",
+          "text": "수면제와 술을 함께 사용하지 마세요. 졸림·낙상·기억 변화가 있으면 알리고 계속 드시던 약을 갑자기 끊지 말고 조절 방법을 상의하세요.",
           "sources": [
             "sleep:insomnia"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "총 수면시간뿐 아니라 잠에 대한 부담·낮 기능·약 사용·부작용을 확인합니다.",
           "sources": [
             "sleep:insomnia"
@@ -2656,7 +2656,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "운전 중 졸림이나 약 복용 뒤 호흡 이상·깨우기 어려움·심한 행동 변화는 즉시 도움을 요청하세요.",
           "sources": [
             "sleep:insomnia"
@@ -2676,7 +2676,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "잠자는 동안 위쪽 기도가 반복해서 좁아지거나 막혀 호흡과 수면이 끊기는 상태입니다. 단순 코골이와 구분합니다.",
           "sources": [
             "sleep:osa",
@@ -2685,8 +2685,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "코골이·목격된 무호흡·아침 두통·낮 졸림이 있을 수 있습니다. 졸림이 없다는 이유만으로 배제하지 않습니다.",
+          "title": "어떤 증상이 있나요?",
+          "text": "코를 골거나, 자는 동안 숨을 멈추는 모습이 보이거나, 아침에 머리가 아프고 낮에 졸릴 수 있습니다. 낮에 졸리지 않아도 수면무호흡증이 있을 수 있습니다.",
           "sources": [
             "sleep:osa",
             "sleep:pap"
@@ -2694,7 +2694,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "적합한 수면검사로 호흡·산소·수면 정보를 평가합니다. 설문만으로 확정하지 않으며 간이검사 음성이라도 의심이 남으면 추가 평가합니다.",
           "sources": [
             "sleep:osa",
@@ -2703,8 +2703,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "양압기·구강 장치·생활 조절 등의 적합성을 검토합니다. 치료 선택은 검사·증상·동반질환과 선호에 따라 달라집니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "양압기, 입에 끼는 장치, 생활 습관 조절 중 맞는 방법을 상의합니다. 검사 결과, 불편한 증상, 함께 앓는 질환과 본인의 선호를 함께 고려합니다.",
           "sources": [
             "sleep:osa",
             "sleep:pap"
@@ -2712,7 +2712,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "술·진정제와 수면 자세의 영향을 상의하세요. 졸릴 때는 운전하지 말고 체중 관리는 현재 몸 상태에 맞게 계획합니다.",
           "sources": [
             "sleep:osa",
@@ -2721,7 +2721,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "수면제·진정제·마약성 진통제 사용을 알려주세요. 양압기는 압력을 임의로 바꾸지 말고 마스크·건조·누출 문제를 상담합니다.",
           "sources": [
             "sleep:osa",
@@ -2730,7 +2730,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "사용 시간과 누출·잔여 호흡 문제뿐 아니라 졸림·기능·불편을 확인합니다. 장치 적응이 어렵다면 중단하기 전에 조정을 상의하세요.",
           "sources": [
             "sleep:osa",
@@ -2739,8 +2739,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "호흡곤란·청색증·깨우기 어려움은 응급 도움을 요청하세요. 심한 졸림으로 사고 위험이 있으면 신속히 연락하세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "숨쉬기 어려움·청색증·깨우기 어려움은 응급 도움을 요청하세요. 심한 졸림으로 사고 위험이 있으면 신속히 연락하세요.",
           "sources": [
             "sleep:osa",
             "sleep:pap"
@@ -2748,7 +2748,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "목격한 무호흡과 졸림을 알려주고 장치 적응을 도와주세요.",
           "sources": [
             "sleep:osa",
@@ -2769,7 +2769,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "가만히 있을 때 다리를 움직이고 싶은 불편이 생겨 움직이면 줄고 저녁·밤에 두드러질 수 있는 상태입니다.",
           "sources": [
             "sleep:rls"
@@ -2777,7 +2777,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "쥐·관절통·신경병증·약물로 인한 초조와 구분합니다. 증상이 시작되는 시각과 수면에 미치는 영향을 알려주세요.",
           "sources": [
             "sleep:rls"
@@ -2785,7 +2785,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력과 철 상태·관련 원인을 확인합니다. 잠잘 때 다리가 움직인다는 사실만으로 이 질환을 확정하지 않습니다.",
           "sources": [
             "sleep:rls"
@@ -2793,15 +2793,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "악화 요인과 철 상태를 먼저 검토하고 필요 시 적절한 약을 선택합니다. 모든 환자에게 같은 약을 사용하는 것은 아닙니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "다리 불편을 심하게 하는 요인과 몸에 철분이 충분한지 살펴봅니다. 약이 필요하면 상태에 맞춰 정합니다.",
           "sources": [
             "sleep:rls"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "수면 리듬과 카페인·음주의 영향을 살피고 무리하지 않는 움직임을 활용하세요. 철분은 검사와 의료진 판단 없이 추가하지 마세요.",
           "sources": [
             "sleep:rls"
@@ -2809,7 +2809,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "일부 약은 시간이 지나며 증상이 더 일찍·넓게 나타나는 악화를 일으킬 수 있습니다. 기존 약을 갑자기 끊지 말고 졸림·낙상·충동 변화도 알리세요.",
           "sources": [
             "sleep:rls"
@@ -2817,16 +2817,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "시작 시각·범위·수면 지장·약 반응과 철 상태를 확인합니다. 약을 늘렸는데 더 일찍 불편해지면 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "증상이 시작된 시각·범위·수면 지장·약 반응과 철 상태를 확인합니다. 약을 늘렸는데 더 일찍 불편해지면 다음 진료에서 다시 살펴봅니다.",
           "sources": [
             "sleep:rls"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 편측 부종·발적·심한 통증이나 급성 약화는 하지불안으로 넘기지 말고 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 편측 부종·발적·심한 통증이나 급성 약화는 하지불안으로 넘기지 말고 빠르게 진료받으세요.",
           "sources": [
             "sleep:rls"
           ]
@@ -2845,15 +2845,15 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "수면 중 반복되는 팔다리 움직임이 수면·낮 기능 문제와 관련되는지 평가하는 경로입니다. 움직임 자체만으로 질환은 아닙니다.",
+          "title": "어떤 상태인가요?",
+          "text": "잠자는 동안 팔다리가 반복해서 움직이는 일이 잠이나 낮 생활에 영향을 주는지 살펴봅니다. 움직임이 보인다는 이유만으로 병이라고 판단하지 않습니다.",
           "sources": [
             "sleep:rls"
           ]
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "같이 자는 사람이 본 움직임과 불면·졸림을 확인합니다. 하지불안·수면무호흡 등 다른 설명이 있는지 살핍니다.",
           "sources": [
             "sleep:rls"
@@ -2861,23 +2861,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "수면검사 소견을 증상과 함께 해석하고 다른 수면질환을 배제합니다. 움직임 횟수만으로 치료 필요성을 정하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "수면 검사 결과와 실제로 느끼는 불편을 함께 보고, 다른 수면 문제가 없는지 확인합니다. 잠잘 때 몸이 움직인 횟수만 보고 치료를 정하지 않습니다.",
           "sources": [
             "sleep:rls"
           ]
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "공존 수면질환·약물 영향을 우선 검토합니다. 이 질환 자체의 약물치료 근거에는 한계가 있어 개별로 결정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "함께 있는 수면 문제와 약의 영향을 먼저 살펴봅니다. 이 움직임 자체에 약이 도움이 되는지는 확실하지 않은 부분이 있어 상태에 맞춰 결정합니다.",
           "sources": [
             "sleep:rls"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "수면·낮 졸림 기록과 목격 내용을 정리하세요. 잠자리 안전과 규칙적인 수면을 돕습니다.",
           "sources": [
             "sleep:rls"
@@ -2885,7 +2885,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "다리 움직임을 줄이려고 진정제를 임의로 추가하지 마세요. 현재 약의 이득·부작용과 치료 목표를 확인합니다.",
           "sources": [
             "sleep:rls"
@@ -2893,15 +2893,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "검사 수치보다 수면과 낮 기능이 나아지는지 확인하고 다른 원인을 재검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "검사 수치보다 잠과 낮 생활이 얼마나 나아졌는지가 중요합니다. 불편이 남으면 다른 원인도 다시 살펴봅니다.",
           "sources": [
             "sleep:rls"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "졸림으로 운전·작업이 위험하거나 수면 중 호흡 이상이 있으면 신속히 알리세요.",
           "sources": [
             "sleep:rls"
@@ -2921,7 +2921,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "꿈을 꾸는 동안 몸이 충분히 억제되지 않아 꿈에 맞춰 소리치거나 움직이는 상태를 평가합니다.",
           "sources": [
             "sleep:rbd"
@@ -2929,7 +2929,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "주먹질·발길질·침대에서 떨어짐 등 본인과 동침자의 부상이 생길 수 있습니다. 다른 수면 행동·호흡 문제와 구분합니다.",
           "sources": [
             "sleep:rbd"
@@ -2937,7 +2937,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "목격 병력과 필요 시 영상 수면검사로 확인합니다. 꿈 내용이나 스마트폰 영상 하나만으로 확정하지 않습니다.",
           "sources": [
             "sleep:rbd"
@@ -2945,15 +2945,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "침실 안전 확보가 우선이며 필요한 약물치료를 검토합니다. 약을 써도 부상 예방 조치는 계속 필요합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "잠자는 동안 본인이나 옆 사람이 다치지 않도록 침실부터 정리합니다. 약이 필요한지 상의하고, 약을 써도 침실 안전 조치는 계속합니다.",
           "sources": [
             "sleep:rbd"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "날카로운 물건과 침대 주변 장애물을 치우고 낙상·동침자 부상을 줄일 환경을 상의하세요. 위험 행동이 있으면 안전한 수면 공간을 마련합니다.",
           "sources": [
             "sleep:rbd"
@@ -2961,7 +2961,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약의 졸림·낙상·수면무호흡 악화 가능성을 확인합니다. 유발 가능 약을 포함해 현재 약을 알리고 임의 중단하지 마세요.",
           "sources": [
             "sleep:rbd"
@@ -2969,23 +2969,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "행동 빈도·부상·약 반응과 운동·인지·자율신경 변화를 추적합니다. 관련 질환 가능성은 개별 상담으로 설명받으세요.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "잠잘 때 움직임이 얼마나 자주 있었는지, 다친 적이나 약을 쓰고 달라진 점을 알려주세요. 움직임, 기억력, 몸의 자동 조절과 관련된 변화도 살핍니다. 관련 질환 가능성은 진료에서 상의하세요.",
           "sources": [
             "sleep:rbd"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "머리 외상·심한 부상·호흡 이상은 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "머리 외상·심한 부상·호흡 이상은 즉시 진료받으세요.",
           "sources": [
             "sleep:rbd"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "관찰 내용을 기록하되 위험한 행동 중 촬영을 우선하지 말고 안전을 확보하세요.",
           "sources": [
             "sleep:rbd"
@@ -3005,8 +3005,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "기면병 등 중추성 과다졸림의 원인을 확인하는 경로입니다. 단순 피로·수면 부족과 구분해야 합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "낮에 참기 어려울 만큼 졸리다면 수면이 부족하거나 피곤한 것과 구분해야 합니다. 기면병처럼 심한 졸림을 일으키는 다른 원인이 있는지도 확인합니다.",
           "sources": [
             "sleep:hypersomnia",
             "sleep:osa"
@@ -3014,7 +3014,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "참기 어려운 졸림·갑작스러운 근력 풀림·수면마비·잠들 무렵 생생한 경험을 확인합니다. 모든 증상이 함께 있는 것은 아닙니다.",
           "sources": [
             "sleep:hypersomnia",
@@ -3023,7 +3023,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "충분한 수면과 약물 영향을 확인한 뒤 수면검사·낮 잠들기 검사를 선택합니다. 준비 상태가 결과에 영향을 줄 수 있습니다.",
           "sources": [
             "sleep:hypersomnia",
@@ -3032,8 +3032,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "수면 계획과 필요 시 각성·탈력발작 치료를 조합합니다. 학업·직장·운전 안전을 함께 고려합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "수면 계획을 세우고 필요하면 낮에 심하게 졸리는 증상이나 갑자기 힘이 빠지는 증상을 치료합니다. 학교나 직장 생활, 운전 안전도 함께 상의합니다.",
           "sources": [
             "sleep:hypersomnia",
             "sleep:osa"
@@ -3041,7 +3041,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "의료진과 수면·계획 낮잠·업무 환경을 조절하세요. 졸린 상태에서 운전하거나 위험 기계를 사용하지 마세요.",
           "sources": [
             "sleep:hypersomnia",
@@ -3050,7 +3050,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "각성 약·탈력발작 약의 상호작용, 임신 계획, 심혈관·정신 증상을 확인합니다. 검사 전 약 조절도 의료진 지시에 따릅니다.",
           "sources": [
             "sleep:hypersomnia",
@@ -3059,7 +3059,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "졸림·갑작스러운 힘 풀림·사고 위험·일상 기능과 약 부작용을 기록합니다.",
           "sources": [
             "sleep:hypersomnia",
@@ -3068,7 +3068,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "운전 중 잠듦·반복 사고 위험, 새 의식 소실·마비는 신속히 의료진에게 알리고 다른 원인도 확인하세요.",
           "sources": [
             "sleep:hypersomnia",
@@ -3089,7 +3089,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "몸의 수면 시간표와 필요한 생활 시간표가 맞지 않아 잠과 낮 기능에 문제가 생기는 상태입니다.",
           "sources": [
             "sleep:circadian"
@@ -3097,7 +3097,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "늦게 자고 늦게 일어남·교대근무·불규칙 수면 등 양상을 구분합니다. 단순한 의지 부족으로만 판단하지 않습니다.",
           "sources": [
             "sleep:circadian"
@@ -3105,7 +3105,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "수면일지와 생활·빛 노출·약물 이력을 확인하고 필요한 검사를 선택합니다. 일주일의 일부 기록만으로 전체 리듬을 단정하지 않습니다.",
           "sources": [
             "sleep:circadian"
@@ -3113,23 +3113,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "일정과 빛 노출을 조절하고 경우에 따라 정해진 시각의 치료를 검토합니다. 치료 시각은 아형마다 다릅니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "생활 일정과 빛을 받는 시간을 조절합니다. 정해진 시각에 하는 치료가 필요할 수 있고, 그 시각은 수면 문제의 종류에 따라 달라집니다.",
           "sources": [
             "sleep:circadian"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "평일·휴일의 잠든 시각과 기상 시각, 근무·빛 노출을 기록하세요. 수면 시간을 무리하게 한 번에 바꾸지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "평일·휴일의 잠든 시각과 일어난 시각, 근무·빛 노출을 기록하세요. 수면 시간을 무리하게 한 번에 바꾸지 마세요.",
           "sources": [
             "sleep:circadian"
           ]
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "멜라토닌 등도 복용 시각·제품·상호작용이 중요합니다. 임의로 용량과 시각을 바꾸며 시험하지 말고 계획을 따르세요.",
           "sources": [
             "sleep:circadian"
@@ -3137,7 +3137,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "목표 시간표에 맞춰 잠과 낮 기능이 회복되는지 확인하고 생활 변화에 맞춰 조정합니다.",
           "sources": [
             "sleep:circadian"
@@ -3145,7 +3145,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "졸음운전·직업상 사고 위험이나 심한 기분 변화가 생기면 신속히 알리세요.",
           "sources": [
             "sleep:circadian"
@@ -3165,7 +3165,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "수면 중 호흡 조절 신호의 문제로 숨이 멈추는 양상을 전문 평가합니다. 기도가 막히는 무호흡과 구분합니다.",
           "sources": [
             "sleep:csa"
@@ -3173,7 +3173,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "심장질환·약물·고도 등 관련 상황과 졸림·밤중 호흡 불편을 확인합니다. 다른 무호흡이 함께 있을 수 있습니다.",
           "sources": [
             "sleep:csa"
@@ -3181,7 +3181,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "수면검사와 원인·심장 기능 평가를 함께 봅니다. 가정용 산소 수치 하나만으로 유형과 치료를 정하지 않습니다.",
           "sources": [
             "sleep:csa"
@@ -3189,23 +3189,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 교정과 호흡 보조 방식의 적합성을 전문팀이 결정합니다. 특히 심부전이 있으면 장치 종류별 이득·위험과 감시가 중요합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인을 치료하고 어떤 호흡 보조 장치가 맞는지 전문 의료진과 정합니다. 심부전이 있으면 장치별 장점과 위험을 따져 보고 경과를 살핍니다.",
           "sources": [
             "sleep:csa"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "호흡 보조 장치 사용과 불편을 기록하고 추적을 유지하세요. 산소나 다른 사람의 장치를 임의로 사용하지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "호흡 보조 장치 사용과 불편을 기록하고 다음 진료 일정에 맞춰 오세요. 산소나 다른 사람의 장치를 임의로 사용하지 마세요.",
           "sources": [
             "sleep:csa"
           ]
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "마약성 진통제·진정제와 심부전 치료 약을 알리세요. 원인 약의 조절은 담당의와 상의합니다.",
           "sources": [
             "sleep:csa"
@@ -3213,7 +3213,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "수면 증상·장치 데이터·심장/호흡 상태를 함께 확인하고 설정 변경은 전문팀과 진행합니다.",
           "sources": [
             "sleep:csa"
@@ -3221,8 +3221,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "안정 시 호흡곤란·흉통·청색증·깨우기 어려움은 즉시 응급 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "안정 시 숨쉬기 어려움·흉통·청색증·깨우기 어려움은 즉시 응급 평가받으세요.",
           "sources": [
             "sleep:csa"
           ]
@@ -3241,7 +3241,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "여러 말초신경의 기능이 떨어져 손발의 감각·통증·힘·균형에 변화가 생기는 상태입니다. 원인과 침범 신경에 따라 양상이 다릅니다.",
           "sources": [
             "numbness:neuropathy",
@@ -3250,7 +3250,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "발끝부터 저리거나 화끈거림·감각 둔함·발목 힘 저하가 나타날 수 있습니다. 당뇨·음주·약물·영양·가족력을 함께 확인합니다.",
           "sources": [
             "nhsNeuropathy",
@@ -3259,8 +3259,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "혈액검사와 신경전도/근전도 등을 목적에 맞춰 선택합니다. 정상 신경전도 결과만으로 작은 신경섬유 문제를 모두 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "어떤 원인이 의심되는지에 따라 혈액 검사나 신경전도·근전도 검사를 합니다. 신경전도 검사가 정상이어도 가는 신경섬유에는 문제가 있을 수 있습니다.",
           "sources": [
             "numbness:neuropathy",
             "numbness:pdn"
@@ -3268,8 +3268,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 관리·통증 완화·발 보호·기능 유지가 목표입니다. 통증 약이 손상된 신경을 즉시 회복시키는 것은 아닙니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인을 관리하고 통증을 줄이며, 발을 보호하고 일상 기능을 유지하는 것이 목표입니다. 통증약이 손상된 신경을 바로 회복시키는 것은 아닙니다.",
           "sources": [
             "numbness:neuropathy",
             "numbness:pdn"
@@ -3277,7 +3277,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "발의 상처와 신발 안을 살피고 뜨거운 찜질로 화상 입지 않게 주의하세요. 넘어짐을 줄일 조명·보행 보조를 상의하세요.",
           "sources": [
             "nhsNeuropathy",
@@ -3286,7 +3286,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "통증 약의 졸림·부종·낙상과 신기능에 따른 적합성을 확인합니다. 비타민도 필요성과 과량 위험을 상담한 뒤 사용하세요.",
           "sources": [
             "numbness:neuropathy",
@@ -3295,8 +3295,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "통증뿐 아니라 수면·걷기·발 상처·힘과 일상 기능을 비교합니다. 원인 관리와 약의 내약성을 함께 확인합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "통증뿐 아니라 수면·걷기·발 상처·힘과 일상 기능을 비교합니다. 원인 관리와 약을 쓰면서 느끼는 불편을 함께 확인합니다.",
           "sources": [
             "numbness:neuropathy",
             "numbness:pdn"
@@ -3304,8 +3304,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "빠르게 번지는 약화·걷기 악화·호흡/삼킴 이상은 즉시 평가받으세요. 낫지 않는 발 상처도 빨리 알리세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "빠르게 번지는 약화·걷기 악화·호흡/삼킴 이상은 즉시 진료받으세요. 낫지 않는 발 상처도 빨리 알리세요.",
           "sources": [
             "numbness:neuropathy",
             "numbness:pdn"
@@ -3325,7 +3325,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "통증·온도·자율신경 기능을 담당하는 작은 말초신경섬유의 문제를 평가합니다.",
           "sources": [
             "numbness:neuropathy",
@@ -3334,7 +3334,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "화끈거림·찌름·접촉 통증이나 땀·기립 증상이 나타날 수 있습니다. 피부·혈관·근골격 원인과도 구분합니다.",
           "sources": [
             "nhsNeuropathy",
@@ -3343,8 +3343,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "일반 신경전도검사가 정상일 수 있어 임상 소견에 따라 피부검사·자율신경검사 등 전문 검사를 검토합니다. 단일 이상만으로 원인을 확정하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "일반 신경전도 검사가 정상일 수 있습니다. 증상과 진찰을 보고 피부나 몸의 자동 조절 기능을 보는 검사가 필요한지 정합니다. 한 가지 검사 결과만으로 원인을 확정하지 않습니다.",
           "sources": [
             "numbness:neuropathy",
             "numbness:neuro"
@@ -3352,8 +3352,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "기저 원인과 통증·자율신경 불편을 함께 관리합니다. 모든 경우에 면역치료가 필요한 것은 아닙니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인과 함께 통증, 땀이나 어지럼처럼 몸의 자동 조절과 관련된 불편을 관리합니다. 모든 경우에 면역치료가 필요한 것은 아닙니다.",
           "sources": [
             "numbness:neuropathy",
             "numbness:neuro"
@@ -3361,7 +3361,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "피부와 발을 살피고 과열·화상을 피하세요. 어지럼이나 땀 문제의 상황을 기록해 안전한 활동 계획을 세웁니다.",
           "sources": [
             "nhsNeuropathy",
@@ -3370,7 +3370,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "통증 약의 졸림·낙상·병용약을 확인합니다. 원인 확인 없이 면역치료나 보충제를 시작하지 마세요.",
           "sources": [
             "numbness:neuropathy",
@@ -3379,8 +3379,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "통증·수면·피부 손상·기립 증상과 기능 변화를 추적합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "통증과 수면, 피부 상처, 일어날 때의 어지럼, 생활에서 불편한 점이 달라졌는지 알려주세요.",
           "sources": [
             "numbness:neuropathy",
             "numbness:neuro"
@@ -3388,8 +3388,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 근력저하·호흡/삼킴 이상·실신은 작은 신경섬유 문제로 넘기지 말고 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새로 힘이 빠짐·호흡/삼킴 이상·실신은 작은 신경섬유 문제로 넘기지 말고 빠르게 진료받으세요.",
           "sources": [
             "numbness:neuropathy",
             "numbness:neuro"
@@ -3409,7 +3409,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "손목에서 정중신경이 눌려 손의 감각·통증·힘에 영향을 줄 수 있는 상태입니다.",
           "sources": [
             "numbness:cts",
@@ -3418,7 +3418,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "엄지·둘째·셋째 손가락 쪽 저림과 밤중 불편이 흔하며 물건을 놓치거나 엄지 힘이 줄 수 있습니다. 목·다른 신경 문제와도 구분합니다.",
           "sources": [
             "numbness:cts",
@@ -3427,7 +3427,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력·진찰과 필요 시 신경전도 등을 함께 봅니다. 검사 수치와 실제 증상·기능을 연결해 해석합니다.",
           "sources": [
             "numbness:cts",
@@ -3436,8 +3436,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "손목 자세 조절·보조기·일부 주사 또는 수술을 상태에 맞게 검토합니다. 주사의 단기 완화와 장기 효과를 구분합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "손목 자세를 조절하고, 상태에 따라 보조기나 주사, 수술을 상의합니다. 주사로 당장 불편이 줄어드는 것과 그 효과가 오래 가는지는 따로 살펴봅니다.",
           "sources": [
             "numbness:cts",
             "numbness:neuro"
@@ -3445,7 +3445,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "손목을 오래 꺾거나 강하게 쥐는 상황을 줄이고 교육받은 보조기를 사용하세요. 맞지 않는 보조기로 압박이 심해지면 상담합니다.",
           "sources": [
             "numbness:cts",
@@ -3454,8 +3454,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "통증 약만 반복하며 힘 저하를 방치하지 마세요. 주사·수술의 이득과 위험, 기저질환에 따른 주의를 확인합니다.",
+          "title": "약을 복용할 때",
+          "text": "통증 약만 반복하며 힘 저하를 방치하지 마세요. 주사·수술의 도움이 되는 점과 위험, 기저질환에 따른 주의를 확인합니다.",
           "sources": [
             "numbness:cts",
             "numbness:neuro"
@@ -3463,7 +3463,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "밤중 증상·감각·엄지 힘·손 사용의 회복을 확인합니다. 지속 감각 저하나 근육 위축은 재평가가 필요합니다.",
           "sources": [
             "numbness:cts",
@@ -3472,8 +3472,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "급격한 손·팔 약화나 마비·언어장애가 함께 생기면 손목 문제로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "급격한 손·팔 약화나 마비·말이 어눌하거나 말이 잘 나오지 않음가 함께 생기면 손목 문제로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "numbness:cts",
             "numbness:neuro"
@@ -3493,7 +3493,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "척골신경이 팔꿈치나 손목 등에서 눌리거나 손상되는 상태를 평가합니다.",
           "sources": [
             "numbness:neuro",
@@ -3502,7 +3502,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "새끼손가락·약지 쪽 저림, 손가락 벌리기·쥐기 힘의 변화를 확인합니다. 목·다발신경병증과도 구분합니다.",
           "sources": [
             "numbness:neuro",
@@ -3511,7 +3511,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "진찰과 부위별 신경전도·필요 검사를 조합합니다. 검사 자세·구간에 따라 결과가 달라 위치와 증상을 함께 해석합니다.",
           "sources": [
             "numbness:neuro",
@@ -3520,8 +3520,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "압박·자세 요인을 줄이고 기능·중증도에 따라 보조기나 전문 수술 평가를 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "팔꿈치나 손목에 가해지는 압박을 줄이고 자세를 바꿉니다. 손을 쓰는 데 얼마나 지장이 있는지 보고 보조기나 수술 상담이 필요한지 정합니다.",
           "sources": [
             "numbness:neuro",
             "numbness:neuropathy"
@@ -3529,7 +3529,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "팔꿈치를 오래 굽히거나 딱딱한 곳에 기대는 습관을 살피세요. 작업·수면 자세 조절은 본인 증상에 맞춰 시행합니다.",
           "sources": [
             "numbness:neuro",
@@ -3538,7 +3538,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "통증 완화와 신경 압박 해소는 역할이 다릅니다. 약 반응만으로 평가를 끝내지 마세요.",
           "sources": [
             "numbness:neuro",
@@ -3547,8 +3547,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "손가락 감각·손 힘·근육 위축·업무 지장을 확인합니다. 약화가 진행하면 조기 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "손가락 감각·손 힘·근육 위축·업무 지장을 확인합니다. 약화가 진행하면 예정일보다 일찍 진료받으세요.",
           "sources": [
             "numbness:neuro",
             "numbness:neuropathy"
@@ -3556,8 +3556,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "급성 광범위 약화, 목 통증과 보행/배뇨 변화 또는 뇌졸중 증상은 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "급성 광범위 약화, 목 통증과 보행/배뇨 변화 또는 뇌졸중 증상은 빠르게 진료받으세요.",
           "sources": [
             "numbness:neuro",
             "numbness:neuropathy"
@@ -3577,7 +3577,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "척추에서 나오는 신경뿌리의 자극·손상으로 팔이나 다리에 통증·저림·약화가 생길 수 있는 상태입니다.",
           "sources": [
             "numbness:neuro"
@@ -3585,7 +3585,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "방사되는 통증의 위치와 힘·감각·반사의 변화를 봅니다. 영상에서 보이는 퇴행 변화가 모든 증상을 설명하는 것은 아닙니다.",
           "sources": [
             "numbness:neuro"
@@ -3593,7 +3593,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "진찰에 따라 MRI·근전도 등을 선택합니다. 검사 시점과 대상 신경에 한계가 있어 한 결과만으로 단정하지 않습니다.",
           "sources": [
             "numbness:neuro"
@@ -3601,15 +3601,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "통증 조절·활동 조정·재활을 검토하고 진행성 약화나 특정 원인에서는 전문 치료가 필요할 수 있습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "통증을 줄이고 활동을 조절하는 방법과 재활을 상의합니다. 힘이 점점 빠지거나 특별한 원인이 있으면 전문 치료가 필요할 수 있습니다.",
           "sources": [
             "numbness:neuro"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "증상을 심하게 만드는 동작을 조절하고 교육받은 범위에서 활동하세요. 무리한 목·허리 교정은 피하고 안전한 자세를 상의합니다.",
           "sources": [
             "numbness:neuro"
@@ -3617,7 +3617,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약의 졸림·낙상·위장/신장 문제와 병용약을 확인하세요. 시술의 목적과 기대 효과도 상담합니다.",
           "sources": [
             "numbness:neuro"
@@ -3625,7 +3625,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "통증뿐 아니라 힘·감각·걷기·일상 복귀를 확인합니다. 약화가 진행하면 예약을 앞당겨 평가합니다.",
           "sources": [
             "numbness:neuro"
@@ -3633,7 +3633,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 대소변 조절 장애·회음부 감각 저하·빠른 양측 약화는 즉시 응급 평가가 필요합니다.",
           "sources": [
             "numbness:neuro"
@@ -3653,8 +3653,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "짧은 기간에 진행하는 말초신경성 약화를 확인하는 응급 감별 경로입니다. 길랭-바레증후군 등 원인이 다양합니다.",
+          "title": "어떤 상태인가요?",
+          "text": "짧은 기간에 몸에 힘이 빠지는 증상이 심해지면 서둘러 원인을 확인해야 합니다. 길랭-바레증후군처럼 말초신경에 영향을 주는 질환도 원인 중 하나입니다.",
           "sources": [
             "numbness:gbs",
             "numbness:neuro"
@@ -3662,7 +3662,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "다리에서 번지는 힘 저하·보행 곤란·감각 변화와 얼굴·삼킴·호흡·맥박 변화를 확인합니다.",
           "sources": [
             "numbness:gbs",
@@ -3671,7 +3671,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "진찰과 신경전도·뇌척수액 등 필요한 검사로 평가하지만 초기 결과가 뚜렷하지 않을 수 있습니다. 검사 때문에 이송을 늦추지 않습니다.",
           "sources": [
             "numbness:gbs",
@@ -3680,8 +3680,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "호흡·삼킴·자율신경 감시가 가능한 병원 평가를 우선하고 원인·중증도에 따라 전문 치료를 결정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "숨쉬기, 삼키기, 혈압과 맥박을 지켜볼 수 있는 병원에서 먼저 진료받는 것이 중요합니다. 원인과 증상의 정도에 맞춰 전문 치료를 정합니다.",
           "sources": [
             "numbness:gbs",
             "numbness:neuro"
@@ -3689,8 +3689,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "혼자 걷거나 운전하지 말고 증상 시작과 진행, 최근 감염·복용약을 알려주세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "혼자 걷거나 운전하지 말고 증상 시작과 진행, 최근 감염·현재 드시는 약을 알려주세요.",
           "sources": [
             "numbness:gbs",
             "numbness:neuro"
@@ -3698,7 +3698,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "일반 진통제나 스테로이드 등 남은 약을 임의로 시작하며 경과를 기다리지 마세요.",
           "sources": [
             "numbness:gbs",
@@ -3707,7 +3707,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "호흡·삼킴·보행·근력·자율신경 상태를 의료진이 연속 평가합니다. 퇴원 후 재활·재악화 대응을 확인합니다.",
           "sources": [
             "numbness:gbs",
@@ -3716,7 +3716,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "빠른 약화·숨참·목소리/삼킴 변화·실신은 즉시 응급 도움을 요청하세요.",
           "sources": [
             "numbness:gbs",
@@ -3725,7 +3725,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "이전보다 못하는 동작과 진행 속도를 알려주고 이동을 도와주세요.",
           "sources": [
             "numbness:gbs",
@@ -3830,7 +3830,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "움직임이 느려지고 경직·떨림 등이 나타날 수 있는 질환입니다. 보행·수면·기분·자율신경 증상도 함께 관리합니다.",
           "sources": [
             "tremor:pd"
@@ -3838,7 +3838,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "손동작·보폭·균형과 약효의 시간대, 변비·기립 어지럼·환시·수면 변화를 구체적으로 알려주세요.",
           "sources": [
             "nhsPD",
@@ -3847,7 +3847,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "임상 진찰과 경과가 중심이며 필요한 검사로 다른 원인을 구분합니다. 한 검사나 약 반응만으로 모든 파킨슨증을 확정하지 않습니다.",
           "sources": [
             "tremor:pd"
@@ -3855,16 +3855,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "약물·맞춤 운동/재활·생활 지원을 조합합니다. 현재 증상과 기능에 맞춰 치료 목표와 약 복용 시간표를 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "약, 몸 상태에 맞는 운동과 재활, 생활 속 도움을 함께 계획합니다. 가장 불편한 증상에 맞춰 치료 목표와 약을 먹는 시간을 정합니다.",
           "sources": [
             "tremor:pd"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "안전한 운동과 보행 보조, 집 안 낙상 예방을 상의하세요. 약 복용 시각·움직임이 좋아지거나 나빠지는 시각을 기록합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "안전한 운동과 보행 보조, 집 안 넘어짐 예방을 상의하세요. 약 복용 시각·움직임이 좋아지거나 나빠지는 시각을 기록합니다.",
           "sources": [
             "nhsPD",
             "tremor:pd"
@@ -3872,7 +3872,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약을 갑자기 중단하지 마세요. 졸음 발작·환시·충동 행동·기립 어지럼과 이상운동을 알리고 임의 증량하지 않습니다.",
           "sources": [
             "tremor:pd"
@@ -3880,7 +3880,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "보행·손 기능·낙상·약효 변동·수면·기분과 삼킴을 함께 확인합니다.",
           "sources": [
             "tremor:pd"
@@ -3888,16 +3888,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "약 중단 뒤 고열·심한 경직·의식 변화, 급성 삼킴/호흡 악화는 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "약 중단 뒤 고열·심한 경직·의식 변화, 급성 삼킴/호흡 악화는 즉시 진료받으세요.",
           "sources": [
             "tremor:pd"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
-          "text": "복약 시각과 낙상·환시·충동 변화를 함께 관찰하고 돌봄 부담도 알려주세요.",
+          "title": "가족이 도울 수 있는 일",
+          "text": "약을 먹은 시간과 낙상·환시·충동 변화를 함께 관찰하고 돌봄 부담도 알려주세요.",
           "sources": [
             "nhsPD",
             "tremor:pd"
@@ -3917,7 +3917,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "일부 약물의 영향으로 느림·경직·떨림 등 파킨슨증이 생기는 상황을 평가합니다.",
           "sources": [
             "tremor:pd",
@@ -3926,7 +3926,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "증상과 약의 시작·증량 시점을 비교합니다. 원래 파킨슨병이 함께 있거나 드러난 경우도 있어 경과를 살핍니다.",
           "sources": [
             "tremor:pd",
@@ -3935,8 +3935,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰과 전체 약 목록을 검토하고 필요 시 추가 검사를 선택합니다. 약 복용 사실만으로 원인을 확정하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰하고 현재 드시는 약을 모두 확인합니다. 필요하면 검사를 더 합니다. 어떤 약을 드신다는 이유만으로 그 약이 원인이라고 판단하지 않습니다.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -3944,8 +3944,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원래 약이 필요한 이유를 고려해 처방의와 감량·대체 가능성을 협의하고 기능 회복을 돕습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "증상과 관련된 약이 왜 필요한지부터 확인합니다. 약을 줄이거나 바꿀 수 있는지는 그 약을 처방한 의료진과 상의하고, 일상 기능을 되찾도록 돕습니다.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -3953,8 +3953,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "일반약·구토약·정신건강 약을 포함해 목록을 준비하고 낙상 위험을 줄이세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "일반약·구토약·정신건강 약을 포함해 목록을 준비하고 넘어질 위험을 줄이세요.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -3962,7 +3962,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "원인으로 의심되는 약도 스스로 끊지 마세요. 대체 약의 위험과 기저질환 악화를 함께 고려해야 합니다.",
           "sources": [
             "tremor:pd",
@@ -3971,8 +3971,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "약 조절 뒤 움직임과 원래 질환이 어떻게 변하는지 추적합니다. 지속 증상은 다른 원인도 재검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "약을 조절한 뒤 움직임과 원래 치료하던 질환이 어떻게 달라졌는지 알려주세요. 불편이 계속되면 다른 원인도 확인합니다.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -3980,7 +3980,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "고열·심한 경직·의식 변화·급격한 전신 상태 악화는 즉시 응급 평가받으세요.",
           "sources": [
             "tremor:pd",
@@ -4001,8 +4001,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "파킨슨병과 비슷한 움직임 증상에 다른 신경계 변화가 동반되는 원인들을 감별하는 경로입니다.",
+          "title": "어떤 상태인가요?",
+          "text": "움직임은 파킨슨병과 비슷해도 다른 신경 증상이 함께 나타날 수 있습니다. 어떤 원인이 있는지는 진찰과 경과를 보고 확인합니다.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -4010,7 +4010,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "이른 낙상·눈 움직임·심한 기립 어지럼·배뇨·말/삼킴·인지 변화와 약 반응을 함께 살핍니다.",
           "sources": [
             "tremor:pd",
@@ -4019,7 +4019,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "전문 진찰과 경과·필요한 영상/검사를 종합합니다. 초기에 구분이 어려워 재평가가 필요할 수 있습니다.",
           "sources": [
             "tremor:pd",
@@ -4028,8 +4028,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인별 증상 조절과 보행·의사소통·삼킴·자율신경 지원을 계획합니다. 파킨슨병 치료와 반응이 같지 않을 수 있습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인에 맞춰 증상을 줄이고 걷기, 대화, 삼키기, 혈압 등 몸의 자동 조절 문제를 돕는 방법을 정합니다. 파킨슨병과 치료 효과가 같지 않을 수 있습니다.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -4037,7 +4037,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "낙상·실신·식사 중 사레 위험을 줄일 보조와 생활 환경을 일찍 상의하세요.",
           "sources": [
             "tremor:pd",
@@ -4046,7 +4046,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약의 효과와 혈압·환시·졸림 영향을 함께 봅니다. 효과가 부족하다고 임의로 늘리지 마세요.",
           "sources": [
             "tremor:pd",
@@ -4055,7 +4055,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "낙상·자율신경·삼킴·영양·소통과 보호자 부담을 함께 확인합니다.",
           "sources": [
             "tremor:pd",
@@ -4064,8 +4064,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 호흡 곤란·반복 질식·실신·급성 마비/의식 변화는 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 숨쉬기 어려움·반복 질식·실신·급성 마비/의식 변화는 즉시 진료받으세요.",
           "sources": [
             "tremor:pd",
             "tremor:neuro"
@@ -4073,7 +4073,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "가족이 관찰한 변화와 위험 상황을 기록하고 돌봄·보조기구 지원을 상의하세요.",
           "sources": [
             "tremor:pd",
@@ -4094,7 +4094,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "근육이 비정상적으로 수축해 자세가 비틀리는 현상과 관련된 떨림을 평가합니다.",
           "sources": [
             "tremor:tremor",
@@ -4103,7 +4103,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "특정 자세·동작에서 떨림과 통증·당김이 달라질 수 있습니다. 목·손의 자세와 다른 떨림을 함께 확인합니다.",
           "sources": [
             "tremor:tremor",
@@ -4112,7 +4112,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "자세·동작별 진찰이 중요하며 필요 검사로 다른 원인을 구분합니다. 떨림 모양만으로 확정하지 않습니다.",
           "sources": [
             "tremor:tremor",
@@ -4121,8 +4121,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "기능 목표에 맞춰 재활·약물·보툴리눔독소 등 전문 치료의 적합성을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어떤 동작을 더 편하게 하고 싶은지 먼저 정합니다. 그 목표에 맞춰 재활, 약, 보툴리눔독소 같은 전문 치료가 맞는지 상의합니다.",
           "sources": [
             "tremor:tremor",
             "tremor:neuro"
@@ -4130,7 +4130,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "어떤 자세·업무에서 불편한지 기록하고 통증을 유발하는 과도한 힘주기를 줄일 방법을 상의하세요.",
           "sources": [
             "tremor:tremor",
@@ -4139,7 +4139,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "주사 치료는 부위에 따라 힘 저하·삼킴 불편 등이 생길 수 있어 예상 부작용과 연락 방법을 확인합니다.",
           "sources": [
             "tremor:tremor",
@@ -4148,7 +4148,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "자세·통증·생활 기능과 치료 효과의 지속, 약화 여부를 함께 비교합니다.",
           "sources": [
             "tremor:tremor",
@@ -4157,8 +4157,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 삼킴/호흡 불편·급격한 약화는 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 삼킴/호흡 불편·급격한 약화는 빠르게 진료받으세요.",
           "sources": [
             "tremor:tremor",
             "tremor:neuro"
@@ -4178,7 +4178,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "신경계 기능 조절의 문제로 생기는 실제 떨림을 평가합니다. 일부러 만들거나 단순히 상상하는 증상이라는 뜻은 아닙니다.",
           "sources": [
             "tremor:tremor",
@@ -4187,7 +4187,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "떨림이 상황·주의·다른 동작에 따라 달라지는 진찰 특징을 확인합니다. 다른 신경질환과 함께 있을 수도 있습니다.",
           "sources": [
             "tremor:tremor",
@@ -4196,7 +4196,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "검사가 정상이라는 이유만으로 진단하지 않고 숙련된 진찰의 양성 특징을 설명받습니다.",
           "sources": [
             "tremor:tremor",
@@ -4205,8 +4205,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "진단에 대한 이해와 기능 회복 중심 재활을 검토하고 필요 시 심리·동반 증상 치료를 조합합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "증상을 이해하고 편하게 할 수 있는 동작을 늘리는 재활을 상의합니다. 필요하면 심리 치료와 함께 있는 증상의 치료를 병행합니다.",
           "sources": [
             "tremor:tremor",
             "tremor:neuro"
@@ -4214,7 +4214,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "회복 가능한 동작과 활동을 작은 목표로 연습하세요. 증상을 증명하려고 반복 검사하거나 무리한 동작을 하기보다 계획을 따릅니다.",
           "sources": [
             "tremor:tremor",
@@ -4223,8 +4223,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "떨림만 보고 파킨슨 약·진정제를 계속 추가하지 않습니다. 기존 약의 필요성과 부작용을 함께 검토합니다.",
+          "title": "약을 복용할 때",
+          "text": "떨림이 있다는 이유만으로 파킨슨병 약이나 진정제를 계속 늘리지는 않습니다. 지금 드시는 약이 필요한지와 부작용을 함께 상의합니다.",
           "sources": [
             "tremor:tremor",
             "tremor:neuro"
@@ -4232,7 +4232,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "떨림 횟수보다 실제 활동·자신감·일상 복귀와 동반 불편을 평가합니다.",
           "sources": [
             "tremor:tremor",
@@ -4241,7 +4241,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 마비·언어/시야 변화·갑작스러운 다른 신경 증상은 기존 기능성 증상으로 단정하지 말고 평가받으세요.",
           "sources": [
             "tremor:tremor",
@@ -4262,7 +4262,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "외부 소리 없이 귀나 머리에서 소리가 느껴지는 증상입니다. 청력 변화 등과 관련될 수 있으며 불편 정도가 사람마다 다릅니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4270,7 +4270,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "소리의 좌우·박동 여부·지속·청력·수면·불안을 확인합니다. 소리 크기만으로 원인이나 위험도를 정하지 않습니다.",
           "sources": [
             "nhsTinnitus",
@@ -4279,7 +4279,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "귀 진찰과 청력 평가가 기본이며 양상에 따라 추가 검사를 선택합니다. 대칭 비박동 이명에 영상이 모두 필요한 것은 아닙니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4287,15 +4287,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 관리, 청력 지원, 상담·인지행동 접근 등으로 생활 영향을 줄이는 것이 목표입니다. 완전 소실만을 치료 성공으로 보지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "이명의 원인을 살피고, 청력을 돕는 방법이나 상담 등을 통해 잠과 일상에 미치는 불편을 줄입니다. 소리가 완전히 사라지는 것만을 목표로 삼지는 않습니다.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "큰 소음 노출을 줄이고 수면·스트레스 관리를 상의하세요. 완전한 정적보다 편안한 작은 배경 소리가 도움이 되는지 살펴봅니다.",
           "sources": [
             "nhsTinnitus",
@@ -4304,15 +4304,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "이명만을 위해 약·보충제를 계속 추가하지 마세요. 복용약의 영향과 공존 수면·기분 문제 치료를 상담합니다.",
+          "title": "약을 복용할 때",
+          "text": "이명만을 위해 약·보충제를 계속 추가하지 마세요. 현재 드시는 약의 영향과 함께 있는 수면이나 기분 문제 치료를 상담합니다.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "수면·집중·불안·청력·일상 지장을 비교하고 도움이 되는 관리 방법을 조정합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4320,8 +4320,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑작스러운 청력 저하·새 마비·심한 어지럼, 머리 외상 뒤 이명은 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑작스러운 청력 저하·새 마비·심한 어지럼, 머리 외상 뒤 이명은 빠르게 진료받으세요.",
           "sources": [
             "tinnitus:tinnitus"
           ]
@@ -4340,7 +4340,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "심장 박동과 맞춰 들리는 이명은 혈관 등 원인 평가가 필요할 수 있어 일반 이명과 구분합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4348,7 +4348,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "맥박과의 일치·좌우·시작 시점·두통·시야·청력 변화를 알려주세요.",
           "sources": [
             "nhsTinnitus",
@@ -4357,7 +4357,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "진찰과 청력·혈관/영상 검사를 양상에 맞게 선택합니다. 모든 영상이 같은 원인을 확인하는 것은 아닙니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4365,16 +4365,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인을 확인한 뒤 그에 맞는 치료를 검토합니다. 일반적인 소리 적응만으로 원인 평가를 대신하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "먼저 소리가 생기는 원인을 확인하고 그에 맞는 치료를 정합니다. 소리에 익숙해지는 방법만으로 원인 검사를 대신할 수는 없습니다.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "들리는 상황과 맥박의 관계를 기록하세요. 원인 확인을 위해 목을 세게 누르거나 위험한 자가 검사를 하지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "들리는 상황과 맥박의 관계를 기록하세요. 원인 확인을 위해 목을 세게 누르거나 위험한 검사를 스스로 하지 마세요.",
           "sources": [
             "nhsTinnitus",
             "tinnitus:tinnitus"
@@ -4382,23 +4382,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "복용약과 혈압 관련 정보를 알리고 스스로 혈압약 등을 조절하지 마세요.",
+          "title": "약을 복용할 때",
+          "text": "현재 드시는 약과 혈압 관련 정보를 알리고 스스로 혈압약 등을 조절하지 마세요.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "검사 결과 확인 시점과 악화 시 연락 방법을 정합니다. 지속·변화가 있으면 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "검사 결과 확인 시점과 악화 시 연락 방법을 정합니다. 지속·변화가 있으면 다음 진료에서 다시 살펴봅니다.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "갑작스러운 심한 두통·새 시야/언어/근력 변화·의식 저하는 즉시 응급 평가받으세요.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4418,7 +4418,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "한쪽 이명이나 양쪽이 다른 청력 저하는 원인 확인을 위해 별도로 평가합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4426,7 +4426,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어느 쪽인지·청력 변화 속도·어지럼·얼굴 감각/힘 변화와 소리의 박동 여부를 알려주세요.",
           "sources": [
             "nhsTinnitus",
@@ -4435,7 +4435,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "청력 평가 후 소견에 따라 MRI 등 검사를 고려합니다. 영상 필요성은 증상·진찰·비대칭 정도를 함께 보고 정합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4443,15 +4443,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 치료와 청력·생활 불편 지원을 함께 검토합니다. 대부분의 소견을 특정 종양으로 단정하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인에 맞는 치료와 함께 잘 듣고 생활하는 데 필요한 도움을 상의합니다. 한쪽에서 소리가 난다는 이유만으로 종양이라고 판단하지 않습니다.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "소음과 청력 보호를 상의하고 수면·소통의 불편을 알려주세요.",
           "sources": [
             "nhsTinnitus",
@@ -4460,7 +4460,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "원인 확인 없이 이명 약·보충제만 반복하지 말고 복용 중인 약을 보여주세요.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4468,7 +4468,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "청력·이명·어지럼 변화와 검사 결과를 확인합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4476,7 +4476,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "갑작스러운 청력 저하는 예약을 기다리지 말고 당일 신속히 진료받으세요. 새 마비·심한 어지럼은 응급 평가가 필요합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4496,15 +4496,15 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "갑자기 생긴 청력 저하와 이명을 신속히 확인하는 경로입니다. 단순 귀 먹먹함이나 기존 이명으로 넘기지 않습니다.",
+          "title": "어떤 상태인가요?",
+          "text": "갑자기 귀가 잘 안 들리고 이명이 생기면 서둘러 진료받으세요. 단순히 귀가 먹먹하거나 평소 이명이 심해진 것으로 넘기지 마세요.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "발생 시각·좌우·청력 변화와 어지럼·신경 증상을 함께 알려주세요.",
           "sources": [
             "nhsTinnitus",
@@ -4513,7 +4513,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "귀 진찰·청력검사와 필요 검사를 신속히 시행해 전음성·감각신경성 원인 등을 구분합니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4521,16 +4521,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "치료 시기가 중요할 수 있어 이비인후과 등 신속한 전문 평가가 우선입니다. 개별 치료 이득·위험을 확인합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "치료를 시작하는 시기가 중요할 수 있어 이비인후과 등 전문 진료를 빨리 받는 것이 먼저입니다. 어떤 치료가 도움이 될지와 위험은 진료에서 확인합니다.",
           "sources": [
             "tinnitus:tinnitus"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "증상 시작 시각과 기존 청력 자료·약 목록을 준비하세요. 자가 처치나 며칠 기다리기로 평가를 늦추지 마세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "증상이 시작된 시각과 기존 청력 자료·약 목록을 준비하세요. 자가 처치나 며칠 기다리기로 진료를 늦추지 마세요.",
           "sources": [
             "nhsTinnitus",
             "tinnitus:tinnitus"
@@ -4538,7 +4538,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "스테로이드 등은 기저질환·금기·방법을 확인한 뒤 의료진이 결정합니다. 남은 약을 임의로 시작하지 마세요.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4546,7 +4546,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "청력 변화와 치료 반응·부작용을 확인하고 필요한 후속 평가를 받습니다.",
           "sources": [
             "tinnitus:tinnitus"
@@ -4554,8 +4554,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 얼굴/팔다리 마비·복시·언어장애·심한 보행 불안은 즉시 응급 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 얼굴/팔다리 마비·물체가 두 개로 보임·말이 어눌하거나 말이 잘 나오지 않음·심한 보행 불안은 즉시 응급 평가받으세요.",
           "sources": [
             "tinnitus:tinnitus"
           ]
@@ -4574,8 +4574,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "갑자기 생긴 국소 신경 증상은 뇌졸중 등 시간에 민감한 원인을 먼저 확인합니다. 확정 진단 이전의 응급 경로입니다.",
+          "title": "어떤 상태인가요?",
+          "text": "몸 한쪽에 갑자기 힘이 빠지거나 말이 잘 나오지 않는다면, 진단을 기다리기보다 뇌졸중 같은 응급 원인이 있는지 바로 확인해야 합니다.",
           "sources": [
             "weakness:stroke",
             "weakness:neuro"
@@ -4583,7 +4583,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "얼굴·팔·다리 한쪽 힘 저하, 말·시야·균형 변화의 시작과 마지막 정상 시각을 확인합니다. 잠깐 좋아져도 평가가 필요합니다.",
           "sources": [
             "nhsStroke",
@@ -4592,7 +4592,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "응급 영상·혈관/전신 평가로 출혈과 혈관 폐색 등을 확인합니다. 외래 검사나 기록 준비 때문에 이송을 지연하지 않습니다.",
           "sources": [
             "weakness:stroke",
@@ -4601,8 +4601,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "응급 병원에서 시간·영상·병력에 따라 재관류 등 적합한 치료를 결정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "응급 병원에서 증상이 시작된 시각, 영상 검사, 병력을 보고 막힌 혈관의 혈류를 회복시키는 치료 등이 가능한지 판단합니다.",
           "sources": [
             "weakness:stroke",
             "weakness:neuro"
@@ -4610,7 +4610,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "직접 운전하지 말고 응급 도움을 요청하세요. 삼킴이 안전한지 확인되기 전에 음식·물·약을 억지로 먹이지 마세요.",
           "sources": [
             "nhsStroke",
@@ -4619,7 +4619,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "아스피린 등 남은 약을 임의로 추가하지 말고 항응고제·항혈소판제 사용과 마지막 복용 시각을 알리세요.",
           "sources": [
             "weakness:stroke",
@@ -4628,7 +4628,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "급성 치료 뒤 기능·삼킴·재활·재발 예방과 복약 계획을 확인합니다.",
           "sources": [
             "weakness:stroke",
@@ -4637,7 +4637,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 마비·말/시야 변화·의식 저하가 있으면 즉시 응급 평가받으세요. 증상 호전을 이유로 취소하지 마세요.",
           "sources": [
             "weakness:stroke",
@@ -4646,8 +4646,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
-          "text": "마지막 정상 시각과 복용약·기존 기능을 전달하고 안전한 이동을 도와주세요.",
+          "title": "가족이 도울 수 있는 일",
+          "text": "마지막 정상 시각과 현재 드시는 약·기존 기능을 전달하고 안전한 이동을 도와주세요.",
           "sources": [
             "nhsStroke",
             "weakness:stroke"
@@ -4667,7 +4667,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "척수·마미 등 척추 안 신경 문제에 의한 약화를 평가합니다. 단순 근육통과 구분이 필요합니다.",
           "sources": [
             "weakness:myelopathy",
@@ -4676,7 +4676,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "양측 손/다리 힘·정교한 동작·보행과 감각, 배뇨/배변·회음부 변화를 확인합니다.",
           "sources": [
             "weakness:myelopathy",
@@ -4685,7 +4685,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "신경 진찰과 필요한 척추 영상을 함께 평가합니다. 영상의 압박 소견과 실제 기능을 연결해 해석합니다.",
           "sources": [
             "weakness:myelopathy",
@@ -4694,8 +4694,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "진행성 또는 심한 신경 손상은 전문 평가·수술 검토가 필요할 수 있습니다. 일반 통증 치료만으로 지연하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "힘이 점점 빠지거나 신경 손상이 심하면 전문 진료와 수술 상담이 필요할 수 있습니다. 통증만 줄이는 치료로 원인 확인을 늦추지 않습니다.",
           "sources": [
             "weakness:myelopathy",
             "weakness:neuro"
@@ -4703,7 +4703,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "넘어짐과 무리한 목·허리 동작을 피하고 보행 보조를 상의하세요.",
           "sources": [
             "weakness:myelopathy",
@@ -4712,7 +4712,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "진통제 반응만으로 신경 압박이 해결됐다고 판단하지 않습니다. 약의 졸림과 낙상을 확인합니다.",
           "sources": [
             "weakness:myelopathy",
@@ -4721,8 +4721,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "힘·손 기능·보행·배뇨 변화 속도를 추적하고 악화 시 조기에 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "힘이 빠지는 속도, 손으로 물건을 다루거나 걷는 일, 소변 보는 데 변화가 있는지 알려주세요. 더 불편해지면 예정일보다 일찍 진료받으세요.",
           "sources": [
             "weakness:myelopathy",
             "weakness:neuro"
@@ -4730,7 +4730,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 대소변 장애·회음부 감각 저하·빠른 양측 약화·호흡 변화는 즉시 응급 평가받으세요.",
           "sources": [
             "weakness:myelopathy",
@@ -4751,7 +4751,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "여러 말초신경의 기능이 떨어져 손발의 감각·통증·힘·균형에 변화가 생기는 상태입니다. 원인과 침범 신경에 따라 양상이 다릅니다.",
           "sources": [
             "weakness:neuropathy",
@@ -4760,7 +4760,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "발끝부터 저리거나 화끈거림·감각 둔함·발목 힘 저하가 나타날 수 있습니다. 당뇨·음주·약물·영양·가족력을 함께 확인합니다.",
           "sources": [
             "nhsNeuropathy",
@@ -4769,8 +4769,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "혈액검사와 신경전도/근전도 등을 목적에 맞춰 선택합니다. 정상 신경전도 결과만으로 작은 신경섬유 문제를 모두 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "어떤 원인이 의심되는지에 따라 혈액 검사나 신경전도·근전도 검사를 합니다. 신경전도 검사가 정상이어도 가는 신경섬유에는 문제가 있을 수 있습니다.",
           "sources": [
             "weakness:neuropathy",
             "weakness:gbs"
@@ -4778,8 +4778,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 관리·통증 완화·발 보호·기능 유지가 목표입니다. 통증 약이 손상된 신경을 즉시 회복시키는 것은 아닙니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인을 관리하고 통증을 줄이며, 발을 보호하고 일상 기능을 유지하는 것이 목표입니다. 통증약이 손상된 신경을 바로 회복시키는 것은 아닙니다.",
           "sources": [
             "weakness:neuropathy",
             "weakness:gbs"
@@ -4787,7 +4787,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "발의 상처와 신발 안을 살피고 뜨거운 찜질로 화상 입지 않게 주의하세요. 넘어짐을 줄일 조명·보행 보조를 상의하세요.",
           "sources": [
             "nhsNeuropathy",
@@ -4796,7 +4796,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "통증 약의 졸림·부종·낙상과 신기능에 따른 적합성을 확인합니다. 비타민도 필요성과 과량 위험을 상담한 뒤 사용하세요.",
           "sources": [
             "weakness:neuropathy",
@@ -4805,8 +4805,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "통증뿐 아니라 수면·걷기·발 상처·힘과 일상 기능을 비교합니다. 원인 관리와 약의 내약성을 함께 확인합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "통증뿐 아니라 수면·걷기·발 상처·힘과 일상 기능을 비교합니다. 원인 관리와 약을 쓰면서 느끼는 불편을 함께 확인합니다.",
           "sources": [
             "weakness:neuropathy",
             "weakness:gbs"
@@ -4814,8 +4814,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "빠르게 번지는 약화·걷기 악화·호흡/삼킴 이상은 즉시 평가받으세요. 낫지 않는 발 상처도 빨리 알리세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "빠르게 번지는 약화·걷기 악화·호흡/삼킴 이상은 즉시 진료받으세요. 낫지 않는 발 상처도 빨리 알리세요.",
           "sources": [
             "weakness:neuropathy",
             "weakness:gbs"
@@ -4835,7 +4835,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "신경에서 근육으로 신호가 전달되는 부위의 문제로 힘이 쉽게 빠지는 질환 등을 평가합니다.",
           "sources": [
             "weakness:mg",
@@ -4844,8 +4844,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "눈꺼풀·복시·말/삼킴·팔다리 힘과 활동 후 악화·휴식 후 변화를 확인합니다. 호흡 불편은 꼭 알리세요.",
+          "title": "어떤 증상이 있나요?",
+          "text": "눈꺼풀·물체가 두 개로 보임·말/삼킴·팔다리 힘과 활동 후 악화·휴식 후 변화를 확인합니다. 호흡 불편은 꼭 알리세요.",
           "sources": [
             "weakness:mg",
             "weakness:neuro"
@@ -4853,8 +4853,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "항체·신경전도/특수 근전도 등 필요한 검사와 진찰을 조합합니다. 일부 음성 결과만으로 모든 유형을 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰과 함께 항체 검사나 신경전도·근전도 검사 중 필요한 것을 합니다. 일부 검사에서 이상이 없더라도 모든 종류의 질환이 없다고 볼 수는 없습니다.",
           "sources": [
             "weakness:mg",
             "weakness:neuro"
@@ -4862,8 +4862,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "증상 조절·면역치료·원인별 전문 치료를 검토하고 호흡/삼킴의 안전을 우선합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "숨쉬고 삼키는 데 문제가 없는지 먼저 확인합니다. 그다음 증상을 줄이는 약이나 면역치료 등 원인에 맞는 전문 치료를 상의합니다.",
           "sources": [
             "weakness:mg",
             "weakness:neuro"
@@ -4871,7 +4871,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "피로를 고려해 활동을 나누고 식사 중 사레·목소리 변화를 관찰하세요. 악화 시 연락 계획을 준비합니다.",
           "sources": [
             "weakness:mg",
@@ -4880,7 +4880,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "새 약·감염·수술 계획을 알리세요. 일부 약이 약화를 악화시킬 수 있어 다른 진료에서도 평가/진단 사실을 알려주세요.",
           "sources": [
             "weakness:mg",
@@ -4889,7 +4889,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "눈·말·삼킴·호흡·활동 능력과 치료 부작용을 함께 확인합니다.",
           "sources": [
             "weakness:mg",
@@ -4898,7 +4898,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "숨참·침/물을 삼키기 어려움·급격한 전신 약화는 즉시 응급 평가받으세요.",
           "sources": [
             "weakness:mg",
@@ -4907,7 +4907,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "평소와 다른 목소리·사레·호흡 변화를 알려주고 억지로 먹이거나 혼자 이동시키지 마세요.",
           "sources": [
             "weakness:mg",
@@ -4928,7 +4928,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "근육 자체의 질환·약물·대사 원인 등으로 힘이 떨어지는 상황을 평가합니다.",
           "sources": [
             "weakness:neuro"
@@ -4936,7 +4936,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "의자에서 일어나기·계단·팔 들기 등 몸통 가까운 근육의 변화와 근육통·발진·소변색을 확인합니다.",
           "sources": [
             "weakness:neuro"
@@ -4944,7 +4944,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "근육 효소·대사 검사·근전도·영상·필요 시 전문 검사를 선택합니다. 혈액 수치 하나만으로 원인과 중증도를 확정하지 않습니다.",
           "sources": [
             "weakness:neuro"
@@ -4952,15 +4952,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 교정과 안전한 활동·재활, 필요한 전문 치료를 계획합니다. 모든 근병증이 같은 약으로 치료되지는 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "근육이 약해진 원인을 치료하고 안전하게 움직이는 방법과 재활을 정합니다. 원인에 따라 필요한 전문 치료가 다릅니다.",
           "sources": [
             "weakness:neuro"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "증상 시작과 운동·감염·약물 변경의 관계를 기록하세요. 원인 확인 전 무리한 운동으로 회복을 시험하지 마세요.",
           "sources": [
             "weakness:neuro"
@@ -4968,7 +4968,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "지질약·스테로이드·일반약·보충제를 모두 알리세요. 의심 약도 중단 여부는 담당의와 상의합니다.",
           "sources": [
             "weakness:neuro"
@@ -4976,7 +4976,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "실제 동작·힘·통증·검사 변화와 부작용을 함께 비교합니다.",
           "sources": [
             "weakness:neuro"
@@ -4984,8 +4984,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "검은 소변·심한 근육통/약화·호흡/삼킴 불편은 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "검은 소변·심한 근육통/약화·호흡/삼킴 불편은 즉시 진료받으세요.",
           "sources": [
             "weakness:neuro"
           ]
@@ -5004,15 +5004,15 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "진행성 약화의 원인으로 운동신경원질환 등 여러 상태를 감별하는 경로입니다. 선택만으로 특정 질환 확정을 뜻하지 않습니다.",
+          "title": "어떤 상태인가요?",
+          "text": "몸의 힘이 점점 빠지는 데에는 여러 원인이 있습니다. 운동신경에 영향을 주는 질환도 원인 중 하나이며, 증상만으로 특정 병을 정할 수는 없습니다.",
           "sources": [
             "weakness:neuro"
           ]
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어디서 시작해 어떻게 번지는지와 근육 위축·경련·말/삼킴·호흡을 확인합니다.",
           "sources": [
             "weakness:neuro"
@@ -5020,7 +5020,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "전문 진찰·근전도와 필요한 영상/혈액검사로 다른 원인을 구분합니다. 단일 소견·검사로 확정하지 않습니다.",
           "sources": [
             "weakness:neuro"
@@ -5028,15 +5028,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 확인과 함께 기능·영양·호흡·소통 지원을 일찍 검토합니다. 치료·지원 선택은 전문팀과 상의합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인을 확인하면서 움직임, 식사와 영양, 숨쉬기, 의사소통을 도울 방법도 일찍 상의합니다. 치료와 지원은 전문 의료진과 정합니다.",
           "sources": [
             "weakness:neuro"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "낙상·식사·피로 문제를 줄일 보조기구와 환경 조절을 상의하고 기능 변화를 기록하세요.",
           "sources": [
             "weakness:neuro"
@@ -5044,7 +5044,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "원인이 확인된 뒤 질환별 치료의 적합성과 감시를 결정합니다. 온라인 약·보충제를 임의로 추가하지 마세요.",
           "sources": [
             "weakness:neuro"
@@ -5052,15 +5052,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "힘뿐 아니라 체중·삼킴·호흡·의사소통·돌봄 부담을 추적합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "힘이 달라지는 것뿐 아니라 체중, 음식 삼키기, 숨쉬기, 대화, 가족이 돌보는 데 어려움이 있는지도 알려주세요.",
           "sources": [
             "weakness:neuro"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "휴식 시 숨참·삼킴 불가·반복 질식·급격한 약화는 즉시 응급 평가받으세요.",
           "sources": [
             "weakness:neuro"
@@ -5068,7 +5068,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "관찰한 변화와 필요한 도움을 구체적으로 전달하고 돌봄·소통 지원을 함께 준비하세요.",
           "sources": [
             "weakness:neuro"
@@ -5088,7 +5088,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "서 있기·통증·긴장 등 상황에서 혈압·맥박 조절 반응으로 잠깐 의식을 잃을 수 있습니다. 심장성 원인 등과 구분합니다.",
           "sources": [
             "syncope:syncope"
@@ -5096,7 +5096,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "직전의 식은땀·메스꺼움·시야 흐림, 유발 상황과 회복 과정을 확인합니다. 목격자의 설명이 도움이 됩니다.",
           "sources": [
             "nhsSyncope",
@@ -5105,7 +5105,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력·진찰·심전도 등으로 위험 원인을 확인합니다. 잠깐 떨렸다는 이유만으로 뇌전증으로 단정하지 않습니다.",
           "sources": [
             "syncope:syncope"
@@ -5113,16 +5113,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "유발 상황 회피·전조 대응과 재발 관리가 중심입니다. 필요 시 추가 검사와 치료를 개별 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "실신이 생기는 상황을 줄이고, 쓰러지기 전에 느끼는 증상에 어떻게 대처할지 배웁니다. 추가 검사나 치료가 필요한지는 상태에 맞춰 정합니다.",
           "sources": [
             "syncope:syncope"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "전조가 느껴지면 넘어지기 전에 안전하게 앉거나 누우세요. 수분·염분과 긴장 대응 동작은 몸 상태에 맞춰 교육받습니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "전조가 느껴지면 넘어지기 전에 안전하게 앉거나 누우세요. 물과 소금 섭취량과 긴장 대응 동작은 몸 상태에 맞춰 교육받습니다.",
           "sources": [
             "nhsSyncope",
             "syncope:syncope"
@@ -5130,7 +5130,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "혈압을 떨어뜨릴 수 있는 약 등을 알리고 스스로 중단하지 마세요. 약물치료가 모든 반사성 실신에 필요한 것은 아닙니다.",
           "sources": [
             "syncope:syncope"
@@ -5138,7 +5138,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "의식 소실 전후 상황·빈도·부상·회복 시간을 기록합니다. 운전·위험 작업 재개는 의료진과 확인합니다.",
           "sources": [
             "syncope:syncope"
@@ -5146,8 +5146,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "운동 중/누워 있을 때 실신, 흉통·두근거림·호흡곤란·회복 지연은 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "운동 중/누워 있을 때 실신, 흉통·두근거림·숨쉬기 어려움·회복 지연은 즉시 진료받으세요.",
           "sources": [
             "syncope:syncope"
           ]
@@ -5166,7 +5166,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "일어설 때 혈압 조절이 충분하지 않아 어지럼·눈앞이 흐려짐·실신이 생길 수 있습니다. 탈수·약물·자율신경 원인 등을 구분합니다.",
           "sources": [
             "syncope:aha",
@@ -5175,7 +5175,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "누웠다 일어날 때, 식후·더운 환경 등 증상이 생기는 상황을 확인합니다. 넘어짐·실신·두근거림을 함께 알려주세요.",
           "sources": [
             "syncope:aha",
@@ -5184,8 +5184,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "정해진 자세와 시간에 혈압·맥박을 측정하고 증상과 비교합니다. 한 번 정상 측정으로 반복 증상을 모두 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "정해진 자세와 시간에 혈압과 맥박을 재고, 그때 어떤 증상이 있었는지 함께 살펴봅니다. 한 번 정상이어도 반복되는 증상의 원인이 없다고 볼 수는 없습니다.",
           "sources": [
             "syncope:aha",
             "syncope:syncope"
@@ -5193,8 +5193,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "유발 요인·복용약을 검토하고 자세 조절 등으로 안전을 확보합니다. 필요 시 압박 의류나 약물의 적합성을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어떤 때 어지러운지와 현재 드시는 약을 살펴봅니다. 안전하게 자세를 바꾸는 방법부터 익히고, 압박 의류나 약이 도움이 될지 상의합니다.",
           "sources": [
             "syncope:aha",
             "syncope:syncope"
@@ -5202,8 +5202,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "일어나기 전 잠시 앉아 상태를 확인하고 지지물을 사용하세요. 수분·염분 조절은 심장·신장 질환과 누운 자세의 고혈압을 고려해 개별로 정합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "일어나기 전 잠시 앉아 상태를 확인하고 손잡이나 단단한 곳을 잡으세요. 물과 소금 섭취량 조절은 심장·신장 질환과 누운 자세의 고혈압을 고려해 몸 상태에 맞춰 정합니다.",
           "sources": [
             "syncope:aha",
             "syncope:syncope"
@@ -5211,7 +5211,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "혈압약·이뇨제·기타 약을 스스로 끊지 마세요. 새 약 이후 악화, 누워 있을 때 두통·혈압 상승을 담당의에게 알리세요.",
           "sources": [
             "syncope:aha",
@@ -5220,7 +5220,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "증상이 생긴 시각·자세·혈압/맥박·낙상을 기록합니다. 수치뿐 아니라 실제 활동과 실신 감소를 함께 평가합니다.",
           "sources": [
             "syncope:aha",
@@ -5229,8 +5229,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "흉통·호흡곤란·운동 중 실신·회복 지연·새 마비는 단순 기립성저혈압으로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "흉통·숨쉬기 어려움·운동 중 실신·회복 지연·새 마비는 단순 기립성저혈압으로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "syncope:aha",
             "syncope:syncope"
@@ -5250,15 +5250,15 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "심장 리듬·구조 문제 등 위험한 원인을 먼저 확인하는 실신 평가 경로입니다.",
+          "title": "어떤 상태인가요?",
+          "text": "쓰러져 의식을 잃었을 때는 심장박동이나 심장 구조에 문제가 있는지 먼저 살펴봐야 하는 경우가 있습니다.",
           "sources": [
             "syncope:syncope"
           ]
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "운동 중·누운 상태 실신, 갑작스러운 두근거림·흉통, 심장질환·급사 가족력을 알려주세요.",
           "sources": [
             "nhsSyncope",
@@ -5267,23 +5267,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "심전도와 상황에 맞는 심장·리듬 검사를 선택합니다. 짧은 검사에 이상이 없더라도 드문 부정맥이 모두 배제되지는 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "심전도와 필요할 때 심장이나 심장박동을 보는 검사를 합니다. 짧게 검사했을 때 정상이어도 가끔만 생기는 부정맥은 놓칠 수 있습니다.",
           "sources": [
             "syncope:syncope"
           ]
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "위험도에 따라 즉시 의뢰·감시·원인 치료가 필요합니다. 일반 어지럼 치료로 대신하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "위험에 따라 즉시 병원 진료, 심장 상태 관찰, 원인 치료가 필요할 수 있습니다. 일반 어지럼 치료로 대신할 수는 없습니다.",
           "sources": [
             "syncope:syncope"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "원인이 확인될 때까지 혼자 운전·높은 곳 작업 등 위험 활동을 피하고 의료진 안내를 받으세요.",
           "sources": [
             "nhsSyncope",
@@ -5292,7 +5292,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "부정맥·혈압에 영향을 주는 모든 약·보충제를 알리세요. 복용량을 임의로 조절하지 마세요.",
           "sources": [
             "syncope:syncope"
@@ -5300,7 +5300,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "검사 결과 확인과 실신 재발 시 대응 계획을 분명하게 정합니다.",
           "sources": [
             "syncope:syncope"
@@ -5308,7 +5308,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "현재 흉통·숨참·의식 소실·심한 두근거림이 있으면 즉시 응급 도움을 요청하세요.",
           "sources": [
             "syncope:syncope"
@@ -5328,7 +5328,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "서 있을 때 불편과 맥박 변화가 반복되는 원인 중 POTS 등 기립불내성을 평가합니다.",
           "sources": [
             "syncope:pots",
@@ -5337,7 +5337,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "서 있을 때 두근거림·어지럼·피로가 나타나는지, 지속 기간과 일상 지장을 확인합니다. 탈수·빈혈·약물 등도 구분합니다.",
           "sources": [
             "syncope:pots",
@@ -5346,7 +5346,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "정해진 자세·시간의 혈압/맥박과 증상, 연령에 맞는 기준을 함께 평가합니다. 스마트워치 맥박 하나만으로 확정하지 않습니다.",
           "sources": [
             "syncope:pots",
@@ -5355,8 +5355,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인과 생활 영향을 확인하고 점진적인 활동·압박 의류·경우에 따른 약물의 적합성을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "어떤 자세와 활동에서 불편한지 확인합니다. 활동을 조금씩 늘리는 계획, 압박 의류나 약이 몸 상태에 맞는지 상의합니다.",
           "sources": [
             "syncope:pots",
             "syncope:syncope"
@@ -5364,8 +5364,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "증상이 생기는 자세·활동과 회복 상황을 기록하세요. 수분·염분·운동 계획은 심장/신장 상태 등을 고려해 개별로 정합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "증상이 생기는 자세·활동과 회복 상황을 기록하세요. 물과 소금 섭취량·운동 계획은 심장/신장 상태 등을 고려해 몸 상태에 맞춰 정합니다.",
           "sources": [
             "syncope:pots",
             "syncope:syncope"
@@ -5373,7 +5373,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "맥박·혈압 약은 사용 목적과 부작용을 확인하고 임의 복용하지 마세요. 현재 약으로 증상이 악화되는지도 상담합니다.",
           "sources": [
             "syncope:pots",
@@ -5382,8 +5382,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "맥박 수치만 아니라 서 있기·학교/직장 활동·실신·부작용을 함께 추적합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "맥박 수치뿐 아니라 얼마나 오래 서 있을 수 있는지, 학교나 직장 생활, 실신이나 치료 중 불편이 있었는지도 알려주세요.",
           "sources": [
             "syncope:pots",
             "syncope:syncope"
@@ -5391,8 +5391,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "운동 중 실신·흉통·호흡곤란·회복 지연은 기립불내성으로 단정하지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "운동 중 실신·흉통·숨쉬기 어려움·회복 지연은 기립불내성으로 단정하지 말고 즉시 진료받으세요.",
           "sources": [
             "syncope:pots",
             "syncope:syncope"
@@ -5412,7 +5412,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "급성 원인이 뚜렷하지 않은 첫 발작을 평가합니다. 한 번의 발작이 곧바로 뇌전증 확정을 뜻하지는 않습니다.",
           "sources": [
             "seizure:epilepsy",
@@ -5421,7 +5421,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "시작 전 느낌·의식·움직임·회복 시간과 수면·약·음주를 확인합니다. 안전하게 확보된 목격 설명이 도움이 됩니다.",
           "sources": [
             "nhsEpilepsy",
@@ -5430,8 +5430,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "뇌파·영상 등은 병력과 함께 해석합니다. 정상 뇌파가 뇌전증을 배제하지 않으며 이상 한 가지로 모든 사건을 설명하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "뇌파나 영상 결과를 발작이 있었을 때의 상황과 함께 살펴봅니다. 뇌파가 정상이어도 뇌전증이 있을 수 있고, 이상 하나만으로 모든 증상을 설명할 수는 없습니다.",
           "sources": [
             "seizure:epilepsy",
             "seizure:syncope"
@@ -5439,8 +5439,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "재발 위험·검사·개인 상황에 따라 약 시작 여부를 상의합니다. 원인·발작 분류가 치료 선택에 중요합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "발작이 다시 생길 가능성과 검사 결과, 생활 여건을 보고 약을 시작할지 상의합니다. 발작의 원인과 종류에 따라 치료가 달라집니다.",
           "sources": [
             "seizure:epilepsy",
             "seizure:syncope"
@@ -5448,7 +5448,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "평가 중에는 운전·혼자 수영·고소 작업·불과 기계 사용의 안전을 의료진과 상의하세요. 수면을 규칙적으로 유지합니다.",
           "sources": [
             "nhsEpilepsy",
@@ -5457,7 +5457,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "복용 중인 약과 갑작스러운 중단·음주 변화를 알리세요. 항발작약은 임의 시작·증량·중단하지 않습니다.",
           "sources": [
             "seizure:epilepsy",
@@ -5466,7 +5466,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "추가 사건·검사 결과·약 부작용과 안전 계획을 확인합니다. 다음 발작 때 연락/응급 대응 방법을 정합니다.",
           "sources": [
             "seizure:epilepsy",
@@ -5475,7 +5475,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "발작이 5분 이상 지속되거나 회복 없이 반복, 호흡 이상·심한 부상이 있으면 즉시 응급 도움을 요청하세요.",
           "sources": [
             "seizure:epilepsy",
@@ -5484,7 +5484,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "주변 위험물을 치우고 시간을 재며 억지로 붙잡거나 입에 물건을 넣지 마세요. 개별 응급 계획을 교육받으세요.",
           "sources": [
             "nhsEpilepsy",
@@ -5505,7 +5505,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "급성 뇌질환·대사 변화·약물 등과 관련해 생긴 발작을 평가합니다. 장기 뇌전증과 치료 계획이 같지 않을 수 있습니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5513,7 +5513,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "급성 감염·뇌손상·전해질/혈당 문제·약물/금단 등 관련 상황과 발작 전후 상태를 확인합니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5521,7 +5521,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "원인을 찾기 위한 응급 검사·뇌파·영상을 선택합니다. 검사 결과와 발작 시점의 관계를 함께 해석합니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5529,15 +5529,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "급성 원인 치료와 발작 조절이 우선입니다. 장기 약물 유지 여부는 원인·회복·재발 위험에 따라 재평가합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "갑자기 발작을 일으킨 원인을 치료하고 발작을 조절하는 것이 먼저입니다. 약을 오래 쓸지는 원인, 회복 상태, 다시 생길 위험을 보고 정합니다.",
           "sources": [
             "seizure:epilepsy"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "운전·목욕·높은 곳 등 안전을 확인하고 급성 질환 치료·재진 계획을 따르세요.",
           "sources": [
             "seizure:epilepsy"
@@ -5545,7 +5545,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "항발작약을 계속 먹을 기간과 중단 계획을 담당의와 확인합니다. 스스로 끊거나 다른 약을 추가하지 마세요.",
           "sources": [
             "seizure:epilepsy"
@@ -5553,7 +5553,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "원인 회복·추가 발작·인지/기능·부작용을 확인하고 장기 치료 필요성을 다시 논의합니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5561,7 +5561,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "5분 이상 발작·회복 없이 반복·호흡 이상·새 마비/의식 저하는 즉시 응급 평가가 필요합니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5569,7 +5569,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "안전을 확보하고 발작 시간·회복 과정을 알려주세요. 억지로 붙잡거나 입에 물건을 넣지 않습니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5589,8 +5589,8 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "뇌전증 발작은 시작과 증상에 따라 분류하며 원인이 불명확한 단계도 있습니다. 분류는 약물과 안전 계획을 정하는 자료입니다.",
+          "title": "어떤 상태인가요?",
+          "text": "발작이 어떻게 시작됐고 어떤 증상이 있었는지에 따라 치료와 안전 계획이 달라집니다. 처음부터 발작의 종류와 원인이 모두 분명하지는 않을 수 있습니다.",
           "sources": [
             "seizure:seizureClass",
             "seizure:epilepsy"
@@ -5598,7 +5598,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "국소·전신 여부와 의식·행동·움직임의 순서, 회복 상태를 살핍니다. 모든 발작이 전신 경련으로 나타나는 것은 아닙니다.",
           "sources": [
             "nhsEpilepsy",
@@ -5607,8 +5607,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "뇌파·영상·병력을 조합하고 필요하면 반복/비디오 뇌파를 검토합니다. 정상 뇌파로 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "발작이 있었을 때의 상황과 뇌파·영상 결과를 함께 살펴봅니다. 필요하면 뇌파를 다시 검사하거나 영상과 함께 기록합니다. 뇌파가 정상이어도 뇌전증이 있을 수 있습니다.",
           "sources": [
             "seizure:seizureClass",
             "seizure:epilepsy"
@@ -5616,8 +5616,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "발작 분류·동반질환·임신 가능성과 선호에 맞춰 치료합니다. 분류가 불명확하면 적합성을 추가 확인합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "발작의 종류, 함께 앓는 질환, 임신 가능성과 본인의 선호를 고려해 치료를 정합니다. 발작의 종류가 뚜렷하지 않으면 치료가 맞는지 더 확인합니다.",
           "sources": [
             "seizure:seizureClass",
             "seizure:epilepsy"
@@ -5625,8 +5625,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "복약 시각과 발작을 기록하고 충분한 수면을 돕습니다. 운전·수영·목욕·직업 활동은 개별 안전 계획을 확인하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "약을 먹은 시간과 발작을 기록하고 충분한 수면을 돕습니다. 운전·수영·목욕·직업 활동은 개별 안전 계획을 확인하세요.",
           "sources": [
             "nhsEpilepsy",
             "seizure:seizureClass"
@@ -5634,7 +5634,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약을 임의로 중단하지 말고 발진·심한 졸림·기분 변화·임신 계획을 알리세요. 피임약 등 상호작용과 복용 누락 대응도 상담합니다.",
           "sources": [
             "seizure:seizureClass",
@@ -5643,7 +5643,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "발작 빈도와 생활 기능·부작용·순응도·안전 문제를 함께 봅니다. 발작이 없어도 변경은 담당의와 상의합니다.",
           "sources": [
             "seizure:seizureClass",
@@ -5652,7 +5652,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "5분 이상 지속·회복 없이 반복·호흡 이상·큰 부상은 즉시 응급 도움을 요청하세요. 개별 구제약은 교육받은 경우 계획대로 사용합니다.",
           "sources": [
             "seizure:seizureClass",
@@ -5661,7 +5661,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "시간을 재고 주변을 안전하게 하며 억지로 붙잡거나 입에 물건을 넣지 마세요. 응급 계획을 함께 익히세요.",
           "sources": [
             "nhsEpilepsy",
@@ -5682,7 +5682,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "뇌전증성 방전과 다른 기전의 기능성 발작을 평가합니다. 실제 증상이며 일부러 만드는 행동이라는 뜻은 아닙니다.",
           "sources": [
             "seizure:functionalSeizure"
@@ -5690,7 +5690,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "발작 양상과 유발 상황·회복을 확인합니다. 뇌전증이나 다른 실신 원인이 함께 있는지도 평가합니다.",
           "sources": [
             "seizure:functionalSeizure"
@@ -5698,7 +5698,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "병력·목격 자료·필요 시 전형적 사건의 비디오 뇌파 등으로 확인합니다. 모습 하나만으로 단정하지 않습니다.",
           "sources": [
             "seizure:functionalSeizure"
@@ -5706,15 +5706,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "진단을 이해하고 기능 회복·심리적 치료와 공존 질환 관리를 검토합니다. 치료 목표는 발작뿐 아니라 생활 회복입니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "증상을 이해하고 일상 기능을 되찾는 연습, 심리 치료, 함께 있는 질환의 관리를 상의합니다. 발작 횟수와 함께 생활이 나아지는지도 살핍니다.",
           "sources": [
             "seizure:functionalSeizure"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "의료진과 발작 시 안전 계획을 세우고 활동을 점진적으로 회복하세요. 증상을 비난하거나 숨기지 마세요.",
           "sources": [
             "seizure:functionalSeizure"
@@ -5722,15 +5722,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "동반 뇌전증 등 다른 적응증이 없다면 항발작약의 필요성을 재검토합니다. 기존 약 감량은 반드시 담당의 계획으로 진행합니다.",
+          "title": "약을 복용할 때",
+          "text": "뇌전증처럼 발작약이 필요한 다른 이유가 있는지 확인합니다. 약을 줄여야 할 때는 반드시 담당의와 계획을 정하고 따르세요.",
           "sources": [
             "seizure:functionalSeizure"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "사건 빈도·부상·일상 복귀·공존 증상과 치료 접근성을 확인합니다.",
           "sources": [
             "seizure:functionalSeizure"
@@ -5738,7 +5738,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 양상·호흡 이상·심한 부상·지속되는 의식 변화는 기존 진단으로 단정하지 말고 응급 평가받으세요.",
           "sources": [
             "seizure:functionalSeizure"
@@ -5746,8 +5746,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
-          "text": "비난하지 말고 안전을 확보하세요. 개별 대응 계획을 따르되 판단이 불확실한 응급 상황의 평가를 늦추지 마세요.",
+          "title": "가족이 도울 수 있는 일",
+          "text": "비난하지 말고 안전을 확보하세요. 개별 대응 계획을 따르되 판단이 불확실한 응급 상황의 진료를 늦추지 마세요.",
           "sources": [
             "seizure:functionalSeizure"
           ]
@@ -5766,16 +5766,16 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
-          "text": "오래 지속되거나 회복 없이 반복되는 발작은 응급 평가 경로입니다. 집에서 앱으로 확정·배제하는 상태가 아닙니다.",
+          "title": "어떤 상태인가요?",
+          "text": "발작이 오래 지속되거나 의식이 돌아오기 전에 다시 발작하면 응급 진료가 필요합니다.",
           "sources": [
             "seizure:epilepsy"
           ]
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "시작 시각·지속시간·발작 사이 회복 여부와 호흡을 확인합니다. 경련이 멈춰도 의식이 돌아오지 않으면 알리세요.",
+          "title": "어떤 증상이 있나요?",
+          "text": "증상이 시작된 시각·지속시간·발작 사이 회복 여부와 호흡을 확인합니다. 경련이 멈춰도 의식이 돌아오지 않으면 알리세요.",
           "sources": [
             "nhsEpilepsy",
             "seizure:epilepsy"
@@ -5783,7 +5783,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "응급 현장에서 원인과 뇌 활동·전신 상태를 평가합니다. 외래 검사나 촬영 준비 때문에 도움 요청을 지연하지 않습니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5791,15 +5791,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "신속한 응급 치료와 원인 평가가 우선입니다. 개별 구제약 계획이 있다면 교육받은 보호자가 그 계획을 따릅니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "응급 치료와 원인 확인이 먼저입니다. 응급약을 쓰는 개인 계획을 받았다면 사용법을 배운 보호자가 그 계획을 따릅니다.",
           "sources": [
             "seizure:epilepsy"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "위험물을 치우고 머리를 보호하며 시간을 재세요. 억지로 팔다리를 붙잡거나 입에 물건·음식·물을 넣지 마세요.",
           "sources": [
             "nhsEpilepsy",
@@ -5808,7 +5808,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "구제약은 대상·투여 방법·추가 투여·호출 기준을 사전에 교육받은 경우에만 계획대로 사용합니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5816,7 +5816,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "응급 치료 뒤 원인·약 조절·재발 대응과 보호자 교육을 확인합니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5824,7 +5824,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "경련이 5분 이상이거나 회복 없이 반복되면 즉시 응급 도움을 요청하세요. 호흡 이상·부상·불확실한 상황도 신속히 알립니다.",
           "sources": [
             "seizure:epilepsy"
@@ -5832,7 +5832,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "촬영보다 안전·시간 확인·응급 연락을 우선하고 처방약 목록을 전달하세요.",
           "sources": [
             "nhsEpilepsy",
@@ -5853,7 +5853,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "뇌척수액 순환 문제와 관련해 보행·인지·배뇨 변화가 나타날 수 있는 상태를 평가합니다. 모든 증상이 동시에 있어야 하는 것은 아닙니다.",
           "sources": [
             "gait:nph"
@@ -5861,7 +5861,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "걸음 시작이 어렵거나 짧은 보폭·균형 저하, 생각·소변 조절의 변화를 함께 살핍니다.",
           "sources": [
             "gait:nph"
@@ -5869,39 +5869,39 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰과 뇌영상, 필요 시 뇌척수액 배액 전후 기능 평가를 조합합니다. 배액 검사 한 번이 음성이어도 가능성을 완전히 배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰과 뇌 영상을 보고, 필요하면 뇌척수액을 일부 빼기 전후에 걷기나 일상 기능이 달라지는지 확인합니다. 한 번 검사에서 차이가 없어도 가능성이 완전히 없어지는 것은 아닙니다.",
           "sources": [
             "gait:nph"
           ]
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "적합한 경우 수술적 치료의 이득과 위험을 전문팀이 평가합니다. 영상에서 뇌실이 커 보인다는 이유만으로 수술을 정하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "수술을 고려할 수 있는 경우 전문 의료진이 도움이 되는 점과 위험을 살펴봅니다. 뇌 영상에서 뇌실이 커 보이는 것만으로 수술을 정하지는 않습니다.",
           "sources": [
             "gait:nph"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "낙상 위험을 줄이고 안전한 보행 보조를 사용하세요. 치료 전후 비교를 위해 같은 환경의 걷기·일상 기능 변화를 기록합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "넘어질 위험을 줄이고 안전한 보행 보조를 사용하세요. 치료 전후 비교를 위해 같은 환경의 걷기·일상 기능 변화를 기록합니다.",
           "sources": [
             "gait:nph"
           ]
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "약으로 모든 원인을 해결할 수 있는 상태는 아닙니다. 배액 검사·수술 전 항응고제 등 복용약을 알리고 임의 조절하지 마세요.",
+          "title": "약을 복용할 때",
+          "text": "약으로 모든 원인을 해결할 수 있는 상태는 아닙니다. 배액 검사·수술 전 항응고제 등 현재 드시는 약을 알리고 임의 조절하지 마세요.",
           "sources": [
             "gait:nph"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "보행 속도·균형·인지·배뇨·낙상을 함께 확인합니다. 시술/수술 후에도 동반 원인의 영향을 평가합니다.",
           "sources": [
             "gait:nph"
@@ -5909,15 +5909,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑자기 걷지 못함·의식 변화·새 마비, 시술/수술 후 발열·심한 두통은 신속히 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 걷지 못함·의식 변화·새 마비, 시술/수술 후 발열·심한 두통은 빠르게 진료받으세요.",
           "sources": [
             "gait:nph"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "기존 보행과 인지 상태를 알려주고 이동·화장실 동선의 안전을 도와주세요.",
           "sources": [
             "gait:nph"
@@ -5937,7 +5937,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "움직임이 느려지고 경직·떨림 등이 나타날 수 있는 질환입니다. 보행·수면·기분·자율신경 증상도 함께 관리합니다.",
           "sources": [
             "gait:pd"
@@ -5945,7 +5945,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "손동작·보폭·균형과 약효의 시간대, 변비·기립 어지럼·환시·수면 변화를 구체적으로 알려주세요.",
           "sources": [
             "nhsPD",
@@ -5954,7 +5954,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "임상 진찰과 경과가 중심이며 필요한 검사로 다른 원인을 구분합니다. 한 검사나 약 반응만으로 모든 파킨슨증을 확정하지 않습니다.",
           "sources": [
             "gait:pd"
@@ -5962,16 +5962,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "약물·맞춤 운동/재활·생활 지원을 조합합니다. 현재 증상과 기능에 맞춰 치료 목표와 약 복용 시간표를 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "약, 몸 상태에 맞는 운동과 재활, 생활 속 도움을 함께 계획합니다. 가장 불편한 증상에 맞춰 치료 목표와 약을 먹는 시간을 정합니다.",
           "sources": [
             "gait:pd"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "안전한 운동과 보행 보조, 집 안 낙상 예방을 상의하세요. 약 복용 시각·움직임이 좋아지거나 나빠지는 시각을 기록합니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "안전한 운동과 보행 보조, 집 안 넘어짐 예방을 상의하세요. 약 복용 시각·움직임이 좋아지거나 나빠지는 시각을 기록합니다.",
           "sources": [
             "nhsPD",
             "gait:pd"
@@ -5979,7 +5979,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "약을 갑자기 중단하지 마세요. 졸음 발작·환시·충동 행동·기립 어지럼과 이상운동을 알리고 임의 증량하지 않습니다.",
           "sources": [
             "gait:pd"
@@ -5987,7 +5987,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "보행·손 기능·낙상·약효 변동·수면·기분과 삼킴을 함께 확인합니다.",
           "sources": [
             "gait:pd"
@@ -5995,16 +5995,16 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "약 중단 뒤 고열·심한 경직·의식 변화, 급성 삼킴/호흡 악화는 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "약 중단 뒤 고열·심한 경직·의식 변화, 급성 삼킴/호흡 악화는 즉시 진료받으세요.",
           "sources": [
             "gait:pd"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
-          "text": "복약 시각과 낙상·환시·충동 변화를 함께 관찰하고 돌봄 부담도 알려주세요.",
+          "title": "가족이 도울 수 있는 일",
+          "text": "약을 먹은 시간과 낙상·환시·충동 변화를 함께 관찰하고 돌봄 부담도 알려주세요.",
           "sources": [
             "nhsPD",
             "gait:pd"
@@ -6024,7 +6024,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "다리의 위치 감각이 떨어져 균형과 보행이 불안한 상태를 평가합니다. 말초신경·척수 등 원인을 구분합니다.",
           "sources": [
             "gait:neuropathy",
@@ -6033,7 +6033,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어두운 곳·눈을 감을 때의 불안과 저림·감각 변화, 낙상 상황을 알려주세요.",
           "sources": [
             "gait:neuropathy",
@@ -6042,7 +6042,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "감각·반사·균형 진찰과 필요한 신경전도·혈액·영상을 선택합니다. 보행 모양 하나만으로 원인을 정하지 않습니다.",
           "sources": [
             "gait:neuropathy",
@@ -6051,8 +6051,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "원인 치료와 균형 재활·보행 보조·낙상 예방을 조합합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "원인을 치료하면서 균형 연습, 걷기 보조, 넘어짐을 줄이는 방법을 함께 배웁니다.",
           "sources": [
             "gait:neuropathy",
             "gait:neuro"
@@ -6060,7 +6060,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "조명·손잡이·맞는 신발을 준비하고 위험한 바닥에서 혼자 걷지 마세요. 발의 상처·화상도 살피세요.",
           "sources": [
             "gait:neuropathy",
@@ -6069,8 +6069,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "균형을 악화시키는 약의 영향과 신경병증 원인 약을 검토합니다. 임의 중단하지 마세요.",
+          "title": "약을 복용할 때",
+          "text": "지금 드시는 약 중 균형에 영향을 주거나 신경 문제와 관련된 것이 있는지 확인합니다. 약은 스스로 끊지 마세요.",
           "sources": [
             "gait:neuropathy",
             "gait:neuro"
@@ -6078,7 +6078,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "낙상·어두운 곳 보행·감각·일상 기능과 재활 반응을 확인합니다.",
           "sources": [
             "gait:neuropathy",
@@ -6087,8 +6087,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑자기 걷지 못하거나 새 마비·배뇨 장애·호흡/삼킴 변화가 생기면 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑자기 걷지 못하거나 새 마비·배뇨 장애·호흡/삼킴 변화가 생기면 즉시 진료받으세요.",
           "sources": [
             "gait:neuropathy",
             "gait:neuro"
@@ -6108,7 +6108,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "소뇌 등 움직임의 조절과 관련된 원인으로 균형·협응이 떨어지는 상태를 평가합니다.",
           "sources": [
             "gait:neuro",
@@ -6117,7 +6117,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "휘청거림·손동작의 부정확함·발음·눈 움직임 변화와 시작 속도를 확인합니다.",
           "sources": [
             "gait:neuro",
@@ -6126,8 +6126,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "신경 진찰과 원인에 맞는 영상·혈액·약물 검토를 선택합니다. 급성 발병과 서서히 진행하는 경우의 평가가 다릅니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "신경 기능을 진찰하고 증상이 갑자기 생겼는지 서서히 심해졌는지 확인합니다. 그에 맞춰 영상이나 혈액 검사를 하고 드시는 약도 살펴봅니다.",
           "sources": [
             "gait:neuro",
             "gait:stroke"
@@ -6135,8 +6135,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "급성 위험 원인을 우선 확인하고 원인 치료·재활·보행/소통 지원을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "급히 치료해야 할 원인이 있는지 먼저 확인합니다. 원인 치료와 함께 재활, 걷기와 의사소통을 돕는 방법을 상의합니다.",
           "sources": [
             "gait:neuro",
             "gait:stroke"
@@ -6144,8 +6144,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "보행 보조·집안 동선을 점검하고 혼자 위험한 균형 연습을 하지 마세요. 음주와 약물 영향을 알립니다.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "보행 보조·집안 동선을 점검하고 혼자 위험한 균형 연습을 하지 마세요. 술과 약물 영향을 알립니다.",
           "sources": [
             "gait:neuro",
             "gait:stroke"
@@ -6153,8 +6153,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "진정제·항발작약 등 복용약과 독성 노출을 알리세요. 증상을 약 부작용으로 단정해 스스로 끊지 마세요.",
+          "title": "약을 복용할 때",
+          "text": "진정제·항발작약 등 현재 드시는 약과 독성 노출을 알리세요. 증상을 약 부작용으로 단정해 스스로 끊지 마세요.",
           "sources": [
             "gait:neuro",
             "gait:stroke"
@@ -6162,7 +6162,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "균형·손 기능·말·삼킴·낙상과 진행 속도를 비교합니다.",
           "sources": [
             "gait:neuro",
@@ -6171,8 +6171,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "갑작스러운 보행 불능·심한 두통·복시·언어/근력 변화는 즉시 응급 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "갑작스러운 보행 불능·심한 두통·물체가 두 개로 보임·언어/근력 변화는 즉시 응급 평가받으세요.",
           "sources": [
             "gait:neuro",
             "gait:stroke"
@@ -6192,7 +6192,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "양쪽 균형기관 기능이 떨어져 움직일 때 시야가 흔들리거나 균형이 불안할 수 있는 상태입니다.",
           "sources": [
             "gait:bilateral",
@@ -6201,7 +6201,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어두운 곳·울퉁불퉁한 바닥에서 더 불안하고 걸으며 글씨가 흔들려 보일 수 있습니다. 청력·약물·다른 신경 증상도 확인합니다.",
           "sources": [
             "gait:bilateral",
@@ -6210,7 +6210,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "양측 전정기능 검사를 병력·진찰과 함께 해석합니다. 보행 문제에는 시력·말초신경·근력 등 여러 요인이 겹칠 수 있습니다.",
           "sources": [
             "gait:bilateral",
@@ -6219,8 +6219,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "시선 안정과 균형을 위한 맞춤 전정재활, 보행 보조·낙상 예방이 중요합니다. 원인에 따라 치료 가능성을 검토합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "움직일 때도 시선을 안정시키고 균형을 잡는 연습을 몸 상태에 맞춰 배웁니다. 걷기 보조와 넘어짐 예방도 함께 챙기고, 원인에 맞는 치료가 있는지 확인합니다.",
           "sources": [
             "gait:bilateral",
             "gait:rehab"
@@ -6228,8 +6228,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
-          "text": "야간 조명과 손잡이를 마련하고 위험한 바닥에서는 도움을 받으세요. 재활 동작은 교육받은 범위에서 안전하게 연습하세요.",
+          "title": "생활에서 해볼 수 있는 것",
+          "text": "밤에 켜둘 조명과 손잡이를 마련하고 위험한 바닥에서는 도움을 받으세요. 재활 동작은 교육받은 범위에서 안전하게 연습하세요.",
           "sources": [
             "gait:bilateral",
             "gait:rehab"
@@ -6237,7 +6237,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "균형을 악화시킬 수 있는 약과 귀에 영향을 줄 수 있는 약의 이력을 알리세요. 필요한 약을 임의로 중단하지 마세요.",
           "sources": [
             "gait:bilateral",
@@ -6246,7 +6246,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "낙상·어두운 곳 보행·시야 흔들림·활동 범위와 재활 반응을 확인합니다.",
           "sources": [
             "gait:bilateral",
@@ -6255,8 +6255,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "급격한 보행 악화나 새 마비·복시·언어장애는 기존 균형 저하로 넘기지 말고 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "급격한 보행 악화나 새 마비·물체가 두 개로 보임·말이 어눌하거나 말이 잘 나오지 않음는 기존 균형 저하로 넘기지 말고 즉시 진료받으세요.",
           "sources": [
             "gait:bilateral",
             "gait:rehab"
@@ -6276,7 +6276,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "척수·마미 등 척추 안 신경 문제에 의한 약화를 평가합니다. 단순 근육통과 구분이 필요합니다.",
           "sources": [
             "gait:myelopathy",
@@ -6285,7 +6285,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "양측 손/다리 힘·정교한 동작·보행과 감각, 배뇨/배변·회음부 변화를 확인합니다.",
           "sources": [
             "gait:myelopathy",
@@ -6294,7 +6294,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "신경 진찰과 필요한 척추 영상을 함께 평가합니다. 영상의 압박 소견과 실제 기능을 연결해 해석합니다.",
           "sources": [
             "gait:myelopathy",
@@ -6303,8 +6303,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "진행성 또는 심한 신경 손상은 전문 평가·수술 검토가 필요할 수 있습니다. 일반 통증 치료만으로 지연하지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "힘이 점점 빠지거나 신경 손상이 심하면 전문 진료와 수술 상담이 필요할 수 있습니다. 통증만 줄이는 치료로 원인 확인을 늦추지 않습니다.",
           "sources": [
             "gait:myelopathy",
             "gait:neuro"
@@ -6312,7 +6312,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "넘어짐과 무리한 목·허리 동작을 피하고 보행 보조를 상의하세요.",
           "sources": [
             "gait:myelopathy",
@@ -6321,7 +6321,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "진통제 반응만으로 신경 압박이 해결됐다고 판단하지 않습니다. 약의 졸림과 낙상을 확인합니다.",
           "sources": [
             "gait:myelopathy",
@@ -6330,8 +6330,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "힘·손 기능·보행·배뇨 변화 속도를 추적하고 악화 시 조기에 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "힘이 빠지는 속도, 손으로 물건을 다루거나 걷는 일, 소변 보는 데 변화가 있는지 알려주세요. 더 불편해지면 예정일보다 일찍 진료받으세요.",
           "sources": [
             "gait:myelopathy",
             "gait:neuro"
@@ -6339,7 +6339,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "새 대소변 장애·회음부 감각 저하·빠른 양측 약화·호흡 변화는 즉시 응급 평가받으세요.",
           "sources": [
             "gait:myelopathy",
@@ -6360,7 +6360,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "보행과 낙상에는 근력·관절·감각·시력·전정·혈압·약물 등 여러 요인이 함께 작용할 수 있습니다.",
           "sources": [
             "gait:falls"
@@ -6368,7 +6368,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "넘어진 상황·보행 변화·어지럼·실신·신발·집안 환경과 도움이 필요한 동작을 확인합니다.",
           "sources": [
             "gait:falls"
@@ -6376,23 +6376,23 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰과 기능 평가로 요인을 찾고 필요한 검사만 선택합니다. 보행 검사 점수 하나로 향후 낙상을 확정·배제하지 않습니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰하고 걷기와 일상 동작을 살핀 뒤 필요한 검사만 합니다. 걷기 검사 점수 하나로 앞으로 넘어질지 결정할 수는 없습니다.",
           "sources": [
             "gait:falls"
           ]
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "개별 운동·균형/근력 재활·약물 검토·시력/환경·보행 보조를 조합합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "몸에 맞는 균형과 근력 운동을 정합니다. 드시는 약, 시력, 집 안 환경을 살펴보고 필요하면 걷기 보조기구를 상의합니다.",
           "sources": [
             "gait:falls"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "통로의 전선·미끄러운 매트를 치우고 조명·손잡이를 점검하세요. 운동과 보조기구는 현재 능력에 맞춰 교육받습니다.",
           "sources": [
             "gait:falls"
@@ -6400,15 +6400,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "수면제·진정제·혈압약 등 낙상 관련 약을 검토합니다. 약을 모두 중단하기보다 이득·위험을 상의합니다.",
+          "title": "약을 복용할 때",
+          "text": "수면제나 진정제, 혈압약이 넘어지는 데 영향을 주는지 확인합니다. 약을 스스로 모두 끊지 말고, 계속 먹을 때의 장점과 위험을 상의하세요.",
           "sources": [
             "gait:falls"
           ]
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "낙상·거의 넘어짐·걷는 범위·자신감·보조기구 사용을 함께 확인합니다.",
           "sources": [
             "gait:falls"
@@ -6416,15 +6416,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "머리 외상 뒤 변화·새 신경 증상·실신·체중을 못 싣는 통증은 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "머리 외상 뒤 변화·새 신경 증상·실신·체중을 못 싣는 통증은 즉시 진료받으세요.",
           "sources": [
             "gait:falls"
           ]
         },
         {
           "id": "caregiver",
-          "title": "9. 보호자가 도울 방법",
+          "title": "가족이 도울 수 있는 일",
           "text": "과도하게 활동을 제한하기보다 안전한 활동을 돕고 낙상 상황을 함께 기록하세요.",
           "sources": [
             "gait:falls"
@@ -6444,7 +6444,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "얼굴 감각을 전달하는 신경과 관련된 통증입니다. 전형적인 경우 짧고 전기가 오는 듯한 통증이 반복되지만 원인 확인이 필요합니다.",
           "sources": [
             "other:tn"
@@ -6452,7 +6452,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "씹기·말하기·세수 같은 가벼운 자극으로 유발될 수 있습니다. 지속 통증·감각 저하·양측 증상도 빠짐없이 알려주세요.",
           "sources": [
             "other:tn"
@@ -6460,7 +6460,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "통증 분포·진찰과 필요한 MRI 등으로 다른 원인을 확인합니다. 치과·안과 문제와도 구분하며 영상 소견만으로 판단하지 않습니다.",
           "sources": [
             "other:tn"
@@ -6468,15 +6468,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "신경성 통증 약을 먼저 검토하고 효과·내약성이 부족하면 전문 시술/수술 평가를 상의할 수 있습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "신경통에 쓰는 약부터 상의합니다. 약이 충분히 듣지 않거나 부작용이 불편하면 시술이나 수술이 도움이 될지 전문 진료에서 상의할 수 있습니다.",
           "sources": [
             "other:tn"
           ]
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "어떤 자극에 통증이 생기는지 기록하고 먹기 쉬운 음식으로 식사를 유지하세요. 음식 섭취와 세면을 오래 피하지 않도록 도움을 받으세요.",
           "sources": [
             "other:tn"
@@ -6484,7 +6484,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
+          "title": "약을 복용할 때",
           "text": "어지럼·졸림·발진과 약물 상호작용을 확인해야 합니다. 처방된 검사·감시를 따르고 약을 임의로 조절하지 마세요.",
           "sources": [
             "other:tn"
@@ -6492,15 +6492,15 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "통증 횟수뿐 아니라 식사·수면·대화가 얼마나 회복되는지 확인합니다. 약 효과가 줄거나 부작용이 생기면 재평가합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "통증 횟수뿐 아니라 식사·수면·대화가 얼마나 회복되는지 확인합니다. 약 효과가 줄거나 부작용이 생기면 다음 진료에서 다시 살펴봅니다.",
           "sources": [
             "other:tn"
           ]
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "심한 발진·점막 증상·의식 변화, 새 마비나 시력 변화는 즉시 진료받으세요. 먹거나 마시기 어려울 정도면 빨리 연락하세요.",
           "sources": [
             "other:tn"
@@ -6520,7 +6520,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "한쪽 얼굴 근육이 반복해서 수축하는 상태를 평가합니다. 눈꺼풀 떨림·틱 등 다른 원인과 구분합니다.",
           "sources": [
             "other:neuro",
@@ -6529,7 +6529,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
+          "title": "어떤 증상이 있나요?",
           "text": "어느 부위에서 시작해 번지는지, 시야·얼굴 감각·힘 변화와 생활 지장을 확인합니다.",
           "sources": [
             "other:neuro",
@@ -6538,7 +6538,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
+          "title": "어떤 검사가 필요한가요?",
           "text": "진찰과 필요한 영상으로 신경·구조적 원인을 평가합니다. 모든 작은 눈꺼풀 떨림을 같은 질환으로 보지 않습니다.",
           "sources": [
             "other:neuro",
@@ -6547,8 +6547,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "기능 지장에 따라 보툴리눔독소 치료나 전문 수술 평가 등을 상의합니다. 제제별 용량을 서로 그대로 바꾸지 않습니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "눈이나 얼굴의 경련이 일상에 주는 불편을 보고 주사 치료나 수술 상담을 상의합니다. 주사 제품이 달라지면 같은 양을 그대로 쓰지 않습니다.",
           "sources": [
             "other:neuro",
             "other:hfs"
@@ -6556,7 +6556,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "수축 양상과 운전·독서·수면의 영향을 기록하고 안전을 우선하세요.",
           "sources": [
             "other:neuro",
@@ -6565,8 +6565,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "주사 후 눈꺼풀 처짐·눈 불편·얼굴 약화·복시 등 예상 부작용과 연락 방법을 확인합니다.",
+          "title": "약을 복용할 때",
+          "text": "주사 후 눈꺼풀 처짐·눈 불편·얼굴 약화·물체가 두 개로 보임 등 예상 부작용과 연락 방법을 확인합니다.",
           "sources": [
             "other:neuro",
             "other:hfs"
@@ -6574,7 +6574,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
+          "title": "다음 진료 때 알려주세요",
           "text": "효과의 정도·지속·부작용과 일상 기능을 비교해 다음 치료를 조절합니다.",
           "sources": [
             "other:neuro",
@@ -6583,8 +6583,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
-          "text": "새 얼굴/팔다리 약화·언어장애·심한 삼킴/호흡 불편은 즉시 평가받으세요.",
+          "title": "바로 알려야 할 변화",
+          "text": "새 얼굴/팔다리 약화·말이 어눌하거나 말이 잘 나오지 않음·심한 삼킴/호흡 불편은 즉시 진료받으세요.",
           "sources": [
             "other:neuro",
             "other:hfs"
@@ -6604,7 +6604,7 @@ window.NeuroPatientEducation={
       "sections": [
         {
           "id": "definition",
-          "title": "1. 질환이 생기는 원리와 의미",
+          "title": "어떤 상태인가요?",
           "text": "말초 얼굴신경의 문제로 한쪽 얼굴 움직임이 약해지는 상태를 평가합니다. Bell 마비는 다른 원인과 구분해 판단합니다.",
           "sources": [
             "other:bell",
@@ -6613,8 +6613,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "symptoms",
-          "title": "2. 흔한 증상과 경과",
-          "text": "눈 감기·입 움직임·맛·귀 통증/발진·청력 변화와 시작 시각을 확인합니다. 팔다리·말 변화도 함께 알리세요.",
+          "title": "어떤 증상이 있나요?",
+          "text": "눈 감기·입 움직임·맛·귀 통증/발진·청력 변화와 증상이 시작된 시각을 확인합니다. 팔다리·말 변화도 함께 알리세요.",
           "sources": [
             "other:bell",
             "other:neuro"
@@ -6622,8 +6622,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "tests",
-          "title": "3. 검사의 목적과 한계",
-          "text": "진찰로 중추성 원인·귀 질환 등과 구분합니다. 전형적인 경우 모든 검사·영상을 일괄 시행하지 않지만 비전형·회복 지연은 재평가합니다.",
+          "title": "어떤 검사가 필요한가요?",
+          "text": "진찰로 중추성 원인·귀 질환 등과 구분합니다. 전형적인 경우 모든 검사·영상을 일괄 시행하지 않지만 비전형·회복 지연은 다음 진료에서 다시 살펴봅니다.",
           "sources": [
             "other:bell",
             "other:neuro"
@@ -6631,8 +6631,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "treatment",
-          "title": "4. 치료 목표와 방법",
-          "text": "눈 보호와 적절한 시기의 치료를 검토합니다. 스테로이드·추가 약의 적합성은 발병 시각·나이·동반질환에 따라 정합니다.",
+          "title": "치료는 어떻게 하나요?",
+          "text": "눈을 보호하고, 증상이 시작된 시간에 맞춰 필요한 치료를 정합니다. 스테로이드나 다른 약이 필요한지는 시작 시각, 나이, 함께 앓는 질환을 보고 판단합니다.",
           "sources": [
             "other:bell",
             "other:neuro"
@@ -6640,7 +6640,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "daily",
-          "title": "5. 일상에서 실천할 관리",
+          "title": "생활에서 해볼 수 있는 것",
           "text": "눈이 덜 감기면 건조·각막 손상을 막는 방법을 구체적으로 교육받으세요. 통증·충혈·시력 변화를 관찰합니다.",
           "sources": [
             "other:bell",
@@ -6649,8 +6649,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "medication",
-          "title": "6. 약물 사용 시 주의",
-          "text": "약의 사용 기간·부작용과 당뇨 등 동반질환의 주의를 확인합니다. 항바이러스제만으로 모든 치료를 대신하지 않습니다.",
+          "title": "약을 복용할 때",
+          "text": "약의 사용 기간·부작용과 당뇨 등 함께 앓는 질환의 주의를 확인합니다. 항바이러스제만으로 모든 치료를 대신하지 않습니다.",
           "sources": [
             "other:bell",
             "other:neuro"
@@ -6658,8 +6658,8 @@ window.NeuroPatientEducation={
         },
         {
           "id": "followup",
-          "title": "7. 추적관리와 다음 진료",
-          "text": "눈 보호 상태·얼굴 기능·회복과 남는 불편을 확인합니다. 회복이 예상과 다르면 원인을 재검토합니다.",
+          "title": "다음 진료 때 알려주세요",
+          "text": "눈을 잘 보호하고 있는지, 얼굴이 얼마나 움직이는지, 어떤 불편이 남았는지 알려주세요. 예상보다 회복이 늦거나 다르면 원인을 다시 살펴봅니다.",
           "sources": [
             "other:bell",
             "other:neuro"
@@ -6667,7 +6667,7 @@ window.NeuroPatientEducation={
         },
         {
           "id": "urgent",
-          "title": "8. 바로 알려야 할 변화",
+          "title": "바로 알려야 할 변화",
           "text": "눈 통증·시력 저하는 신속히 진료받으세요. 새 팔다리 약화·말/삼킴 변화는 즉시 응급 평가가 필요합니다.",
           "sources": [
             "other:bell",
