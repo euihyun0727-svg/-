@@ -211,6 +211,33 @@ el('docStage_stage5_followup').insertBefore(ui,el('printableArea'));
 const zoom=document.createElement('div');zoom.id='vmZoom';zoom.className='vm-zoom no-print';zoom.hidden=true;zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','검사 이미지 확대');zoom.innerHTML='<button type="button" class="btn-subpath" id="vmZoomClose">확대 닫기</button><img id="vmZoomImage" alt="첨부 검사 이미지">';document.body.appendChild(zoom);el('vmZoomClose').onclick=closeZoom;zoom.onkeydown=event=>{if(event.key==='Escape')closeZoom();if(event.key==='Tab'){event.preventDefault();el('vmZoomClose').focus?.();}};
 el('vmFileInput').onchange=()=>{const input=el('vmFileInput'),selected=Array.from(input.files||[]);input.value='';acceptFiles(selected);};
 el('vmPreviewButton').onclick=()=>{el('vmPreview').innerHTML=path()?outputHTML():'검토할 증상·질환을 먼저 선택하세요.';namespaceMechanismMarkers(el('vmPreview'));};
+const visitTemplates=[
+  ['visitTests','검사 목적 안내','검사는 증상의 원인을 확인하는 데 필요한 정보를 얻기 위해 시행합니다. 검사 결과는 문진과 진찰 내용과 함께 설명드리겠습니다.'],
+  ['visitCare','증상 기록 안내','증상이 생긴 날짜와 상황, 얼마나 오래 지속됐는지 간단히 적어 두세요. 다음 진료 때 기록을 가져오시면 함께 확인하겠습니다.'],
+  ['visitCare','처방약 안내','약은 처방전에 적힌 방법으로 복용하세요. 복용하면서 불편한 점이 생기면 의료진에게 알려주세요.'],
+  ['visitReturn','다음 진료 준비','다음 진료에서 증상이 어떻게 달라졌는지 함께 확인하겠습니다. 새로 생긴 증상이나 약을 쓰면서 불편했던 점이 있다면 알려주세요.']
+];
+const templates=document.createElement('details');
+templates.className='no-print';
+templates.innerHTML='<summary>자주 쓰는 안내 문장</summary><p>버튼을 누르면 해당 입력란에 문장이 추가됩니다. 오늘 설명한 내용에 맞게 수정하세요.</p><div class="vm-row"></div><p role="status"></p>';
+el('visitDiagnosis').closest('.visit-fields').before(templates);
+visitTemplates.forEach(([id,label,sentence])=>{
+  const button=document.createElement('button');
+  button.type='button';button.className='btn-subpath';button.textContent=label;
+  templates.querySelector('.vm-row').append(button);
+  button.onclick=()=>{
+    const field=el(id),status=templates.querySelector('[role="status"]');
+    const current=field.value.trimEnd();
+    const next=current?current+' '+sentence:sentence;
+    if(next.length>field.maxLength){status.textContent='입력란 글자 수 제한 때문에 추가하지 못했습니다.';return;}
+    if(!current.includes(sentence)){
+      field.value=next;
+      field.dispatchEvent(new Event('input',{bubbles:true}));
+    }
+    status.textContent='';
+    field.focus();
+  };
+});
 fields.forEach(id=>el(id).addEventListener('input',invalidate));el('visitIncludeVisuals').addEventListener('change',invalidate);el('educationFamily').addEventListener('change',()=>{invalidate();renderEducationPrint();el('educationPreview').innerHTML=selectedEducation();});
 el('doctorSection').addEventListener('change',event=>{if(['visitReviewed','eduConfirmed'].includes(event.target.id))return;invalidate();});
 window.NeuroVisitMaterials={acceptFiles,print,limits,getState:()=>({count:files.length,pending,revision,files:files.map(({signature,url,...f})=>({...f})),selection:[...selection]})};renderFiles();
