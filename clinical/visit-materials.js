@@ -178,6 +178,9 @@ function outputHTML(){
     +group('오늘 할 일',sections[2],'handout-plan')
     +group('다음 진료',sections[3],'handout-plan')
     +group('바로 연락해야 할 상황',sections[4],'handout-next')
+    +group('오늘 질문과 답변', (window.getSelectedVisitConcernReplies?.('handout') || []).map(([question, answer]) =>
+      '<section class="handout-entry"><h3>'+safe(question)+'</h3><p>'+safe(answer)+'</p></section>'
+    ).join(''), 'handout-plan')
     +attachmentHTML()+handoutVisual(current.id)+selectedEducation();
 }
 function fingerprint(){return JSON.stringify([generation,revision,key(),outputHTML(),window.NeuroHeadache?.getState(),window.NeuroDizziness?.getState(),window.NeuroModuleReview?.getState(),el('dzRevision')?.textContent,el('cmRevision')?.textContent]);}
@@ -238,6 +241,7 @@ visitTemplates.forEach(([id,label,sentence])=>{
     field.focus();
   };
 });
+document.addEventListener('visitConcernRepliesChanged',invalidate);
 fields.forEach(id=>el(id).addEventListener('input',invalidate));el('visitIncludeVisuals').addEventListener('change',invalidate);el('educationFamily').addEventListener('change',()=>{invalidate();renderEducationPrint();el('educationPreview').innerHTML=selectedEducation();});
 el('doctorSection').addEventListener('change',event=>{if(['visitReviewed','eduConfirmed'].includes(event.target.id))return;invalidate();});
 window.NeuroVisitMaterials={acceptFiles,print,limits,getState:()=>({count:files.length,pending,revision,files:files.map(({signature,url,...f})=>({...f})),selection:[...selection]})};renderFiles();
