@@ -278,6 +278,11 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
 
 </style>
   <style data-source="experience.css">
+    #visitConcernReplies[hidden]{display:none}
+    #visitConcernReplies fieldset{margin:12px 0;padding:10px;border:1px solid var(--gray-300);border-radius:8px}
+    #visitConcernReplies input[type=text]{width:100%;font:inherit;padding:6px;margin:4px 0 8px}
+    #visitConcernReplies label{margin-inline-end:12px}
+
     #emrChartPreview[hidden]{display:none}
     .emr-chart-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
     .emr-review-items{padding:12px;border:1px solid var(--gray-300);border-radius:8px;overflow-wrap:anywhere}
@@ -709,6 +714,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
             </div>
           </details>
           <section id="experienceSummary" class="experience-doctor-summary" aria-label="환자가 선택한 증상과 궁금한 점"></section>
+          <section id="visitConcernReplies" class="experience-doctor-summary no-print" hidden></section>
           <section id="visitQuickSummary" class="quick-summary" aria-label="핵심 문진 요약"></section>
           <div id="docRedFlagsArea"></div>
 
@@ -2829,10 +2835,46 @@ NEURO_DATA.other = {
   function educationParts(){const {sp}=current();const data=sp&&EDUCATION_V2[sp.id];if(!data)return [];return [data[0],(sp.nonPharmTx||[]).join(' / '),data[2],data[1],data[3]];}
   function invalidate(){el('visitReviewed').checked=false;refreshVisitPrint();}
   window.setExperienceType=function(type){el('returnBrief').hidden=type!=='return';};
+  const concernReplies = new Map();
+  let renderedReplyVisit;
+  window.getSelectedVisitConcernReplies = destination => Array.from(concernReplies, ([question, reply]) =>
+    reply[destination] && reply.text.trim() ? [question, reply.text.trim()] : null
+  ).filter(Boolean);
+  function emrConcernReplies() {
+    const replies = window.getSelectedVisitConcernReplies('emr');
+    return replies.length ? '\n\n■ 환자 질문에 설명한 내용\n'
+      + replies.map(([question, answer]) => '- ' + question + ': ' + answer).join('\n') : '';
+  }
+  function renderConcernReplies() {
+    const panel = el('visitConcernReplies');
+    panel.hidden = visit.type !== 'first' || !visit.concerns.length || !AppState.activeDoctorSymptom;
+    if (renderedReplyVisit === visit) return;
+    renderedReplyVisit = visit;
+    panel.replaceChildren();
+    if (visit.type !== 'first' || !visit.concerns.length) return;
+    panel.innerHTML = '<h3>환자 질문에 설명한 내용</h3><p>질문별로 실제 설명을 한 줄 적고, 넣을 곳을 선택하세요. 이름·연락처는 입력하지 마세요.</p>';
+    visit.concerns.forEach(question => {
+      const reply = {text:'', emr:false, handout:false};
+      concernReplies.set(question, reply);
+      const row = document.createElement('fieldset');
+      row.innerHTML = '<legend>' + safe(question) + '</legend><label>한 줄 답변<input type="text" maxlength="200"></label>'
+        + '<label><input type="checkbox" data-destination="emr"> EMR에 포함</label>'
+        + '<label><input type="checkbox" data-destination="handout"> 안내서에 포함</label>';
+      row.addEventListener('input', event => {
+        const input = event.target;
+        if (input.type === 'text') reply.text = input.value;
+        else reply[input.dataset.destination] = input.checked;
+        el('emrDraftStatus').textContent = '';
+        document.dispatchEvent(new Event('visitConcernRepliesChanged'));
+      });
+      panel.append(row);
+    });
+  }
+
   window.getVisitEmrText=function(){
     let text='\n■ 환자가 확인하고 싶은 내용:\n'+(visit.concerns.join(' · ')||'선택 없음')+'\n';
     if(visit.type==='return')text+='\n■ 재진 변화 (환자/보호자 응답):\n- 증상 변화: '+visit.course+'\n- 약 사용 중 불편감: '+visit.medicine+'\n- 새 증상: '+visit.newSymptoms+'\n'+(visit.note?'- 추가 설명: '+visit.note+'\n':'');
-    return text;
+    return text + emrConcernReplies();
   };
   function summary(){if(!NEURO_DATA[AppState.activeDoctorSymptom]){el('experienceSummary').innerHTML='';return;}const symptoms=AppState.selectedSymptoms.map(id=>NEURO_DATA[id]?.name).filter(Boolean);el('experienceSummary').innerHTML='<h3>환자가 선택한 증상과 궁금한 점</h3><dl><dt>선택한 증상</dt><dd>'+safe(symptoms.join(' · ')||'선택한 증상 없음')+'</dd><dt>오늘 궁금한 점</dt><dd>'+safe(visit.concerns.join(' · ')||'선택한 질문 없음')+'</dd></dl><p class="experience-note">'+(visit.type==='return'?(visit.detailed?'재진 상세 문진':'간단 재진 문진'):'기존 상세 문진')+' · '+(AppState.isProxy?'보호자 대리 응답':'본인 응답')+'</p>'+(visit.type==='return'?'<dl><dt>증상 변화</dt><dd>'+safe(visit.course)+'</dd><dt>약 사용 중 불편감</dt><dd>'+safe(visit.medicine)+'</dd><dt>새 증상</dt><dd>'+safe(visit.newSymptoms)+'</dd></dl>'+(visit.note?'<p class="return-note">'+safe(visit.note)+'</p>':'')+'<p class="quick-warning">'+(visit.detailed?'변화 확인을 위해 상세 문진을 함께 진행했습니다.':'간단 재진에서는 기존 상세 문진을 생략했습니다.')+' 새 증상·위험신호는 진료실에서 직접 확인하세요.</p>':'');}
   function renderPicker(){const {sp,key}=current();pickerKey=key;const parts=educationParts();const selected=selection[key]||{items:[],family:false};el('educationFamily').checked=selected.family;el('educationContext').textContent=sp?'검토 중인 교육자료: '+sp.name:'질환 선택 후 교육자료를 확인하세요.';el('educationChoices').innerHTML=parts.map((value,i)=>value?'<label><input type="checkbox" data-education="'+i+'" '+(selected.items.includes(i)?'checked':'')+' onchange="changeEducationChoice()"> '+labels[i]+'</label>':'').join('');el('educationPreview').innerHTML=getSelectedEducationHTML()||'<p>선택한 자료가 없습니다.</p>';}
@@ -2919,7 +2961,7 @@ NEURO_DATA.other = {
     const draft = chartDrafts.get(chartSymptom);
     return '[신경과 초진 · ' + NEURO_DATA[chartSymptom].name + ']\n\n'
       + '■ 환자·보호자 문진 응답\n' + draft.patient.trim() + '\n\n'
-      + '■ 의사 소견\n' + draft.clinician.trim();
+      + '■ 의사 소견\n' + draft.clinician.trim() + emrConcernReplies();
   }
 
   patientText.oninput = () => {chartDrafts.get(chartSymptom).patient = patientText.value;chartStatus.textContent = '';};
@@ -2944,10 +2986,10 @@ NEURO_DATA.other = {
   };
 
   const oldStart=startPatientIntake;
-  startPatientIntake=function(){if(!AppState.selectedSymptoms.length){oldStart();return;}const type=choice('experienceType')||'first';const course=choice('returnCourse'),medicine=choice('returnMedicine'),newSymptoms=choice('returnNew');if(type==='return'&&(!course||!medicine||!newSymptoms)){alert('재진 변화 질문 3개에 답해 주세요. 잘 모르시면 해당 항목을 선택해 주세요.');return;}clearChartDrafts();chartVisitStarted=true;visit={type,concerns:concernValues(),course,medicine,newSymptoms,note:type==='return'?el('returnNote').value.trim():''};if(type==='first'||course==='악화'||newSymptoms==='새 증상 있음'){if(type==='return')alert('증상 악화 또는 새 증상을 확인하기 위해 상세 문진을 진행합니다. 의료진에게 변화 내용을 직접 알려 주세요.');visit.detailed=type==='return';oldStart();return;}cancelQuestionAdvance();AppState.answers={};AppState.queue=[];AppState.queueIndex=0;AppState.isProxy=el('chkProxyCaregiver').checked;el('screenSymptomSelect').style.display='none';el('screenQuestionnaire').style.display='none';finishIntake();};
-  const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();summary();renderPicker();renderChartDraft();};
+  startPatientIntake=function(){if(!AppState.selectedSymptoms.length){oldStart();return;}const type=choice('experienceType')||'first';const course=choice('returnCourse'),medicine=choice('returnMedicine'),newSymptoms=choice('returnNew');if(type==='return'&&(!course||!medicine||!newSymptoms)){alert('재진 변화 질문 3개에 답해 주세요. 잘 모르시면 해당 항목을 선택해 주세요.');return;}clearChartDrafts();concernReplies.clear();chartVisitStarted=true;visit={type,concerns:concernValues(),course,medicine,newSymptoms,note:type==='return'?el('returnNote').value.trim():''};if(type==='first'||course==='악화'||newSymptoms==='새 증상 있음'){if(type==='return')alert('증상 악화 또는 새 증상을 확인하기 위해 상세 문진을 진행합니다. 의료진에게 변화 내용을 직접 알려 주세요.');visit.detailed=type==='return';oldStart();return;}cancelQuestionAdvance();AppState.answers={};AppState.queue=[];AppState.queueIndex=0;AppState.isProxy=el('chkProxyCaregiver').checked;el('screenSymptomSelect').style.display='none';el('screenQuestionnaire').style.display='none';finishIntake();};
+  const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();summary();renderPicker();renderChartDraft();renderConcernReplies();};
   const oldClear=clearVisitDraft;window.clearVisitDraft=function(){oldClear();if(pickerKey)delete selection[pickerKey];renderPicker();invalidate();};
-  const oldReset=resetPatientIntake;resetPatientIntake=function(){oldReset();clearChartDrafts();visit={type:'first',concerns:[],course:'',medicine:'',newSymptoms:'',note:''};Object.keys(selection).forEach(k=>delete selection[k]);pickerKey='';document.querySelectorAll('input[name="experienceType"],input[name="returnCourse"],input[name="returnMedicine"],input[name="returnNew"],input[name="visitConcern"]').forEach(n=>n.checked=n.name==='experienceType'&&n.value==='first');el('returnBrief').hidden=true;el('returnNote').value='';el('educationFamily').checked=false;el('educationChoices').innerHTML='';el('educationPreview').innerHTML='';el('educationContext').textContent='';el('experienceSummary').innerHTML='';AppState.selectedSubpath={};AppState.activeDoctorSymptom=null;AppState.isProxy=false;el('chkProxyCaregiver').checked=false;el('eduPrintButton').disabled=true;el('visitIncludeVisuals').checked=true;document.querySelectorAll('input[data-education]').forEach(n=>n.checked=false);el('patientSummaryCard').innerHTML='';el('symSwitchContainer').innerHTML='';document.querySelectorAll('.doc-stage').forEach(n=>n.classList.toggle('active',n.id==='docStage_stage1_summary'));document.querySelectorAll('#doctor5StageNav .nav-btn').forEach((n,i)=>n.classList.toggle('active',i===0));renderDoctorStage();switchMode('patient');};
+  const oldReset=resetPatientIntake;resetPatientIntake=function(){oldReset();clearChartDrafts();concernReplies.clear();visit={type:'first',concerns:[],course:'',medicine:'',newSymptoms:'',note:''};Object.keys(selection).forEach(k=>delete selection[k]);pickerKey='';document.querySelectorAll('input[name="experienceType"],input[name="returnCourse"],input[name="returnMedicine"],input[name="returnNew"],input[name="visitConcern"]').forEach(n=>n.checked=n.name==='experienceType'&&n.value==='first');el('returnBrief').hidden=true;el('returnNote').value='';el('educationFamily').checked=false;el('educationChoices').innerHTML='';el('educationPreview').innerHTML='';el('educationContext').textContent='';el('experienceSummary').innerHTML='';AppState.selectedSubpath={};AppState.activeDoctorSymptom=null;AppState.isProxy=false;el('chkProxyCaregiver').checked=false;el('eduPrintButton').disabled=true;el('visitIncludeVisuals').checked=true;document.querySelectorAll('input[data-education]').forEach(n=>n.checked=false);el('patientSummaryCard').innerHTML='';el('symSwitchContainer').innerHTML='';document.querySelectorAll('.doc-stage').forEach(n=>n.classList.toggle('active',n.id==='docStage_stage1_summary'));document.querySelectorAll('#doctor5StageNav .nav-btn').forEach((n,i)=>n.classList.toggle('active',i===0));renderDoctorStage();switchMode('patient');};
 })();
 
 </script>
