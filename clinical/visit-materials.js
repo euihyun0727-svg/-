@@ -160,7 +160,7 @@ function epleyHandout(side){
     const body=rolled?'<rect x="70" y="43" width="20" height="34" rx="8" fill="#659b91"/>':'<rect x="61" y="43" width="38" height="32" rx="10" fill="#659b91"/>';
     return '<svg viewBox="0 0 160 86" role="img" aria-label="'+safe(steps[index][0])+'"><rect x="43" y="9" width="74" height="72" rx="7" fill="#e1eee9" stroke="#92b5ac"/>'+(seated?'<path d="M51 67h58" stroke="#92b5ac" stroke-width="2"/>':'<rect x="53" y="43" width="54" height="14" rx="4" fill="#faf4e7" stroke="#c6b698"/>')+body+head+'</svg>';
   }
-  return '<section class="handout-treatment"><h2>에플리 이석정복술 · '+affected+' 후반고리관</h2><p>진료에서 집에서도 해도 된다고 안내받고 동작을 배운 경우에 따라 하세요. 목·허리 질환이나 움직임 제한이 있으면 먼저 의료진에게 확인하세요.</p><ol class="epley-steps">'+steps.map(([title,body],index)=>'<li>'+pose(index)+'<h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>').join('')+'</ol><p>그림은 자세를 구분하는 간단한 도식입니다. 반복 횟수는 진료에서 받은 안내를 따르세요.</p></section>';
+  return '<section class="handout-treatment"><h2>에플리 이석정복술 · '+affected+' 후반고리관</h2><p>진료에서 집에서도 해도 된다고 안내받고 동작을 배운 경우에 따라 하세요. 목·허리 질환이나 움직임 제한이 있으면 먼저 의료진에게 확인하세요.</p><ol class="epley-steps">'+steps.map(([title,body],index)=>'<li>'+pose(index)+'<h3>'+(index+1)+'. '+title+'</h3><p>'+body+'</p></li>').join('')+'</ol><p>반복 횟수는 진료에서 받은 안내를 따르세요.</p></section>';
 }
 function outputHTML(){
   const current=path();
