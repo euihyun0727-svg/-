@@ -308,18 +308,18 @@ window.NeuroQuickVisit = {
         .map(([name]) => [name, guideFor(name).text]) : []
     };
   },
-  chartText(id) {
+  soap(id) {
     const state = choices.get(id);
     const chosen = NEURO_DATA[id]?.differentialPathways.find(path => path.id === state?.diagnosis);
     if (!state) return '';
     const therapies = chosen && (id === AppState.activeDoctorSymptom ? activeTreatments() : state.therapies);
+    const assessment = state.certainty === '원인 미확정' ? state.certainty
+      : chosen && state.certainty ? chosen.name + ' (' + state.certainty + ')' : '';
     const lines = [];
-    if (state.certainty === '원인 미확정') lines.push('Assessment: 원인 미확정');
-    else if (chosen && state.certainty) lines.push('Assessment: ' + chosen.name + ' (' + state.certainty + ')');
-    if (therapies?.length) lines.push('Plan: 검토한 치료 · ' + therapies.join(' / '));
+    if (therapies?.length) lines.push('검토한 치료 · ' + therapies.join(' / '));
     if (state.tests.size) lines.push('검사 계획: ' + Array.from(state.tests.keys()).join(' / '));
-    if (state.plan.trim()) lines.push('Plan: ' + state.plan.trim());
-    return lines.length ? '\n' + lines.join('\n') : '';
+    if (state.plan.trim()) lines.push('' + state.plan.trim());
+    return {assessment, plan:lines.join('\n')};
   }
 };
 render();
