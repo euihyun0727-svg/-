@@ -47,6 +47,10 @@ const activeTreatments = () => AppState.activeDoctorSymptom === 'dizziness' && d
 
 function render() {
   const mod = module();
+  if (mod && !el('emrChartPreview').hidden && !choices.has(mod.id)) {
+    choices.set(mod.id, {diagnosis:'', certainty:'', plan:'', selfCare:false, followup:false, therapies:[], tests:new Map()});
+    chartOpen();
+  }
   const state = current();
   el('doctorSection').classList.toggle('quick-visit-mode', enabled());
   el('doctor5StageNav').classList.toggle('quick-visit-nav-hidden', enabled());
@@ -264,6 +268,12 @@ el('quickCopyHandout').onclick = async () => {
 };
 const oldRender = renderDoctorStage;
 renderDoctorStage = function () { oldRender(); render(); };
+const oldStart = startPatientIntake;
+startPatientIntake = function () {
+  if (!AppState.selectedSymptoms.length) return oldStart();
+  oldStart();
+  if (el('screenQuestionnaire').style.display === 'block') choices.clear();
+};
 const oldReset = resetPatientIntake;
 resetPatientIntake = function () {
   choices.clear();
