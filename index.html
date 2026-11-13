@@ -731,11 +731,13 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
             <div class="emr-chart-layout">
             <section id="singleVisitHistory"><h3>문진 체크</h3><div id="singleVisitWarning" role="status"></div><div id="singleVisitPrimary"></div><details><summary>상세 문진 자세히 보기</summary><section id="doctorIntakeQuestions" hidden aria-label="진료실 초진 문진"></section></details></section>
             <div class="emr-chart-fields"><h3>차팅 초안</h3>
-            <label for="emrPatientText">환자·보호자 문진 응답</label>
+            <label for="emrPatientText">S · 주관적 정보</label>
             <textarea id="emrPatientText" rows="10"></textarea>
             <button type="button" class="btn-subpath" id="doctorIntakeRefresh" hidden>문진 답변으로 환자 진술 다시 작성</button>
-            <label for="emrClinicianText">의사 소견</label>
-            <textarea id="emrClinicianText" rows="5" placeholder="진찰 소견, 평가 및 계획을 직접 입력"></textarea>
+            <label for="emrClinicianText">O · 진찰 및 검사 소견</label>
+            <textarea id="emrClinicianText" rows="5" placeholder="확인한 진찰 및 검사 소견"></textarea>
+            <label for="emrAssessment">A · 평가</label><textarea id="emrAssessment" rows="3"></textarea>
+            <label for="emrPlan">P · 계획</label><textarea id="emrPlan" rows="3"></textarea>
             <button type="button" class="btn-subpath" id="emrCopyDraft">검토한 차팅 복사</button>
             <button type="button" class="btn-subpath" id="emrCopyAll" hidden>선택한 증상 차팅 모두 복사</button>
             <p id="emrDraftStatus" role="status"></p>
@@ -2917,6 +2919,8 @@ NEURO_DATA.other = {
   const chartPanel = el('emrChartPreview');
   const patientText = el('emrPatientText');
   const clinicianText = el('emrClinicianText');
+  const assessmentText = el('emrAssessment');
+  const planText = el('emrPlan');
   const chartStatus = el('emrDraftStatus');
   let chartSymptom = '';
   let chartVisitStarted = false;
@@ -2931,7 +2935,7 @@ NEURO_DATA.other = {
     chartPanel.open = false;
     chartPanel.hidden = true;
     patientText.value = '';
-    clinicianText.value = '';
+    clinicianText.value = assessmentText.value = planText.value = '';
     chartStatus.textContent = '';
     el('emrReviewItems').textContent = '';
   }
@@ -2976,7 +2980,7 @@ NEURO_DATA.other = {
       chartSymptom = '';
       chartPanel.open = false;
       patientText.value = '';
-      clinicianText.value = '';
+      clinicianText.value = assessmentText.value = planText.value = '';
       chartStatus.textContent = '';
       return;
     }
@@ -2987,6 +2991,8 @@ NEURO_DATA.other = {
     chartSymptom = id;
     patientText.value = draft.patient;
     clinicianText.value = draft.clinician;
+    assessmentText.value = draft.assessment;
+    planText.value = draft.plan;
     chartStatus.textContent = '';
   }
 
@@ -2995,15 +3001,12 @@ NEURO_DATA.other = {
     const responses = (mod.questions || []).filter(q =>
       chartQuestionVisible(id, q) && AppState.answers[q.id] && AppState.answers[q.id] !== '건너뜀');
     const lines = window.NeuroQuickVisit?.historyLines(id, responses) || responses.map(q => '- ' + q.stem + ' ' + AppState.answers[q.id]);
-    return ['응답자: ' + (AppState.isProxy ? '보호자' : '환자'),
-      '주호소: ' + mod.name, '', '현병력',
-      ...(lines.length ? lines : ['기록된 문진 응답 없음']),
-      '', '환자가 궁금한 점: ' + (visit.concerns.join(' · ') || '선택 없음')].join('\n');
+    return [mod.name + (AppState.isProxy ? ' (보호자 진술)' : ''), ...lines].join('\n');
   }
 
   function getChartDraft(id) {
     if (!chartDrafts.has(id)) {
-      chartDrafts.set(id, {patient: buildPatientChart(id), clinician: '', edited: false});
+      chartDrafts.set(id, {patient: buildPatientChart(id), clinician: '', assessment: '', plan: '', edited: false});
     }
     return chartDrafts.get(id);
   }
@@ -3079,13 +3082,19 @@ NEURO_DATA.other = {
 
   function chartText(id) {
     const draft = getChartDraft(id);
-    return '[신경과 초진 · ' + NEURO_DATA[id].name + ']\n\n'
-      + '■ 환자·보호자 문진 응답\n' + draft.patient.trim() + '\n\n'
-      + '■ 의사 소견\n' + draft.clinician.trim() + (window.NeuroQuickVisit?.chartText(id) || '');
+    const selected = window.NeuroQuickVisit?.soap(id);
+    return ['[' + NEURO_DATA[id].name + ']', ...[
+      ['S', draft.patient],
+      ['O', draft.clinician],
+      ['A', [draft.assessment, selected?.assessment].filter(Boolean).join('\n')],
+      ['P', [draft.plan, selected?.plan].filter(Boolean).join('\n')]
+    ].filter(([,value]) => value.trim()).map(([label,value]) => label + ': ' + value.trim())].join('\n');
   }
 
   patientText.oninput = () => {const draft = chartDrafts.get(chartSymptom);draft.patient = patientText.value;draft.edited = true;directRefresh.hidden = !directIntakeIds.has(chartSymptom);chartStatus.textContent = '';};
   clinicianText.oninput = () => {chartDrafts.get(chartSymptom).clinician = clinicianText.value;chartStatus.textContent = '';};
+  assessmentText.oninput = () => { chartDrafts.get(chartSymptom).assessment = assessmentText.value; chartStatus.textContent = ''; };
+  planText.oninput = () => { chartDrafts.get(chartSymptom).plan = planText.value; chartStatus.textContent = ''; };
   const legacyCopyEmrText = copyEmrText;
   copyEmrText = function () {
     if (!chartSymptom) return legacyCopyEmrText();
