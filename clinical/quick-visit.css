@@ -1,0 +1,26 @@
+#quickVisit{margin-bottom:16px}
+#quickSymptoms{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+#quickSymptoms [aria-pressed=true]{background:var(--primary);color:white}
+#quickVisitFields label,#singleVisitPrimary label,#singleVisitHandoutOptions label{display:block;margin:8px 0}
+#quickVisitFields select,#quickPlan,#singleVisitPrimary select{font:inherit;max-width:100%;padding:6px}
+#doctor5StageNav.quick-visit-nav-hidden,#doctorSymptomSwitcher:has(+ #doctor5StageNav.quick-visit-nav-hidden){display:none!important}
+#doctorSection.quick-visit-mode .doc-stage{display:block}
+#doctorSection.quick-visit-mode:has(#quickVisitFields[hidden]) .doc-stage,#doctorSection.quick-visit-mode:has(#quickVisitFields[hidden]) .single-visit-detail{display:none}
+#doctorSection.quick-visit-mode #docStage_stage1_summary .nd-summary-card > :not(#emrChartPreview,#visitConcernReplies){display:none}
+#doctorSection.quick-visit-mode #docStage_stage1_summary .nd-summary-card:has(#emrChartPreview[hidden]){display:none}
+#doctorSection.quick-visit-mode .emr-chart-layout{grid-template-columns:repeat(2,minmax(0,1fr))}
+#doctorSection.quick-visit-mode .emr-review-items{grid-column:1/-1}
+#singleVisitWarning{margin:8px 0;font-weight:700}
+.single-visit-detail,.single-visit-actions{margin:12px 0}
+#quickVisitFields[hidden],#singleVisitTests[hidden]{display:none}
+@media(max-width:760px){#doctorSection.quick-visit-mode .emr-chart-layout{grid-template-columns:1fr}}
+
+.single-visit-internal,#doctorSection .nd-followup-reference,#doctorSection #docStage_stage1_summary .nd-summary-card > :not(#emrChartPreview){display:none!important}
+#docStage_stage5_followup .nd-followup-hero{display:none!important}
+#quickVisit{padding-block:12px}
+#quickVisit h2{display:inline-block;margin-inline-end:12px}
+#singleVisitTests section{margin:8px 0}
+
+#docStage_stage5_followup :is(.nd-workspace-heading,#ndBrandMini,#ndPreviewAction,#ndPlanSection .section-label,#visitEditorTitle,#visitContext){display:none!important}
+#docStage_stage5_followup #printableArea{display:block}
+#docStage_stage5_followup .nd-output-desk{position:static;margin-top:12px}
