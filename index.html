@@ -2980,6 +2980,7 @@ NEURO_DATA.other = {
       chartStatus.textContent = '';
       return;
     }
+    if (AppState.queue.some(item => item.symptomId === id)) directIntakeIds.add(id);
     renderChartReview(id);
     if (chartSymptom === id) return;
     const draft = getChartDraft(id);
