@@ -14,3 +14,13 @@
 .single-visit-detail,.single-visit-actions{margin:12px 0}
 #quickVisitFields[hidden],#singleVisitTests[hidden]{display:none}
 @media(max-width:760px){#doctorSection.quick-visit-mode .emr-chart-layout{grid-template-columns:1fr}}
+
+.single-visit-internal,#doctorSection .nd-followup-reference,#doctorSection #docStage_stage1_summary .nd-summary-card > :not(#emrChartPreview){display:none!important}
+#docStage_stage5_followup .nd-followup-hero{display:none!important}
+#quickVisit{padding-block:12px}
+#quickVisit h2{display:inline-block;margin-inline-end:12px}
+#singleVisitTests section{margin:8px 0}
+
+#docStage_stage5_followup :is(.nd-workspace-heading,#ndBrandMini,#ndPreviewAction,#ndPlanSection .section-label,#visitEditorTitle,#visitContext){display:none!important}
+#docStage_stage5_followup #printableArea{display:block}
+#docStage_stage5_followup .nd-output-desk{position:static;margin-top:12px}
