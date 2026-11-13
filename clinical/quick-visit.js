@@ -12,19 +12,8 @@ const notify = message => { el('quickStatus').textContent = message; };
 const option = (name, value = name) => new Option(name, value);
 const field = id => el(id).value;
 const chartOpen = () => { el('emrChartPreview').open = true; };
-const reviewStages = [
-  ['stage2_tests','검사 근거 자세히 보기'],
-  ['stage3_tx','진단·치료 근거 자세히 보기'],
-  ['stage4_scales','임상척도 자세히 보기']
-];
-for (const [id, title] of reviewStages) {
-  const stage = el('docStage_' + id);
-  const details = document.createElement('details');
-  const summary = document.createElement('summary');
-  details.className = 'single-visit-detail';
-  summary.textContent = title;
-  stage.before(details);
-  details.append(summary, stage);
+for (const id of ['doctor5StageNav', 'doctorSymptomSwitcher', 'docStage_stage2_tests', 'docStage_stage3_tx', 'docStage_stage4_scales']) {
+  el(id).classList.add('single-visit-internal');
 }
 el('docStage_stage1_summary').after(el('singleVisitTests'));
 const followup = el('docStage_stage5_followup');
@@ -39,6 +28,9 @@ const handoutOptions = document.createElement('div');
 handoutOptions.id = 'singleVisitHandoutOptions';
 handoutOptions.innerHTML = "<div id=\"quickTreatment\"></div>\n          <label><input type=\"checkbox\" id=\"quickSelfCare\"> 생활관리 안내 포함</label>\n          <label><input type=\"checkbox\" id=\"quickFollowup\"> 추적관리 안내 포함</label>\n          <label>추가 관리 계획 <input id=\"quickPlan\" maxlength=\"500\"></label>";
 title.after(handoutOptions);
+followup.querySelector('.nd-b-output-heading')?.classList.add('single-visit-internal');
+followup.querySelector('.nd-output-order')?.classList.add('single-visit-internal');
+el('eduPrintButton').parentElement.classList.add('single-visit-internal');
 
 const closeOutput = () => { window.NeuroVisitMaterials.invalidate(); notify(''); el('quickCopyHandout').hidden = true; };
 const treatmentInputs = () => Array.from(document.querySelectorAll('#dzPlan [data-dz-therapy]'));
