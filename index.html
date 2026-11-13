@@ -2901,12 +2901,12 @@ NEURO_DATA.other = {
   }
 
   function renderChartReview(id) {
-    const clinicalModule = id === 'headache' ? window.NeuroHeadache : window.NeuroDizziness;
+    const clinicalModule = {headache: window.NeuroHeadache, dizziness: window.NeuroDizziness}[id];
     const groups = new Map([['위험신호 응답', []], ['모름', []], ['미응답', []]]);
     for (const item of AppState.queue) {
       if (item.symptomId !== id) continue;
       const question = item.question;
-      if (question.when && !clinicalModule?.visible(question)) continue;
+      if (clinicalModule && !clinicalModule.visible(question)) continue;
       const answer = AppState.answers[question.id];
       const option = question.options.find(entry => entry.text === answer);
       const label = !answer || answer === '건너뜀' ? '미응답'
@@ -2925,7 +2925,7 @@ NEURO_DATA.other = {
   function renderChartDraft() {
     const id = AppState.activeDoctorSymptom;
     const eligible = chartVisitStarted && visit.type === 'first'
-      && ['headache', 'dizziness'].includes(id) && AppState.selectedSymptoms.includes(id);
+      && AppState.selectedSymptoms.includes(id) && AppState.queue.some(item => item.symptomId === id);
     chartPanel.hidden = !eligible;
     if (!eligible) {
       chartSymptom = '';
