@@ -705,6 +705,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
             <label for="emrClinicianText">의사 소견</label>
             <textarea id="emrClinicianText" rows="5" placeholder="진찰 소견, 평가 및 계획을 직접 입력"></textarea>
             <button type="button" class="btn-subpath" id="emrCopyDraft">검토한 차팅 복사</button>
+            <button type="button" class="btn-subpath" id="emrCopyAll" hidden>선택한 증상 차팅 모두 복사</button>
             <p id="emrDraftStatus" role="status"></p>
             </div>
             <aside class="emr-review-items" aria-labelledby="emrReviewTitle">
@@ -2922,11 +2923,16 @@ NEURO_DATA.other = {
     ).join('') || '<p>표시할 확인 항목이 없습니다.</p>';
   }
 
+  function selectedChartSymptoms() {
+    return AppState.selectedSymptoms.filter(id => AppState.queue.some(item => item.symptomId === id));
+  }
+
   function renderChartDraft() {
     const id = AppState.activeDoctorSymptom;
     const eligible = chartVisitStarted && visit.type === 'first'
       && AppState.selectedSymptoms.includes(id) && AppState.queue.some(item => item.symptomId === id);
     chartPanel.hidden = !eligible;
+    el('emrCopyAll').hidden = !eligible || selectedChartSymptoms().length < 2;
     if (!eligible) {
       chartSymptom = '';
       chartPanel.open = false;
@@ -2937,8 +2943,16 @@ NEURO_DATA.other = {
     }
     renderChartReview(id);
     if (chartSymptom === id) return;
-    const mod = NEURO_DATA[id];
+    const draft = getChartDraft(id);
+    chartSymptom = id;
+    patientText.value = draft.patient;
+    clinicianText.value = draft.clinician;
+    chartStatus.textContent = '';
+  }
+
+  function getChartDraft(id) {
     if (!chartDrafts.has(id)) {
+      const mod = NEURO_DATA[id];
       const responses = (mod.questions || []).filter(q => AppState.answers[q.id] && AppState.answers[q.id] !== '건너뜀');
       const lines = responses.map(q => '- ' + q.stem + ' ' + AppState.answers[q.id]);
       chartDrafts.set(id, {
@@ -2949,18 +2963,14 @@ NEURO_DATA.other = {
         clinician: ''
       });
     }
-    chartSymptom = id;
-    const draft = chartDrafts.get(id);
-    patientText.value = draft.patient;
-    clinicianText.value = draft.clinician;
-    chartStatus.textContent = '';
+    return chartDrafts.get(id);
   }
 
-  function chartText() {
-    const draft = chartDrafts.get(chartSymptom);
-    return '[신경과 초진 · ' + NEURO_DATA[chartSymptom].name + ']\n\n'
+  function chartText(id) {
+    const draft = getChartDraft(id);
+    return '[신경과 초진 · ' + NEURO_DATA[id].name + ']\n\n'
       + '■ 환자·보호자 문진 응답\n' + draft.patient.trim() + '\n\n'
-      + '■ 의사 소견\n' + draft.clinician.trim() + emrConcernReplies();
+      + '■ 의사 소견\n' + draft.clinician.trim();
   }
 
   patientText.oninput = () => {chartDrafts.get(chartSymptom).patient = patientText.value;chartStatus.textContent = '';};
@@ -2972,17 +2982,21 @@ NEURO_DATA.other = {
     patientText.focus();
   };
 
-  el('emrCopyDraft').onclick = async () => {
+  async function copyChart(includeAll) {
     if (!chartSymptom) return;
     const id = chartSymptom;
     const draft = chartDrafts.get(id);
     try {
-      await navigator.clipboard.writeText(chartText());
+      const ids = includeAll ? selectedChartSymptoms() : [id];
+      const text = ids.map(chartText).join('\n\n') + emrConcernReplies();
+      await navigator.clipboard.writeText(text);
       if (chartDrafts.get(id) === draft && chartSymptom === id) chartStatus.textContent = '복사했습니다. 환자 차트를 확인하고 붙여넣으세요.';
     } catch {
       if (chartDrafts.get(id) === draft && chartSymptom === id) chartStatus.textContent = '복사 권한을 확인하거나 입력란에서 텍스트를 직접 복사하세요.';
     }
-  };
+  }
+  el('emrCopyDraft').onclick = () => copyChart(false);
+  el('emrCopyAll').onclick = () => copyChart(true);
 
   const oldStart=startPatientIntake;
   startPatientIntake=function(){if(!AppState.selectedSymptoms.length){oldStart();return;}const type=choice('experienceType')||'first';const course=choice('returnCourse'),medicine=choice('returnMedicine'),newSymptoms=choice('returnNew');if(type==='return'&&(!course||!medicine||!newSymptoms)){alert('재진 변화 질문 3개에 답해 주세요. 잘 모르시면 해당 항목을 선택해 주세요.');return;}clearChartDrafts();concernReplies.clear();chartVisitStarted=true;visit={type,concerns:concernValues(),course,medicine,newSymptoms,note:type==='return'?el('returnNote').value.trim():''};if(type==='first'||course==='악화'||newSymptoms==='새 증상 있음'){if(type==='return')alert('증상 악화 또는 새 증상을 확인하기 위해 상세 문진을 진행합니다. 의료진에게 변화 내용을 직접 알려 주세요.');visit.detailed=type==='return';oldStart();return;}cancelQuestionAdvance();AppState.answers={};AppState.queue=[];AppState.queueIndex=0;AppState.isProxy=el('chkProxyCaregiver').checked;el('screenSymptomSelect').style.display='none';el('screenQuestionnaire').style.display='none';finishIntake();};
