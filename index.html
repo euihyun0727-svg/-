@@ -284,6 +284,14 @@ body{background:#f5f4ee;color:#203a30;line-height:1.65}button,input{font:inherit
     #visitConcernReplies label{margin-inline-end:12px}
 
     #emrChartPreview[hidden]{display:none}
+    #emrChartPreview.doctor-intake-open .emr-chart-layout{grid-template-columns:repeat(2,minmax(0,1fr))}
+    #emrChartPreview.doctor-intake-open .emr-review-items{grid-column:2}
+    #doctorIntakeQuestions fieldset{margin:0 0 10px;padding:8px;border:1px solid var(--gray-300);border-radius:8px}
+    #doctorIntakeQuestions label{font-weight:400;margin-top:4px}
+    @media(max-width:760px){
+      #emrChartPreview.doctor-intake-open .emr-chart-layout{grid-template-columns:minmax(0,1fr)}
+      #emrChartPreview.doctor-intake-open .emr-review-items{grid-column:1;grid-row:auto}
+    }
     .emr-chart-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
     .emr-review-items{padding:12px;border:1px solid var(--gray-300);border-radius:8px;overflow-wrap:anywhere}
     .emr-review-items h5{margin:10px 0 4px}
@@ -577,6 +585,7 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
   body.visit-printing #visitPrintSheet .patient-leaflet.dizziness-leaflet ~ .handout-treatment + .selected-education{break-before:page}
 }
 </style>
+<link rel="stylesheet" href="clinical/quick-visit.css">
 </head>
 <body>
 
@@ -681,6 +690,25 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
     <!-- [B] 의사용 통합 진료실 데스크 (12개 증상 완전 분리 5단계 파이프라인)          -->
     <!-- ========================================================================= -->
     <div id="doctorSection" style="display:none;">
+      <section id="quickVisit" class="card no-print" aria-label="빠른 진료">
+        <h2>빠른 진료</h2>
+        <nav id="quickSymptoms" aria-label="증상"></nav>
+        <div id="quickVisitFields" hidden>
+          <label>검토할 질환 <select id="quickDiagnosis"></select></label>
+          <label>진단 상태 <select id="quickCertainty"><option value="">선택</option><option>의심</option><option>확정</option><option>원인 미확정</option></select></label>
+          <fieldset id="quickSymptomsReported"><legend>주요 증상 · 환자 진술</legend></fieldset>
+          <div id="quickTreatment"></div>
+          <label><input type="checkbox" id="quickSelfCare"> 생활관리 안내 포함</label>
+          <label><input type="checkbox" id="quickFollowup"> 추적관리 안내 포함</label>
+          <label>추가 관리 계획 <input id="quickPlan" maxlength="500"></label>
+          <div id="quickWarning" role="status"></div>
+          <button type="button" class="btn-subpath" id="quickHandout">교육자료 미리보기</button>
+          <button type="button" class="btn-subpath" id="quickCopyHandout" hidden>안내서 텍스트 복사</button>
+          <button type="button" class="btn-subpath" id="quickChart">EMR 차팅</button>
+          <p id="quickStatus" role="status"></p>
+        </div>
+        <button type="button" class="btn-subpath" id="quickDetails" aria-expanded="false">상세 진료 도구</button>
+      </section>
 
       <!-- Stage 1: 문진 종합 요약 및 위험신호 -->
       <div id="docStage_stage1_summary" class="doc-stage active">
@@ -695,13 +723,21 @@ nav.doctor-nav { background:#fff; border-color:var(--product-border); padding:8p
             </div>
           </div>
 
+          <section class="experience-doctor-summary no-print">
+            <label for="doctorIntakeSymptom">진료실 초진 문진</label>
+            <select id="doctorIntakeSymptom"></select>
+            <button type="button" class="btn-subpath" id="doctorIntakeAdd">증상 문진 열기</button>
+            <p id="doctorIntakeStatus" role="status"></p>
+          </section>
           <details id="emrChartPreview" class="experience-doctor-summary no-print" hidden>
             <summary>EMR 차팅 미리보기</summary>
             <p>문진 응답을 검토하고 진찰·평가·계획을 직접 작성하세요. 이름·등록번호·연락처는 입력하지 마세요.</p>
             <div class="emr-chart-layout">
+            <section id="doctorIntakeQuestions" hidden aria-label="진료실 초진 문진"></section>
             <div class="emr-chart-fields">
             <label for="emrPatientText">환자·보호자 문진 응답</label>
             <textarea id="emrPatientText" rows="10"></textarea>
+            <button type="button" class="btn-subpath" id="doctorIntakeRefresh" hidden>문진 답변으로 환자 진술 다시 작성</button>
             <label for="emrClinicianText">의사 소견</label>
             <textarea id="emrClinicianText" rows="5" placeholder="진찰 소견, 평가 및 계획을 직접 입력"></textarea>
             <button type="button" class="btn-subpath" id="emrCopyDraft">검토한 차팅 복사</button>
@@ -2891,6 +2927,9 @@ NEURO_DATA.other = {
 
   function clearChartDrafts() {
     chartDrafts.clear();
+    directIntakeIds.clear();
+    directQuestions.replaceChildren();
+    el('doctorIntakeStatus').textContent = '';
     chartSymptom = '';
     chartVisitStarted = false;
     chartPanel.open = false;
@@ -2901,13 +2940,17 @@ NEURO_DATA.other = {
     el('emrReviewItems').textContent = '';
   }
 
-  function renderChartReview(id) {
+  function chartQuestionVisible(id, question) {
     const clinicalModule = {headache: window.NeuroHeadache, dizziness: window.NeuroDizziness}[id];
+    return !clinicalModule || clinicalModule.visible(question);
+  }
+
+  function renderChartReview(id) {
     const groups = new Map([['위험신호 응답', []], ['모름', []], ['미응답', []]]);
     for (const item of AppState.queue) {
       if (item.symptomId !== id) continue;
       const question = item.question;
-      if (clinicalModule && !clinicalModule.visible(question)) continue;
+      if (!chartQuestionVisible(id, question)) continue;
       const answer = AppState.answers[question.id];
       const option = question.options.find(entry => entry.text === answer);
       const label = !answer || answer === '건너뜀' ? '미응답'
@@ -2950,30 +2993,101 @@ NEURO_DATA.other = {
     chartStatus.textContent = '';
   }
 
+  function buildPatientChart(id) {
+    const mod = NEURO_DATA[id];
+    const responses = (mod.questions || []).filter(q =>
+      chartQuestionVisible(id, q) && AppState.answers[q.id] && AppState.answers[q.id] !== '건너뜀');
+    const lines = responses.map(q => '- ' + q.stem + ' ' + AppState.answers[q.id]);
+    return ['응답자: ' + (AppState.isProxy ? '보호자' : '환자'),
+      '주호소: ' + mod.name, '', '현병력·동반 증상 및 관련 병력 (문진)',
+      ...(lines.length ? lines : ['기록된 문진 응답 없음']),
+      '', '환자가 궁금한 점: ' + (visit.concerns.join(' · ') || '선택 없음')].join('\n');
+  }
+
   function getChartDraft(id) {
     if (!chartDrafts.has(id)) {
-      const mod = NEURO_DATA[id];
-      const responses = (mod.questions || []).filter(q => AppState.answers[q.id] && AppState.answers[q.id] !== '건너뜀');
-      const lines = responses.map(q => '- ' + q.stem + ' ' + AppState.answers[q.id]);
-      chartDrafts.set(id, {
-        patient: ['응답자: ' + (AppState.isProxy ? '보호자' : '환자'),
-          '주호소: ' + mod.name, '', '현병력·동반 증상 및 관련 병력 (문진)',
-          ...(lines.length ? lines : ['기록된 문진 응답 없음']),
-          '', '환자가 궁금한 점: ' + (visit.concerns.join(' · ') || '선택 없음')].join('\n'),
-        clinician: ''
-      });
+      chartDrafts.set(id, {patient: buildPatientChart(id), clinician: '', edited: false});
     }
     return chartDrafts.get(id);
   }
+
+  const directIntakeIds = new Set();
+  const directQuestions = el('doctorIntakeQuestions');
+  const directRefresh = el('doctorIntakeRefresh');
+  const symptomPicker = el('doctorIntakeSymptom');
+  Object.values(NEURO_DATA).forEach(mod => symptomPicker.add(new Option(mod.name, mod.id)));
+
+  el('doctorIntakeAdd').onclick = () => {
+    if (chartVisitStarted && visit.type !== 'first') {
+      el('doctorIntakeStatus').textContent = '초진 문진을 시작하려면 먼저 새 환자 시작을 눌러 주세요.';
+      return;
+    }
+    const id = symptomPicker.value;
+    chartVisitStarted = true;
+    directIntakeIds.add(id);
+    if (!AppState.selectedSymptoms.includes(id)) AppState.selectedSymptoms.push(id);
+    buildQueue();
+    AppState.activeDoctorSymptom = id;
+    initDoctorDashboard();
+    chartPanel.open = true;
+  };
+
+  function renderDirectIntake() {
+    const id = chartSymptom;
+    const active = directIntakeIds.has(id);
+    directQuestions.hidden = !active;
+    chartPanel.classList.toggle('doctor-intake-open', active);
+    directRefresh.hidden = !active || !getChartDraft(id).edited;
+    directQuestions.replaceChildren();
+    if (!active) return;
+    NEURO_DATA[id].questions.filter(q => chartQuestionVisible(id, q)).forEach(question => {
+      const copy = PATIENT_INTAKE_COPY.questions[question.id];
+      const group = document.createElement('fieldset');
+      const legend = document.createElement('legend');
+      legend.textContent = copy?.[0] || question.stem;
+      group.append(legend);
+      [{text: '', label: '미응답'}, ...question.options].forEach((option, index) => {
+        const label = document.createElement('label');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'doctor-intake-' + question.id;
+        radio.checked = (AppState.answers[question.id] || '') === option.text;
+        radio.onchange = () => {
+          if (option.text) AppState.answers[question.id] = option.text;
+          else delete AppState.answers[question.id];
+          for (const q of NEURO_DATA[id].questions) {
+            if (!chartQuestionVisible(id, q)) delete AppState.answers[q.id];
+          }
+          const draft = getChartDraft(id);
+          if (!draft.edited) patientText.value = draft.patient = buildPatientChart(id);
+          chartStatus.textContent = draft.edited ? '편집한 환자 진술을 유지했습니다. 새 답변을 반영하려면 환자 진술을 다시 작성하세요.' : '';
+          renderDoctorStage();
+          document.getElementsByName(radio.name)[index]?.focus();
+        };
+        label.append(radio, ' ' + (copy?.[1]?.[index - 1] || option.label || option.text));
+        group.append(label);
+      });
+      directQuestions.append(group);
+    });
+  }
+
+  directRefresh.onclick = () => {
+    const draft = getChartDraft(chartSymptom);
+    patientText.value = draft.patient = buildPatientChart(chartSymptom);
+    draft.edited = false;
+    chartStatus.textContent = '';
+    directRefresh.hidden = true;
+    patientText.focus();
+  };
 
   function chartText(id) {
     const draft = getChartDraft(id);
     return '[신경과 초진 · ' + NEURO_DATA[id].name + ']\n\n'
       + '■ 환자·보호자 문진 응답\n' + draft.patient.trim() + '\n\n'
-      + '■ 의사 소견\n' + draft.clinician.trim();
+      + '■ 의사 소견\n' + draft.clinician.trim() + (window.NeuroQuickVisit?.chartText(id) || '');
   }
 
-  patientText.oninput = () => {chartDrafts.get(chartSymptom).patient = patientText.value;chartStatus.textContent = '';};
+  patientText.oninput = () => {const draft = chartDrafts.get(chartSymptom);draft.patient = patientText.value;draft.edited = true;directRefresh.hidden = !directIntakeIds.has(chartSymptom);chartStatus.textContent = '';};
   clinicianText.oninput = () => {chartDrafts.get(chartSymptom).clinician = clinicianText.value;chartStatus.textContent = '';};
   const legacyCopyEmrText = copyEmrText;
   copyEmrText = function () {
@@ -3000,7 +3114,7 @@ NEURO_DATA.other = {
 
   const oldStart=startPatientIntake;
   startPatientIntake=function(){if(!AppState.selectedSymptoms.length){oldStart();return;}const type=choice('experienceType')||'first';const course=choice('returnCourse'),medicine=choice('returnMedicine'),newSymptoms=choice('returnNew');if(type==='return'&&(!course||!medicine||!newSymptoms)){alert('재진 변화 질문 3개에 답해 주세요. 잘 모르시면 해당 항목을 선택해 주세요.');return;}clearChartDrafts();concernReplies.clear();chartVisitStarted=true;visit={type,concerns:concernValues(),course,medicine,newSymptoms,note:type==='return'?el('returnNote').value.trim():''};if(type==='first'||course==='악화'||newSymptoms==='새 증상 있음'){if(type==='return')alert('증상 악화 또는 새 증상을 확인하기 위해 상세 문진을 진행합니다. 의료진에게 변화 내용을 직접 알려 주세요.');visit.detailed=type==='return';oldStart();return;}cancelQuestionAdvance();AppState.answers={};AppState.queue=[];AppState.queueIndex=0;AppState.isProxy=el('chkProxyCaregiver').checked;el('screenSymptomSelect').style.display='none';el('screenQuestionnaire').style.display='none';finishIntake();};
-  const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();summary();renderPicker();renderChartDraft();renderConcernReplies();};
+  const oldRender=renderDoctorStage;renderDoctorStage=function(){oldRender();summary();renderPicker();renderChartDraft();renderDirectIntake();renderConcernReplies();};
   const oldClear=clearVisitDraft;window.clearVisitDraft=function(){oldClear();if(pickerKey)delete selection[pickerKey];renderPicker();invalidate();};
   const oldReset=resetPatientIntake;resetPatientIntake=function(){oldReset();clearChartDrafts();concernReplies.clear();visit={type:'first',concerns:[],course:'',medicine:'',newSymptoms:'',note:''};Object.keys(selection).forEach(k=>delete selection[k]);pickerKey='';document.querySelectorAll('input[name="experienceType"],input[name="returnCourse"],input[name="returnMedicine"],input[name="returnNew"],input[name="visitConcern"]').forEach(n=>n.checked=n.name==='experienceType'&&n.value==='first');el('returnBrief').hidden=true;el('returnNote').value='';el('educationFamily').checked=false;el('educationChoices').innerHTML='';el('educationPreview').innerHTML='';el('educationContext').textContent='';el('experienceSummary').innerHTML='';AppState.selectedSubpath={};AppState.activeDoctorSymptom=null;AppState.isProxy=false;el('chkProxyCaregiver').checked=false;el('eduPrintButton').disabled=true;el('visitIncludeVisuals').checked=true;document.querySelectorAll('input[data-education]').forEach(n=>n.checked=false);el('patientSummaryCard').innerHTML='';el('symSwitchContainer').innerHTML='';document.querySelectorAll('.doc-stage').forEach(n=>n.classList.toggle('active',n.id==='docStage_stage1_summary'));document.querySelectorAll('#doctor5StageNav .nav-btn').forEach((n,i)=>n.classList.toggle('active',i===0));renderDoctorStage();switchMode('patient');};
 })();
@@ -3026,5 +3140,6 @@ NEURO_DATA.other = {
   <script src="clinical/patient-education-data.js"></script>
   <script src="clinical/followup-workspace.js"></script>
   <script src="clinical/visit-materials.js"></script>
+  <script src="clinical/quick-visit.js"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+#quickVisit{margin-bottom:16px}
+#quickSymptoms{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+#quickSymptoms [aria-pressed=true]{background:var(--primary);color:white}
+#quickVisitFields label{display:block;margin:8px 0}
+#quickVisitFields select,#quickPlan{font:inherit;max-width:100%;padding:6px}
+#quickSymptomsReported{border:1px solid var(--gray-300);border-radius:8px;margin:12px 0;padding:8px}
+#quickWarning{margin:12px 0}
+#quickDetails{margin-top:8px}
+#doctor5StageNav.quick-visit-nav-hidden{display:none!important}
+#doctorSection.quick-visit-mode #docStage_stage1_summary .nd-summary-card > :not(#emrChartPreview){display:none}
+#doctorSection.quick-visit-mode #docStage_stage1_summary .nd-summary-card:has(#emrChartPreview[hidden]){display:none}
+#doctorSection.quick-visit-mode #doctorIntakeQuestions{display:none}
+#doctorSection.quick-visit-mode #emrChartPreview .emr-chart-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media(max-width:760px){#doctorSection.quick-visit-mode #emrChartPreview .emr-chart-layout{grid-template-columns:1fr}}
